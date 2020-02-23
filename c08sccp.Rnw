@@ -1,0 +1,248 @@
+
+\chapter{Modelling sentence comprehension deficits in aphasia} \label{c06}
+
+Aphasia is an acquired disorder of language processing that arises from lesions in the speech and language areas in the brain. These lesions occur due to cerebrovascular and other  diseases and injuries. Early studies on aphasia showed that two distinct types of aphasia arise depending on the area of the brain that develops lesions. Broca's aphasia involves lesions to the left lateral frontal region (the so-called Broca's area) and Wernicke's aphasia involves lesions to the left posterior temporal lobe (Wernicke's area). Classical definitions of sub-types of aphasia are defined around syndromes.
+Broca's aphasia involves difficulties in language production and moderate problems in syntactic comprehension. Spontaneous speech can be non-fluent, and  repeating sentences back can be difficult. 
+Wernicke's aphasia involves severe comprehension and repetition difficulties, and difficulty in finding words. 
+Some other sub-types are global aphasia (complete loss of language); conduction aphasia (relative intact comprehension and production but difficulties in repetition); and anomic aphasia (comprehension intact, but difficulty in finding words).
+
+%cite De Bleser, Cholewa, Stadies, Tabatable 1997.
+%Huber, Poeck, Weniger, Willmes, 1983
+
+Because aphasia is an acquired disorder, from the computational modelling perspective it is natural to ask whether models of sentence processing can help us understand what the nature of the impairment(s) is.
+Focusing only on sentence comprehension, several attempts have been made to ``damage'' a computational model of unimpaired processing in various ways to simulate disorders of comprehension. 
+% summarize the various attempts, in table?
+
+In healthy adults, 
+sentence comprehension has long been argued to be influenced by individual differences; a commonly assumed source is differences in working memory capacity \citep{DanemanCarpenter1980,jc92}. 
+Other factors such as age \citep{CaplanWaters2005} and cognitive control \citep{novick2005cognitive} have also been implicated.
+
+An important question that has not received much attention in the computational psycholinguistics literature is: what are sources of individual differences in healthy adults versus impaired populations, such as individuals with aphasia (IWA)? 
+
+It is well known that individuals with aphasia often experience difficulties in comprehending sentences. These difficulties are mainly observable as lower accuracy scores in comprehension tasks such as sentence-picture matching, in which a picture must be selected in accordance with the meaning of a sentence, or in object-manipulation task, in which the meaning of a sentence must be reenacted with figurines (see literature review in \cite{PatilEtAl2016}). Furthermore, eye-tracking during comprehension studies have revealed that IWA exhibit slower overall processing times \citep{hanneetal11}.
+
+Two factors that are known to affect performance in sentence comprehension tasks (such as sentence-picture-matching, see \cite{hanneetal11}) are canonicity (i.e., word order), and reversibility of thematic roles of animate nouns. Comprehension difficulties in IWA are selective in nature and particularly pronounced in sentences that are semantically reversible and have non-canonical word order, for example passives or object relative clauses. For these sentence structures, response accuracy is often indistinguishable from guessing (50\% accuracy). Such a pattern is referred to as chance performance. On the other hand, performance for canonical structures (e.g., actives or subject relative clauses) and irreversible sentences is often within normal range \citep{hanneetal11}. While chance performance is a typical trait of Broca's aphasia, it can be observed in other aphasia syndromes as well.
+
+Regarding the underlying nature of this deficit in IWA, two primary approaches have been proposed in the literature: \emph{representational} vs.\ \emph{processing accounts}. Whereas representational accounts \citep{Grodzinsky1995} argue that chance performance is caused by impaired syntactic representations on which the parser operates, processing accounts assume an underlying deficit in parsing procedures proper. The exact nature of the impairment in mechanisms that are employed in parsing operations, however, are still not clear, and several proposals have been made. In this paper, we focus on processing accounts of sentence comprehension deficits in IWA and, specifically, evaluate three influential proposals  (for a detailed evaluation of representational accounts, see \cite{PatilEtAl2016}):
+
+\begin{enumerate}
+ \item \textit{Slowed processing}:
+  \cite{BurkhardtEtAl2003} argue that a slowdown in parsing mechanisms can best explain the processing deficit.  
+\ \item \textit{Intermittent deficiencies}:
+  \cite{CaplanEtAl2015} suggest that occasional temporal breakdowns of parsing mechanisms capture the observed behavior. 
+  \item \textit{Resource reduction}:
+  A further hypothesis, due to \cite{Caplan2012}, is that the deficit is caused by a reduction in resources related to sentence comprehension. 
+\end{enumerate} 
+
+Computational modeling can help evaluate these different proposals quantitatively. 
+Specifically, the cue-based retrieval account of \cite{LewisVasishth2005}, which was developed within the ACT-R framework \citep{AndersonEtAl2004}, is a computationally implemented model of unimpaired sentence comprehension 
+ that has been used to model a broad array of empirical phenomena in sentence processing relating to similarity-based interference effects 
+\citep{NicenboimRetrieval2017,JaegerEngelmannVasishth2017,EngelmannJaegerVasishthSubmitted2016} and the interaction between oculomotor control and sentence comprehension \citep{Engelmanna}.\footnote{The model can be downloaded in its current form from 
+https://github.com/felixengelmann/act-r-sentence-parser-em.}
+
+The Lewis and Vasishth model (and its more recent version by \cite{engelmann:phd}) integrates top-down predictions into bottom-up, word-by-word parsing steps by using a left-corner parsing algorithm. The model assumes that words are being read on a (simulated) screen. Simplifying somewhat, the processing cycle consists of the following stages, which are repeated until there are no more words to process: (1) lexical access and integration with the current parse, (2) predictive structure building; and (3) dependency completion (e.g., connecting a grammatical subject and a verb) through a so-called retrieval process. 
+The \cite{LewisVasishth2005} model is particularly attractive for studying sentence comprehension because the retrieval process relies on the general constraints on cognitive processes that have been laid out in the ACT-R framework. This makes it possible to investigate whether sentence processing could be seen as being subject to the same general cognitive constraints as  any other information processing task (of course, this does not entail that there are no language-specific constraints on sentence comprehension).
+A further advantage of the \cite{LewisVasishth2005} model in the context of theories of processing deficits in aphasia is that several of its numerical parameters (which are part of the general ACT-R framework) can be interpreted as implementing the three proposals mentioned above.
+
+The objective of the work presented here is to demonstrate that it is possible to map the three types of deficits mentioned above to three distinct parameters (described below) of the ACT-R architecture, and to use, for each individual IWA, the best-fitting values of these parameters as a means to distinguish between impaired and unimpaired individuals.
+
+In \cite{PatilEtAl2016}, the \cite{LewisVasishth2005} architecture was used to model aphasic sentence processing on a small scale, using data from seven IWA. 
+They modeled proportions of fixations in a visual world task, response accuracies and response times for empirical data of a sentence-picture matching experiment by \cite{hanneetal11}. Their goal was to test two of the three hypotheses of sentence comprehension deficits mentioned above, slowed processing and intermittent deficiency.  
+Their results revealed the best fit for the model that implemented both of the accounts, compared to models that only implemented one. Further, the results lead to the conclusion that IWA exhibit deficits to differing amounts.
+
+One major limitation of the Patil et al.\ study was the limited data it was based on: 7 IWA.
+In the present work, we provide a proof of concept study that goes beyond \cite{PatilEtAl2016} in two respects: first, we use a much larger data-set from \cite{CaplanEtAl2015} with 56 IWA and 46 matched controls; and second, we evaluate the evidence for all the three hypotheses mentioned above. %In future work, we intend to extend the data that will be used to evaluate the model.
+
+%Before we describe the modeling carried out in the present paper and the data used for the evaluation, we first introduce the cognitive constraints assumed in the \cite{LewisVasishth2005} model that are relevant for this work, and show how the theoretical approaches to the aphasic processing deficit can be implemented using specific model parameters. Having introduced the essential elements of the model architecture, we simulate comprehension question-response accuracies for unimpaired controls and IWA, and then fit the simulated accuracy data to published data \citep{CaplanEtAl2015} from controls and IWA. 
+
+When fitting individual participants, we vary three parameters that map to the three theoretical proposals mentioned above. The goal is to determine whether the distributions of optimal parameter values computed for individual participants furnish any support for any of the three sources of deficits in processing. 
+We expect that if there is a tendency in one parameter to show non-default values in individual model fits for IWA, for example slowed processing,
+then there is support for the claim that slowed processing is an underlying source of processing difficulty in IWA. Similar predictions hold for the other two constructs, intermittent deficiency and resource reduction; and for combinations of the three proposals.
+
+\section{Mapping ACT-R parameters to sources of deficits}
+
+In ACT-R, the retrieval of a chunk from memory depends on its activation level, which is determined by several constraints; we discuss a subset of these next. 
+Let $C$ be the set of all chunks in declarative memory. The total activation of a chunk $i \in C$ equals
+
+\begin{equation}\label{eq:1}
+A_i = B_i + S_i + \epsilon,
+\end{equation}
+
+\noindent
+where $B_i$ is the base-level or resting-state activation of the chunk $i$; the second summand $S_i$ represents the spreading activation that a chunk $i$ receives during a particular retrieval event; 
+and $\epsilon$ is noise that is logistically distributed, approximating a normal distribution, with mean $0$ and standard deviation ANS; the noise term is generated at each new retrieval request.
+The time it takes for a chunk $i$ to be retrieved $T_i$ depends on its activation $A_i$ via $T_i = F exp(-A_i)$, where $F$ is a scaling constant which we kept constant at $0.2$ here.
+
+The parameter ANS of the logistic distribution from which $\epsilon$ is generated can be interpreted as implementing the \emph{intermittent deficiency} hypothesis, because higher values of ANS will tend to lead to more fluctuations in activation of a chunk and therefore higher rates of unsuccessful retrievals.\footnote{Note that \cite{PatilEtAl2016} implemented intermittent deficiency using another source of noise in the model which affects not activation levels but rather the odds of a processing operation being chosen.} 
+Increasing ANS leads to a larger influence of random fluctuation in activation on a chunk's activation, which represents the core idea of \emph{intermittent deficiency}: that there is not a constantly present damage to the processing system, but rather that the deficit occasionally interferes with parsing, leading to more errors.
+
+The second summand in \eqref{eq:1} represents the process of \emph{spreading activation} within the ACT-R framework. For a given chunk $i$ to be retrieved, and given retrieval cues $j \in \{1, \ldots, J\}$, the amount of activation spread to the chunk $i$ as a function of the retrieval cues is quantified by computing: 
+
+\begin{equation}\label{eq:2}
+  S_i = \sum_{j=1}^J W_j S_{ji}.
+\end{equation}
+
+\noindent
+The weighting term $W_j$ is assumed by default to be $\frac{\text{GA}}{J}$, where GA is an ACT-R parameter\footnote{GA stands for goal activation in ACT-R, for reasons that are not relevant here.} and $S_{ji}$ is a value that  reflects the strength of association between  the retrieval cue $j$ and the chunk $i$. To give a simplified  example of what spreading activation does, assume that two chunks $i_1$ and $i_2$ are in memory, and there are two retrieval cues $c_1$ and $c_2$ that are being used to search for a chunk. Chunk $i_1$ matches fully with the two retrieval cues, and chunk $i_2$ matches with only one of the retrieval cues, say $c_2$.  Suppose also that the strength of association $S_{ji}$ between a retrieval cue $j$ and a chunk $i$ is $1$ if the retrieval cue matches a feature on the chunk, and $0$ otherwise. Assume that GA is $1$.
+Then, the activation spread to item $i_1$ as a function of the two retrieval cues is: 
+
+\begin{equation}
+  S_{i_1} = W_1 S_{11}+W_2 S_{21}=1/2 \times 1 + 1/2 \times 1 = 1
+\end{equation}
+
+and the activation spread to item $i_2$ is:
+
+\begin{equation}
+  S_{i_2} = W_1 S_{12}+W_2 S_{22}=1/2 \times 1 + 1/2 \times 0 = 1/2
+\end{equation}
+
+More activation is spread to chunk $i_1$ than to chunk $i_2$ due to a full match with the retrieval cues. Now consider the case where $GA=2$. Now, 
+$S_{i_1}= 2/2 \times 1 + 2/2 \times 1 = 2$ and 
+$S_{i_2}= 2/2 \times 1 + 2/2 \times 0 = 1$. Thus, with a higher GA value, more activation is spread to a chunk in memory when it matches the retrieval cues.
+
+The parameter GA therefore determines the total amount of activation increase in a chunk as a function of the number of retrieval cues it matches. It is a free parameter in ACT-R. As discussed in chapter~\ref{c04}, this parameter 
+has been used to model individual differences in working memory capacity (see, for example, \cite{DailyEtAl2001}). 
+The lower the GA value, the lower the increase in activation of the chunk $i$ due to a match with the retrieval cues.
+Low GA values thus model low working memory capacity: when an item needs to be retrieved from memory using certain retrieval cues, the probability of successful retrieval will go down if GA is lower.
+Similarly, higher GA values model higher working memory capacity.
+Thus, it can be seen as one way (although by no means the only way) to implement the resource reduction hypothesis. 
+
+Finally, the hypothesis of \emph{slowed processing} can be mapped to the \emph{default action time} (DAT) parameter in ACT-R. This defines the constant amount of time it takes a selected parsing rule to ``fire'', i.e., to start the actions specified in the action part of the rule. Higher values would lead to a greater delay in firing of parsing rules. Due to the longer decay in this case, retrieval may be slower and more failed retrieval attempts may occur. 
+
+In the following section, we evaluate the model's performance on the empirical data for IWA and unimpaired individuals, implementing the three theoretical claims by varying the three parameters described above. 
+
+\section{Simulations}
+
+In this section we describe our modeling method and the procedure we use for fitting the model results to the empirical data from \cite{CaplanEtAl2015}.
+
+\subsection{Materials}
+
+We used the data from 56 IWA and 46 matched controls published in \cite{CaplanEtAl2015}. In this data-set, participants listened to recordings of sentences presented word-by-word; they paced themselves through the sentence, providing self-paced listening data. Participants processed 20 examples of 11 spoken sentence types and indicated which of two pictures corresponded to the meaning of each sentence. This yielded accuracy data for each sentence type. 
+
+Out of the 11 sentence types, we chose the subject/object relative clause contrast for the current simulation:
+subject relatives (\textit{The woman who hugged the girl washed the boy}) represent the arguments of the sentence (woman, girl) in canonical order, whereas in object relatives (\textit{The woman who the girl hugged washed the boy}), they occur in non-canonical order.
+We chose relative clauses for two reasons. First, relative clauses have been very well-studied in psycholinguistics and serve as a typical example where processing difficulty is (arguably) experienced due to deviations in canonical word ordering \citep{jc92}.
+Second, 
+the \cite{LewisVasishth2005} model already has productions defined for these constructions, so the relative clause data serve as a good test of the model as it currently stands.
+
+\subsection{Parameter estimation}
+
+We used grid search to find the best fitting parameters. We refer to the parameter space $\Pi_i$ as the set of all vectors $(\text{GA}, \text{DAT}, \text{ANS})$ with $\text{GA},\ \text{DAT},\ \text{ANS} \in \mathbb{R}$.
+For computational convenience, we chose a discretisation of $\Pi$ by defining a step-width and lower and upper boundaries for each parameter. In this discretised space $\Pi'$, we chose $\text{GA} \in \{0.2, 0.3, \ldots, 1.1\}$, $\text{DAT} \in \{0.05, 0.06, \ldots, 0.1\}$, and $\text{ANS} \in \{0.15, 0.2, \ldots, 0.45\}$.\footnote{The standard settings in the \cite{LewisVasishth2005} model are $\text{GA} = 1,\ \text{DAT} = 0.05\ \text{(or 50 ms)},\ \text{and ANS} = 0.15$.} $\Pi'$ could be visualised as a three-dimensional grid of 420 dots, which are the elements $p' \in \Pi'$.
+
+The default parameter values were included in $\Pi'$. This means that models that vary only one or two of the three parameters were included in the simulations. 
+
+
+For all participants in the \cite{CaplanEtAl2015} data-set, we calculated comprehension question response accuracies, averaged over all items of the subject / object relative clause condition. For each $p' \in \Pi'$, we ran the model for 1000 iterations for the subject and object relative tasks.
+From the model output, we determined whether the model made the correct attachment in each iteration, i.e., whether the correct noun was selected as subject of the embedded verb, and we calculated the accuracy in a simulation for a given parameter $p' \in \Pi'$ as the proportion of iterations where the model made the correct attachment. We counted a parsing failure, where the model did not create the target dependency, as an incorrect response.
+
+The problem of finding the best fit for each subject can be phrased as follows: for all subjects, find the parameter vector that minimises the absolute distance between the model accuracy for that parameter vector and each subject's accuracy. Because there might not always be a unique $p'$ that solves this problem, the solution can be a set of parameter vectors.
+If for any one participant multiple optimal parameters were calculated, we averaged each parameter value to obtain a unique parameter vector. This transforms the parameter estimates from the discretised space $\Pi'$ to the original parameter space $\Pi$.
+
+
+\subsection{Results}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figures/margSR.pdf}
+  \caption{Marginal distributions of each of the three parameters for subject relatives in controls (solid lines) vs.\ IWA (dotted lines). The vertical line shows the default setting for the respective parameter.}
+  \label{fig:margSR}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figures/margOR.pdf}
+  \caption{Marginal distributions of each of the three parameters for object relatives in controls (solid lines) vs.\ IWA (dotted lines). The vertical line shows the default setting for the respective parameter.}
+  \label{fig:margOR}
+\end{figure}
+
+\begin{table}
+  \centering
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{llccccccc}
+    ~  & ~        & GA & DAT & ANS & GA \& DAT & GA \& ANS & DAT \& ANS & GA \& DAT \& ANS\\
+    \hline
+    SR & control  & 19 & 24  & 18  & 18     & 11     & 16      & 10\\
+    ~  & IWA      & 38 & 41  & 42  & 32     & 33     & 36      & 27\\
+    \hline
+    OR & control  & 21 & 26  & 36  & 21     & 20     & 25      & 20\\
+    ~  & IWA      & 40 & 48  & 53  & 38     & 40     & 48      & 38\\
+    \hline
+  \end{tabular}
+  }
+  \caption{The number of participants in \textbf{subject / object relatives} (SR/OR) for which non-default parameter values were predicted, in the subject vs.\ object relative tasks, respectively; for goal activation (GA), default action time (DAT) and noise (ANS) parameters.}
+  \label{table:normsettingsSO}
+\end{table}
+
+In this section we presents the results of the simulations and the fit to the data. First, we describe the general pattern of results reflected by the distribution of non-default parameter estimates per subject. Following that, we test whether tighter clustering occurs in controls.
+
+\paragraph{Distribution of parameter value estimates} 
+Table~\ref{table:normsettingsSO} shows the number of participants for which a non-default parameter value was predicted. 
+We refer to the values $\text{GA} = 1,\ \text{DAT} = 0.05\ \text{(or 50 ms)},\ \text{and ANS} = 0.15$ as the default values, as set in the ACT-R architecture.
+It is clear that, as expected, the number of subjects with non-default parameter values is always larger for IWA vs.\ controls, but controls show non-default values unexpectedly often.
+In controls, the main difference between subject and object relatives is a clear increase in elevated noise values in object relatives.
+
+For IWA in subject relatives, the single-parameter models are very similar, whereas in simple object relatives, most IWA (95\%) exhibit elevated noise values, while a far smaller proportion (71\%) showed reduced goal activation values. 
+
+Figures~\ref{fig:margSR} and \ref{fig:margOR} illustrate the smoothed marginal distributions of parameter value estimates, for subject and object relative clauses, respectively. Most importantly, it is visible in both subject and object relatives that the distributions of controls' estimates have their point of highest density around the default value of the respective parameter. Deviations from this observation are mainly visible in the distributions for object relatives, where a second peak further away from the default is visible for each parameter. Distributions for IWA, on the other hand, are much flatter, and most density is concentrated relatively far away from the default parameter setting. This situation is exacerbated in object relatives compared to subject relatives.
+
+Overall, most IWA exhibit non-default parameter settings ANS and DAT, and to a lesser extent in GA. Table~\ref{table:normsettingsSO} shows further that the only combined model (i.e., the model that varied two or more parameters instead of keeping the other two at their default value) that matches the single variation model for DAT or ANS is the one combining DAT and ANS. We suspect that the lower number of IWA for which non-default GA values were estimated are due to GA and ANS eliciting similar model behavior.
+We address this point in the discussion below.
+
+\paragraph{Cluster analysis} In order to investigate the
+ predicted clustering of parameter estimates, we performed a cluster analysis on the data too see to which degree controls and IWA could be discriminated.
+If our prediction is correct that, compared to IWA, clustering is tighter in controls, we expect that a higher proportion of the data should be correctly assigned to one of two clusters, one corresponding to controls, the other one corresponding to IWA. We chose hierarchical clustering to test this prediction \citep{friedman2001elements}.
+
+We combined the data for subject and object relatives into one respective data set.
+We calculated the dendrogram and cut the tree at 2, because we are only looking for the discrimination between controls and IWA. The results of this are shown in Table~\ref{table:hclustSO}. The clustering is able to identify controls better than IWA, but the identification of IWA is better than chance (50\%). 
+Discriminative ability might improve if all 11 constructions in \cite{CaplanEtAl2015} were to be used; this will be investigated in future work.
+
+\begin{table}
+\begin{tabular}{ccccc}
+ &\multicolumn{2}{c}{Subject relatives} & \multicolumn{2}{c}{Object relatives}\\
+predicted group &    controls &  IWA & controls & IWA \\ 
+         control      &  \textbf{34}             & 21   &        \textbf{42}   & 24\\
+         IWA           & 12              & \textbf{35}    &         4    & \textbf{32}\\ 
+ \hline        
+         accuracy & 74\% & 63\% & 91\% & 57\%
+\end{tabular}
+\caption{Discrimination ability of hierarchical clustering on the combined data for \textbf{subject / object relatives}. Numbers in bold show the number of correctly clustered data points. The bottom row shows the percentage accuracy.}
+  \label{table:hclustSO}
+\end{table}
+
+
+\section{Discussion}
+
+The simulations and cluster analysis above demonstrate overall tighter clustering in parameter estimates for controls, and more variance in IWA. This is evident from the clustering results in Table~\ref{table:hclustSO}.
+These findings are consistent with the predictions of the small-scale study in \cite{PatilEtAl2016}. However, there is considerable variability even in the parameter estimates for controls, more than expected based on the results of \cite{PatilEtAl2016}.
+
+The distribution of non-default parameter estimates (see Figures~\ref{fig:margSR}, \ref{fig:margOR} and Table~\ref{table:normsettingsSO})
+suggest that all three hypotheses are possible explanations for the patterns in our simulation results: compared to controls, estimates for IWA tend to include higher default action times and activation noise scales, and lower goal activation. These effects generally appear to be more pronounced in object relatives vs.\ subject relatives. This means that all the three hypotheses can be considered viable candidate explanations. 
+Overall, more IWA than controls display non-default parameter settings. Although there is evidence that many IWA are affected by all three impairments in our implementation, there are also many patients that show only one or two non-default parameter values. Again, this is more the case in object relatives than in subject relatives.
+
+In general, there is evidence that all three deficits are plausible to some degree. However, IWA differ in the degree of the deficits, and they have a broader range of parameter values than controls.
+Nevertheless, even the controls show a broad range of differences in parameter values, and even though these are not as variable as IWA, this suggests that some of the unimpaired controls can be seen as showing slowed processing, intermittent deficiencies, and resource reduction to some degree.
+
+There are several problems with the current modeling method. First, using the ACT-R framework with its multiple free parameters has the risk of overfitting. We plan to address this problem in three ways in future research: (1) Testing more constructions from the \cite{CaplanEtAl2015} data-set might show whether the current estimates are unique to this kind of construction, or if they are generalisable. (2) We plan to create a new data-set analogous to Caplan's, using German as the test language. Once the English data-set has been analysed and the conclusions about the different candidate hypotheses have been tested on English, a crucial test of the conclusions will be cross-linguistic generalisability.
+A systematic model comparison method such as k-fold cross-validation might 
+serve  as a means to formally compare the implementations of the theoretical claims of aphasic sentence processing.
+
+Second, the use of accuracies as modeling measure has some drawbacks. Informally, in an accuracy value there is less information encoded than in, for example, reading or listening times. In future work, we aim to implement an approach modeling both accuracies and listening times \citep{NicenboimRetrieval2017}. Also, counting each parsing failure as `wrong' might yield overly conservative accuracy values for the model; this can be addressed by assigning a random component into the calculation. This reflects more closely a participant who guesses if he/she did not fully comprehend the sentence.
+
+Third, related to the overfitting problem addressed above, at least two of the varied parameters -- goal activation and activation noise -- lead to similar effects when manipulated in the way described here. 
+More specifically, the decision to use the ANS parameter makes the assumption that the high noise levels for IWA influence all declarative memory retrieval processes, and thus the whole memory, not only the production system. 
+Similarly, assuming lower GA values for IWA amounts to assuming generally lower working memory capacity in those participants, not specifically lower verbal working memory.
+Both parameters lead to a higher rate of retrieval failures. Because of this, it will be worth investigating in future work whether other sources of noise in the ACT-R framework may be a better way to model intermittent deficiencies (see \cite{PatilEtAl2016} for an example).
+
+Lastly, simulating the subject vs.\ object relative tasks separately yields the undesirable interpretation of participants' parameters varying across sentence types. While this is not totally implausible, estimating only one set of parameters for all sentence types would reduce the necessity of making additional theoretical assumptions on the underlying mechanisms, and allows for easier comparisons between different syntactic constructions.  We plan to do this in future work.
+
+Although our method, as a proof of concept, showed that all three hypotheses are supported to some degree, it is worth investigating more thoroughly how different ACT-R mechanisms are influenced by changes in the three varied parameters in the present work. Implementing more of the constructions from \cite{CaplanEtAl2015} will, for example, enable us to explore how the different hypotheses interact with each other in our implementation. 
+
+One possible way to delve deeper into identifying the sources of individual variability in IWA could be to investigate whether sub-clusters show up within the IWA parameter estimates.
+For example, different IWA being grouped together by high noise values could be interpreted as these patients sharing a common source of their sentence processing deficit (in this hypothetical case, our implementation of intermittent deficiencies). We will address this question once we have simulated data for more constructions of the \cite{CaplanEtAl2015} data-set.
+
+\section{Concluding remarks}
+
+We evaluated three well-known verbally stated hypotheses about causes of deficits in  sentence comprehension in aphasia: slowed processing, intermittent deficiency, and resource reduction. We implemented these hypotheses within a computational model of sentence processing, the \cite{LewisVasishth2005} model of cue-based retrieval. The three hypotheses can be implemented by changing the default values of three different parameter values within the Lewis and Vasishth model. Using a large data-set from IWA and unimpaired controls, 
+we estimated the optimal values for each of these parameters for each individual separately. We found that, compared to controls, IWA have more variable optimal parameter values than controls, and that IWA show differential degrees of deficit, where a deficit is considered to exist if an optimal parameter value for an individual  deviates from the default value of the parameter. Thus, all three hypotheses about deficits in sentence comprehension may be viable explanations of processing difficulty; however, for each individual, the degree of impairment along each of these dimensions of slowed processing, intermittent deficiency, and resource reduction is likely to differ. An important implication is that it is not meaningful to state hypotheses about deficits in IWA  in terms of average behavior: multiple causes of deficit may exist in any one individual, and the degree of deficit along each dimension in each individual may differ. Understanding deficits in IWA requires shifting the focus toward understanding the nature of the variability between individuals.
+

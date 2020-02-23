@@ -1,0 +1,242 @@
+% authored_guide.tex
+% 2011/06/23, v3.1 gamma
+%
+% Adapted by Diana Gillooly and David Tranah
+% from Ali Woollatt's original documentation for cambridge7A
+\NeedsTeXFormat{LaTeX2e}[1996/06/01]
+\documentclass{cambridge7A}
+% \documentclass[spanningrule]{../cambridge7A}% option
+
+\usepackage{natbib}
+% \usepackage[numbers]{natbib}% option
+\usepackage[figuresright]{rotating}
+\usepackage{floatpag}
+\rotfloatpagestyle{empty}
+
+\usepackage{amsmath}% if you are using this package,
+                      % it must be loaded before amsthm.sty
+
+\usepackage{xcolor,colortbl}
+%\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{threeparttable}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{appendix}
+\usepackage{etoolbox}
+
+\usepackage[ruled,vlined]{algorithm2e}
+
+%% different appendices for each chapter:
+\AtBeginEnvironment{subappendices}{%
+  \addtocontents{toc}{\protect\addvspace{10pt}Appendices}
+}
+\makeatletter
+\patchcmd{\@chapter}{\protect\numberline{\thechapter}#1}
+{\@chapapp~\thechapter: #1}{}{}
+\makeatother
+
+ \usepackage{txfonts}
+% \usepackage[scaled=0.9]{couriers}% use if you're using \tt fonts
+
+% indexes
+% uncomment the relevant set of commands
+
+% for a single index
+\usepackage{makeidx}
+\makeindex
+
+% for multiple indexes using multind.sty
+%  \usepackage{multind}\ProvidesPackage{multind}
+%  \makeindex{authors}
+%  \makeindex{subject}
+
+% for glossary entries
+  %\usepackage[style=list]{glossary}
+  %\usepackage[number=none]{glossary}
+%\makeglossary
+
+
+% \hyphenation{docu-ment baseline-skip polar}
+
+% for this documentation, table of contents lists up to subsection level
+  \setcounter{tocdepth}{2}
+
+  \newcommand\cambridge{cambridge7A}
+
+% remove the dot and change default for enumerated lists
+  \def\makeRRlabeldot#1{\hss\llap{#1}}
+  \renewcommand\theenumi{{\rm (\roman{enumi})}}
+  \renewcommand\theenumii{{\rm (\alph{enumii})}}
+  \renewcommand\theenumiii{{\rm (\arabic{enumiii})}}
+  \renewcommand\theenumiv{{\rm (\Alph{enumiv})}}
+
+\newcommand{\Dutchvon}[2]{#2}
+\newcommand{\ck}{\ding{52}}
+\newcommand{\nope}{\ding{56}}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\R}{\textsf{R}}
+\newcommand{\actrcue}[1]{\texttt{\uppercase{#1}}}
+% \newcommand{\match}[1]{$+$\texttt{#1}}
+\newcommand{\match}[1]{\texttt{+\uppercase{#1}}}
+% \newcommand{\mismatch}[1]{$-$\texttt{\uppercase{#1}}}
+\newcommand{\mismatch}[1]{\texttt{-\uppercase{#1}}}
+\newcommand{\featureset}[2]{$\{^{\texttt{\uppercase{#1}}}_{\texttt{\uppercase{#2}}}\}$}
+\newcommand{\featuresetNP}[2]{$^{\texttt{\uppercase{#1}}}_{\texttt{\uppercase{#2}}}$}
+\mathchardef\mhyphen="2D % Define a "math hyphen"
+\newcommand\ccom{\mathop{c\mhyphen com}}
+% \newcommand{\ignore}[1]{}
+\newcommand{\me}{\mathrm{e}}
+
+\newcommand{\revised}[1]{#1}
+\newcommand{\revisedII}[1]{#1}
+\newcommand{\revisedIII}[1]{#1}
+\newcommand{\revFE}[1]{#1}
+\newcommand{\revSV}[1]{#1}
+\newcommand{\revIV}[1]{#1}
+\newcommand{\revV}[1]{#1}
+\newcommand{\revVI}[1]{{\color{red}{#1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \includeonly{06authored}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[german,american]{babel}
+%\usepackage[utf8]{inputenc}
+%\usepackage{todonotes}
+\usepackage{gb4e}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = false,
+    linkbordercolor = {white}
+}
+
+
+\begin{document}
+
+  \title[A Computational Approach]
+    {Sentence Comprehension \\ as a Cognitive Process}
+  \author{Shravan Vasishth and Felix Engelmann}
+ 
+\bookabstract{We present the last 20 years of research on developing computational models of retrieval processes in sentence comprehension. After reviewing the empirical literature on retrieval, the ACT-R based Lewis and Vasishth 2005 model and its recent extensions are presented. The LV05 model's empirical coverage and limitations are discussed using benchmark data-sets and data summaries from published papers. This is to our knowledge the first comprehensive investigaton of models of retrieval processes. All code and data are available from https://vasishth.github.io/sccp/.} 
+\bookkeywords{computational modelling, sentence comprehension, psycholinguistics, ACT-R}
+
+\frontmatter
+\maketitle
+  
+\tableofcontents
+
+\include{c00acksccp} 
+
+\include{c00prefacesccp}
+
+<<setup,include=FALSE,cache=FALSE,echo=FALSE>>=
+library(knitr)
+library(coda)
+library(dplyr)
+library(ggplot2)
+theme_set(theme_light())
+library(xtable)
+require(tidyr)
+library(rstan)
+library(parallel)
+rstan_options(auto_write=TRUE)
+options(mc.cores=parallel::detectCores())
+library(brms)
+library(bayesplot)
+library(grid)
+library(tidyverse)
+library(patchwork)
+library(ggridges)
+
+opts_chunk$set(fig.path='figures/fig-', fig.align='center', fig.show='hold',warning=FALSE, message=FALSE)
+options(replace.assign=TRUE,show.signif.stars=FALSE)
+options(replace.assign=TRUE,width=75)
+opts_chunk$set(dev='postscript')
+
+source("R/funnelplot.R")
+source("R/prettyfunnelplot.R")
+## creates panel-like plots:
+source("R/multiplot.R")
+## plots target parameter:
+source("R/plotparameter.R")
+## fits JAGS model:
+source("R/fitmodel.R")
+## computes the posterior credible intervals,
+## used for plotting and summarizing in table:
+source("R/GetCrI.R")
+## plots posteriors of all studies:
+source("R/plotposteriors.R")
+source("R/plotmeanSE.R")
+## summary of posterior parameters, with convergence stats:
+source("R/mysummary.R")
+## summarizes posterior credible int for 
+## table in paper:
+source("R/summarize.R")
+## needed for Stan code results:
+source("R/magnifytext.R")
+source("R/plotresults.R")
+source("R/createStanDat.R")
+source("R/stan_results.R")
+@
+
+\mainmatter
+
+% introduction
+<<c01, child='c01sccp.Rnw'>>=
+@
+
+% main phenomena of interest
+<<c02, child='c02sccp.Rnw'>>=
+@
+
+% core model
+<<c03, child='c03sccp.Rnw'>>=
+@
+
+% prominence
+<<c04, child='c04sccp.Rnw'>>=
+@
+
+% emma
+\include{c05sccp}
+
+% reanalysis, underspecification
+<<c06, child='c06sccp.Rnw'>>=
+@
+
+% slternative approaches to modeling retrieval   
+<<c07, child='c07sccp.Rnw'>>=
+@
+
+% modeling sentence processing deficits in aphasia
+<<c08, child='c08sccp.Rnw'>>=
+@
+
+\backmatter
+\appendix
+% if you only have one appendix, use \oneappendix instead of \appendix
+%  \include{theorem}
+%  \include{root}
+%  \include{appnum}
+  \endappendix
+  \addtocontents{toc}{\vspace{\baselineskip}}
+
+% the following lines will give you references at the end of the book
+  \renewcommand{\refname}{Bibliography}% if you prefer this heading
+  \bookreferences % if you already have references at the end of chapters,
+                  % you will need this command to start a new \chapter* heading
+\bibliography{sccp,EMMA-edited,cuesim}\label{refs}
+\bibliographystyle{cambridgeauthordate}
+
+\cleardoublepage
+
+% indexes
+% for a single index
+\printindex
+
+\end{document}
+
+

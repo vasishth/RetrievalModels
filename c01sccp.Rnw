@@ -1,0 +1,764 @@
+\chapter{The motivation for this book} \label{c00}
+
+\section{Introduction}
+
+A large body of work in cognitive science is concerned with
+understanding the constraints on human language comprehension and
+production. Although questions about language processing fall within the relatively narrow confines of psycholinguistics, there are deep connections between language processing and independently developed research on memory processes within cognitive psychology. This book
+is about a particular set of computational models of sentence
+comprehension processes
+\citep{LewisVasishth2005,EngelmannJaegerVasishth2019} that seek to
+explain how one particular conception of working memory constraints
+comes into play when we comprehend a sentence. The aim is to use an
+independently developed process model of human information processing
+(ACT-R) to account for some of the cognitive processes that unfold
+when a sentence is read or heard.
+
+This book summarizes only one particular thread of research on the role of
+working memory constraints in sentence comprehension, but the work
+reported here is intended to be a modest contribution towards a
+broader, longer-term goal: developing competing theories and models of sentence
+comprehension or parsing processes that can be quantitatively compared
+against high-quality benchmark empirical data.  In an effort to foster
+reproducibility, and to allow others to use and extend the
+computational models presented here, all the associated data and code
+for this book have been made available from the following repository:
+
+https://github.com/vasishth/sccp.
+
+In the next few subsections, we quickly survey some important aspects of previous research on sentence processing, focusing on two important and closely related ideas: the role of working memory constraints and the role of predictive processing.
+
+\subsection{Working memory in theories of sentence comprehension}
+
+Theoretical and empirical research in sentence comprehension spans a
+broad range of topics; for comprehensive reviews of the classical
+theory, see \cite{Frazier1987}, \cite{PickeringVanGompel2006}, and for
+a discussion of some of the recent theoretical developments, see
+\cite{traxler2014trends}. Historically, there have been two broad
+classes of empirical phenomena that have been studied: the effect on
+comprehension difficulty of complexity (syntactic or
+semantic/pragmatic) and of ambiguity.
+
+\cite{MillerChomsky63} were among the first to investigate the role of
+syntactic complexity in sentence processing by indirectly invoking a
+limit on working memory capacity. They developed a measure of
+structural complexity that was meant to correlate with memory
+limitations \cite[480-482]{MillerChomsky63}: the ratio between the
+non-terminal and terminal nodes in the tree-representation of a
+sentence (i.e., a global ratio) was taken as a measure of ``the amount
+of computation per input symbol that must be performed''
+\cite[480]{MillerChomsky63}.  For example, the ratio of non-terminals
+to terminals in a sentence like \textit{That John failed his exam
+surprised Mary} is higher than for the extraposed (and easier
+to process) version \textit{It surprised Mary that John failed his
+exam}.  In related work, \cite{yngve} proposed the depth hypothesis,
+which stated that the depth of embedding of a phrase was a major
+predictor of processing complexity. This line of work on complexity
+continues to be expanded on today.
+
+The double center embedding construction is a classic example that
+illustrates this shift in emphasis from limits on working memory
+capacity to the constraints imposed on the predictive process.
+Janet Fodor is cited in \cite{frazier85} as noticing that in
+English complex multiple center embeddings have surprisingly been
+found to be easier to process when an embedded verb is missing (i.e.,
+when the sentence is ungrammatical), compared to when the sentence has
+the correct syntactic structure . Consider the following sentences:
+
+\begin{exe}
+\ex \label{ungramCE}
+\begin{xlist}
+\item *The apartment that the maid who the service had sent over was well decorated.
+\item The apartment that the maid who the service had sent over \textit{was} \textit{cleaning} \textit{every} \textit{week} was well decorated.
+\end{xlist}
+\end{exe}
+
+The middle verb phrase \textit{was cleaning every week} is missing in
+(\ref{ungramCE}a), rendering the sentence ungrammatical
+(ungrammaticality is marked with an asterisk, following linguistic
+convention); compare the ungrammatical sentence with its grammatical
+counterpart (\ref{ungramCE}b).  In an acceptability rating study,
+\cite{gibsonthomas97} found similar ratings for both sentences, a
+surprising outcome given that the first sentence is outright
+ungrammatical. Gibson and colleagues invoked storage overload when
+holding predictions in memory: the increased storage cost of holding items
+in memory is assumed to lead the parsing system to forget a previously generated prediction of an upcoming verb phrase. 
+Gibson's storage cost proposal would predict similar behavior
+across languages; however, it seems that German behaves differently
+from English. In a set of seven reading studies (self-paced reading
+and eyetracking while reading), \cite{VasishthSuckowLewis2010} found
+that in English, reading time at the region following the final verb
+phrase was shorter in the ungrammatical vs.\ grammatical
+constructions. This finding from English is consistent with the Gibson and Thomas
+proposal. However, \cite{VasishthSuckowLewis2010} found the opposite
+pattern in German: the region after the final verb phrase was read
+\textit{slower} in the ungrammatical vs.\ grammatical sentences. This
+pattern for German has been replicated, and similar patterns were
+found for Dutch \citep{FrankTrompenaarsVasishth2015}, but see
+\cite{bader2016complex} for results inconsistent with this claim about
+German. \cite{VasishthSuckowLewis2010} suggested that German speakers
+may be able to hold predictions of upcoming verb phrases in memory
+better than English speakers, because verb phrases in German embedded
+clauses are always in the last position. German speakers get more exposure to verb-final constructions than English speakers; this is assumed to allow German speakers to maintain predictions for upcoming verbs in German better than English speakers reading English. The explanation is therefore grounded in experience, not some inherent working memory capacity difference between German and English speakers. Incidentally, the ability to maintain predictions seems to be linked to the properties of the language: when German and Dutch speakers who speak fluent English read sentences in English, they no longer show German/Dutch-like behavior, and behave like English native speakers, reading ungrammatical sentence faster
+\citep{FrankTrompenaarsVasishth2015}. This differentiated pattern of responses conditional on the language being currently used suggests that the probabilistic knowledge about syntactic predictions may not transfer across the languages spoken by an individual; if this conclusion turns out to be correct, it would be an interesting avenue of research in bilingualism, where research often presupposes  transfer effects across languages.
+
+Some of the other recent empirical work on
+reading that is concerned with the role of prediction in processing
+complex syntactic structures is
+\cite{levyfedgibsonRussian,levy2012processing,LevyKeller2013,VasishthMertzenJaegerGelman2018,levy2012processing,linzenuncertainty}. However,
+ working memory limitations may also play a role independent of
+the constraints imposed by predictive processing. For example,
+\cite{SafaviEtAlFrontiers2016} showed that in Persian, readers tended
+to forget highly predictable particles in verb-particle constructions;
+this is unexpected under the probabilistic prediction
+accounts. Further, \cite{HusainEtAl2014} found that strong predictions
+about upcoming materials could override forgetting effects, but weak
+predictions did not.
+
+Working memory limitations have also been invoked to explain the effect of ambiguity on comprehension ease.
+For example, Frazier proposed two heuristic principles that guide parsing
+decisions. These were mainly directed at explaining so-called garden-path sentences, which are characterized by a local ambiguity in the syntactic structure that is resolved later in the sentence, leading to a possible misparse.
+
+The first principle is minimal attachment, which stipulates:
+ ``Choose the structurally simplest analysis (the one with the fewest additional nodes).'' An example is:
+
+\begin{exe} 
+\ex  \label{ambiguity}
+The lawyer knew the answer was wrong.
+\end{exe}
+
+Here, the parser initially assumes incorrectly that \textit{the answer} is the object of \textit{knew}, because this is a simpler structure than the correct one, in which a missing complementizer \textit{that} appears after \textit{knew}: 
+
+\begin{exe} 
+\ex  \label{ambiguitythat}
+The lawyer knew that the answer was wrong.
+\end{exe}
+
+The second heuristic principle was Late Closure:  ``Integrate current input into current  constituent (when possible).'' An example sentence is:
+
+\begin{exe} 
+\ex  \label{ambiguity2}
+After the student moved the chair broke. 
+\end{exe}
+
+Frazier suggested that Minimal Attachment and Late Closure
+are reflexes of a constrained capacity working memory
+system.  Regarding Late Closure, \cite[39]{Frazier79} writes:
+
+\begin{quote} 
+``It is a well-attested fact about human memory that the more structured
+the material to be remembered, the less burden the material will place
+on immediate memory. Hence, by allowing incoming material to be
+structured immediately, Late Closure has the effect of reducing the
+parser's memory load.'' 
+\end{quote}
+
+Similarly, regarding Minimal Attachment \cite[40]{Frazier79} writes:
+
+\begin{quote} 
+``[T]he Minimal Attachment strategy not only guarantees minimal
+structure to be held in memory, but also minimizes rule
+accessing. Hence, [Minimal Attachment is also an `economical' strategy] in
+the sense that [it reduces] the computation and memory load of the parser.''
+\end{quote}
+
+The minimal attachment proposal has an interesting twist. \cite{SwetsDesmetClifton2008} showed that task demands can modulate whether participants engage in any attachment at all. In other words, participants may be engaging in  underspecification, and one possible explanation for why they underspecify may have to do with working memory limitations.
+To understand the phenomenon of underspecification, consider the triplet of sentences shown in (\ref{swets}):
+
+\begin{exe}
+\ex \label{swets}
+\begin{xlist}
+\item Low attachment: \\
+The son of the princess who scratched herself in public was terribly humiliated.
+\item High attachment: \\
+The son of the princess who scratched himself in public was terribly humiliated.
+\item Globally ambiguous: \\
+The maid of the princess who scratched herself in public was terribly humiliated.
+\end{xlist}
+\end{exe}
+
+Under the classical account, discussed for example in
+\cite{FrazierRayner1982}, the parser should find it easier to complete
+low attachment than high attachment (compare \ref{swets}a and
+\ref{swets}b) to minimize effort as discussed above, and in the
+globally ambiguous case (\ref{swets}c), the parser should
+automatically take the route of least effort and make a low
+attachment. As a consequence, the globally ambiguous condition should
+show the same processing difficulty as the low attachment
+condition. Surprisingly, the relative clause in the globally ambiguous
+condition has been found to be read \textit{faster} than in the low
+attachment condition \citep{TraxlerPickeringClifton1998}; this
+phenomenon is called the ambiguity advantage.
+
+Swets and colleagues suggested that the ambiguity advantage could be
+due to an underspecification process under different task demands.  To
+show this, they carried out a self-paced reading study, asking
+participants to read sentences like (\ref{swets}). They asked different
+kinds of questions about these sentences, changing the complexity and
+frequency of the questions in a between-participants
+design. Forty-eight participants were asked questions about relative
+clause attachment on every experimental trial. An example question for
+the above set of example sentences is: \textit{Did the
+maid/princess/son scratch in public?} A second group of 48
+participants was asked superficial questions. An example for the above
+sentences is \textit{Was anyone humiliated/proud?} A third group of
+48 participants was asked superficial questions only occasionally
+(once every 12 trials). Swets and colleagues found that an ambiguity
+advantage was observed when questions were superficial, but no
+ambiguity advantage was observed when the questions were about the
+relative clause attachment (here, the globally ambiguous and low
+attachment conditions patterned together, as the classical theory by
+Frazier would predict). Thus, when participants do not need to engage
+deeply with the target sentences, they may engage in more superficial
+processing, to the extent that they may not even build completely
+connected syntactic structure.  Although the driver of
+underspecification here is externally imposed task demands, working memory limitations
+may also be an additional factor. In a Spanish reading study using
+eyetracking, \cite{MalsburgVasishth2013} suggested that low working
+memory capacity participants may underspecify more often in the face of
+temporary ambiguity; also see \cite{Traxler2007}.
+
+\subsection{Prediction in sentence processing}
+
+In his Syntactic Prediction Locality Theory \citep{Gibson1998} and his
+subsequent Dependency Locality Theory, \cite{Gibson2000} formalized
+the idea that the parser predicts upcoming material, and that there
+are limits on how much information can be stored. Storage
+cost has empirical support from several studies; examples are the double
+center embedding work on English by \cite{gibsonthomas97} discussed
+above, and a Hindi eyetracking corpus study
+\citep{HusainVasishthNarayanan2015}. A very different perspective on
+predictive processing was developed through the work of
+\cite{Jurafsky1996,Hale2001,Levy2008}, among others; the assumption
+here is not that prediction is constrained by working memory
+limitations, but rather by an underlying probabilistic grammar
+representation. As a sentence is processed incrementally, an
+essentially parallel, or ranked parallel set of possible continuations
+is predicted, and as one transitions from one word to the next , the
+change in the probability mass of the predicted continuations indexes
+processing difficulty. Briefly put, rare continuations are hard to
+process. These prediction-oriented theories represent a distinct class of
+account that has two characteristics: it has no need for any
+constraints imposed by working memory, and it only focuses on
+``forward-looking processes'', i.e., predictions about upcoming
+material. Extreme forms of prediction theories assume, implicitly or explicitly, no limit on the number of proposed continuations (i.e., massively parallel predictions); for discussion, see \citet{Boston2011}.
+Contrast this with the discussion about ambiguity resolution
+above, where the focus was on the constraints on accessing previously encountered material. For
+example, when an attachment site for a relative clause is searched for 
+by the parser, the search is directed towards accessing previously processed
+material. Such ``backward-looking processes'' could be subject to somewhat different constraints than ``forward-looking processes''.
+
+Explicit rejections of working-memory based accounts of sentence comprehension difficulty come from the connectionist modelling literature; these can also be seen as a class of prediction-based models.
+For example, \cite{MacDonaldChristiansen2002} wrote an important critique of \cite{JustCarpenter1992}, who had claimed that high- and low-working memory capacity individuals process sentences differently. Just and Carpenter present data showing that high capacity participants exhibit smaller differences in object- vs.\ subject relative clause difficulty than low-capacity participants.\footnote{It is worth noting here as an aside that capacity was measured using the \cite{DanemanCarpenter1980} reading span task, which may index experience with language rather than inherent capacity per se \citep{wellsetal}.} MacDonald and Christiansen argued that the differences in processing difficulty attributed to inherent capacity differences may be due to an interaction between experience with language and biological (neural architectural) factors that have nothing to do with the capacity of a separate working memory system.
+
+\subsection{Working memory and prediction as explanations for processing difficulty}
+
+In summary,  memory load and limits on working memory capacity are candidate explanation for certain aspects of language processing, but certain other aspects of processing have a better explanation in terms of probabilistic predictive processes.  Much of the inspiration for memory
+explanations came, either directly or indirectly, from work in cognitive psychology. Decay and
+similarity-based interference are two key 
+constructs that have been invoked in psycholinguistics in one form or another;  these ideas come from research on memory in psychology \citep{brown,petersonpeterson,keppelunderwood,waughnorman}. This 
+connection between sentence comprehension difficulty and research on
+decay and/or interference has been explored in detail by
+\cite{lewis:magical,lewis:phd,Gibson2000,JustCarpenter1992}. The critical role that prediction plays in human sentence processing was recognized quite early in connection with formal  theories of parsing, as discussed in \cite{philip92leftcorner}. The seminal work of \cite{Jurafsky1996} laid the foundations for the use probabilistic grammatical knowledge in explaining sentence comprehension difficulty; this line of thinking  resulted in another important paper by \cite{Levy2008}. 
+
+
+\section{Current beliefs about constraints on sentence comprehension}
+
+Given the above short (and incomplete) survey, some of the broad tentative conclusions that the last sixty years of work on sentence processing
+can be summarized as follows. Of course, not everyone will agree with this summary; but in our opinion, the claims listed below are relatively well supported by the literature. 
+
+\begin{enumerate}
+\item The parser builds incremental structural (syntactic) representations during online processing, although the parser may also, under certain circumstances, engage in underspecification of structure or track only local collocational frequencies \citep{FrazierRayner1982,TraxlerPickeringClifton1998,SwetsDesmetClifton2008,Taboretal04}.
+\item The parser probabilistically predicts upcoming material \citep{Hale2001,Levy2008}.
+\item What is retained in memory and what is predicted during parsing is probably constrained by a working memory component \citep{Gibson1998,Gibson2000,SafaviEtAlFrontiers2016,HusainEtAl2014,HusainVasishthNarayanan2015}.
+\item Experience with language affects our probabilistic knowledge of language, and consequently, our comprehension \citep{MacDonaldChristiansen2002,wellsetal}.
+\end{enumerate}
+
+\section{Three gaps in the sentence processing literature}
+
+Although the last sixty years have seen significant advances in our understanding of sentence comprehension processes, we see three major gaps in existing work. 
+
+\subsection{The scarcity of computationally implemented models}
+
+The first gap is that, instead of making computational/mathematical
+modelling the basis for theory development, the field has largely
+relied on verbally-stated models of comprehension processes. This has
+led to a great deal of vagueness in theory development.
+Verbally-stated theories have the great advantage that nascent ides can be
+quickly sketched out. Indeed, computational models usually begin with an
+informal statement of the key intuitions. In psycholinguistics,
+researchers stop too often at the verbal theorizing stage and never
+attempt to implement their models. There are of course exceptions to
+this: some examples of implemented models are listed below.
+
+\begin{enumerate}
+\item Connectionist models: \cite{MacDonaldChristiansen2002,Frank2009,EngelmannVasishth2009,rabovsky2014simulating,linzen2018distinct}.
+\item Constraint-based models: \cite{McRaeSpiveyKnowltonTanenhaus1998}.
+\item Probabilistic parsing models: \cite{Hale2001,Levy2008,rasmussen2017left}.
+\item  Dynamical systems approaches \cite{vossekempen2000,Taboretal04,cho2017incremental,SmithFranckTaborCogSci2018}.
+\item 
+Computational cognitive models of underspecification: \cite{LogacevVasishthQJEP2016}.
+\item Models of decision processes in parsing: \cite{hammerly2019grammaticality,parker2019cue}.
+\end{enumerate}
+
+As an aside, we note that, with some rare exceptions, one major
+problem with much of the modelling has been the lack of publicly
+available reproducible code that allows the reader to independently
+evaluate or extend the published model. 
+
+Despite the fact that several serious attempts exist at implementing theories as computational models, many theoretical proposals remain unimplemented.
+Except for the simplest of ideas, it is generally not sufficient to stop
+at verbal statements. This is because informally stated theories
+usually have hidden degrees of freedom that allow the researcher to
+explain away or simply ignore counterexamples.  Computational
+implementations force the researcher to confront the distance between
+theory and data. Although computational models also have hidden
+degrees of freedom, these are usually easier to see.
+
+An example of the problems that arise in verbally-stated theories comes from the \index{Dependency Locality Theory} Dependency Locality
+Theory \citep{Gibson2000}. Originally, a central tenet of the theory was that only
+new discourse referents can disrupt dependency completion; in
+previous work, this point was explicitly brought up by showing that a
+pronoun, which introduces a given or easily inferrable referent,
+causes less disruption than a newly introduced discourse referent
+\citep{warrengibson05}. Moreover, in the classic description of the
+model \citep{Gibson1998} and in its follow-up revision
+\citep{Gibson2000}, the following assumption is adopted: ``Although
+processing all words probably causes some integration cost increment,
+it is hypothesized here that substantial integration cost increments
+are caused by processing words indicating new discourse structure''
+\citep[12]{Gibson1998}.  However, in \cite{gibsonwu}, previously
+introduced (old) discourse referents are assumed to lead to increased
+dependency completion cost in exactly the same way that new discourse referents do \citep{HsiaoGibson2003}, without any discussion about the change
+in the assumptions of the model. This change is actually not an inherently important
+one for the theory, because one could have easily assumed from the
+outset that all intervening discourse referents (regardless of whether they are new or old) cause 
+processing difficulty. Nevertheless, the example illustrates that model
+predictions can be ``computed'' (in the researcher's mind), without
+noticing that the model assumptions have changed.
+
+A further disadvantage of verbally stated theories is that no
+quantitative predictions can be derived. This affects the kinds of
+scientific questions one can ask, and the way that one frames one's predictions. With verbally stated theories, we
+can only ask questions of the type ``does this effect exist or not?''
+This kind of framing makes it irrelevant whether the effect is 2 ms or 200 ms in
+magnitude. As discussed below in section \ref{typem}, ignoring the magnitude of the expected effect has important consequences for inference. By contrast, a quantitative modelling approach allows us to
+focus on how the empirical estimates (and the uncertainty associated
+with these estimates) match up with the range of predictions from the
+computational models of interest.
+
+A commonly heard objection to computational modeling is that we don't
+yet know enough about the process of interest to implement it; a
+related objection is that an implemented model will miss crucial
+aspects of the cognitive process of interest. These objections are
+valid, to some extent. But models should be seen as useful lies that
+help us see the range of possibilities that could constitute truth \citep{whymodel}. As the word itself suggests, a
+model is rarely intended to accurately capture every single aspect of
+reality. The criticism that a model fails to capture this or that detail points to an important limitation of the model, but is not a reason to abandon the entire enterprise of model development  \citep{smaldino2017models}.
+
+In contrast to sentence comprehension research, within other areas
+adjacent to cognitive science---artificial intelligence and
+mathematical/cognitive psychology---the development of different
+computational cognitive architectures and frameworks has flourished
+and has had a major and positive impact on our understanding of the
+phenomena under study.  This is because it is well-understood in these
+areas that computational models allow the scientist to build detailed
+process models of human cognitive processes, and to investigate the
+quantitative predictions arising from these models. Prominent examples
+from classical AI research are the SOAR \citep{laird2012soar} and
+ACT-R \citep{AndersonEtAl2004} architectures; in psychology, the E-Z
+Reader \citep{Reichle2003,ReichleEtAl2009,ReichleWarrenMcConnell2009}
+and SWIFT \citep{EngbertNuthmannRichter2005,richteretal06,Rabe2019}
+models of eye-movement control stand out as examples of 
+comprehensive architectural frameworks of a particular cognitive
+process of interest (reading).  Cognitive psychology has a rich
+tradition of such models: the working memory models by
+\cite{OberauerKliegl2006,LewandowskyGeigerOberauer2008}, the 4CAPS architecture \citep{justetal99} (http://www.ccbi.cmu.edu/4CAPS/), and other models \citep{lee2014bayesian,busemeyer2010cognitive,lewiscogmodsym,farrell2018computational}.
+By contrast, in the narrower field of sentence processing, not as much effort has gone into developing comprehensive architectures.
+
+\subsection{A focus on average behaviour and neglect of individual-level differences}
+
+The second gap in current work is that the vast majority of the empirical and modelling work has focused on explaining average behavior. Researchers have pointed out that the excessive focus on modelling average bahaviour is problematic; for example, see the discussion in \cite{kidd2018individual}.
+
+As \cite{norm} put it, ``The average is an abstraction. The reality is
+variation.'' The average response is not sufficiently informative
+about the true nature of the cognitive process of interest. The focus
+should be on understanding the causes for average as well as the
+individual-level behaviour; this will lead to a better understanding
+of the systematic reasons that lead speakers/comprehenders to show
+differentiated behavior.  Individual differences have been
+investigated in some sentence processing studies
+\citep[e.g.,][]{JustCarpenter1992,van2014low,MacDonaldChristiansen2002}; but the
+field would benefit from making this a routine part of the
+investigation of the causes of processing difficulty.
+
+\subsection{The absence of high-precision studies}
+
+The third gap in the literature is the absence of properly powered experimental studies. The proliferation of underpowered studies has led to a range of invalid inferences in the literature. The term invalid inference here doesn't mean the inferences don't reflect the truth, but rather that they are not supported by the statistical analyses. The most egregious example of invalid inferences is concluding that the null hypothesis is true when the p-value is greater than 0.05.
+
+The underlying reasons for the proliferation of underpowered studies is easy to work out: First,
+researchers are incentivized to publish ``big news'' papers as fast as
+possible; this encourages small sample ``microstudies'' that seem to
+lead to groundbreaking discoveries. Second, many of the early
+discoveries in psycholinguistics were large effects that didn't even
+need an experiment to establish. An example is the strong garden-path
+sentence \textit{The horse raced past the barn fell}; one can ``feel'' the oddness of the sentence even without doing an experiment.  Another example
+is the late closure example mentioned above, \textit{After the student
+moved the chair broke}; one immediately senses that something is wrong with this sentence. Processing difficulties in such easily discernable effects can be reliably detected even with relatively modest sample sizes. For example, the classic garden-path study by \cite{FrazierRayner1982} had only 16
+subjects, and 16 items for a four-condition late-closure design, and
+16 items for a four-condition minimal attachment design (the late
+closure/minimal attachment manipulation was between items). This
+sample size might have been sufficient to detect large effects. But such a sample size is
+certainly too small to investigate predictability
+\citep{VasishthMertzenJaegerGelman2018} or memory effects
+\citep{JaegerEngelmannVasishth2017,MertzenEtAlAMLaP2019,JaegerMertzenVanDykeVasishth2019}.  For investigations of such subtle phenomena in sentence comprehension, there has been no
+systematic attempt to assess whether sample sizes used for classical
+garden-path effects would suffice.  The consequence has been that a
+lot of the data published in psycholinguistics is likely to come from
+underpowered studies. As we discuss below (section \ref{typem}), this has very bad consequences for theory development.
+
+\section{The goals of this book}
+
+The present book aims to address the gaps discussed in the previous section from a very particular perspective.
+In the following pages, we will spell out a theory of
+sentence processing \citep{LewisVasishth2005} that uses (or is inspired by) a specific cognitive
+architecture, ACT-R \citep{AndersonEtAl2004}, that has been designed for
+modelling general cognitive processes. ACT-R is a reasonable choice
+for a framework because it is a mature architecture that has been
+widely used in artificial intelligence, human-computer interaction,
+psychology, and other areas of cognitive science to model human
+information processing (for examples, see the literature listed on the home page for the architecture: http://act-r.psy.cmu.edu/). 
+
+
+
+\subsection{Modelling average effects as well as individual differences}
+
+The book will also discuss the modelling of individual differences. Specifically, we will illustrate how we could investigate (a) 
+the influence of individual differences in working memory capacity on parsing, (b) the role of parsing strategy, including task-dependent underspecification,  (c) the interaction between individual working memory capacity, grammatical knowledge, and parsing, (d) the interaction between the eye-movement control system and sentence comprehension, and (e) how individual-level differences in the behaviour of individuals with aphasia might be explained in terms of model parameters. 
+
+\subsection{Developing a set of modelling and empirical benchmarks for future model comparison}
+
+A further goal of the book is to provide the next generation of
+researchers with a synthesis of the modelling and empirical work that
+followed the publication of the article by
+\cite{LewisVasishth2005}. Our hope is that others will be able to
+build and improve on the present work, either falsifying or extending
+the empirical support for the model claims and thereby advancing our
+understanding of the important open theoretical issues, or developing
+competing models that can outperform the ones presented here.  Some
+attempts at developing competing models that aim to outperform the
+models presented in the present book already exist
+\citep{SmithFranckTaborCogSci2018,rasmussen2017left,cho2017incremental,parker2019cue}. One
+problem common to all these models is that they take up one or two
+empirical phenomena of interest (a common choice is subject vs.\
+object relatives, usually in English). This often leads to overfitting
+the model to a very narrow set of facts. A remarkable number of
+modelling studies limit themselves to narrow topics like relative clause processing.  What is missing in the field is a set of
+benchmark empirical tests that a model can be evaluated on in order to demonstrate superior fit to data, relative to some baseline model. As a first step towards developing such a benchmark, we provide in one place the data-sets from reading studies on interference effect that happen to be publicly available.
+
+Regarding the data used in this book, we focus almost exclusively on reading data, from self-paced reading or self-paced listening, and eyetracking studies. This is because we primarily set out to model the reading process;  an exception is the modelling of visual world data reported in  \cite{PatilEtAl2016}.
+We chose reading times as a convenient starting point because the \cite{LewisVasishth2005} model delivers predictions in terms of retrieval time and retrieval accuracy, and dependent measures in reading studies (e.g., fixation durations, comprehension accuracy) map relatively straightforwardly to this measure.  We will therefore not discuss the large body of research using other methods such as EEG and the visual world paradigm.  It is of course important to develop computational models that can be related to data that come from these methods. We hope
+that future generations will take up that task.
+
+\section{Desiderata for a good model fit}
+
+In psycholinguistics, there are no general standards on how to
+quantify a good model fit. A standard criterion is root mean squared
+deviation, which quantifies the average deviation from the observed
+value, but there are better approaches. We discuss two important
+criteria below that we feel are appropriate for modelling work in
+psycholinguistics; both are related to each other and are
+fundamentally graphical in nature.
+
+\subsection{The Roberts and Pashler (2000) criteria}
+
+In an influential paper, \cite{rp} pointed out that a quantitative
+model's fit to the data is only convincing when two conditions are
+met. First, the model must make sufficiently constrained
+predictions. Second, the data should have low uncertainty. These
+criteria are illustrated in the schematic plot shown in
+Figure~\ref{fig:rp}. The two diagonal lines illustrate a hypothetical
+range of correlations between two variables $x$ and $y$ that are
+predicted by some model. The uncertainty (variability) in the
+correlation can be high or low. High variability is shown by widely
+separated lines and amounts to a relatively unconstrained prediction
+from the model. \cite{rp} make the point that a model's predictions
+are not going to be impressive if they allow just about any outcome. A
+more tightly limited prediction will pose a stringent test for the
+theory.  Similarly, a good fit to a
+model's predictions will be unimpressive and unconvincing if the data have
+high uncertainty; in practice, what high uncertainty means is that 
+the standard error of the estimated effect is large.
+
+Thus, for a model fit to be convincing, two conditions must be
+satisfied: the model must make highly constrained predictions and the
+data must deliver estimates with low uncertainty.
+
+\begin{figure}
+\centering
+<<rp,echo=FALSE>>=
+y<-seq(1,100,by=0.01)
+
+op<-par(mfrow=c(2,2),pty="s")
+
+plot(y,y,type="l",ylim=c(0,200),
+     main="",xaxt="n",yaxt="n",xlab="",ylab="")
+title(xlab="x", 
+      line=.5, cex.lab=1)
+title(ylab="y", 
+      line=.5, cex.lab=1)
+
+lines(y,y+80)
+points(50,90)
+arrows(x0=50,x1=50,y0=10,y1=170,
+       angle=90,
+       length=0)
+text("weak support",x=40,y=200)
+
+plot(y,y,type="l",ylim=c(0,200),
+     main="",xaxt="n",yaxt="n",xlab="",ylab="")
+title(xlab="x", 
+      line=.5, cex.lab=1)
+title(ylab="y", 
+      line=.5, cex.lab=1)
+lines(y,y+80)
+points(50,90)
+arrows(x0=50,x1=50,y0=80,y1=100,
+       angle=90,
+       length=0)
+text("weak support",x=40,y=200)
+
+plot(y,y,type="l",ylim=c(0,200),
+     main="",xaxt="n",yaxt="n",xlab="",ylab="")
+title(xlab="x", 
+      line=.5, cex.lab=1)
+title(ylab="y", 
+      line=.5, cex.lab=1)
+lines(y,y+20)
+points(50,60)
+arrows(x0=50,x1=50,y0=60-50,y1=60+50,
+       angle=90,
+       length=0)
+text("weak support",x=40,y=200)
+
+plot(y,y,type="l",ylim=c(0,200),
+     main="",xaxt="n",yaxt="n",xlab="",ylab="")
+title(xlab="x", 
+      line=.5, cex.lab=1)
+title(ylab="y", 
+      line=.5, cex.lab=1)
+lines(y,y+20)
+points(50,60)
+arrows(x0=50,x1=50,y0=60-10,y1=60+10,
+       angle=90,
+       length=0)
+text("strong support",x=40,y=200)
+@
+\caption{A schematic summary of the \cite{rp} discussion regarding what constitutes a good fit of a model to data. The data are represented by the circle (the estimated mean) and the vertical uncertainty interval, and the model predictions by the diagonal parallel lines. 
+If a model predicts a positive correlation between two variables $x$ and $y$, strong support for the model can only be argued for if both the data and the model predictions are highly constrained: the model must make predictions over a narrow range, and the data must have low uncertainty associated with it.}\label{fig:rp}
+\end{figure}
+
+
+\subsubsection{Why is high uncertainty undesirable in the estimate from the data?} \label{typem}
+
+It seems obvious enough that a model should not allow any possible
+empirical outcome; such a model is not particularly useful
+because it can ``explain'' any outcome. Examples from psychology of models that can predict any outcome are discussed in \cite{rp}. 
+It is less clear intuitively why
+empirical estimates of effects need to be measured with precision. As
+researchers, we are trained to only check whether an effect is
+statistically significant or not; it is considered irrelevant whether
+the standard error of the effect is large or not. Here, we show why
+the precision of the estimate (roughly speaking, the standard error)
+is a crucial component when evaluating theoretical predictions. The
+p-value is in most cases useless, especially when considered as the
+sole piece of information from a data analysis \citep{pvals}. The limitations of using p-values alone for inference is by no means a new insight, but it has been generally ignored in psychology and linguistics.
+
+Estimates of an effect that have high uncertainty (wide standard
+errors) are also studies that are likely to be underpowered. This has
+all the bad consequences that come with low power, most dramatically
+Type M and S errors \citep{GelmanCarlin2014}. Type M(agnitude) error
+refers to an overestimation of the effect magnitude, and Type S(ign)
+error refers to an incorrect sign (incorrect relative to the predicted
+or expected effect). Both types of error occur when power is low, as
+the following simulation demonstrates.  Suppose that a true effect in
+a reading time experiment has magnitude 20 ms, and that standard
+deviation is 150 ms. In such a situation, a paired t-test with a
+sample size of 26 yields 10\% power. If one were to repeatedly run an
+experiment with this sample size, as shown in the upper part of
+Figure~\ref{fig:typemdemo}, apart from there being many null results,
+\textit{all} significant results will be either overestimates or will have the
+wrong sign (or both). By contrast, as shown in the lower part of the
+figure, when power is high (say, 80\% or higher), most significant
+effects will be close to the true value.
+
+\begin{figure}[!htbp]
+\centering
+<<typemdemo,cache=TRUE,echo=FALSE>>=
+set.seed(20031964)
+d<-20
+sd<-150
+lown<-power.t.test(d=d,sd=sd,power=.10,type="one.sample",alternative="two.sided",strict=TRUE)$n
+highn<-power.t.test(d=d,sd=sd,power=.80,type="one.sample",alternative="two.sided",strict=TRUE)$n
+nsim<-50
+tlow<-thigh<-meanslow<-meanshigh<-CIuplow<-CIlwlow<-CIuphigh<-CIlwhigh<-NULL
+critlow<-abs(qt(0.025,df=lown-1))
+crithigh<-abs(qt(0.025,df=highn-1))
+
+for(i in 1:nsim){
+  x<-rnorm(lown,mean=d,sd=sd)
+  meanslow[i]<-mean(x)
+  tlow[i]<-t.test(x)$statistic
+  CIuplow[i]<-mean(x)+critlow*sd(x)/sqrt(length(x))
+  CIlwlow[i]<-mean(x)-critlow*sd(x)/sqrt(length(x))
+  x<-rnorm(highn,mean=d,sd=sd)
+  meanshigh[i]<-mean(x)
+  thigh[i]<-t.test(x)$statistic
+  CIuphigh[i]<-mean(x)+crithigh*sd(x)/sqrt(length(x))
+  CIlwhigh[i]<-mean(x)-crithigh*sd(x)/sqrt(length(x))
+}
+
+ 
+siglow<-ifelse(abs(tlow)>abs(critlow),"p<0.05","p>0.05")
+sighigh<-ifelse(abs(thigh)>abs(crithigh),"p<0.05","p>0.05")
+
+summarylow<-data.frame(means=meanslow,significance=siglow, CIupper=CIuplow, CIlower=CIlwlow)
+summaryhigh<-data.frame(index=1:nsim,means=meanshigh,significance=sighigh, CIupper=CIuphigh, CIlower=CIlwhigh)
+
+
+# re-order data by mean effect size
+summarylow<-summarylow[order(summarylow$means), ]
+summarylow$index<-1:nrow(summarylow)
+summaryhigh<-summaryhigh[order(summaryhigh$means), ]
+summaryhigh$index<-1:nrow(summaryhigh)
+
+p_low<-ggplot(summarylow, aes(y=means, x=index,
+                              shape=significance,  
+                              ymax=CIupper, ymin=CIlower)) + 
+  geom_pointrange()+
+  #coord_flip()+
+  geom_point(size=2.5)+
+  scale_shape_manual(values=c(2, 19))+
+  geom_hline(yintercept=20) +
+  theme_bw() + 
+  scale_x_continuous(name = "Sample id")+
+  scale_y_continuous(name = "means",limits=c(-200,200))+
+  labs(title="Effect 20 ms, SD 150, \n n=25, power=0.10")+
+  #theme(legend.position="none")+
+  theme(legend.position=c(0.8,0.3))+geom_hline(yintercept=0, linetype="dotted")+magnifytext(sze=16)
+
+p_hi<-ggplot(summaryhigh, aes(y=means, x=index,
+                              shape=significance, ymax=CIupper, ymin=CIlower)) + 
+  geom_pointrange()+
+  #coord_flip()+
+  geom_point(size=2.5)+
+  scale_shape_manual(values=c(2, 19))+
+    scale_x_continuous(name = "Sample id")+ 
+  geom_hline(yintercept=d) +
+  theme_bw() + 
+  scale_y_continuous(name = "means",limits=c(-200,200))+
+  labs(title="Effect 20 ms, SD 150, \n n=350, power=0.80")+
+  theme(legend.position=c(0.8,0.3))+geom_hline(yintercept=0, linetype="dotted")+
+  magnifytext(sze=16)
+  
+multiplot(p_low,p_hi,cols=1)  
+@
+\caption{A demonstration of  Type M and S error. Low power studies will yield overestimates and/or incorrect signs whenever a result is significant.}\label{fig:typemdemo}
+\end{figure}
+
+Overestimates or effects with possibly the wrong sign are problematic for
+the modeller, because the target for modeling itself is
+misleading. 
+
+The Type M/S error issue is not just a theoretical statistical point; it has real
+practical consequences. For example, consider the eyetracking studies
+reported in \cite{LevyKeller2013}. These studies claim to show
+evidence for surprisal effects \citep{Hale2001,Levy2008}, but seven
+replication attempts, including one higher powered study (100 participants vs.\ the original 28 participants) consistently failed to reproduce the claimed
+effect \citep{VasishthMertzenJaegerGelman2018}. It is quite possible that
+many such underpowered studies form the basis for theory development in
+psycholinguistics. We return to this point later when carrying out
+model evaluations on published interference effects.
+
+Apart from the incorrect inferencs that  arise due to Type M/S error, 
+another major problem in the psycholinguistics is statistically incorrect inferences based on null results.  Null results under repeated sampling can only be interpreted if there is a demonstration of sufficient statistical power \citep{hoenigheisey} computed before conducting the studies. In the past, power has never been considered in such studies, but the situation has improved in recent years \citep[e.g.,][]{stack2018failure}.  This point about null results in low-power experiments is demonstrated in the upper part of Figure \ref{fig:typemdemo}. If a researcher were to run an experiment with 10\% power repeatedly, they would usually get a null result. Accepting the null result would be a mistake here, because the true estimate is not zero; it is just impossible to detect accurately. Such incorrect inferences are quite common in psycholinguistics. The problems with such misinterpretations  have been brought up repeatedly in the psychology literature 
+\citep[e.g.,][]{cohen1962statistical}. But these problems with incorrect inferences from low power studies have generally have been ignored; a likely reason for this misuse of statistical theory is the cursory statistical education usually available in psycholinguistic curricula.
+
+\subsection{The Freedman-Spiegelhalter approach}
+
+In Bayesian approaches to clinical trials, an approach for evaluating predictions exists that is closely related to the Robert and Pashler criteria discussed above.\footnote{The following section is from \cite{VasishthGelman2019}, which is available under a CC-BY 4.0 Attribution International license.}
+%%to-do: obtain permission to reuse
+Simply put, the proposal is to posit a range of predicted values, and then compare the the estimates from the data with this predicted range.   This method is discussed in \citep{Freedman1984,spiegelhalter1994bayesian}. In recent years, this idea has been re-introduced into psychology by \cite{kruschke2014doing} as the region of practical equivalence (ROPE) approach.
+
+The essential idea behind interpreting data using a ROPE is summarized in Figure~\ref{fig:rope}. Assume that we have a model prediction spanning [-36, -9] ms \citep{JaegerMertzenVanDykeVasishth2019}. If we run our experiment until we have the same width as the predicted range (here, 36-9=27 ms), then there are five possible uncertainty (confidence) intervals that can be observed; see  Figure~\ref{fig:rope}. The observed interval can be: 
+
+\begin{enumerate}
+\item[A.] to the right of the predicted interval.
+\item[B.] to the left of the predicted interval.
+\item[C.] to the right of the predicted interval but overlapping with it.
+\item[D.] to the left of the predicted interval but overlapping with it.
+\item[E.] within the predicted range.
+\end{enumerate}
+
+Only situation E shows consistency with the quantitative prediction. A and B are inconsistent with the model prediction; and C and D are inconclusive. There is a sixth possibility: one may not be able to collect data with the desired precision, and in that case, the observed interval could overlap with the predicted range but may be much wider than it (here, the width of the predicted range is 27 ms). That would be an uninformative, low-precision study.
+
+\begin{figure}[!htbp]
+		\centering
+		%\scalebox{0.7}{
+			\begin{tikzpicture}
+			%\tikz{
+			\node[](A) {A};
+			\node[right of=A, xshift=5.8cm] (a) {};%
+			\draw (a) circle (0.1cm);
+			\draw[-|] (a) --++(-0:1cm);
+			\draw[-|] (a) --++(0:-1cm);
+				
+			\node[below of=A, yshift=0.5cm](B) {B};
+			\node[right of=B, xshift=1cm] (b) {};%
+			\draw (b) circle (0.1cm);
+			\draw[-|] (b) --++(-0:1cm);
+			\draw[-|] (b) --++(0:-1cm);
+			
+			\node[below of=B, yshift=0.5cm](C) {C};
+			\node[right of=C, xshift=2cm] (c) {};%
+			\draw (c) circle (0.1cm);
+			\draw[-|] (c) --++(-0:1cm);
+			\draw[-|] (c) --++(0:-1cm);
+			
+			
+			\node[below of=C, yshift=0.5cm](D) {D};
+			\node[right of=D, xshift=4.8cm] (d) {};%
+			\draw (d) circle (0.1cm);
+			\draw[-|] (d) --++(-0:1cm);
+			\draw[-|] (d) --++(0:-1cm);
+			
+			\node[below of=D, yshift=0.5cm](E) {E};
+			\node[right of=E, xshift=3.4cm] (e) {};%
+			\draw (e) circle (0.1cm);
+			\draw[-|] (e) --++(-0:1cm);
+			\draw[-|] (e) --++(0:-1cm);
+			
+			\node[below of=E](L) {};
+			\node[right of=L, xshift=3.4cm] (l) {};%
+			\draw (l) circle (0.1cm);
+			\draw[-|] (l) --++(-0:1.2cm);
+			\draw[-|] (l) --++(0:-1.2cm);
+
+			\node[below of=l, xshift=-1.2cm, yshift=0.5cm](l1) {-36 ms};
+			\node[below of=l, xshift=1.2cm, yshift=0.5cm](l2) {-9 ms};
+			
+		
+			\end{tikzpicture}
+	%	}
+		\caption{The five possible outcomes when using the null region or ``region of practical equivalence'' method for decision-making (Kruschke, 2015). Outcomes A and B are inconsistent with the quantitative predictions of the theory; C and D are inconclusive; and E is consistent with the quantitative theoretical prediction. Figure reproduced from \cite{VasishthGelman2019}.}
+		\label{fig:rope}
+	\end{figure}
+
+
+In contrast to the ROPE approach described above, what models in psycholinguistics usually predict is the sign of an effect, but not the magnitude or the uncertainty. This is one reason why null hypothesis significance testing is so popular: the question whether an effect is ``present'' vs.\ ``absent'' is easily answered by looking up the  p-value.
+
+But a prediction like ``the effect is present'' is not particularly useful because this implies that an effect with estimated mean $500$ ms that is statistically significant would be consistent with the prediction just as well as a significant $5$ ms effect. However, a 5 ms effect may have no special relevance for theory development.
+
+\section{Looking ahead}
+
+It may be useful to briefly summarize the structure of the remainder of this book. Chapter \ref{c01} reviews the range of empirical phenomena that form the basis for a large chunk of the modelling, and discusses the published empirical findings regarding these phenomena.  One of the key takeaways from this chapter is that published studies on these phenomena are likely to be underpowered and therefore not sufficiently informative. Chapter \ref{c02} presents the core ACT-R model, as developed in the \cite{LewisVasishth2005} paper; chapters \ref{c02prominence} and \ref{c02emma} summarize two recent extensions. The first extension (chapter \ref{c02prominence}) modifies the core model to account for linguistic prominence of items in memory, and for so-called multi-associative cues. The second extension (chapter \ref{c02emma}) integrates an eye-movement control model (EMMA, a simplified version of the E-Z Reader model) with the parsing model and evaluates its performance. Chapter \ref{c04} then presents an evaluation of the model incorporating eye-movement control on psycholinguistic data on reanalysis and underspecification effects, and shows how individual differences in capacity can be explained by the model.  One important question that needs to be answered is how the Lewis and Vasishth model fares in comparison to a competing model of retrieval processes; this is the topic of the chapter \ref{c05}, which covers a model evaluation, using an implementation of the direct-access model of McElree as a baseline.  Finally, chapter \ref{c06} discusses the model's ability to explain individual-level differences in deficits in sentence comprehension in aphasia. The concluding chapter lays out important open problems and possible future directions and modelling approaches. 
