@@ -228,7 +228,7 @@ source("R/stan_results.R")
   \renewcommand{\refname}{Bibliography}% if you prefer this heading
   \bookreferences % if you already have references at the end of chapters,
                   % you will need this command to start a new \chapter* heading
-\bibliography{sccp,EMMA-edited,cuesim}\label{refs}
+\bibliography{sccp}\label{refs}
 \bibliographystyle{cambridgeauthordate}
 
 \cleardoublepage
