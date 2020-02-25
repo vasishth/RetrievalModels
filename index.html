@@ -35,20 +35,47 @@
       <h4>Sentence Comprehension as a Cognitive Process: A Computational Approach</h4>
       <h5>Shravan Vasishth and Felix Engelmann</h5>
 
-This web page accompanies a book to be published by Cambridge University Press. The web page provides all the code that  lies behind the modeling presented in the book. This project was funded by the Volkswagen Foundation (grant 89 953).
+<br><br>
 <strong>This  web page currently contains only a book draft</strong>.
+<br><br>
+
+<h4>About</h4>
+
+This web page accompanies a book to be published by Cambridge University Press. Here, we provide all the code and data that lie behind the modeling presented in the book and the related articles. 
+
+<h4>Funding</h4>
+
+This project was funded by the Volkswagen Foundation (grant 89 953).
 
 
-The github repository behind this page is <a href="https://github.com/vasishth/RetrievalModels">here</a>.<br><br><br>
+<h4>Download book code and data</h4>
+
+The github repository behind this page is <a href="https://github.com/vasishth/RetrievalModels">here</a>. The book source code is available there.<br><br><br>
 
 <strong>Instructions for reproducing analyses</strong>: 
 <ol>
 <li>Clone the repository (if you know how to use github), or <a href="https://github.com/vasishth/RetrievalModels/archive/master.zip">download the master directory as a zip archive</a> (if you are unfamiliar with github)</li>
 <li>Download the <a href="https://www.ling.uni-potsdam.de/~vasishth/data/data.zip">data.zip</a> directory and place it in the main directory of this  repository. Without these data the R code that comes with the book will not work.
+ <li>Reproduce the figures and code in the book by running VasishthEngelmannSCCP.R incrementally. Alternatively, compile the whole book by running the bash script run.sh</li> 
 </ol>
 
     <div>
-    <h3>Shiny app</h3> 
+    <h4>Shiny app</h4>
+
+This Shiny app provides an untuitive interface to derive quantitative predictions for some standard similarity-based interference designs, using existing data (some 100 experiments' data summaries).
+
+<h3>Main references</h3>
+
+<dd>
+Shravan Vasishth, Bruno Nicenboim, Felix Engelmann, and Frank Burchert.
+ <b>Computational models of retrieval processes in sentence
+  processing</b>.
+ <em>Trends in Cognitive Sciences</em>, 23:968-982, 2019.
+[&nbsp;<a href="https://doi.org/10.1016/j.tics.2019.09.003">DOI</a>&nbsp;| 
+<a href="https://osf.io/qtvxj/">code</a>&nbsp;| 
+<a href="https://psyarxiv.com/e4jds">pdf</a>&nbsp;]
+</dd>
+
 <dd>
 Felix Engelmann, Lena&nbsp;A. J&auml;ger, and Shravan Vasishth.
  <b>The effect of prominence and cue association in retrieval
@@ -64,19 +91,15 @@ Felix Engelmann, Lena&nbsp;A. J&auml;ger, and Shravan Vasishth.
 
 <br><br><br>
 
-<h3>The ACT-R implementation (lisp)</h3>
+<h4>The ACT-R implementation (lisp)</h4>
 
-Felix Engelmann, Shravan Vasishth, Ralf Engbert, and Reinhold Kliegl.
- <b>A framework for modeling the interaction of syntactic
-  processing and eye movement control</b>.
- <em>Topics in Cognitive Science</em>, 5(3):452-474, 2013. 
-[&nbsp;<a href="http://www.ling.uni-potsdam.de/~vasishth/pdfs/EngelmannVasishthEngbertKliegl2013.pdf">pdf</a>&nbsp;]
-<br><br>
 The Lewis and Vasishth ACT-R model for sentence processing: lisp code extended by <a href="https://de.linkedin.com/in/felixengelmann">Felix Engelmann</a>; see <a href="https://github.com/felixengelmann/act-r-sentence-parser-em">here</a>.
 
 <br><br><br>
 
-<h3>The R implementation (inter-act)</h3>
+<h4>The R implementation (inter-act)</h4>
+
+This is an implementation that considerably simplifies the assumptions of the model, and uses R. 
 
 Download from <a href="https://github.com/felixengelmann/inter-act/">here</a>.
 
@@ -94,7 +117,7 @@ Bruno Nicenboim and Shravan Vasishth.
 
 <br><br><br>
 
-Lisson et al implementation (in progress)
+<a href="https://paulalisson.github.io/">Paula Liss&oacute;n</a> et al implementation (coming soon)
 
 </div>
 </div>
