@@ -611,7 +611,7 @@ crit_orig <- subset(orig, roi==5 & cond!='filler')
 crit_orig<-subset(crit_orig,TFT!="NA")
 @
 
-<<fitdillonmodel,echo=FALSE,message=FALSE,warning=FALSE,results="asis",cache=TRUE,eval=FALSE>>=
+<<priorsdillon,echo=FALSE>>=
 library(brms)
 priors<-c(set_prior("normal(0,10)", 
                     class = "Intercept"),
@@ -620,6 +620,9 @@ priors<-c(set_prior("normal(0,10)",
                       set_prior("normal(0,1)", 
                                 class = "sd"),
           set_prior("lkj(2)", class = "cor"))
+@
+
+<<fitdillonmodel,echo=FALSE,message=FALSE,warning=FALSE,results="asis",cache=TRUE,eval=FALSE>>=
 
 m_dillon<-brm(TFT~1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr + (1+1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|subj) + (1+1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|item),crit_orig,family=lognormal(),prior = priors,
             warmup = 1000, iter = 2000, 
@@ -756,7 +759,7 @@ crit<-subset(crit,TFT>0)
 #length(unique(crit$subj))
 @
 
-<<dillonrepbrmsanalysis,echo=FALSE,cache=TRUE>>=
+<<dillonrepbrmsanalysis,echo=FALSE,cache=TRUE,eval=FALSE>>=
 m_drep<-brm(TFT~1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr + (1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|subj) + (1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|item),crit,
             family=lognormal(),prior = priors,
             warmup = 1000, iter = 2000, 
@@ -769,7 +772,7 @@ summary(m_drep)
 @
 
 <<dillonrepplot,echo=FALSE>>=
-#load(file="data/m_drep.Rda")
+load(file="data/m_drep.Rda")
 m_post<-posterior_samples(m_drep,pars=c("b_Intercept","b_Int_ungram_refl","b_Int_ungram_agr"))
 ## mean effects:
 post_refl<-exp(m_post[,1]+m_post[,2]/2)-exp(m_post[,1]-m_post[,2]/2)
@@ -892,7 +895,7 @@ In their paper, Dillon and colleagues argue that reflexives and agreement attrac
 Thus, although the experiment design had the potential to demonstrate that dependency type determines whether interference occurs, the data don't seem to provide a basis for a conclusion. 
 
 A major issue in the Dillon et al.\ study was that the sample size was quite small. 
-We attempted to replicate the key results with a larger sample size (181 participants). This work is reported in full in \cite{JaegerMertzenVanDykeVasishth2018}.
+We attempted to replicate the key results with a larger sample size (181 participants). This work is reported in full in \cite{JaegerMertzenVanDykeVasishth2019}.
 Figure~\ref{fig:dillonrepresults} shows the results at the critical region (the auxiliary or reflexive). Figure~\ref{fig:dillonrepresults} shows that both agreement and reflexives in ungrammatical conditions seem to show similar  facilitatory interference effects in total reading times.
 
 \subsection{Individual-level effects in the Dillon et al.\ design}
