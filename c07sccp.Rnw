@@ -1,8 +1,10 @@
 \chapter{Evaluating competing accounts of retrieval processes in sentence processing} \label{c05}
 
+The cue-based retrieval model presented in this book is only one way to implement retrieval in sentence processing. An interesting competing proposal comes from \cite{McElree2000,McElree2006RecentEvents}. For a long time, the Lewis and Vasishth activation model and the McElree direct-access model were, at least implicitly, considered to be notational variants \citep[e.g., see][]{LewisVasishthVanDyke2006,parkervandykeshvartsman2017}. \cite{NicenboimRetrieval2018} were the first to implement the direct-access model computationally and  to quantitatively compare the predictions of the two models of retrieval. In this chapter, we present some of the work relating to these model comparisons.
+
 \section{The direct-access model}
 
-The direct-access model was motivated by research from the cognitive psychology literature \citep{McElree2000,VanDyke2006,McElree2006RecentEvents}, which shows that accessing items from memory is driven by a content-addressable memory system. That is, as in the activation model,  retrieval cues (bundles of feature-value pairs) are used for carry out a search.  Sentence processing is assumed to be constrained by the same general memory system that constrains other types of information processing \citep{McElree1993}.\footnote{This chapter contains text reused with permission from \cite{VasishthEtAlTiCS2019}, Copyright (2019) Elsevier; license numbers 4740780688305 and 4740790181694.} 
+The direct-access model was motivated by research from the cognitive psychology literature \citep{McElree2000,VanDyke2006,McElree2006RecentEvents}, which shows that accessing items from memory is driven by a content-addressable memory system. That is, as in the activation model,  retrieval cues (bundles of feature-value pairs) are used for carry out a search.  Sentence processing is assumed to be constrained by the same general memory system that constrains other types of information processing \citep{McElree1993}.\footnote{This chapter contains text used with permission from \cite{VasishthEtAlTiCS2019}, Copyright (2019) Elsevier; license numbers 4740780688305 and 4740790181694.} 
 
 \begin{figure}
 \begin{center}
@@ -12,8 +14,7 @@ The direct-access model was motivated by research from the cognitive psychology 
 \caption{\textbf{A schematic illustration of the direct-access model}. For sentences like (\ref{ex:vandyke07}a), the model assumes that once a search is initiated in memory using a set of retrieval cues (here, subject and animate), one of two events can happen. Either the correct item is retrieved from memory, or the incorrect item, which matches some of the retrieval cues, is misretrieved. In the case of a misretrieval, either processing ends with a misretrieval, or a reanalysis step is initiated that leads to a correct retrieval. This reanalysis step costs time, and therefore leads to slowdowns in processing on average. The figure is by Vasishth, 2019; it is available from http://10.6084/m9.figshare.9396515 under a CC-BY4.0 license.} \label{fig:da}
 \end{figure}
 
-
-The term direct-access refers to the assumption that search in memory is driven by directly accessing items in memory that match the features used as retrieval cues. The time taken to complete a retrieval is assumed to be constant regardless of when the item was previously encountered. This type of search process is often referred to as a content-addressable cue-based search. The term content-addressable refers to the use of retrieval cues (bundles of feature-value specifications such as [subject: yes, animate: yes]) to search for items in memory using their feature specifications. 
+The term ``direct-access'' refers to the assumption that search in memory is driven by directly accessing items in memory that match the features used as retrieval cues. The time taken to complete a retrieval is assumed to be constant regardless of when the item was previously encountered. \cite{LewisVasishthVanDyke2006} point out that  ``[t]he estimate of memory retrieval times from the SAT [Speed-accuracy tradeoff] studies is about 80–90 ms.'' This type of  search process is often referred to as a content-addressable cue-based search. The term content-addressable refers to the use of retrieval cues (bundles of feature-value specifications such as [subject: yes, animate: yes]) to search for items in memory using their feature specifications. 
 
 The memory-access process assumed in the computationally implemented version of the direct-access model \citep{NicenboimRetrieval2018} is perhaps most easily understood if we consider how inhibitory interference effects arise in the model. We use example (\ref{ex:vandyke07}) to explain model assumptions.
 
@@ -21,29 +22,20 @@ The memory-access process assumed in the computationally implemented version of 
 \ex \label{ex:vandyke07}
 \begin{xlist}
 \item[a.]
-The worker was surprised that the resident$^{+animate}_{+subject}$ who was living near the dangerous neighbor$^{+animate}_{-subject}$ was complaining$\{^{animate}_{subject}\}$ about the investigation.
+The worker was surprised that the resident$^{+animate}_{+subject}$ who was living near the dangerous neighbour$^{+animate}_{-subject}$ was complaining$\{^{animate}_{subject}\}$ about the investigation.
 \item[b.]
 The worker was surprised that the resident$^{+animate}_{+subject}$ who was living near the dangerous warehouse$^{-animate}_{-subject}$ was complaining$\{^{animate}_{subject}\}$ about the investigation.
 \end{xlist}
 \end{exe}
 
-As shown schematically in Figure~\ref{fig:da}, for sentence (\ref{ex:vandyke07}a) the model assumes that when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, these cues match the noun ``resident'', but they also partially match the noun ``neighbor'' on one feature (animate). This leads to a cue overload as in the activation model. The consequence of this cue overload is that in most trials the subject ``resident'' will be retrieved, but in some proportion of trials the incorrect noun ``neighbor'' will be misretrieved. In both cases the time taken to complete the retrieval is the same, say $\beta$ milliseconds. In trials where the incorrect noun is retrieved, in some proportion of the cases a second retrieval attempt (referred to as reanalysis) is carried out which costs a certain amount of time, say $\delta$ ms. In contrast to (\ref{ex:vandyke07}a), in (\ref{ex:vandyke07}b)  when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, only one noun (``resident'') matches these cues and most of the retrievals succeed immediately. Thus, in (\ref{ex:vandyke07}a) the probability of a misretrieval followed by a reanalysis step is higher than in (\ref{ex:vandyke07}a), and since reanalysis costs $\delta$ ms, sentence (\ref{ex:vandyke07}a) takes longer to read than (\ref{ex:vandyke07}b). 
+As shown schematically in Figure~\ref{fig:da}, for sentence (\ref{ex:vandyke07}a) the model assumes that when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, these cues match the noun ``resident'', but they also partially match the noun ``neighbour'' on one feature (animate). This leads to a cue overload as in the activation model. The consequence of this cue overload is that in most trials the subject ``resident'' will be retrieved, but in some proportion of trials the incorrect noun ``neighbour'' will be misretrieved. In both cases the time taken to complete the retrieval is the same, say $\beta$ milliseconds. In trials where the incorrect noun is retrieved, in some proportion of the cases a second retrieval attempt (referred to as reanalysis) is carried out which costs a certain amount of time, say $\delta$ ms. In contrast to (\ref{ex:vandyke07}a), in (\ref{ex:vandyke07}b)  when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, only one noun (``resident'') matches these cues and most of the retrievals succeed immediately. Thus, in (\ref{ex:vandyke07}a) the probability of a misretrieval followed by a reanalysis step is higher than in (\ref{ex:vandyke07}a), and since reanalysis costs $\delta$ ms, sentence (\ref{ex:vandyke07}a) takes longer to read than (\ref{ex:vandyke07}b). 
 
-An important difference from the activation model is that cue overload affects only the probability of retrieving an item from memory; the retrieval time per se is constant. In the direct-access model, the increased reading time observed due to cue overload is a consequence of the reanalysis time. 
+An important difference from the activation model is that in the direct-access model, cue overload affects only the probability of retrieving an item from memory; the retrieval time per se is constant. In the direct-access model, the increased reading time observed due to cue overload is a consequence of the reanalysis time. 
 By contrast, in the activation model, cue overload redistributes the activation of items, dampening activation for all items that (partly) match the retrieval cues. Since activation affects retrieval accuracy as well as retrieval time, the direct consequence of cue overload is increased retrieval time. 
 
-Formally, the direct-access model can therefore be seen as a two-component finite mixture process \citep{mclachlan2004finite,fruhwirth2006finite}, with some proportion of trials representing a successful retrieval in the first-attempt, and some proportion representing a slower retrieval that is the consequence of an initially unsuccessful retrieval in the first attempt followed by a subsequent reanalysis step \citep{NicenboimRetrieval2018}. A formalization in terms of a mixture process is shown in Box 1.
+Formally, the direct-access model can therefore be seen as a two-component finite mixture process \citep{mclachlan2004finite,fruhwirth2006finite}, with some proportion of trials representing a successful retrieval in the first-attempt, and some proportion representing a slower retrieval that is the consequence of an initially unsuccessful retrieval in the first attempt followed by a subsequent reanalysis step \citep{NicenboimRetrieval2018}. A formalization in terms of a mixture process is as follows.
 
-
-All the published work relating to the direct-access model has focused on inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. Thus, the model is underspecifcied regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed in connection with the activation model. This is a potentially interesting topic for future research.
-
-A computational implementation of the direct-access model in Stan \citep{stan:2017} is available from http://tiny.cc/da\_model.
-
-\subsection{Comparing the predictions of the direct-access model and the activation model}
-
-Since the two computational models discussed above assume different underlying processes which both lead to the same observed behavioral outcome (inhibitory interference), one obvious question arises: which model furnishes a better explanation for inhibitory interference effects? A model comparison was carried out using a relatively large-sample (182 participants) data-set that showed inhibitory interference \citep{nicenboimexploratory}. The predictive performance of the two models was evaluated using k-fold cross validation \citep{vehtari2012survey,vehtari2016LOOwaic}. The direct-access model exhibited a better predictive performance compared to the activation model. The reason that the direct-access model outperformed the activation model is that the latter predicts that in inhibitory interference experimental designs, retrievals of the incorrect chunk should be slower than the retrievals of the correct chunk. In the data-set used for model comparison \citep{nicenboimexploratory}, incorrect retrievals had faster reading time than correct retrievals. This model comparison is explained below in more detail.
-
-The direct-access model can be defined as a finite mixture model as follows. Let $y$ be the reading time in milliseconds, and $\beta$ the mean time in log milliseconds taken for a successful retrieval, with standard deviation $\sigma$. Such a successful retrieval happens with probability $p$. Retrieval is assumed to fail with probability $(1-p)$, and the extra cost of re-attempting and successfully carrying out retrieval is $\delta$ log ms. For the full, hierarchically specified model, see \citep{NicenboimRetrieval2018}.
+Let $y$ be the reading time in milliseconds, and $\beta$ the mean time in log milliseconds taken for a successful retrieval, with standard deviation $\sigma$. Such a successful retrieval happens with probability $p$. Retrieval is assumed to fail with probability $(1-p)$, and the extra cost of re-attempting and successfully carrying out retrieval is $\delta$ log ms. For the full, hierarchically specified model, see \citep{NicenboimRetrieval2018}.
 \begin{equation} \label{eq:mixmodsr2}
   y \sim \left \{
   \begin{aligned}
@@ -53,10 +45,74 @@ The direct-access model can be defined as a finite mixture model as follows. Let
 \end{equation} 
 
 We can now determine whether the observed data are underlyingly coming from a two-component mixture (the direct-access model) or from the activation model, and whether a mixture distribution yields better predictions with respect to the data.  
-Figure I shows a comparison of the relative predictive fits from the hierarchical Bayesian models implementing the activation model, and McElree's direct-access model as a finite mixture process. The violin plots show posterior predictive distributions from the model; their width represents the density of the predicted mean reading times. The black circles show the empirically observed mean reading times. The four types of reading times refer to four different kinds of question responses that the participants gave in a self-paced reading task \citep{nicenboimexploratory}. The activation model overestimates the reading times in the incorrect responses, compared to the direct-access model. Although not shown here, this overestimation is due to the activation model assuming a single variance component for both correct and incorrect responses. When that assumption is relaxed, both models show similar predictive accuracy \citep{NicenboimRetrieval2018}.
+
+A computational implementation of the direct-access model in Stan \citep{stan:2017} is available from http://tiny.cc/da\_model.
+
+\section{Comparing the predictions of the direct-access model and the activation model}\label{nicenboiminhint}
+
+\subsection{Inhibitory interference}
+
+\cite{NicenboimEtAlCogSci2018} carried out a self-paced reading study in German. The critical items are shown below. Examples (\ref{ex:exp1}) show  sentences where the verb phrase `had greeted' requires a subject noun with singular, animate marking. In (\ref{ex:HI}), two other nouns match the  singular number cue, increasing the fan to three; by contrast, in (\ref{ex:LI}), only the subject matches the number cue of the verb.  For this design, the activation model predicts an inhibitory interference effect (a slowdown) at the verb in (\ref{ex:HI}) vs.\ (\ref{ex:LI}) because of the fan effect.    
+
+\begin{exe}
+    \ex  \label{ex:exp1}
+    \begin{xlist}
+        \ex \textsc{High Interference} \label{ex:HI}
+        \gll \textbf{Der} \textbf{Wohltäter}, der den Assistenten {} des
+        Direktors \textbf{begrüßt} \textbf{hatte}, saß später im
+        Spendenausschuss.\\
+        \textbf{The.sg.nom} \textbf{philanthropist}, who.sg.nom
+        the.\underline{sg}.acc assistant (of) the.\underline{sg}.gen director
+        \textbf{greeted} \textbf{had.sg}, sat.sg {later} {in the} {donations
+        committee}.\\
+        \glt ‘The philanthropist, who had greeted the assistant of the director,
+        sat later in the donations committee.'
+        \ex \textsc{Low Interference} \label{ex:LI}
+        \gll \textbf{Der} \textbf{Wohltäter}, der die Assistenten {} der
+        Direktoren  \textbf{begrüßt} \textbf{hatte}, saß später im
+        Spendenausschuss.\\
+        \textbf{The.sg.nom} \textbf{philanthropist}, who.sg.nom
+        the.\underline{pl}.acc assistant(s) (of) the.\underline{pl}.gen
+        director(s) \textbf{greeted} \textbf{had.sg}, sat.sg {later} {in the}
+        {donations committee}.\\
+        \glt ‘The philanthropist, who had greeted the assistants of the
+        directors, sat later in the donations committee.'
+    \end{xlist}
+\end{exe}
+
+After each trial, \cite{NicenboimEtAlCogSci2018} also asked participants who carried out the action implied in the main clause. Four options were given  as possible answers; see (\ref{ex:multip-q}).
+
+\begin{exe}
+    \ex  \textsc{Question} \label{ex:multip-q}
+    \begin{xlist}
+        \ex \textsc{(mv)} Wer saß später im Spendenausschuss? 
+        \glt Who sat in the donations committee? 
+        \ex \textsc{(evs)}  Wer hatte jemanden begrüßt? 
+        \glt Who had greeted someone?
+        \ex \textsc{(evo)}  Wen hatte jemand begrüßt? 
+        \glt Whom had someone greeted?
+    \end{xlist}
+
+    \ex  \textsc{Multiple-choice options} \label{ex:answers}
+    \begin{xlist}
+        \ex (1) der/die Wohltäter \textsc{(mv-evs)}; (2) der/die Assistent/en \textsc{(evo)};
+        (3) der/die Direktor/en; (4) Ich weiß es nicht
+        \glt (1) the philanthropist(s) \textsc{(mv-evs)}; (2) the assistant(s) \textsc{(evo)}; (3)
+        the director(s); (4) I don't know
+    \end{xlist}
+\end{exe}
+
+As a consequence, for each trial, participants provided a reading time at the verb phrase, and either a correct response or one of three possible incorrect responses. 
+
+The experiment showed the expected inhibitory interference effect; the estimated slowdown in (\ref{ex:HI}) vs.\ (\ref{ex:LI}) was 9 ms, with a 95\% credible interval spanning 0-18 ms.  
+
+In order to evaluate the relative predictive accuracy of the activation model and the direct-access model, \cite{NicenboimRetrieval2018} carried out a model comparison using the above data. The predictive performance of the two models was evaluated using k-fold cross validation \citep{vehtari2012survey,vehtari2016LOOwaic}. 
+Figure \ref{fig:daactcomparison} shows a comparison of the relative predictive fits from the hierarchical Bayesian models implementing the activation model, and McElree's direct-access model as a finite mixture process. The violin plots show posterior predictive distributions from the model; their width represents the density of the predicted mean reading times. The black circles show the empirically observed mean reading times. The four types of reading times refer to four different kinds of question responses that the participants could give in the experiment \citep{nicenboimexploratory}. 
+
+The figure shows that the activation model overestimates the reading times in the incorrect responses, compared to the direct-access model. Although not shown here, this overestimation is due to the activation model assuming a single variance component for both correct and incorrect responses. When that assumption is relaxed, both models show similar predictive accuracy \citep{NicenboimRetrieval2018}.
+
 
 %% Created in retrieval_models.Rmd in github stancon_talks/2017/Contributed-Talks/07_nicenboim
-
 \begin{figure}[!htbp]
 \begin{center}
 \includegraphics[height=9cm]{figures/activationdacomparison2.jpg}
@@ -64,10 +120,74 @@ Figure I shows a comparison of the relative predictive fits from the hierarchica
 \caption{A comparison of observed sample means with the posterior predictive distributions of the activation and direct-access models.} \label{fig:daactcomparison}
 \end{figure}
 
+In summary, the direct-access model exhibited a better predictive performance compared to the activation model. The reason that the direct-access model outperformed the activation model is that the latter predicts that in inhibitory interference experimental designs, retrievals of the incorrect chunk should be slower than the retrievals of the correct chunk. In the data-set used for model comparison \citep{nicenboimexploratory}, incorrect retrievals had faster reading time than correct retrievals. This pattern is  predicted by the direct-access model because correct retrievals are a mixture of an initially correct retrieval and an initial retrieval failure followed by a second retrieval attempt; the presence of trials with a costly second retrieval attempt take more time on average than incorrect trials.
 
+The direct-access mode and the activation model can be compared on other data as well.
 
-- Bruno work: Figs 1, 4, 5, 6, 7, 12
+\subsection{Relative clauses in Chinese} \label{rchinese}
 
-\section{Relative clauses in Chinese} \label{rchinese}
+One interesting test of the activation vs.\ direct-access models is relative clause processing. We turn to this next.
+
+It is widely accepted in psycholinguistics that  English subject relative clauses are easier to process than object relatives \citep[e.g.,][]{grodner}. For example, in (\ref{ex:EnglishRCs}), reading times at the relative clause verb \textit{invited} would be shorter in  subject vs.\ object relatives.
+
+\begin{exe}
+\ex  \label{ex:EnglishRCs}
+\begin{xlist}
+\item Subject relative\\
+The official who invited the tycoon has bad intentions.
+\item 
+Object relative \\
+The official who the tycoon invited has bad intentions.
+\end{xlist}
+\end{exe}
+
+One of the explanations for this observed difference is decay in working memory: the distance between the subject and the relative clause verb is larger in object relatives than subject relatives; this leads to the decay in activation of the subject, causing greater retrieval difficulty at the relative clause verb \citep{Gibson2000}. Another alternative explanation is in terms of the fan effect \citep{LewisVasishth2005}: in object relatives, two nouns match the retrieval cues  set at the relative clause verb, whereas in subject relatives only one noun matches the retrieval cues. We will refer to the decay or interference explanations as the distance account, because both depend on whether or not an intervener appears between the subject and the verb.
+
+Interestingly, the distance account predicts that in Chinese, object relatives should be \textit{easier} than subject relatives---this would be the opposite pattern to that found for English. As shown in (\ref{ex:chineseRCs}), Chinese relative clauses are prenominal: they appear before the head noun, not after (as is the case in English). This has the consequence that the distance between the  gap and the relative clause head noun is larger in the subject relative than in the object relative. 
+
+\begin{exe}
+\ex  \label{ex:chineseRCs}
+\begin{xlist}
+\item
+Subject relative
+\gll [GAP$_i$ yaoqing fuhao de] guanyuan$_i$ xinhuaibugui \\
+GAP invite tycoon DE official {have bad intentions}\\
+\glt `The official who invited the tycoon has bad intentions.’
+\item 
+Object relative 
+\gll [fuhao yaoqing GAP$_i$ de] guanyuan$_i$ xinhuaibugui \\
+tycoon invite GAP DE official { have bad intentions}\\
+\glt `The official who the tycoon invited has bad intentions.’
+\end{xlist}
+\end{exe}
+
+The distance account therefore predicts that in Chinese, the head noun should be read slower in subject relatives compared to object relatives. We will refer to this as the object relative advantage. The first study to claim that this expected pattern is indeed observed in Chinese is \cite{HsiaoGibson2003}. A  subsequent study \citep{gibsonwu} also showed the same object-relative advantage,and this pattern was replicated in a  direct replication attempt \cite{VasishthetalPLoSOne2013}.  There are several empirical difficulties  with the claimed object relative advantage; these are discussed elsewhere \citep{VasishthetalPLoSOne2013,WuKaiserVasishth2017,JagerChenLi2015}. 
+
+For the present purposes, we focus on the observed object relative advantage reported in \cite{gibsonwu} and the replication reported in \cite{VasishthetalPLoSOne2013}; the data from \cite{HsiaoGibson2003} were not available. \cite{VasishthChopinRyderNicenboimCogSci2017}  asked the question: is the observed  object relative advantage explained better by the distance account, or  by the direct-access model? One can use the same model comparison approach as the one described in section~\ref{nicenboiminhint} to answer this question.
+
+\cite{VasishthChopinRyderNicenboimCogSci2017} implemented the distance account and the direct-access model as hierarchical models in  Stan, and compared the predictive performance of the two models against held-out data. 
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{rlrr}
+  \hline
+ & models & $\Delta \widehat{elpd}$ & se \\ 
+  \hline
+1 & M1 vs M0 & 118.00 & 13.82 \\ 
+  2 & M2 vs M1 & 29.61 & 9.28 \\ 
+  3 & M3 vs M2 & -2.05 & 2.52 \\ 
+   \hline
+\end{tabular}
+\caption{Model comparison using K-fold cross-validation for the Gibson and Wu 2013 data. Shown are the differences in $\widehat{elpd}$, along with standard errors of the differences. In a comparison between a model A vs B, a positive $\widehat{elpd}$ favors model A.} 
+\label{tab:modcompgibsonwu}
+\end{table}
 
 \section{Encoding interference in agreement attraction} \label{encint}
+
+
+
+\subsection{Future directions}
+
+All the published work relating to the direct-access model has focused on inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. Thus, the direct-accss model is underspecified regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed earlier in connection with the activation model. This is a potentially interesting topic for future research.
+
+%- Bruno work: Figs 1, 4, 5, 6, 7, 12
