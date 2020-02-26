@@ -120,7 +120,7 @@
     {Sentence Comprehension \\ as a Cognitive Process}
   \author{Shravan Vasishth and Felix Engelmann}
  
-\bookabstract{We present the last 20 years of research on developing computational models of retrieval processes in sentence comprehension. After reviewing the empirical literature on retrieval, the ACT-R based Lewis and Vasishth 2005 model and its recent extensions are presented. The LV05 model's empirical coverage and limitations are discussed using benchmark data-sets and data summaries from published papers. This is to our knowledge the first comprehensive investigaton of models of retrieval processes. All code and data are available from https://vasishth.github.io/sccp/.} 
+\bookabstract{We present the last 20 years of research on developing computational models of retrieval processes in sentence comprehension. After reviewing the empirical literature on retrieval, the ACT-R based Lewis and Vasishth 2005 model and its recent extensions are presented. The LV05 model's empirical coverage and limitations are discussed using benchmark data-sets and data summaries from published papers. This is to our knowledge the first comprehensive investigaton of models of retrieval processes. All code and data are available from https://vasishth.github.io/RetrievalModels/.} 
 \bookkeywords{computational modelling, sentence comprehension, psycholinguistics, ACT-R}
 
 \frontmatter
