@@ -125,12 +125,12 @@
 
 \frontmatter
 \maketitle
-  
 \tableofcontents
-
 \include{c00acksccp} 
-
 \include{c00prefacesccp}
+\listoffigures
+\listoftables
+
 
 <<setup,include=FALSE,cache=FALSE,echo=FALSE>>=
 library(knitr)
