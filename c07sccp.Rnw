@@ -1,4 +1,4 @@
-\chapter{Evaluating competing accounts of retrieval processes in sentence processing} \label{c05}
+\chapter{Competing accounts of retrieval processes in sentence processing} \label{c05}
 
 The cue-based retrieval model presented in this book is only one way to implement retrieval in sentence processing. An interesting competing proposal comes from \cite{McElree2000,McElree2006RecentEvents}. For a long time, the Lewis and Vasishth activation model and the McElree direct-access model were, at least implicitly, considered to be notational variants \citep[e.g., see][]{LewisVasishthVanDyke2006,parkervandykeshvartsman2017}. \cite{NicenboimRetrieval2018} were the first to implement the direct-access model computationally and  to quantitatively compare the predictions of the two models of retrieval. In this chapter, we present some of the work relating to these model comparisons.
 
@@ -11,7 +11,7 @@ The direct-access model was motivated by research from the cognitive psychology 
 \includegraphics[height=5cm,width=7cm]{figures/c05DA.jpg}
 \end{center}
 %%to-do: rewrite
-\caption{\textbf{A schematic illustration of the direct-access model}. For sentences like (\ref{ex:vandyke07}a), the model assumes that once a search is initiated in memory using a set of retrieval cues (here, subject and animate), one of two events can happen. Either the correct item is retrieved from memory, or the incorrect item, which matches some of the retrieval cues, is misretrieved. In the case of a misretrieval, either processing ends with a misretrieval, or a reanalysis step is initiated that leads to a correct retrieval. This reanalysis step costs time, and therefore leads to slowdowns in processing on average. The figure is by Vasishth, 2019; it is available from http://10.6084/m9.figshare.9396515 under a CC-BY4.0 license.} \label{fig:da}
+\caption{A schematic illustration of the direct-access model. For sentences like (\ref{ex:vandyke07}a), the model assumes that once a search is initiated in memory using a set of retrieval cues (here, subject and animate), one of two events can happen. Either the correct item is retrieved from memory, or the incorrect item, which matches some of the retrieval cues, is misretrieved. In the case of a misretrieval, either processing ends with a misretrieval, or a reanalysis step is initiated that leads to a correct retrieval. This reanalysis step costs time, and therefore leads to slowdowns in processing on average. The figure is by Vasishth, 2019; it is available from http://10.6084/m9.figshare.9396515 under a CC-BY4.0 license.} \label{fig:da}
 \end{figure}
 
 The term ``direct-access'' refers to the assumption that search in memory is driven by directly accessing items in memory that match the features used as retrieval cues. The time taken to complete a retrieval is assumed to be constant regardless of when the item was previously encountered. \cite{LewisVasishthVanDyke2006} point out that  ``[t]he estimate of memory retrieval times from the SAT [Speed-accuracy tradeoff] studies is about 80–90 ms.'' This type of  search process is often referred to as a content-addressable cue-based search. The term content-addressable refers to the use of retrieval cues (bundles of feature-value specifications such as [subject: yes, animate: yes]) to search for items in memory using their feature specifications. 
@@ -163,9 +163,19 @@ tycoon invite GAP DE official { have bad intentions}\\
 
 The distance account therefore predicts that in Chinese, the head noun should be read slower in subject relatives compared to object relatives. We will refer to this as the object relative advantage. The first study to claim that this expected pattern is indeed observed in Chinese is \cite{HsiaoGibson2003}. A  subsequent study \citep{gibsonwu} also showed the same object-relative advantage,and this pattern was replicated in a  direct replication attempt \cite{VasishthetalPLoSOne2013}.  There are several empirical difficulties  with the claimed object relative advantage; these are discussed elsewhere \citep{VasishthetalPLoSOne2013,WuKaiserVasishth2017,JagerChenLi2015}. 
 
-For the present purposes, we focus on the observed object relative advantage reported in \cite{gibsonwu} and the replication reported in \cite{VasishthetalPLoSOne2013}; the data from \cite{HsiaoGibson2003} were not available. \cite{VasishthChopinRyderNicenboimCogSci2017}  asked the question: is the observed  object relative advantage explained better by the distance account, or  by the direct-access model? One can use the same model comparison approach as the one described in section~\ref{nicenboiminhint} to answer this question.
+For the present purposes, we focus on the observed object relative advantage reported in \cite{gibsonwu} and the replication reported in \cite{VasishthetalPLoSOne2013}; the data from \cite{HsiaoGibson2003} were not available. \cite{VasishthChopinRyderNicenboimCogSci2017}  asked the question: is the observed  object relative advantage explained better by the distance account, or  by the direct-access model as defined above? One can use k-fold cross-validation  to answer this question.
 
-\cite{VasishthChopinRyderNicenboimCogSci2017} implemented the distance account and the direct-access model as hierarchical models in  Stan, and compared the predictive performance of the two models against held-out data. 
+\cite{VasishthChopinRyderNicenboimCogSci2017} implemented the distance account and the direct-access model as hierarchical models in  Stan, and compared the predictive performance of the two models against held-out data from the two data-sets. Four models were defined:
+
+\begin{itemize}
+\item M0: A standard hierarchical linear model (no mixture). This corresponds to a test of Gibson's DLT and Lewis and Vasishth's cue-based retrieval account.
+\item M1: This model assumes a mixture distribution in both subject and object relatives. The model also assumes
+that there is no difference in retrieval time in ORs vs SRs, but only in the probability of successful retrieval. The variances of the success and reanalysis distributions are assumed to be identical (homogeneous variances). 
+\item M2: This model assumes a mixture in both relative clause types just like M1. It differs from M1 in that the variances of the success and reanalysis distributions are assumed to be different (heterogeneous variances).
+\item M3: This model assumes that retrieval time in SRs and ORs is different, and that the variances of the two distributions are different (heterogeneous variance). Thus, M3 is like M2, but with the additional assumption that distance may affect dependency completion time, as proposed by Gibson and others. This model is therefore a hybrid of the two proposals.
+\end{itemize}
+
+The results of the k-fold cross validation for the \cite{gibsonwu} data are shown in Table~\ref{tab:modcompgibsonwu}. The quantity shown is the difference ($\Delta$) in expected log pointwise density (ELPD) between the two models. ELPD is  a measure of deviance; a positive  difference represents a better fit.
 
 \begin{table}[!htbp]
 \centering
@@ -178,16 +188,210 @@ For the present purposes, we focus on the observed object relative advantage rep
   3 & M3 vs M2 & -2.05 & 2.52 \\ 
    \hline
 \end{tabular}
-\caption{Model comparison using K-fold cross-validation for the Gibson and Wu 2013 data. Shown are the differences in $\widehat{elpd}$, along with standard errors of the differences. In a comparison between a model A vs B, a positive $\widehat{elpd}$ favors model A.} 
+\caption{Model comparison using K-fold cross-validation for the Gibson and Wu 2013 data. Shown are the differences in $\widehat{elpd}$, along with standard errors of the differences. In a comparison between a model A vs B, a positive $\Delta\widehat{elpd}$ favors model A.} 
 \label{tab:modcompgibsonwu}
 \end{table}
 
-\section{Encoding interference in agreement attraction} \label{encint}
+As shown in the table, model M1 has  a better fit than M0, and M2 is better than M1; there is no improvement in fit between M3 and M2. This implies that for the \cite{gibsonwu} data, the heterogeneous variance version of the direct-access model exhibits a better predictive performance than the distance account. There isn't any evidence for a hybrid model that includes both the direct-access assumption or renalysis-driven cost and the distance account's assumption of distance-driven cost.
+
+The replication data from \cite{VasishthetalPLoSOne2013} also show a similar pattern: superior predictive performance of the direct-access model over the distance accounts; see Table~\ref{tab:modcompgibsonwurep}. 
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{rlrr}
+  \hline
+ & models & elpd\_diff & se \\ 
+  \hline
+1 & M1 vs M0 & 107.78 & 18.56 \\ 
+  2 & M2 vs M1 & 51.46 & 16.25 \\
+  3 & M3 vs M2 & 0.13 & 3.48 \\
+   \hline
+\end{tabular}
+\caption{Model comparison using k-fold cross-validation for the Vasishth et al.\ 2013 replication of the Gibson and Wu 2013 study.} 
+\label{tab:modcompgibsonwurep}
+\end{table}
 
 
+\subsection{Discussion}
 
-\subsection{Future directions}
+It is interesting that the direct-access model can outperform the Lewis and Vasishth model on three data-sets. This suggests that a wider investigation of these two models is needed; we are carrying out further model comparisons.
 
-All the published work relating to the direct-access model has focused on inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. Thus, the direct-accss model is underspecified regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed earlier in connection with the activation model. This is a potentially interesting topic for future research.
+One important limitation of the direct-access model is that all the published work relating to this model has focused on inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. The direct-accss model is underspecified regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed earlier in connection with the activation model. Extending the direct-access model is a potentially interesting topic for future research.
 
 %- Bruno work: Figs 1, 4, 5, 6, 7, 12
+
+Continuing with our exploration of  competing accounts of retrieval, we explore an idea, proposed by \cite{VillataFranck}, that encoding interference rather  than retrieval interference might be a better explanation for the agreement attraction effects discussed earlier in the book.
+
+\section{Encoding interference in agreement attraction} \label{encint}
+
+As discussed earlier iin the book, sentences such as (\ref{example1}) can lead to an illusion of grammaticality.\footnote{An  extended version of this section appeared as \cite{VasishthEtAlICCM2017} in the Proceedings of the International Conference on Cognitive Modelling, held at the University of Warwick, Coventry, UK.}
+The sentence is
+ungrammatical because of the lack of number agreement between
+the subject \textit{key} and the auxiliary \textit{are}.
+Note that the second noun, \textit{cabinets}, and the auxiliary \textit{are} agree in number, but no syntactic agreement is possible between these two elements.
+
+\begin{exe} 
+\ex
+\begin{xlist}
+\item \label{example1}
+The key to the cabinets are on the table.
+\item \label{example2}
+The key to the cabinet are on the table.
+\end{xlist}
+\end{exe}
+
+The illusion has the effect that
+ the auxiliary \textit{are} is read faster in (\ref{example1}) compared to the equally ungrammatical sentence (\ref{example2}) \citep[see][for a review]{JaegerEngelmannVasishth2017}. In contrast to (\ref{example1}), in (\ref{example2}) the second noun (\textit{cabinet}) is singular and does not agree with the auxilary in number.
+
+Several explanations have been proposed for the illusion of grammaticality in (\ref{example1}) vs.\ (\ref{example2}).
+We discuss two of these here.
+
+The feature percolation account proposes that in (\ref{example1}) the plural feature on \textit{cabinets} can, in some proportion of trials, move or percolate up to the head noun \textit{key}  \citep[see][for recent evidence for this model]{patson2016misinterpretations}. The head noun now has the plural feature, leading to an illusion of grammaticality compared to (\ref{example2}), where no such feature percolation occurs. 
+Another prominent explanation, due to \cite{WagersLauPhillips2009}, is the retrieval interference account. Here, in ungrammatical sentences like (\ref{example1}), a singular verb would be predicted; but when the plural verb \textit{are} is encountered, a cue-based retrieval process is triggered: The verb triggers a search for a noun that is plural marked and is a subject. A parallel cue-based associative memory access leads to the retrieval of a partially matching noun in memory (\textit{cabinets}) that agrees in number but is not the subject. This partial match leads to a successful retrieval and an illusion of grammaticality.\footnote{Notice that the cue-based retrieval account may a priori be implausible because it predicts that an incorrect dependency is built between \textit{cabinets} and \textit{are}; building such a dependency would imply that the sentence has the implausible meaning that the cabinets are on the table. The reader should detect such an implausible meaning and this should lead to a slowdown rather than facilitation.} 
+
+There is evidence for both these accounts: a facilitatory effect is generally present in the published data. 
+A question then arises: if we take the position that a dependency between \textit{cabinets} and \textit{are} is not plausible, could there be an explanation for the facilitation that does not need reference to a cue-based retrieval process?
+
+As discussed earlier in section \ref{numagrmt}, the facilitatory effect is robustly seen in at least 10 published studies (self-paced reading or eyetracking). The explanation we presented in section \ref{tgtmismatch} was in terms of a race process within the ACT-R based model. Next, we consider an alternative explanation in terms of encoding interference.
+
+Consider the ungrammatical example sentences again. In example~(\ref{example2}),
+both the nouns are marked singular, whereas in example~(\ref{example1}) the nouns have different number marking. 
+As discussed in \cite{VillataFranck},
+the similarity in number of the two nouns in (\ref{example2}) could be the underlying cause for increased processing difficulty, compared to (\ref{example1}).
+The identical number marking in (\ref{example2}) could lead to increased confusability between the two nouns, leading to longer reading times at the moment when a subject noun is to be accessed at the auxiliary verb. 
+The feature overwriting model of \cite{Nairne1990} formalizes this idea. To quote (p.\ 252):
+\textit{An individual feature of a primary memory trace is assumed to be overwritten, with probability $F$, if that feature is matched in a subsequently occurring event. Interference occurs on a feature-by-feature basis, so that, if feature $b$ matches feature $a$, the latter will be lost with probability $F$}.
+
+The Nairne proposal has a natural interpretation as a finite mixture process. Specifically, feature overwriting could occur with a higher probability in example~(\ref{example2rep}) compared to (\ref{example1rep}). This assumption implies that the reading times in both (\ref{example2rep}) and (\ref{example1rep}) are generated from a mixture of two distributions. 
+In a particular trial, if no feature overwriting occurs, the reading time would come from a Lognormal distribution with some location and scale parameters; this situation would result in 
+minimal processing difficulty in  carrying out a retrieval and detecting the ungrammaticality. In other trials,
+when feature overwriting does occur, 
+the reading time would have a larger location parameter, and possibly also a larger scale parameter; this would represent the cases where additional difficulty occurred due to feature overwriting. 
+
+An explicit assumption here is that feature overwriting could occur in both (\ref{example2rep}) and (\ref{example1rep}), but the proportion would be higher in (\ref{example2rep}). It is also possible to assume that feature overwriting only occurs in 
+(\ref{example2rep}), but we leave the investigation of this and other alternative models to future work. 
+
+Thus, in the mixture model implementation of the Nairne proposal, one distribution will have a larger location parameter (and perhaps also a larger scale parameter).
+In the modelling presented below, one goal is to estimate the mixing proportions of these distributions.
+Whenr reporting the results below, we will refer to the proportion of the slow reading time distributions in (\ref{example2rep}) as \texttt{prob\_hi}, and in (\ref{example1rep}) \texttt{prob\_lo}. The suffixes \texttt{hi} and \texttt{lo} here refer to whether we expect confusability to be high or low.
+
+To summarize, the feature percolation, cue-based retrieval, and 
+feature overwriting models all predict facilitation in the ungrammatical sentences (\ref{example1rep}) compared to (\ref{example2rep}), but the underlying generative process assumed in each model is different. Feature percolation and feature overwriting can be seen as finite mixture models of different types, and cue-based retrieval can be seen as implemented by the standard hierarchical model.
+Our goal here is to implement all the three proposals as statistical models and then compare their relative fit to the data in order to adjudicate between them.
+
+
+\subsection{An evaluation of the Nairne proposal}
+
+We fit homogeneous and heterogeneous variance hierarchical mixture models to the 10 reading time data-sets that compared reading times at the auxiliary or the following region for sentences like (\ref{example1rep}) and (\ref{example2rep}). 
+
+The data were assumed to be generated from a two-mixture Lognormal distribution with either a homogeneous variance in both mixture distributions, or heterogeneous variances. 
+Thus, for the high confusability condition (\ref{example2rep}), we considered two models:
+
+\begin{equation}
+\begin{split}
+       ~&\hbox{\underline{Homogeneous variance feature overwriting model}}\\
+y_{ij} \sim& \hbox{prob\_hi} \cdot LogNormal(\beta+\delta+u_i+w_j,\sigma_{e}^2)+\\
+           ~& (1-\hbox{prob\_hi}) \cdot LogNormal(\beta+u_i+w_j,\sigma_e^2)\\
+           ~& \hbox{where: }\\
+           ~& u_i \sim Normal(0,\sigma_u^2), w_k \sim Normal(0,\sigma_w^2)\\ 
+\end{split}
+\end{equation}
+
+
+\begin{equation}
+\begin{split}
+       ~&\hbox{\underline{Heterogeneous variance feature overwriting model}}\\
+y_{ij}
+\sim& \hbox{prob\_hi} \cdot LogNormal(\beta+\delta+u_i+w_j,\sigma_{e'}^2)+\\
+           ~& (1-\hbox{prob\_hi}) \cdot LogNormal(\beta+u_i+w_j,\sigma_e^2)\\
+           ~& \hbox{where: }\\
+           ~& u_i \sim Normal(0,\sigma_u^2), w_k \sim Normal(0,\sigma_w^2)\\ 
+\end{split}
+\end{equation}
+
+
+\noindent
+In both models, 
+$y_{ij}$ 
+is the reading time in milliseconds from subject $i$ and item $j$.  The probability  \texttt{prob\_hi} represents the mixing probability of the distribution that generates the slow reading times corresponding to trials where feature overwriting occurred (\ref{example2rep}). Although not shown, another mixture distribution is defined for example (\ref{example1rep}); here, 
+\texttt{prob\_lo} represents the mixing probability of the distribution that generates the slower reading times corresponding to the trials where feature overwriting occurred. 
+
+The homogeneous variance model assumes that both mixture distributions have the same standard deviation $\sigma_e$.  The heterogeneous mixture model assumes that the mixture distribution that leads to the slower reading times is assumed to have both a different mean ($\beta+\delta$) and a different standard deviation ($\sigma_{e'}$) than the other distribution.
+Alternative models can be fit which relax these assumptions, but we leave these extensions for future work.
+
+
+As a baseline, we fit a model corresponding to the retrieval interference account,  and the 
+feature percolation proposal. The latter also assumes a mixture distribution, but only for the condition corresponding to  example (\ref{example1rep}). Recall that the claim is that in ungrammatical sentences, in some proportion of trials the plural feature on the distractor \textit{cabinets} moves up to the head noun. In (\ref{example2rep}), no such mixture process should occur because percolation never occurs; hence a standard hierarchical LogNormal distribution can be assumed here. We therefore defined the following generative process for (\ref{example1rep}):
+
+\begin{equation}
+\begin{split}
+       ~&\hbox{\underline{Feature percolation model}}\\
+y_{ij} \sim& \hbox{prob\_perc} \cdot LogNormal(\beta+\gamma+u_i+w_j,\sigma_{e}^2)+\\
+           ~& (1-\hbox{prob\_perc}) \cdot LogNormal(\beta+u_i+w_j,\sigma_e^2)\\
+           ~& \hbox{where: }\\
+           ~& u_i \sim Normal(0,\sigma_u^2), w_k \sim Normal(0,\sigma_w^2), \gamma < 0 \\ 
+\end{split}
+\end{equation}
+
+\noindent
+Note that in the specification above the parameter $\gamma$, which represents the change in the location parameter, is constrained in the model to be negative; this is because the assumption in the feature percolation proposal is that percolation leads to faster reading time.
+
+For sentences like (\ref{example2rep}), in which no percolation is assumed to occur, we simply assumed a LogNormal generative process:
+
+\begin{equation}
+y_{ij} \sim LogNormal(\beta+u_i+w_j,\sigma_{e}^2)
+\end{equation}
+
+\subsection{Model comparison}
+Having fit the homogeneous and heterogeneous variance models, as well as the baseline models (the cue-based retrieval and feature percolation models), we evaluate the predictive fit of the competing models using $\widehat{elpd}$ as in the preceding section.
+
+
+\begin{table}[!htbp]
+\begin{center}
+\begin{tabular}{ccccccc}
+      & \multicolumn{2}{c}{(a) Standard HLM vs.} & \multicolumn{2}{c}{(b) Percolation vs.} & \multicolumn{2}{c}{(c) Homogeneous variance vs.}\\
+      & \multicolumn{2}{c}{Homogeneous variance} & \multicolumn{2}{c}{Homogeneous variance} & \multicolumn{2}{c}{Heterogeneous variance}\\
+            & \multicolumn{2}{c}{mixture model} & \multicolumn{2}{c}{mixture model} & \multicolumn{2}{c}{mixture model}\\
+Study & elpd\_diff & SE &    elpd\_diff & SE & elpd\_diff & SE \\ 
+   1 & -0.29 & 1.67     &    29.55 & 6.97    & 0.57 & 1.09 \\ 
+  2 & 56.98 & 13.57     &    76.34 & 14.26   & 15.20 & 6.07 \\ 
+   3 & 97.62 & 16.10    &    112.40 & 17.43  & 57.12 & 11.11 \\ 
+  4 & 71.29 & 14.08     &    84.78 & 14.12   & 19.66 & 8.77 \\ 
+   5 & 112.74 & 18.17   &    120.45 & 18.56  & 63.28 & 18.12 \\ 
+  6 & 66.84 & 12.59     &    85.97 & 13.88   & 43.58 & 12.18 \\ 
+   7 & 72.45 & 13.76    &    80.93 & 14.72   & 80.92 & 14.41 \\ 
+  8 & 88.50 & 14.60     &    90.22 & 14.77   & 40.17 & 11.87 \\ 
+  9 & 78.35 & 14.21     &    108.10 & 16.04  & 26.21 & 7.76 \\ 
+  10 & 90.08 & 14.14    &   105.23 & 15.02   & 33.59 & 11.95 \\ 
+\end{tabular}
+\end{center}
+\caption{Comparison of the 10 sets of hierarchical models. Shown are the differences in $\widehat{elpd}$ between (a) the standard hierarchical model and the homogeneous variance mixture model; (b) the feature percolation model and the homogeneous variance mixture model; and (c) the homogeneous vs.\ heterogeneous variance mixture model. Also shown are standard errors for each comparison. If the difference in $\widehat{elpd}$ is positive, this is evidence in favour of the second model. The pairwise model comparisons are transitive. 
+These comparisons show that the heterogeneous variance mixture model has the best predictive performance.}\label{tab:allcomparisons}
+\end{table}
+
+Table~\ref{tab:allcomparisons}  shows that 
+apart from study 1, the homogeneous variance feature overwriting model is clearly superior to the retrieval interference model because it has higher $\widehat{elpd}$ values. 
+Table~\ref{tab:allcomparisons} also shows that the homogeneous variance feature overwriting model furnishes a better fit than the feature percolation model. Finally, the table shows that, except for study 1, the heterogeneous variance model is superior to the homogeneous variance model.
+
+Since the model comparisons are transitive (if model A is better than B, and C is better than B, then C is better than A), we can conclude that, among the models compared, the heterogeneous variance feature overwriting model characterises these data the best. 
+In summary, overall there is good motivation to assume that in the
+condition with two singular nouns (example~\ref{example2rep}), a proportion of trials comes from a distribution with a larger mean and larger standard deviation, and this proportion is higher than in the condition with one singular and one plural noun (example~\ref{example2rep}). 
+
+\subsection{Discussion}
+
+We implemented as a statistical model the proposal that nouns with similar feature marking (here, number) may be more confusable due to feature overwriting in some proportion of trials, which in turn leads to occasional increase in difficulty in accessing the correct noun when a dependency is to be completed between the subject and the verb. By fitting Bayesian hierarchical two-mixture models, we showed that 9 out of the 10 data-sets showed evidence for this increased confusability in one condition over the other. 
+
+The feature overwriting account for the ungrammatical sentences (\ref{example1rep}, \ref{example2rep}) appears to be superior to both the retrieval interference and feature percolation accounts. 
+
+\subsubsection{Some limitations}
+
+An interesting future direction would be to evaluate the predictions of these models for grammatical sentences such as those considered in \cite{VillataFranck}. The overall pattern observed in the literature is that, with one exception \citep{nicenboimexploratory}, no differences are seen in the grammatical conditions \citep[see, e.g., the meta-analysis results reported in][]{JaegerEngelmannVasishth2017}. However, as discussed in chapter~\ref{c00}, it is likely that the studies that investigated the grammatical constructions were underpowered; if so, there may not be enough data from each study to draw any conclusions from the absence of an effect. Nevertheless, in principle it is possible that the feature overwriting process can explain the data better than the alternative accounts. T
+
+As mentioned earlier, the retrieval interference proposal has an a priori difficulty that may rule it out: it implies that whenever \textit{cabinets} is erroneously retrieved in (\ref{example1rep}), the reader should conclude that the cabinets are on the table. This interpretation should make no sense to the reader because cabinets are usually not placed on tables.  Thus, even if the reader misretrieves \textit{cabinets} in (\ref{example1rep}), they should register that something is wrong with the resulting meaning. As a consequence, if subjects do register this anomaly and assuming that this step costs time, facilitation (faster reading time) may not necessarily be observed at the verb (auxiliary or main verb, depending on the experiment) or a subsequent region in (\ref{example1rep}) vs.\ (\ref{example2rep}). 
+One could, however, defend the cue-based retrieval account on the grounds that the comprehender is not interpreting the meaning of the sentence but is relying only on some type of syntactic local coherence \cite{taboretal04} to parse the sentence. Given the evidence in the literature for underspecification in comprehension \citep{SwetsDesmetClifton2008,MalsburgVasishth2013}, this could be an argument for the cue-based retrieval account. Future research should focus on disentangling these two competing accounts.  
+
+One argument against the feature overwriting account is that one cannot explain the facilitatory interference effects found in \cite{CunningsSturt2018}; see the discussion relating to example~\ref{ex:CunningsSturt2018} on page~\pageref{ex:CunningsSturt2018}. In the Cunnings and Sturt design, there cannot be a feature overwrite between the nouns in question that can explain the differences in reading time observed at the verb. 
+
+Finally, new data-sets on agreement attraction have become available \citep{ALV2020,JaegerMertzenVanDykeVasishth2019}. A more extensive investigation should be carried out to evaluate whether the feature overwriting model can explain these data better as well.   
+
+
