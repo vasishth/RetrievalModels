@@ -332,7 +332,7 @@ One explanation for this facilitation is in terms of a lognormal race (although 
 
 Subject-verb dependencies have also been investigated in the context of  number agreement. Here, the retrieval cue of interest is number marking: at least in English, the subject must agree in number with the verb. Dependencies involving number agreement exhibit some interesting peculiarities, as we discuss next.
 
-\section{Subject-verb number agreement} 
+\section{Subject-verb number agreement} \label{numagrmt}
 
 It is well-known that sentences such as (\ref{example1}) 
 can lead to an illusion of grammaticality.  The sentence is
