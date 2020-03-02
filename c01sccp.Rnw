@@ -271,7 +271,7 @@ can be summarized as follows. Of course, not everyone will agree with this summa
 \item The parser builds incremental structural (syntactic) representations during online processing, although the parser may also, under certain circumstances, engage in underspecification of structure or track only local collocational frequencies \citep{FrazierRayner1982,TraxlerPickeringClifton1998,SwetsDesmetClifton2008,taboretal04}.
 \item The parser probabilistically predicts upcoming material \citep{Hale2001,Levy2008}.
 \item What is retained in memory and what is predicted during parsing is probably constrained by a working memory component \citep{Gibson1998,Gibson2000,SafaviEtAlFrontiers2016,HusainEtAl2014,HusainVasishthNarayanan2015}.
-\item Experience with language affects our probabilistic knowledge of language, and consequently, our comprehension \citep{MacDonaldChristiansen2002,wellsetal}.
+\item Experience with language affects our probabilistic knowledge of language, and consequently, our comprehension \citep{MacDonaldChristiansen2002,wellsetal,PickeringGarrod2007,dellchang14}.
 \end{enumerate}
 
 \section{Three gaps in the sentence processing literature}
