@@ -215,6 +215,10 @@ source("R/stan_results.R")
 <<c08, child='c08sccp.Rnw'>>=
 @
 
+% future directions
+<<c09, child='c09sccp.Rnw'>>=
+@
+
 \backmatter
 \appendix
 % if you only have one appendix, use \oneappendix instead of \appendix
