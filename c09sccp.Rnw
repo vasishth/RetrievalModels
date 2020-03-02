@@ -1,0 +1,20 @@
+
+\chapter{Future directions} \label{c09}
+
+\subsection{The role of prediction in sentence comprehension}
+
+Review the surprisal literature. Show that the evidence from reading studies and EEG is weak at best.
+Levy and Keller, Mante and MnNicenboim repl of DeLong stuff.
+
+Common to the connectionist and probabilistic grammar based approaches is the idea that certain distributions of sentence patterns experienced by native speakers determine the constraints that apply on comprehension. This implies that there is some underlying cause that drives the preference to produce certain constructions over others(e.g., subject vs.\ object relatives). 
+\cite{dellchang14}  explain this point:
+\begin{quote}
+The processing system experiences distributions of linguistic elements, which it learns. But where do these distributions come from? As MacDonald [9] noted in her Production– Distribution – Comprehension proposal, they come from the production systems of other speakers. Processes intrinsic to prduction make some structures easier to say than others.
+\end{quote}
+
+However, there is not much discussion in the literature the nature of these ``processes intrinsic to production'' are; surely, these processes constitute the true underlying explanation. The distributional properties of constructions, which drive the predictions of connectionist and probabilistic grammar approaches, must be artefacts of these ``processes intrinsic to production''.  The processes could be syntactic or memory-based constraints on production.
+
+Heavy-NP shift is a canonical example: in languages like  English, long NPs tend to be produced sentence-finally rather  than sentence-initially, but in  Japanese the pattern is the opposite \citep{yamashita2001long}. This preference to postpone long phrases to the end of a sentence (short-before-long in English), or to produce them first (long-before-short in Japanese) could either be an idiosyncratic property of languages with no further explanation, or it could be grounded in deeper causes relating to underyling syntactic constraints such as word-order.  \citep[B54][]{yamashita2001long} argue that the difference in long vs.\ short phrase placement in English vs.\ Japanese is driven by the relatively free word order in Japanese. Free word order allows Japanese to use word placement to mark saliency; by contrast, the relatively fixed word order of English does not allow this possibility.
+Thus, the underlying explanation lies with syntactic constraints that are intrinsic to the language in question.
+
+Another example is the illusion of grammaticality in  double center embeddings. As discussed in chapter \ref{c00}, English seems to show easier processing when a middle verb is missing vs.\ when it is present, but German shows the opposite pattern. This difference has been explained in terms of the head-final property of German: German native speakers reading German are better at maintaining predictions of an upcoming verb than English native speakers reading English, simply because German speakers are used to seeing verb-final constructions (in subordinate clauses) but English speakers are not. The underlying cause here is the inherent syntactic differences in these languages. If the explanation for the English/German difference lies in head-finality,  Hindi should pattern with German. Such cross-linguistic predictions need to be tested in order to make convincing claims about the underlying causes of the syntactic patterns observed in a particular language. 
