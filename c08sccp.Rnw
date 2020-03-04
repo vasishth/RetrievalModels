@@ -1,17 +1,149 @@
 
 \chapter{Modelling sentence comprehension deficits in aphasia} \label{c06}
 
-Aphasia is an acquired disorder of language processing that arises from lesions in the speech and language areas in the brain. These lesions occur due to cerebrovascular and other  diseases and injuries. Early studies on aphasia showed that two distinct types of aphasia arise depending on the area of the brain that develops lesions. Broca's aphasia involves lesions to the left lateral frontal region (the so-called Broca's area) and Wernicke's aphasia involves lesions to the left posterior temporal lobe (Wernicke's area). Classical definitions of sub-types of aphasia are defined around syndromes.
+Aphasia is an acquired disorder of language processing that arises from lesions in the speech and language areas in the brain. These lesions occur due to cerebrovascular and other  diseases or  other injuries. Studies on aphasia have shown that two distinct types of aphasia arise depending on the area of the brain that develops lesions. Broca's aphasia involves lesions to the left lateral frontal region (the so-called Broca's area) and Wernicke's aphasia involves lesions to the left posterior temporal lobe (Wernicke's area). Classical definitions of sub-types of aphasia are defined around syndromes.
 Broca's aphasia involves difficulties in language production and moderate problems in syntactic comprehension. Spontaneous speech can be non-fluent, and  repeating sentences back can be difficult. 
 Wernicke's aphasia involves severe comprehension and repetition difficulties, and difficulty in finding words. 
 Some other sub-types are global aphasia (complete loss of language); conduction aphasia (relative intact comprehension and production but difficulties in repetition); and anomic aphasia (comprehension intact, but difficulty in finding words).
 
-%cite De Bleser, Cholewa, Stadies, Tabatable 1997.
-%Huber, Poeck, Weniger, Willmes, 1983
-
 Because aphasia is an acquired disorder, from the computational modelling perspective it is natural to ask whether models of sentence processing can help us understand what the nature of the impairment(s) is.
-Focusing only on sentence comprehension, several attempts have been made to ``damage'' a computational model of unimpaired processing in various ways to simulate disorders of comprehension. 
-% summarize the various attempts, in table?
+Focusing only on sentence comprehension, several attempts have been made to ``damage'' a computational model of unimpaired processing in various ways to simulate disorders of comprehension. We summarize some of the important models and theories next.\footnote{The next section is reproduced with permission from \cite{PatilEtAl2016}, Copyright (2016) Wiley; license number 4736540285736.}
+
+\subsection{Theories and models of sentence comprehension deficits} \label{alternativeexplanations}
+
+Theories of sentence processing deficits in aphasia have been traditionally categorized as either representational deficit accounts or processing deficit accounts [for an overview, see][] \citep{Caplan:2009}.
+Representational or specific deficit accounts ascribe the impairment to disturbances in underlying syntactic representations, i.e., they assume that patients suffer from a breakdown in their knowledge of the grammar; in traditional linguistic terms, the deficit is in their competence as opposed to performance. 
+For example, the Trace Deletion Hypothesis \citep[TDH,][]{Grodzinsky:1995,Grodzinsky:2000,Grodzinsky:2006a} proposes that aphasic patients have lost the ability to represent traces of syntactic movement. Hence, for non-canonical structures such as passives, they have no information about the theta-role of a moved NP and they need to rely on a default cognitive strategy which assigns the AGENT theta-role to the first NP in a sentence. However, the patients' syntactic representation also contains another AGENT, the one assigned to the unmoved subject NP in base position, which forces them to simply guess which of the two NPs is assigned the role of AGENT in a reversible non-canonical sentence.
+Besides the TDH, other accounts exist that relate syntactic comprehension disorders to disruptions in constructing fully intact syntactic representations \citep[for example,][]{Beretta:1998,Hickok:1995,Mauner:1993}. These accounts ascribe patients' sentence comprehension deficits to a breakdown in syntactic chain formation. 
+In summary, representational deficit accounts generally equate ``breakdown in knowledge of grammar'' with the loss in the ability to track head-dependent relations (such as the relation between a noun phrase and its trace) or the ability to keep track of the derivational history of a syntactic structure, where derivational history is construed in classical Chomskyan terms. It is by no means clear that such a breakdown is not due to processing difficulty; that is, the failure to keep track of dependencies (which may be equivalent to deleting traces) may be a processing problem arising due to stochastic variability or less efficient retrieval processes in parsing \cite{EngelmannVasishthCUNY2014}.
+
+We turn next to theories that have traditionally been termed processing deficit accounts. These assume that the underlying grammatical knowledge of patients is preserved, but the syntactic processing system is affected by processing (or capacity) limitations. Thus, these theories ascribe patients' difficulties with non-canonical sentences to a processing breakdown in parsing. 
+
+There exist various processing accounts that differ in how exactly they conceptualize processing limitations in syntactic parsing:
+(i) timing deficits;
+(ii) reduction in memory
+(iii) intermittent deficiency;
+(iv) weakened syntax;
+(v) slow syntax;
+(vi) lexical integration deficit;
+and (vii) lexical access deficits.
+
+Timing deficit accounts have been articulated in some detail in computationally implemented models; the others remain verbally--stated theories. We discuss each of these theories below.
+
+\subsubsection{Timing deficit}
+A representative of the timing deficit accounts is the work by 
+\cite{Haarmann-Kolk-1991}. They proposed a computational model of aphasic language breakdown, called SYNCHRON. This model implements the hypothesis by \cite{Kolk-vanGrunsven-1985} that parsing fails in agrammatic aphasics because syntactic representational elements that need to be simultaneously active in working memory are often not coactive because of disturbances in timing due to brain damage. The model is provided with a predefined phrase-structure representation of a sentence and it determines whether the complete construction of this phrase-structure representation is possible given a set of temporal constraints. The model constructs the phrase-structure representation as a bottom-up chain of retrievals---input words cause the retrieval of word forms, word forms cause the retrieval of associated lexical categories and lexical categories cause the retrieval of phrasal categories. The retrieval of a phrasal category is possible only if all its constituent categories are available in memory, which is the \emph{computational simultaneity} constraint in the model.
+
+SYNCHRON assumes that aphasics have a temporal disorder---either the retrieval time, the time required to retrieve an element, is longer than normal, or the memory time, the amount of time a retrieved element remains available for further processing, is shorter than normal. 
+A different way to characterize these constraints is in terms of slowed retrieval and faster than normal decay of items in memory.
+This temporal disorder disrupts computational simultaneity among elements of the phrasal category, causing parsing failures. \cite{Haarmann-Kolk-1991} showed that assuming a temporal disorder is sufficient to model the combined effects of the degree of severity and sentence complexity in agrammatic aphasics described in \cite{Schwartz-EtAl-1980} and in a replication study by \cite{Kolk-vanGrunsven-1985}. Although SYNCHRON was successful in modeling aphasic behavior on simpler sentence types, its capabilities are limited due to the absence of a parsing process. It also lacked a mechanism for thematic role assignment, which is a crucial issue in sentence processing.
+
+
+\subsubsection{Reduction in memory}
+In later work, 
+\cite{Haarmann-EtAl-1997} proposed an enhanced model of aphasic sentence processing, the Capacity Constrained Resource Deficit (CCRD) model. It is implemented in the 3CAPS architecture  \cite{Just1980} and is derived from the Resource Reduction Hypothesis \cite{Miyake-EtAl-1994}. This hypothesis proposes that the impairment in aphasia is an extension of sentence processing limitations in low working memory capacity of unimpaired individuals. CCRD focuses on deriving thematic roles assigned by the verb in the sentence. CCRD is composed of three main subsystems that accomplish thematic role assignment by carrying out three different sub-tasks in sentence processing: performing lexical access, constructing the parse tree and mapping thematic roles. The functionality of each component subsystem is achieved through a set of production rules. Production rules temporarily activate the working memory elements that lead to various sentence representations. The rules in the thematic role component use the parse tree representation of a sentence to generate thematic roles between words in the sentence. Once the processing of a sentence is completed, the levels of activation of the working memory elements representing the thematic role bindings are recorded. Sentence comprehension accuracy is indicated by the average activation of these memory elements. 
+
+Both storage and computation of information need to draw from available activation. If enough activation is not available, this leads to a breakdown in sentence comprehension. The hypothesis for aphasic patients is that they share a deficit of pathologically reduced working memory capacity. A more complex sentence has higher storage and computational demands, and the reduction in the available activation in aphasics induces a breakdown in processing. The model was shown to reproduce the sentence complexity effect obtained by \cite{Caplan-Et-Al-1985} across nine sentence types, as well as the interaction between the sentence complexity effect and the degree of severity of aphasia in the data from \cite{Kolk-vanGrunsven-1985}. All simulations involved modeling the offline measure of sentence comprehension accuracy by fitting the memory capacity parameter along with several other parameters.
+
+Apart from SYNCHRON and CCRD, other attempts at modeling aphasic sentence comprehension are the HOPE model proposed by \cite{Gigley-1986}, the UNIFICATION SPACE model proposed by \cite{Kempen-Vosse-1989,vossekempen2000} and the ACT-R based model proposed by \cite{Crescentini-Stocco-2005}. While these models differ considerably in their details, they are consistent with the assumption that aphasic sentence comprehension is not a result of any breakdown in the knowledge of the grammar, but rather a deficit in the processing of this knowledge. As observed by \cite[p.~82][]{Haarmann-EtAl-1997}, 
+all these previous models share the common assumptions that ``(i) knowledge representation and processing are activation driven, (ii) successful sentence comprehension requires the co-activation of certain critical representational elements, and (iii) in aphasia, co-activation is disturbed by an immediate or emergent timing deficit.'' 
+
+\subsubsection{Intermittent deficiency}
+Support for intermittent deficiency comes from recent online studies with aphasics. In a self-paced listening study combined with a sentence-picture matching and grammaticality judgement task, \cite{Caplan:2007} found normal \textit{online} performance for patients when they provided correct offline responses. In contrast, incorrect offline responses were associated with abnormal online performance. This result is unexpected under the TDH, which does not predict systematic differences in online processes underlying correct and erroneous responses. Caplan and colleagues concluded that patients cannot be suffering from constant impairments in an underlying grammatical structure (e.g., deleted traces), or from a total breakdown in specific parsing operations (e.g., associating a trace with its filler). Instead, they argued that sentence comprehension deficits should better be conceptualized as reflecting intermittent deficiencies in resources necessary for syntactic parsing. These intermittent reductions are then seen in divergent self-paced listening data and lead the patient to end up with an erroneous sentence interpretation. These claims are consistent with the results of former sentence processing studies by \cite{Caplan:2003,Caplan:1995}.
+In recent work, \cite{hanneetal11} also provided evidence for the systematic differences between correct vs.\ incorrect parses, pointing to intermittent deficiencies.
+
+\subsubsection{Weakened syntax}
+Weakened syntax has received support from sentence comprehension studies using eye tracking \citep[e.g.,][]{Choy:2010,Dickey2009,Dickey:2007a,hanneetal11,Meyer2012,ThompsonChoy-2009}; for eye tracking studies on sentence production in aphasia see also \cite{Cho2010,Lee2011a,Lee2011}.
+Through a series of studies in the visual world paradigm, Thompson and colleagues explored patients' online parsing abilities
+for structures like yes-no questions, wh-questions and object clefts \cite{Dickey:2007a,Thompson2004}.
+For correctly answered wh-questions, aphasics showed the same eye movements patterns as controls---anticipatory eye movements to a potential filler (the moved object) for the gap when they heard the verb. When the offline response was incorrect, they showed increased looks to the subject competitor towards the end of the sentence.
+According to the authors, the anticipatory eye movements reflect the participants' incremental, automatic gap-filling during sentence comprehension. This suggests that 
+``resolving wh-dependencies was relatively unimpaired in the patients'' \cite[p.~14][]{Dickey:2007a}. Moreover, because patients' eye movements during correct responses were similar to controls' in speed and the overall pattern, the results are inconsistent with a slow-down in aphasics' online processing. 
+Referring to \cite{Avrutin:2006}, the authors suggested a weakened-syntax view of sentence comprehension disorders, which holds that syntactic representations in aphasia are (largely) undamaged and processing operations such as gap filling function with the same speed as in controls', but the resulting syntactic structures are not strong enough to inhibit competition from other sources (such as competing extra-linguistic heuristics) \cite{Dickey:2007a}. 
+To replicate and extend these initial results, \cite{Dickey2006,Dickey2009} evaluated patients' online processing in sentences with two different types of syntactic movement---wh-movement in object relative clauses and NP-movement in passives. 
+Although the results showed that patients can successfully resolve wh-movement dependencies,  gap-filling in object relative clauses was slightly delayed. 
+These results are different from earlier findings involving wh-questions. 
+Hence, the process of gap filling may be delayed in patients at least for some syntactic structures involving movement. Moreover, this process was disrupted by the late-emerging influence of syntactically unlicensed competitor interpretations.
+This position is closely related to the idea of slow syntax \citep{BurkhardtEtAl2003}, discussed next.
+
+\subsubsection{Slow syntax}
+As mentioned above, there is some evidence that gap-filling is delayed in patients.
+Further evidence consistent with slow syntax comes from 
+\cite{hanneetal11}, who investigated online processing of Broca's aphasics on German reversible canonical (SVO) sentences and their non-canonical counterparts (OVS) using a classical sentence-picture matching task in the visual world paradigm.
+Online (eye movements) and offline (accuracy and response time) data were collected simultaneously during the task. Patients' accuracy reflected the expected pattern. On average, they performed worse than controls, and comprehension for non-canonical sentences was significantly lower than for canonical sentences. Reaction times were significantly longer in patients than in controls, and non-canonical sentences elicited longer latencies than canonical ones. 
+Fixation patterns showed systematic differences in correct vs.\ incorrect offline responses. For correctly answered trials, patients' eye movement patterns were very similar to controls' (in terms of relative fixation probabilities). For incorrectly answered trials, patients' eye movements were clearly deviant from controls'. Interestingly, patients' eye movement patterns were delayed compared to controls, which is suggestive of a slowdown in online sentence processing. 
+Following Caplan and colleagues, they also came to the conclusion that these preserved processing routines are not always available because of intermittent deficiencies of parsing operations. Thus, the data of Hanne et al.\ are consistent with the independently motivated idea of a slow-down in syntactic processing in aphasia and with intermittent deficiency, although there may well be other underlying factors that lead to a slow-down, such as increased uncertainty under noisy memory representations.
+Using eyetracking with sentence-picture matching, \cite{Meyer2012} investigated the processing of English active and passive sentences in aphasics and age-matched controls. They found that, in active sentences as well as correctly comprehended passive sentences, on average aphasics' eye movements converged to the correct picture a little bit later than controls.  Such delays could be interpreted as slow syntactic processing or,  as Meyer et al.~interpreted them, as delayed lexical integration, which is discussed next. 
+
+\subsubsection{Lexical integration deficit}
+Thompson and colleagues are the main proponents of lexical integration difficulties.
+In a comprehensive summary of their eye tracking experiments, \cite{ThompsonChoy-2009} concluded that sentence comprehension impairments in aphasia are unlikely to be ``related to an inability to form, or compute, syntactic representations'' (p.\ 278). They further emphasized that although slight delays in gap-filling were seen for some syntactic structures, no delayed syntactic processing was found for patients' dependency resolution in pronominal constructions as well as in wh-questions, making a general delay in syntactic computation unlikely. Instead, given the consistent finding of the late-emerging influence of competitor interpretations in patients' incorrect responses, the authors  argued for a lexical integration deficit in aphasia, i.e., an impairment in the ability to integrate already accessed lexical information into a syntactic or a higher level semantic representation. Work by \cite{hagoort1996lexical} and \cite{SwaabEtAl-1997} makes similar claims.
+
+\subsubsection{Lexical access deficits}
+Some authors attribute patients' syntactic difficulties to an earlier stage in language processing---lexical access.
+\cite{Prather:1997}, using a list priming paradigm, found slower than normal activation of word meanings in Broca's patients. They suggested that this effect directly connects to reduced and/or absent activation effects found at gap sites during real-time sentence processing \citep{Zurif1994}. 
+In subsequent studies using a cross-modal lexical priming paradigm with Broca's aphasics, Love and colleagues \citep{Swinney1996,Love2001} found that priming of a filler at its gap site in syntactic movement structures is not absent, but delayed. The late reactivation of the antecedent was taken as evidence that patients can associate a moved element with a trace; however, this process is pathologically slow.
+In another study \citep{Love:2008}, when the speech rate of the auditory input was slowed, patients showed immediate priming effects at the gap site. They also showed delays in lexical activation when a moved NP was first overtly encountered in a sentence. Love and colleagues interpreted their findings as evidence that ``the formation of a syntactic dependency involving a moved constituent is selectively vulnerable, not because it's a syntactic operation, but because if lexical reactivation is not accomplished within a normal time frame, a non-grammatical heuristic kicks in to provide a conflicting interpretation'' \citep[p.~216][]{Love:2008}. Further, \cite{Ferrill2012} showed that in patients, lexical activation is slower not only in syntactic structures containing movement dependencies but also in canonical sentences without dislocated NPs. However, it remains unclear why comprehension of canonical structures is less (or even not at all) affected in aphasia.
+
+It is also worth noting that the lexical access account and the lexical integration deficit account may be difficult to disentangle.
+The lexical access account  
+is in principle distinct from Thompson and colleagues' proposal of  a deficit in lexical integration. 
+Thompson and colleagues observed no or only slight delays in the reactivation of antecedents at their gap sites (at least for correct trials) across experiments involving different movement structures \citep{ThompsonChoy-2009,Choy:2010,Meyer2012}. This absence of an effect, together with the observation of aberrant sentence-end effects of lexical competitors, led Thompson and colleagues to propose an impairment in integrating already accessed lexical information into the syntax or a higher level semantic representation. According to them, this account could explain deficits in comprehending both pronominal and movement structures.
+However, Thompson and colleagues' findings could also be interpreted as evidence towards a delay in lexical access. For example, in experiment one in \cite{ThompsonChoy-2009} \citep[see also][]{Choy:2010}, patients showed delayed looks to overtly mentioned (unmoved) nouns in a sentence compared to controls. \cite{Dickey:2007a} observed similar effects at the subject in yes-no-questions \citep[see also experiment two reported in][]{ThompsonChoy-2009}. In addition, \cite{Love:2008} pointed out that the auditory sentences used, for example, in \cite{Dickey:2007a} were spoken at a slower than normal speech rate, which might have confounded the results because the slow input could have compensated for the delay in aphasics' lexical activation.
+Furthermore, \cite{Yee2008} showed evidence for reduced lexical activation in Broca's aphasia rather than delays in reaching a certain activation threshold value; this points to impairments in lexical activation levels rather than the time course of this activation. Finally, \cite{Blumstein1998}, found no delays but successful priming of a filler at its gap site using a within-modality priming paradigm (auditory-auditory lexical decision). In this study, Broca's patients even patterned with unimpaired participants.
+Given the diverging results, it is currently still unclear whether and how impairments in sentence comprehension are caused by failures at the stage of lexical access or lexical integration. 
+
+We have summarized above the various theories about sentence comprehension deficits in aphasia; but it may be helpful to see the connections, similarities and differences between these theories by trying to identify some of the key proposals in these theories. We present such a comparison next.
+
+\subsubsection{A comparison of theories of impaired processing, and their relation to theories of unimpaired processing}
+
+The theories of sentence processing deficits mentioned above address essentially the same issues that theories of unimpaired populations address (one difference is that the effect of the various determinants of processing difficulty may be amplified in impaired populations). This becomes clear when we consider how  theories of unimpaired sentence processing that focus on the effect of working memory are characterized; here, comprehension difficulty (i.e., delays) can arise in the integration of lexical items due to decay or interference \citep{vandykelewis03}, or working-memory capacity differences \cite{JustCarpenter1992}; dependencies may be forgotten \cite{taboretal04,VasishthSuckowLewis2010,FrankTrompenaarsVasishth2015}, which may or may not lead to parse failure; and there may be occasional mis-parses \cite{WagersLauPhillips2009,BadeckerStraub2002,Vasishth2008,CunningsFelser2013,PatilVasishthLewis2016}, due to interference effects or stochastic noise.
+As Table~\ref{modelcomparison} shows, classifying the theories mentioned above along these three dimensions---delay, forgetting, and mis-retrieval---demonstrates that while all the theories of sentence comprehension deficits in aphasia try to characterize forgetting in different ways, some try to also develop a theory of why processes are delayed, and why mis-retrievals happen:
+
+\begin{enumerate}
+\item
+In TDH, trace deletion has the effect that the relationship between a filler and a gap, which originally was present, is forgotten. Possibly, delays could also occur if the parser carries out extra steps to complete a heuristic strategy to decide on thematic roles for arguments.
+\item SYNCHRON implements delays and forgetting by inducing timing deficits that make retrieval slower and that make items in memory decay faster.
+\item 
+CCRD induces capacity limitations, which lead to forgetting.
+\item 
+Intermittent deficiency, as discussed by Caplan and others, is mainly concerned with occasional forgetting and mis-retrieval, although the precise nature of the deficiency is not defined.
+\item 
+Weakened syntax assumes that syntactic structures do not have strong enough representations, which may be a way to implement forgetting. 
+\item Slow syntax assumes slowed down parsing processes, which would cause delays, and occasional parsing failures.
+\item The lexical integration deficit proposal, as developed by Thompson and colleagues, 
+assumes a failure to retrieve a lexical item into a higher-level representation; this could be seen as implementing forgetting and possibly also mis-retrieval.
+\item 
+The delayed lexical access model  assumes that accessing an item in memory in the service of completing a dependency will lead to delays and failures.
+ \end{enumerate}
+
+
+Framing existing theories of sentence comprehension deficits in the context of delay, forgetting, and mis-retrieval also highlights the fact that (a) no one theory seems to cover all three events, and (b) one could re-classify theories as either being about delays (more generally, slowed processing), occasional failures to retrieve, or mis-retrievals.
+As an aside, note that none of the theories have any formalization of prediction cost \citep[e.g.,][]{Hale2001,Levy2008}; researchers in aphasia have largely neglected this topic in the past, but it is likely to become a  focus of research in the coming years \citep[see][for an interesting recent attempt using the storage cost metric from the Dependency Locality Theory]{clark12}.
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{rccc}
+\hline
+Model     &                        Delays  &     Forgetting    &	Mis-retrieval\\  
+\hline
+TDH                    &          x           &                   x    &	\\
+SYNCHRON       &             x        &                  x      &	\\
+CCRD                  &                        &                    x   &	\\
+ intermittent deficiency   &              &          x             &	x	\\
+ weakened syntax        &               &         x              &	\\
+ slow syntax                  &   x          &        x   &	\\
+ lexical integration deficit  &      &       x              &	x	\\
+ delayed lexical access        &  x      &            x   &	\\
+\hline
+\end{tabular}
+\caption{A matrix showing how the models relate to each other along dimensions of the three working-memory related events---delays, forgetting (or failure to retrieve), mis-retrieval---that have been investigated in sentence comprehension research.} \label{modelcomparison}
+\end{table}
+
+In summary, a useful way to understand the various theories of sentence comprehension deficits is in terms of their attempt to characterize delays, forgetting, and mis-retrievals. The fact that theories of unimpaired sentence comprehension that depend on working memory concepts
+are also focused on these same events suggests a natural classification of theories of impairment that makes contact with a more general theory of unimpaired processing.
+
+\section{Modelling individual-level differences}
 
 In healthy adults, 
 sentence comprehension has long been argued to be influenced by individual differences; a commonly assumed source is differences in working memory capacity \citep{DanemanCarpenter1980,jc92}. 
@@ -59,7 +191,7 @@ When fitting individual participants, we vary three parameters that map to the t
 We expect that if there is a tendency in one parameter to show non-default values in individual model fits for IWA, for example slowed processing,
 then there is support for the claim that slowed processing is an underlying source of processing difficulty in IWA. Similar predictions hold for the other two constructs, intermittent deficiency and resource reduction; and for combinations of the three proposals.
 
-\section{Mapping ACT-R parameters to sources of deficits}
+\subsection{Mapping ACT-R parameters to sources of deficits}
 
 In ACT-R, the retrieval of a chunk from memory depends on its activation level, which is determined by several constraints; we discuss a subset of these next. 
 Let $C$ be the set of all chunks in declarative memory. The total activation of a chunk $i \in C$ equals
@@ -111,11 +243,11 @@ Finally, the hypothesis of \emph{slowed processing} can be mapped to the \emph{d
 
 In the following section, we evaluate the model's performance on the empirical data for IWA and unimpaired individuals, implementing the three theoretical claims by varying the three parameters described above. 
 
-\section{Simulations}
+\subsection{Simulations}
 
 In this section we describe our modeling method and the procedure we use for fitting the model results to the empirical data from \cite{CaplanEtAl2015}.
 
-\subsection{Materials}
+\subsubsection{Materials}
 
 We used the data from 56 IWA and 46 matched controls published in \cite{CaplanEtAl2015}. In this data-set, participants listened to recordings of sentences presented word-by-word; they paced themselves through the sentence, providing self-paced listening data. Participants processed 20 examples of 11 spoken sentence types and indicated which of two pictures corresponded to the meaning of each sentence. This yielded accuracy data for each sentence type. 
 
@@ -125,7 +257,7 @@ We chose relative clauses for two reasons. First, relative clauses have been ver
 Second, 
 the \cite{LewisVasishth2005} model already has productions defined for these constructions, so the relative clause data serve as a good test of the model as it currently stands.
 
-\subsection{Parameter estimation}
+\subsubsection{Parameter estimation}
 
 We used grid search to find the best fitting parameters. We refer to the parameter space $\Pi_i$ as the set of all vectors $(\text{GA}, \text{DAT}, \text{ANS})$ with $\text{GA},\ \text{DAT},\ \text{ANS} \in \mathbb{R}$.
 For computational convenience, we chose a discretisation of $\Pi$ by defining a step-width and lower and upper boundaries for each parameter. In this discretised space $\Pi'$, we chose $\text{GA} \in \{0.2, 0.3, \ldots, 1.1\}$, $\text{DAT} \in \{0.05, 0.06, \ldots, 0.1\}$, and $\text{ANS} \in \{0.15, 0.2, \ldots, 0.45\}$.\footnote{The standard settings in the \cite{LewisVasishth2005} model are $\text{GA} = 1,\ \text{DAT} = 0.05\ \text{(or 50 ms)},\ \text{and ANS} = 0.15$.} $\Pi'$ could be visualised as a three-dimensional grid of 420 dots, which are the elements $p' \in \Pi'$.
