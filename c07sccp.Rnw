@@ -1,4 +1,4 @@
-\chapter{Competing accounts of retrieval processes in sentence processing} \label{c05}
+\chapter{Competing accounts of interrference in sentence processing} \label{c05}
 
 The cue-based retrieval model presented in this book is only one way to implement retrieval in sentence processing. An interesting competing proposal comes from \cite{McElree2000,McElree2006RecentEvents}. For a long time, the Lewis and Vasishth activation model and the McElree direct-access model were, at least implicitly, considered to be notational variants \citep[e.g., see][]{LewisVasishthVanDyke2006,parkervandykeshvartsman2017}. \cite{NicenboimRetrieval2018} were the first to implement the direct-access model computationally and  to quantitatively compare the predictions of the two models of retrieval. In this chapter, we present some of the work relating to these model comparisons.
 
