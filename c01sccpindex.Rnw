@@ -243,7 +243,7 @@ here is not that prediction is constrained by working memory
 limitations, but rather by an underlying probabilistic grammar \index{probabilistic grammar}
 representation. As a sentence is processed incrementally, an \index{parallel} \index{ranked parallel}
 essentially parallel, or ranked parallel set of possible continuations 
-is predicted, and as one transitions from one word to the next , the
+is predicted, and as one transitions from one word to the next, the
 change in the probability mass of the predicted continuations indexes
 processing difficulty. Briefly put, rare continuations are hard to
 process. These prediction-oriented theories represent a distinct class of
@@ -281,7 +281,7 @@ Given the above short (and incomplete) survey, some of the broad tentative concl
 can be summarized as follows. Of course, not everyone will agree with this summary; but in our opinion, the claims listed below are relatively well supported by the literature. 
 
 \begin{enumerate}
-\item The parser builds incremental structural (syntactic) representations during online processing, although the parser may also, under certain circumstances, engage in underspecification of structure or \index{underspecification} track only local collocational frequencies \citep{FrazierRayner1982,TraxlerPickeringClifton1998,SwetsDesmetClifton2008,Taboretal04}.
+\item The parser builds incremental structural (syntactic) representations during online processing, although the parser may also, under certain circumstances, engage in underspecification of structure or \index{underspecification} track only local collocational frequencies \citep{FrazierRayner1982,TraxlerPickeringClifton1998,SwetsDesmetClifton2008,taboretal04}.
 \item The parser probabilistically predicts upcoming material \citep{Hale2001,Levy2008}. 
 \index{working memory}
 \item What is retained in memory and what is predicted during parsing is probably constrained by a working memory component \citep{Gibson1998,Gibson2000,SafaviEtAlFrontiers2016,HusainEtAl2014,HusainVasishthNarayanan2015}. 
@@ -300,7 +300,7 @@ The first gap is that, instead of making computational/mathematical
 modelling the basis for theory development, the field has largely \index{verbally-stated models}
 relied on verbally-stated models of comprehension processes. This has
 led to a great deal of vagueness in theory development.
-Verbally-stated theories have the great advantage that nascent ides can be
+Verbally-stated theories have the great advantage that nascent ideas can be
 quickly sketched out. Indeed, computational models usually begin with an
 informal statement of the key intuitions. In psycholinguistics,
 researchers stop too often at the verbal theorizing stage and never
@@ -385,7 +385,7 @@ phenomena under study.  This is because it is well-understood in these
 areas that computational models allow the scientist to build detailed
 process models of human cognitive processes, and to investigate the
 quantitative predictions arising from these models. Prominent examples
-from classical AI research are the SOAR \citep{laird2012soar} and \index{SOAR} \index{ACT-R}
+from classical artificial intelligence \index{artificial intelligence} research are the SOAR \citep{laird2012soar} and \index{SOAR} \index{ACT-R}
 ACT-R \citep{AndersonEtAl2004} architectures; in psychology, the E-Z \index{E-Z Reader}
 Reader \citep{Reichle2003,ReichleEtAl2009,ReichleWarrenMcConnell2009} \index{SWIFT}
 and SWIFT \citep{EngbertNuthmannRichter2005,richteretal06,Rabe2019} \index{eye-movement control}
@@ -712,7 +712,7 @@ another major problem in the psycholinguistics is statistically incorrect infere
 \index{Bayesian} \index{clinical trials}
 In Bayesian approaches to clinical trials, an approach for evaluating predictions exists that is closely related to the Robert and Pashler criteria discussed above.\footnote{The following section is from \cite{VasishthGelman2019}, which is available under a CC-BY 4.0 Attribution International license.}
 %%to-do: obtain permission to reuse
-Simply put, the proposal is to posit a range of predicted values, and then compare the the estimates from the data with this predicted range.   This method is discussed in \citep{Freedman1984,spiegelhalter1994bayesian}. In recent years, this idea has been re-introduced into psychology by \cite{kruschke2014doing} as the region of practical equivalence (ROPE) approach. \index{the region of practical equivalence} \index{ROPE}
+Simply put, the proposal is to posit a range of predicted values, and then compare the estimates from the data with this predicted range.   This method is discussed in \citep{Freedman1984,spiegelhalter1994bayesian}. In recent years, this idea has been re-introduced into psychology by \cite{kruschke2014doing} as the region of practical equivalence (ROPE) approach. \index{the region of practical equivalence} \index{ROPE}
 
 The essential idea behind interpreting data using a ROPE is summarized in Figure~\ref{fig:rope}. Assume that we have a model prediction spanning [-36, -9] ms \citep{JaegerMertzenVanDykeVasishth2019}. If we run our experiment until we have the same width as the predicted range (here, 36-9=27 ms), then there are five possible uncertainty (confidence) intervals that can be observed; see  Figure~\ref{fig:rope}. The observed interval can be: 
 
