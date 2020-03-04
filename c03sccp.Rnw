@@ -105,7 +105,7 @@ Figure~\ref{fig:lv05buffers} from \cite{LewisVasishth2005} illustrates the cycle
 
 % Using the model's predictions of parsing duration,  explained effects of distance and structural interference in sentence processing in terms of independently motivated principles of working memory access.  
 The parsing architecture has been further used to model important aspects of sentence comprehension such as anti-locality \citep{VasishthLewis2006}, intrusive interference in negative polarity constructions \citep{VasishthBruessowLewis2008}, interference effects in reflexive processing \citep{PatilVasishthLewis2012,ParkerPhillips2014,JaegerEngelmannVasishth2015} and subject-verb processing
-\citep{WagersLauPhillips2009,DillonMishlerSloggett2013}, and impaired sentence comprehension in aphasia \citep{PatilHanneBurchert2015,MaetzigEtAltopics2018}.
+\citep{WagersLauPhillips2009,DillonMishlerSloggett2013}, and impaired sentence comprehension in aphasia \citep{PatilEtAl2016,MaetzigEtAltopics2018}.
 
 \subsection{A priori predictions of the model} \label{lv05predictions}
 
