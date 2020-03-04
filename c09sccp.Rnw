@@ -1,24 +1,38 @@
 
 \chapter{Future directions} \label{c09}
 
-\section{The creation of higher-precision benchmark data for model evaluation and comparison}
 
-Several types of phenomena have been studied in sentence processing:
+In this closing chapter, we briefly discuss what we see as some of the important open problems that researchers could pursue.
+
+\section{The need for creating higher-precision benchmark data-sets for model evaluation and comparison}
+
+Several classes of problems have been studied in sentence processing, A probably incomplete list is as follows:
 
 \begin{enumerate}
-\item Local attachment ambiguities leading to  garden pathing
+\item Local attachment ambiguities (garden-path constructions)
+\item Shallow vs.\ deep processing (good-enough processing and underspecification)
+\item Serial vs.\ parallel parsing
+\item The use of syntactic vs.\ semantic (pragmatic/phonological/prosodic) cues in sentence comprehension
 \item Illusions of grammaticality/ungrammaticality
-\item Similarity-based interference
-\item The effects of prediction
+\item Similarity-based interference effects
+\item Expectation-based effects
+\item Large-scale comprehension data on processing differences between unimpaired and impaired populations.
 \end{enumerate}
 
-\section{What is the role of prediction in sentence comprehension?}
+In the present work, we provide  all the benchmark reading data available to us on similarity-based interference effects. These data are a mixture of complete data-sets, and minimal data summaries derived from published work. It would be useful to systematically develop a repository of such data-sets for the different topics listed above, with the goal that the predictions of competing models of sentence processing could be tested against a broad class of phenomena.
 
-Review the surprisal literature. Show that the evidence from reading studies and EEG is weak at best.
-Levy and Keller, Mante and MnNicenboim repl of DeLong stuff.
+\section{Comprehensive model comparisons of competing models of retrieval}
+
+Although \cite{NicenboimRetrieval2018}, \cite{VasishthChopinRyderNicenboimCogSci2017}, and \cite{LissonEtAl2020} have made some initial attempts to compare the predictions of the Lewis and Vasishth activation-based model and McElree's direct-access model against benchmark data, a broader investigation is needed. For example, \cite{MertzenEtAlAMLaP2019} has developed large-sample data from English, German, and Russian on proactive interference effects; such data can serve as useful test-sets for model comparisons.
+
+\section{The need for direct-replication studies}
+
+As we have discussed at length in the earlier part of this book, the evidence for similarity-based interference is largely based on underpowered experiments. Currently, there have not been many attempts at obtaining larger-sample estimates of the predicted effects. A very informative direction for future work would be to attempt to systematically conduct direct replications of the claimed effects, summarized for example in \cite{JaegerEngelmannVasishth2017}, preferably with data from languages other than only English.
+
+The absence of direct replications is not limited to interference designs. A second major line of work in psycholinguistics involves surprisal effects. Surprisal is the idea that rare continuations are hard to process \citep{Hale2001,Levy2008}. The proposal is intuitively very appealing and, if we assume a predictive parsing mechanism, is very likely to be the right way to characterize violations of expectations. However, as in the case of similarity-based interferencee, the evidence for surprisal may be quite shaky. Quite a few reading studies report evidence consistent  with surprisal \citep[e.g.,][]{lars00,konieczny2003anticipation,jemrsurprisal,VasishthLewis2006,DembergKeller2008,BostonHaleVasishth2011,LevyKeller2013,levyfedgibsonRussian,JagerChenLi2015,linzenuncertainty,WuKaiserVasishth2017}, but the one replication attempt (which involved seven experiments) that has been conducted so far has been a disappointing replication failure, even when sample size was increased to four times the original study's \citep{VasishthMertzenJaegerGelman2018}. It's possible that the published effects are based on small-sample studies. Furthermore, several a priori predictions of surprisal seem to not be fully borne out by the data from planned experiments \citep{HusainVasishthSrinivasan2014,levyfedgibsonRussian,SafaviEtAlFrontiers2016}. In the ERP literature, a large-scale multi-lab replication attempt of the well-known \cite{DeLongUrbachKutas2005} study on predictability effects has shown rather limited evidence for prediction \citep{nieuwland2017limits}. In recent work, \cite{NicenboimPreactivation2019} argue that the predictability effect in an experiment design such as \cite{DeLongUrbachKutas2005}  is likely to be very small, which implies that any published evidence for predictability with conventional sample sizes is likely to be Type M errors, i.e., based on overestimates of the  true effect. Properly powered direct replications would help to obtain more realistic and robust (i.e., replicable) estimates of the expected surprisal effect.
 
 
-\section{Where do observed distributions of sentence patterns come from?}
+\section{Understanding why certain sentence patterns occur more frequently}
 
 Common to the connectionist and probabilistic grammar based approaches is the idea that certain distributions of sentence patterns experienced by native speakers determine the constraints that apply on comprehension. This implies that there is some underlying cause that drives the preference to produce certain constructions over others(e.g., subject vs.\ object relatives). 
 \cite{dellchang14}  explain this point:
@@ -26,9 +40,9 @@ Common to the connectionist and probabilistic grammar based approaches is the id
 The processing system experiences distributions of linguistic elements, which it learns. But where do these distributions come from? As MacDonald [9] noted in her Production– Distribution – Comprehension proposal, they come from the production systems of other speakers. Processes intrinsic to prduction make some structures easier to say than others.
 \end{quote}
 
-However, there is not much discussion in the literature the nature of these ``processes intrinsic to production'' are; surely, these processes constitute the true underlying explanation. The distributional properties of constructions, which drive the predictions of connectionist and probabilistic grammar approaches, must be artefacts of these ``processes intrinsic to production''.  The processes could be syntactic or memory-based constraints on production.
+However, there is not much discussion in the literature the nature of these ``processes intrinsic to production'' are. Surely these processes constitute the true underlying explanation. The distributional properties of constructions, which drive the predictions of connectionist and probabilistic grammar approaches, must be artefacts of these ``processes intrinsic to production''.  The processes could be syntactic or memory-based constraints on production. Uncovering the underlying explanation(s) for observed distributional patterns will go a long  way in helping us understand the factors that determine sentence  comprehension  difficulty.
 
 Heavy-NP shift is a canonical example: in languages like  English, long NPs tend to be produced sentence-finally rather  than sentence-initially, but in  Japanese the pattern is the opposite \citep{yamashita2001long}. This preference to postpone long phrases to the end of a sentence (short-before-long in English), or to produce them first (long-before-short in Japanese) could either be an idiosyncratic property of languages with no further explanation, or it could be grounded in deeper causes relating to underyling syntactic constraints such as word-order.  \citep[B54][]{yamashita2001long} argue that the difference in long vs.\ short phrase placement in English vs.\ Japanese is driven by the relatively free word order in Japanese. Free word order allows Japanese to use word placement to mark saliency; by contrast, the relatively fixed word order of English does not allow this possibility.
 Thus, the underlying explanation lies with syntactic constraints that are intrinsic to the language in question.
 
-Another example is the illusion of grammaticality in  double center embeddings. As discussed in chapter \ref{c00}, English seems to show easier processing when a middle verb is missing vs.\ when it is present, but German shows the opposite pattern. This difference has been explained in terms of the head-final property of German: German native speakers reading German are better at maintaining predictions of an upcoming verb than English native speakers reading English, simply because German speakers are used to seeing verb-final constructions (in subordinate clauses) but English speakers are not. The underlying cause here is the inherent syntactic differences in these languages. If the explanation for the English/German difference lies in head-finality,  Hindi should pattern with German. Such cross-linguistic predictions need to be tested in order to better understand the underlying causes of the observed distributions of syntactic patterns. Understanding these  underlying causes will lead to a clearer picture of the true explanations that drive the predictions of connectionist and probabilistic models of language comprehension.
+Another example is the illusion of grammaticality in  double center embeddings. As discussed in chapter \ref{c00}, English seems to show easier processing when the middle verb is missing vs.\ when it is present, but German and Dutch shows the opposite pattern \citep{VasishthSuckowLewis2010,FrankTrompenaarsVasishth2015}. This difference has been explained in terms of the head-final property of German: German native speakers reading German are better at maintaining predictions of an upcoming verb than English native speakers reading English, simply because German speakers are used to seeing verb-final constructions (in subordinate clauses) but English speakers are not. The underlying cause here is the inherent syntactic differences in these languages. If the explanation for the English/German difference lies in head-finality,  Hindi should pattern with German, and preliminary evidence supports that prediction \citep{HusainBhatia2018}. Such cross-linguistic predictions need to be tested in order to better understand the underlying causes of the observed distributions of syntactic patterns. Understanding these  underlying causes will lead to a clearer picture of the true explanations that drive the predictions of connectionist and probabilistic models of language comprehension, and their connection (if any) to theory that invoke memory processes or purely linguistic constraints.
