@@ -1,7 +1,5 @@
 \chapter{The core ACT-R-based model of retrieval processes} \label{c02}
 
-% -*- root: ../phdthesis-FelixEngelmann.Rnw -*-
-
 Any comprehensive theory of sentence comprehension needs to explain the mechanisms behind the formation of dependencies between non-adjacent words such as a verb and its subject. This process necessarily involves storing and accessing information in working memory.
 There is a large body of evidence for a content-addressable memory architecture underlying human cognition in general \citep{WatkinsWatkins1975, AndersonLebiere1998,AndersonEtAl2004,Ratcliff1978} and sentence processing in particular \citep{McElree2000,McElreeForakerDyer2003, VanDykeLewis2003, LewisVasishth2005, VanDykeMcElree2011}. 
 
@@ -109,7 +107,7 @@ The parsing architecture has been further used to model important aspects of sen
 
 \subsection{A priori predictions of the model} \label{lv05predictions}
 
-Figures~\ref{fig:plotmatch} and \ref{fig:plotmismatch} show the range of predicted retrieval time (in milliseconds) for target match and mismatch conditions respectively, for a range of parameter values. 
+Figure~\ref{fig:plotmatch} shows the range of predicted retrieval time (in milliseconds) for target match and mismatch conditions respectively, for a range of parameter values. 
 
 <<predictions,echo=FALSE,include=FALSE>>=
 ## cue weight 1:
@@ -225,7 +223,7 @@ plot_mismatch+facet_wrap( ~ cueweighting, ncol=3)+
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=18cm,width=15cm]{figures/priorpredictions}
+\includegraphics[height=18cm,width=12cm]{figures/priorpredictions}
 \caption{Predicted reading times of the LV05 model for the target-match and mismatch configurations, where the noise parameter has value 0.2; the mismatch penalty parameter has value 0.15; retrieval threshold has value -1.5;  the LF parameter values come from a Normal distribution with mean 0.3 and standard deviation 0.1; and the maximum associative strength comes from a Normal distribution with mean 1.5 and standard deviation 0.25.}\label{fig:plotmatch}
 \end{figure}
 
@@ -287,10 +285,10 @@ In our example (Figure~\ref{fig:ACTRpred} and Example~\ref{ex:sturt03:exp2}), th
   % B_i = \text{ln}(\sum_{j=1}^n t_j^{-d}) + \beta_i \label{eq:bl}
 \end{equation}
 
-A decrease in activation causes the retrieval time \revFE{(also called \emph{retrieval latency})} \textit{RT}$_i$ to increase. As shown in Equation~\ref{eq:rt}, the \revFE{retrieval latency} of an item is a negative exponential function of its activation at the time of retrieval, where $F$ and $f$ are two scaling parameters --- the \emph{latency factor} and the \emph{latency exponent}, respectively.
+A decrease in activation causes the retrieval time \revFE{(also called \emph{retrieval latency})} \textit{RT}$_i$ to increase. As shown in Equation~\ref{eq:rtrep}, the \revFE{retrieval latency} of an item is a negative exponential function of its activation at the time of retrieval, where $F$ and $f$ are two scaling parameters --- the \emph{latency factor} and the \emph{latency exponent}, respectively.
 
 \begin{equation}
-  \textit{RT}_i = Fe^{-(f\times A_i)} \label{eq:rt}
+  \textit{RT}_i = Fe^{-(f\times A_i)} \label{eq:rtrep}
 \end{equation}
 
 Hence, the similarity in gender between target and distractor in target-match configurations shown in Figure~\ref{fig:ACTRpred} a vs.\ b predicts a slower retrieval latency due to the fan effect, \revFE{i.e., inhibitory interference}.
