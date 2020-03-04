@@ -292,7 +292,7 @@ attempt to implement their models. There are of course exceptions to
 this: some examples of implemented models are listed below.
 
 \begin{enumerate}
-\item Connectionist models: \cite{MacDonaldChristiansen2002,Frank2009,EngelmannVasishth2009,rabovsky2014simulating,linzen2018distinct}.
+\item Connectionist models: \cite{MacDonaldChristiansen2002,Frank2009,EngelmannVasishth2009,rabovsky2014simulating,dellchang14,linzen2018distinct}.
 \item Constraint-based models: \cite{McRaeSpiveyKnowltonTanenhaus1998}.
 \item Probabilistic parsing models: \cite{Hale2001,Levy2008,rasmussen2017left}.
 \item  Dynamical systems approaches \cite{vossekempen2000,taboretal04,cho2017incremental,SmithFranckTaborCogSci2018}.
