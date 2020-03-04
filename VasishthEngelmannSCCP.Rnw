@@ -185,11 +185,11 @@ source("R/stan_results.R")
 \mainmatter
 
 % introduction
-<<c01, child='c01sccp.Rnw'>>=
+<<c01, child='c01sccpindex.Rnw'>>=
 @
 
 % main phenomena of interest
-<<c02, child='c02sccp.Rnw'>>=
+<<c02, child='c02sccpindex.Rnw'>>=
 @
 
 % core model
