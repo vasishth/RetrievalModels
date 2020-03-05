@@ -7,6 +7,7 @@
 \documentclass{cambridge7A}
 % \documentclass[spanningrule]{../cambridge7A}% option
 
+\usepackage{pifont}
 \usepackage{natbib}
 % \usepackage[numbers]{natbib}% option
 \usepackage[figuresright]{rotating}
