@@ -250,7 +250,7 @@ process. These prediction-oriented theories represent a distinct class of
 account that has two characteristics: it has no need for any
 constraints imposed by working memory, and it only focuses on \index{forward-looking processes}
 ``forward-looking processes'', i.e., predictions about upcoming
-material. Extreme forms of prediction theories assume, implicitly or explicitly, no limit on the number of proposed continuations (i.e., massively parallel predictions); for discussion, see \citet{Boston2011}.
+material. Extreme forms of prediction theories assume, implicitly or explicitly, no limit on the number of proposed continuations (i.e., massively parallel predictions); for discussion, see \cite{BostonHaleVasishth2011}.
 Contrast this with the discussion about ambiguity resolution
 above, where the focus was on the constraints on accessing previously encountered material. For
 example, when an attachment site for a relative clause is searched for 
@@ -387,7 +387,7 @@ process models of human cognitive processes, and to investigate the
 quantitative predictions arising from these models. Prominent examples
 from classical artificial intelligence \index{artificial intelligence} research are the SOAR \citep{laird2012soar} and \index{SOAR} \index{ACT-R}
 ACT-R \citep{AndersonEtAl2004} architectures; in psychology, the E-Z \index{E-Z Reader}
-Reader \citep{Reichle2003,ReichleEtAl2009,ReichleWarrenMcConnell2009} \index{SWIFT}
+Reader \citep{Reichle2003,ReichleWarrenMcConnell2009} \index{SWIFT}
 and SWIFT \citep{EngbertNuthmannRichter2005,richteretal06,Rabe2019} \index{eye-movement control}
 models of eye-movement control stand out as examples of 
 comprehensive architectural frameworks of a particular cognitive
