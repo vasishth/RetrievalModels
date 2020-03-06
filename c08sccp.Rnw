@@ -11,7 +11,7 @@ Focusing only on sentence comprehension, several attempts have been made to ``da
 
 \section{Theories and models of sentence comprehension deficits} \label{alternativeexplanations}
 
-Theories of sentence processing deficits in aphasia have been traditionally categorized as either representational deficit accounts or processing deficit accounts [for an overview, see][] \citep{Caplan:2009}.
+Theories of sentence processing deficits in aphasia have been traditionally categorized as either representational deficit accounts or processing deficit accounts [for an overview, see][]\citep{Caplan:2009}.
 Representational or specific deficit accounts ascribe the impairment to disturbances in underlying syntactic representations, i.e., they assume that patients suffer from a breakdown in their knowledge of the grammar; in traditional linguistic terms, the deficit is in their competence as opposed to performance. 
 For example, the Trace Deletion Hypothesis \citep[TDH,][]{Grodzinsky:1995,Grodzinsky:2000,Grodzinsky:2006a} proposes that aphasic patients have lost the ability to represent traces of syntactic movement. Hence, for non-canonical structures such as passives, they have no information about the theta-role of a moved NP and they need to rely on a default cognitive strategy which assigns the AGENT theta-role to the first NP in a sentence. However, the patients' syntactic representation also contains another AGENT, the one assigned to the unmoved subject NP in base position, which forces them to simply guess which of the two NPs is assigned the role of AGENT in a reversible non-canonical sentence.
 Besides the TDH, other accounts exist that relate syntactic comprehension disorders to disruptions in constructing fully intact syntactic representations \citep[for example,][]{Beretta:1998,Hickok:1995,Mauner:1993}. These accounts ascribe patients' sentence comprehension deficits to a breakdown in syntactic chain formation. 
@@ -146,7 +146,7 @@ are also focused on these same events suggests a natural classification of theor
 \section{Modelling individual-level differences}
 
 In healthy adults, 
-sentence comprehension has long been argued to be influenced by individual differences; a commonly assumed source is differences in working memory capacity \citep{DanemanCarpenter1980,jc92}. 
+sentence comprehension has long been argued to be influenced by individual differences; a commonly assumed source is differences in working memory capacity \citep{DanemanCarpenter1980,JustCarpenter1992}. 
 Other factors such as age \citep{CaplanWaters2005} and cognitive control \citep{novick2005cognitive} have also been implicated.
 
 An important question that has not received much attention in the computational psycholinguistics literature is: what are sources of individual differences in healthy adults versus impaired populations, such as individuals with aphasia (IWA)? 
@@ -253,9 +253,8 @@ We used the data from 56 IWA and 46 matched controls published in \cite{CaplanEt
 
 Out of the 11 sentence types, we chose the subject/object relative clause contrast for the current simulation:
 subject relatives (\textit{The woman who hugged the girl washed the boy}) represent the arguments of the sentence (woman, girl) in canonical order, whereas in object relatives (\textit{The woman who the girl hugged washed the boy}), they occur in non-canonical order.
-We chose relative clauses for two reasons. First, relative clauses have been very well-studied in psycholinguistics and serve as a typical example where processing difficulty is (arguably) experienced due to deviations in canonical word ordering \citep{jc92}.
-Second, 
-the \cite{LewisVasishth2005} model already has productions defined for these constructions, so the relative clause data serve as a good test of the model as it currently stands.
+We chose relative clauses for two reasons. First, relative clauses have been very well-studied in psycholinguistics and serve as a typical example where processing difficulty is (arguably) experienced due to deviations in canonical word ordering \citep{JustCarpenter1992}.
+Second, the \cite{LewisVasishth2005} model already has productions defined for these constructions, so the relative clause data serve as a good test of the model as it currently stands.
 
 \subsubsection{Parameter estimation}
 
