@@ -1,0 +1,155 @@
+---
+title: "ABC for parameter estimation using inter-act code"
+author: "Garrett Smith and Shravan Vasishth"
+date: "6/25/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+## some helper functions:
+rmsd <- function (obs, pred) {
+	sqrt(mean((obs - pred)^2, na.rm = TRUE))
+}
+
+compute_int_means <- function(d){
+	int <- select(filter(d, Distractor=="Match"), -Condition, -Distractor)
+	dim(int)
+	int$int <- filter(d, Distractor=="Match")$latency - filter(d, Distractor=="Mismatch")$latency
+	#
+	# means <- group_by(int, Set, Target, lf, ans, mas, mp, rth, bll, lp, ldp, blc, dbl, ndistr) %>% summarise(Effect=mean(int), SE=sd(int)/sqrt(length(int))) %>% ungroup() %>% mutate(lower=Effect-SE, upper=Effect+SE)
+	# means
+	means <- group_by(int, Set, Target, lf, ans, mas, mp, rth, bll, psc, pic, qcf, qco, cuesim, tprom, dprom, lp, ldp, blc, dbl, ndistr, cueweighting) %>% summarise(Effect=mean(int), SE=sd(int)/sqrt(length(int)), Sji_neg=sum(Sji_neg)) %>% ungroup() %>% mutate(lower=Effect-SE, upper=Effect+SE)
+	means
+}
+
+convert2log <- function(x){
+	ifelse(x>=1, log(x), ifelse(x<=-1, -log(abs(x)), 0))
+}
+
+convert2log10 <- function(x){
+	x <- ifelse(x>-1 & x<1, 0, x)
+	x <- ifelse(x<=-1, -log10(abs(x)), x) 
+	x <- ifelse(x>=1, log10(abs(x)), x)
+}
+
+```
+
+# Introduction 
+
+
+## Load interact
+
+This code, written by Felix Engelmann, provides the main computation code for ACT-R calculations.
+
+```{r}
+source("interACT.R")
+```
+
+## Iterate through different values of latency factor lf and maximum associative strength mas
+
+```{r}
+## needs to be modified for ABC:
+## instead of a prespecified range of lf values,
+## we have to sample from a prior, 
+## e.g., lf ~ normal(mu,sigma)
+## and then do e.g. rejection sampling of the posterior 
+## distribution of lf
+iterate_lf <- function(values,iterations=1000){
+  ## values is the vector of lf values
+  ## iterations is the number of iterations for that given value
+  ## we need multiple iterations as noise is non-zero and there will be some 
+  ## variability due to noise
+  maxset <- 0
+  means <- NULL
+  for(v in values){
+    lf <<- v
+    pmatr <- create_param_matrix(model_4cond, iterations) 
+    results <- run(pmatr)
+    means2 <- compute_int_means(results)
+    means2$Set <- means2$Set+maxset
+    means <- bind_rows(means, means2)
+  }
+  means
+}
+
+## we set the parameters:
+reset_params()
+psc <<- 0
+qcf <<- 0
+cuesim <<- -1
+bll <<- 0.5
+## default in Engelmann et al 2019 Cog Sci paper
+mp <<- 0.15
+## default in Engelmann et al 2019 Cog Sci paper
+mas <<- 1.5 ## could change this to a random starting value: 
+            ## mas <- runif(1,min=1,max=2)
+#mas<<-sort(rnorm(50,mean=1.5,sd=0.25))
+# default in Engelmann et al 2019 Cog Sci paper
+ans <<- 0.2
+# default in Engelmann et al 2019 Cog Sci paper
+rth <<-  -1.5
+dbl <<- 0
+#cueweighting <<- seq(1,2,by=0.5)
+cueweighting <<- 1 ## must be estimated eventually
+
+latency_factor <<- runif(1,min = 0.1,max=0.5) ## just some random starting value between 0.1 and 0.5
+#latency_factor <<- seq(0.1,0.5,.1)
+#latency_factor <<- sort(abs(rnorm(100,mean=0.3,sd=0.1)))
+```
+
+Now generate one run with lf as the parameter to be estimated using ABC:
+
+```{r}
+## for Engelmann Vasishth book:
+# simulations using cuewt 1
+means <- iterate_lf(latency_factor)
+
+## grammatical: inhibitory interference effect
+means$Effect[1]
+
+## ungrammatical: facilitatory interference effect
+means$Effect[2]
+```
+
+## Toy example of ABC workflow
+
+```{r}
+## our data from one subject in one pair of conditions (difference in means):
+n<-10 
+fakedat<-rnorm(n,mean=50,sd=10)
+xbar<-mean(fakedat)
+se<-sd(fakedat)/sqrt(length(n))
+## set acceptable bounds of generated effect:
+lower <- xbar-se
+upper <- xbar+se
+
+
+## Rejection sampling:
+nsamp<-100
+lf_posterior<-rep(NA,nsamp)
+for(i in 1:nsamp){
+  ## generate *random* latency factor value each time? Not sure
+  latency_factor <<- runif(1,min = 0.1,max=0.5) 
+## get generated effect:   
+generated_effect<-iterate_lf(latency_factor)$Effect[1]
+  ## if generated effect is within bounds, accept
+if(generated_effect>=lower & generated_effect<=upper){
+  lf_posterior[i]<-latency_factor
+} else {
+  ## reject
+  lf_posterior[i]<- -1
+  } 
+}
+
+## very low acceptance rate:
+rejected<-which(lf_posterior==-1)
+length(lf_posterior[-rejected])/nsamp
+
+hist(lf_posterior[-rejected])
+
+```

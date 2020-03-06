@@ -1,0 +1,172 @@
+---
+title: "InterACT SR/OR data fitting"
+output:
+  html_document:
+    code_folding: show
+    df_print: kable
+    fig_caption: yes
+    highlight: tango
+    number_sections: yes
+    theme: paper
+    toc: yes
+    toc_float: yes
+---
+
+```{r, include=FALSE}
+library(knitr)
+opts_chunk$set(tidy=TRUE, warning=FALSE, message=FALSE)
+set.seed(4711)
+library(tidyverse)
+options(dplyr.width = Inf)
+```
+
+
+# Prepare model
+
+## Load interAct
+```{r }
+source("interACT.R")
+```
+
+## Define model
+> Interference model with 2 conditions: Target-match, distractor-match/mismatch
+
+```{r model}
+model_2cond <- list(
+	target_match = list(c(1,1), c(1,1)),  ## codes trtmt and baseline conditions
+	distractor_match = list(c(0,1), c(0,0)), ## trtmt 0,1 baseline 0,0
+	Target = c("Match","Match"),
+	Distractor = c("Match","Mismatch"),
+	weights = list(c(strWeight(),semWeight()))
+	)
+```
+
+## Set parameters
+```{r params}
+reset_params()
+lf        <<- 0.15    # latency factor
+rth 	    <<- -1.5    # retrieval threshold
+bll       <<- 0.5     # decay parameter
+ans       <<- 0.2     # activation noise
+mas       <<- 1.5       # maximum associative strength 
+mp        <<- 1       # mismatch penalty
+ga        <<- 0       # goal source activation
+blc       <<- 0       # target base-level activation
+lp        <<- 1       # target time since last presentation (msec)
+ldp       <<- 1       # last distractor presentation (msec)
+## Distractor control:
+ndistr    <<- 1				# number of distractors
+dbl       <<- 0       # distractor base-level
+```
+
+### Optional model extensions
+> Quality correction factor *qcf*: When $qcf > 0$, base-level influences match-quality (and thus the fan)  
+> Prominence scaling constant *psc*: When $psc > 0$, prominence influences base-level activation  
+
+```{r params1}
+psc <<- 1 
+qcf <<- 1
+cuesim <<- -1         # Cue-feature similarity [-1..0]
+dprom <<- 0  				  # Distractor prominence
+cueweighting <<- 1    # Strength of structural cue as ratio   
+```
+
+
+
+## Test run model with parameter range
+
+```{r parmrange1}
+lf <<- seq(0.1,0.4, by = .1)
+mas <<- c(1)
+ans <<- seq(0.2,0.7, by = .1)
+ga <<- c(0.2, 0.6, 1)
+```
+
+```{r run}
+sims <- create_param_matrix(model_2cond, iterations=2000)
+(n_sims <- nrow(sims))
+
+results <- run(sims)
+
+means <- results %>% group_by(Set, Condition) %>% summarise(Mean = mean(acc))
+summary(means$Mean)
+head(means)
+params <- select(sims, Set, lf:weights) %>% distinct()
+head(params)
+```
+
+
+
+# Fit data
+
+## Load data
+
+```{r loaddata}
+load("subjaccRC.Rda")
+head(subjaccRC)
+str(subjaccRC)
+```
+
+## Define a fitting function
+```{r fitfunction}
+dofit <- function(dat, model, n = 1000){
+	datdf <- data.frame(ID = dat[3], Condition = c(2,1), Data = as.numeric(dat[1:2]))
+	print(datdf)
+
+	# Run model
+	sims <- create_param_matrix(model, n)
+	results <- run(sims)
+
+	means <- results %>% group_by(Set, Condition) %>% summarise(Model = mean(acc))
+	means <- left_join(means, datdf)
+
+	# Numerical fit
+	means <- mutate(means, d=abs(Data-Model))
+	# Summarise numerical fit and correlation
+	fit <- means %>% group_by(Set) %>% 
+		summarise(
+			rmsd=mean(d, na.rm=TRUE), 
+			SE=sd(d)/sqrt(n()), 
+			R=cor(Model, Data)
+		)
+	fit$R[is.na(fit$R)] <- 1
+
+	# Select best fit
+	bestfit <- filter(fit, rmsd == min(rmsd))
+
+	# Return data
+	params <- select(sims, Set, lf:weights) %>% distinct()
+	bestmodel <- filter(means, Set%in%bestfit$Set) %>% left_join(bestfit) %>% left_join(params)
+	bestmodel <- bestmodel %>% gather(Dataset, Mean, Model, Data)
+	bestmodel
+}
+```
+
+## Fit data
+
+```{r paramsforfit}
+lf <<- seq(0.1,0.4, by = .1)
+mas <<- c(1)
+ans <<- seq(0.2,0.7, by = .1)
+ga <<- c(0.2, 0.6, 1)
+```
+
+```{r fit, results='hide'}
+subjaccRC <- as.data.frame(subjaccRC)
+subjaccRC$ID <- rownames(subjaccRC)
+
+res <- apply(subjaccRC, 1, dofit, model_2cond, 2000)
+```
+
+```{r fitres}
+allresults <- bind_rows(res)
+allresults <- allresults %>% mutate(Condition = ifelse(Condition==1, "SS","SO"))
+head(allresults)
+
+# ggplot(filter(allresults), aes(Condition, Mean, color=Dataset, group=Dataset)) +
+# 	geom_point() +
+# 	geom_line() +
+# 	facet_wrap(~ID)
+```
+
+

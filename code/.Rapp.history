@@ -1,0 +1,146 @@
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+source("interACT.R")
+iterate_lf <- function(values){#
+  maxset <- 0#
+  means <- NULL#
+  for(v in values){#
+    lf <<- v#
+    pmatr <- create_param_matrix(model_4cond, 1000) #
+    results <- run(pmatr)#
+    means2 <- compute_int_means(results)#
+    means2$Set <- means2$Set+maxset#
+    means <- bind_rows(means, means2)#
+  }#
+  means#
+}#
+#
+reset_params()#
+psc <<- 0#
+qcf <<- 0#
+cuesim <<- -1#
+bll <<- 0.5#
+#mp <<- seq(0,3,1)#
+#mp <<-  seq(0.15,.35,0.1)#
+mp <<- 0.15#
+#mas <<- seq(1,2,0.5)#
+#mas <<- 1.5#
+mas<<-sort(rnorm(100,mean=1.5,sd=0.25))#
+#hist(mas)#
+#ans <<- seq(0.1,0.3,.1)#
+ans <<- 0.2#
+##rth <<- seq(-2,-1,.5)#
+rth <<-  -1.5#
+# dbl <<- seq(-2,2,1)#
+dbl <<- 0#
+#cueweighting <<- seq(1,2,by=0.5)#
+cueweighting <<- 4#
+#
+#latency_factor <<- seq(0.1,0.5,.1)#
+latency_factor <<- sort(abs(rnorm(100,mean=0.3,sd=0.1)))#
+## compute predicted retrieval times for different parameter settings:#
+#means <- iterate_lf(seq(0,0.6,.01))#
+means <- iterate_lf(latency_factor)
+summary(means)
+cueweighting <<- 1
+cueweighting <<- 1
+means <- iterate_lf(latency_factor)
+mas <<- seq(1,2,0.5)
+mas <<- seq(1,2,0.5)
+latency_factor <<- seq(0.1,0.5,.1)
+cueweighting <<- 1
+means <- iterate_lf(latency_factor)
+lv05pspaceEVcuewt2 <- means
+lv05pspaceEVcuewt1 <- means
+save(lv05pspaceEVcuewt1, file="lv05pspaceEVcuewt1.Rd")
+cueweighting <<- 2
+means <- iterate_lf(latency_factor)
+lv05pspaceEVcuewt2 <- means
+save(lv05pspaceEVcuewt2, file="lv05pspaceEVcuewt2.Rd")
+cueweighting <<- 4
+means <- iterate_lf(latency_factor)
+lv05pspaceEVcuewt4 <- means
+save(lv05pspaceEVcuewt4, file="lv05pspaceEVcuewt4.Rd")
+?system
+system("copy lv05pspaceEVcuewt* ../data/")
+system("cp lv05pspaceEVcuewt* ../data/")
+dim(means)
+means
+mas
+latency_factor
+mas<<-sort(rnorm(100,mean=1.5,sd=0.25))
+iterate_lf <- function(values){#
+  maxset <- 0#
+  means <- NULL#
+  for(v in values){#
+    lf <<- v#
+    pmatr <- create_param_matrix(model_4cond, 1000) #
+    results <- run(pmatr)#
+    means2 <- compute_int_means(results)#
+    means2$Set <- means2$Set+maxset#
+    means <- bind_rows(means, means2)#
+  }#
+  means#
+}
+cueweighting <<- 1
+means <- iterate_lf(latency_factor)
+mas<<-sort(rnorm(50,mean=1.5,sd=0.25))
+mas<<-sort(rnorm(50,mean=1.5,sd=0.25))
+cueweighting <<- 1
+means <- iterate_lf(latency_factor)
+save(lv05pspaceEVcuewt1, file="lv05pspaceEVcuewt1.Rd")#
+#
+# simulations using cuewt 2#
+cueweighting <<- 2#
+means <- iterate_lf(latency_factor)#
+lv05pspaceEVcuewt2 <- means#
+save(lv05pspaceEVcuewt2, file="lv05pspaceEVcuewt2.Rd")#
+#
+# simulations using cuewt 4#
+cueweighting <<- 4#
+means <- iterate_lf(latency_factor)#
+lv05pspaceEVcuewt4 <- means#
+save(lv05pspaceEVcuewt4, file="lv05pspaceEVcuewt4.Rd")#
+system("cp lv05pspaceEVcuewt* ../data/")
+source("interACT.R")
+iterate_lf <- function(values){
+iterate_lf <- function(values){#
+  maxset <- 0#
+  means <- NULL#
+  for(v in values){#
+    lf <<- v#
+    pmatr <- create_param_matrix(model_4cond, 1000) #
+    results <- run(pmatr)#
+    means2 <- compute_int_means(results)#
+    means2$Set <- means2$Set+maxset#
+    means <- bind_rows(means, means2)#
+  }#
+  means#
+}#
+#
+reset_params()
+psc <<- 0#
+qcf <<- 0#
+cuesim <<- -1#
+bll <<- 0.5#
+#mp <<- seq(0,3,1)#
+#mp <<-  seq(0.15,.35,0.1)#
+mp <<- 0.15#
+#mas <<- seq(1,2,0.5)#
+#mas <<- 1.5#
+mas<<-sort(rnorm(50,mean=1.5,sd=0.25))#
+#hist(mas)#
+#ans <<- seq(0.1,0.3,.1)#
+ans <<- 0.2#
+##rth <<- seq(-2,-1,.5)#
+rth <<-  -1.5#
+# dbl <<- seq(-2,2,1)#
+dbl <<- 0#
+#cueweighting <<- seq(1,2,by=0.5)#
+#cueweighting <<- 4
+latency_factor <<- seq(0.1,0.5,.1)
+means <- iterate_lf(latency_factor)#
+lv05pspaceEVcuewt1 <- means#
+save(lv05pspaceEVcuewt1, file="lv05pspaceEVcuewt1.Rd")
+system("cp lv05pspaceEVcuewt* ../data/")
