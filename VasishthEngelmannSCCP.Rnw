@@ -194,18 +194,18 @@ source("R/stan_results.R")
 @
 
 % core model
-<<c03, child='c03sccp.Rnw'>>=
+<<c03, child='c03sccpindex.Rnw'>>=
 @
 
 % prominence
-<<c04, child='c04sccp.Rnw'>>=
+<<c04, child='c04sccpindex.Rnw'>>=
 @
 
 % emma
-\include{c05sccp}
+\include{c05sccpindex}
 
 % reanalysis, underspecification
-<<c06, child='c06sccp.Rnw'>>=
+<<c06, child='c06sccpindex.Rnw'>>=
 @
 
 % slternative approaches to modeling retrieval   
