@@ -1,0 +1,670 @@
+\chapter{The core ACT-R-based model of retrieval processes} \label{c02}
+
+Any comprehensive theory of sentence comprehension needs to explain the mechanisms behind the formation of dependencies between non-adjacent words such as a verb and its subject. This process necessarily involves storing and accessing information in working memory. \index{content-addressable memory}
+There is a large body of evidence for a content-addressable memory architecture underlying human cognition in general \citep{WatkinsWatkins1975, AndersonLebiere1998,AndersonEtAl2004,Ratcliff1978} and sentence processing in particular \citep{McElree2000,McElreeForakerDyer2003, VanDykeLewis2003, LewisVasishth2005, VanDykeMcElree2011}. 
+
+\index{cue-based retrieval}
+In a content-addressable memory, a cue-based retrieval mechanism can activate certain items in parallel on the basis of how well their properties, i.e., their \textit{features}, agree with a set of requirements, i.e. \textit{cues}, which are determined by the type of dependency.
+This stands in contrast to search mechanisms which assume that items in memory are checked based on their location in memory, e.g., their \index{serial order position} serial order position \citep{Sternberg1966,Sternberg1969,BerwickWeinberg1984} or their position in a syntactic tree \citep{Sturt2003}. 
+
+A cue-based model of sentence parsing has been described in 
+\cite{VanDykeLewis2003}, \cite{LewisVasishth2005}, \cite{LewisVasishthVanDyke2006}, and \cite{VasishthLewis2006}. 
+\cite{LewisVasishth2005} implemented the model in the cognitive architecture \index{Adaptive Control of Thought Rational} \emph{Adaptive Control of Thought Rational} \index{ACT-R} (ACT-R, \citealp{AndersonLebiere1998, AndersonEtAl2004}) with the objective of grounding the means of language processing in general cognitive mechanisms.
+The parser uses rapid associative memory retrievals to form inter-word dependencies, incrementally building a structural sentence representation. The success and latency of the retrieval process depends on the activation of syntactic representations, which is affected by time-based decay and interference from similar items. \index{time-based decay}
+
+\section{ACT-R}
+ACT-R is a \index{comprehensive theory} comprehensive, implemented theory which integrates processes of working memory access, rule-guided behavior, learning, sensual input, and motor control. 
+It is a constantly developing framework that incorporates  findings from experimental work in various areas of cognitive psychology. \index{long-term memory}
+ACT-R consists of a long-term memory of declarative and procedural knowledge and \index{short-term buffers} short-term buffers with limited capacity, representing a limited focus of attention \citep{McElree2006,Cowan2001,Miller1956}. 
+Procedural knowledge is realized in the form of a production system \citep{Newell1973,Newell1978} that consists of condition-action pairs that operate on short-term, or \emph{working} memory. \index{working memory}
+
+The contents of short-term memory buffers serve as conditions that trigger productions to fire. The result of a condition --- the manipulated buffer contents --- serve as condition for other productions. Hence, the  sequence of events is defined through condition-action specifications that operate by the serial firing of productions. 
+At the same time, associated items are related by a mechanism of spreading activation that affects an individual item's activation dependent on the presence of related items. Memory items, so-called \emph{chunks}, enter the buffers by being retrieved from declarative memory. 
+Memory items are accessed by a cue-based retrieval mechanism on the basis of their activation, which is subject to decay, reactivation, similarity-based interference, and noise.
+
+Next, the equations that underlie ACT-R content-addressable memory access will be explained in a --- sometimes simplified --- way as they are relevant for the model of sentence comprehension described in \cite{LewisVasishth2005}.
+
+In ACT-R, the probability and latency of retrieving a memory item
+%, called a \textit{chunk}, 
+is determined by its activation value. An item's activation fluctuates over time as the result of decay, reactivation, and noise. At the time of a retrieval request, a limited amount of activation spreads among all items in relation to their match with the retrieval specification, which is defined by a comparison of an item's \textit{features} with the retrieval \textit{cues}.
+
+An item's final activation value is the sum of four components: A base-level $B_i$, which includes decay and frequency of use, the spreading activation $S_i$, which includes similarity-based interference, a penalty component $P_i$ for mismatches with the retrieval specification, and a random noise component $\varepsilon$.
+ % The sum of these components yield the chunk activation at retrieval time: $A_i = B_i + S_i + P_i + \epsilon_i$.
+% \begin{equation}\label{eq:act}
+% 	A_i = B_i + S_i + P_i + \epsilon_i
+% \end{equation}
+The base-level activation $B_i$ is computed from a \textit{base-level constant} $\beta_i$ and the item's history of use:
+\begin{equation}\label{eq:base}
+	B_i = \log\left (\sum_{j=1}^n t_j^{-d}\right) + \beta_i
+\end{equation}
+where $n$ is the number of times the item was accessed in memory, $t_j$ is the time since the $j$th access, and $d$ is the \textit{decay parameter}. An item's activation decreases over time, with a decay parameter of $0.5$ by default, and receives a reactivation boost when it is accessed. 
+
+At the time of a retrieval request, activation is spread from each retrieval cue to all matching items. This activation, however, is limited for each cue and distributed among the items that share the requested feature, i.e., the \emph{competitors}. The number of items competing for activation from a certain cue is called the \textit{fan}. An item with a high fan will thus receive less spreading activation than one with no competitors, i.e., it is inhibited by similarity-based interference or the so-called \index{fan effect} \textit{fan effect}.\footnote{Note that the description of ACT-R for the present purpose is simplified to reflect the way that it was used in the model of \cite{LewisVasishth2005}. In default ACT-R, spreading activation is not a property of retrieval cues per se. Rather, any buffer's content can spread activation to related items. Usually, the chunks in the goal buffer are the sources of spreading activation and, hence, of the fan effect. In the \cite{LewisVasishth2005} parser, the retrieval cues are always mirrored in the goal buffer, such that the model behaves as if spreading activation is specific to retrieval cues.}
+The spreading activation component $S_i$ of item $i$ is summed over all cues $j \in J$ in the retrieval specification: 
+\begin{equation}\label{eq:spread}
+	S_i = \sum_j W_{j} S_{ji}
+\end{equation}
+where $W_{j}$ is the amount of activation from the cue $j$ and $S_{ji}$ is the strength of association between cue $j$ and item $i$. $S_{ji}$ is a function of the fan of item $i$ for cue $j$:%, which is the number of competitors that are similar with respect to cue $j$:
+\begin{equation}\label{eq:fan}
+	S_{ji} = S - \log(\textit{fan}_{ji})
+\end{equation}
+where $S$ is the \index{maximum associative strength} \textit{maximum associative strength} (MAS). The fan of item $i$ for cue $j$ is defined by the number of competing items in memory that match the feature associated with $j$: $\textit{fan}_{ji} = 1+\textit{items}_j$.\footnote{In fact, all \textit{slots} in all memory items containing the feature are counted. For simplicity, we assume here that a linguistically relevant item will have a certain feature in only one slot.}
+As a consequence, the spreading activation component $S_i$ increases the item's activation by Equation (\ref{eq:spread}) for each matching retrieval cue and reduces its activation by Equation (\ref{eq:fan}) for each distractor item that also (partially) matches the retrieval cues. Note that (\ref{eq:fan}) is the core equation of \index{similarity-based interference} similarity-based interference in ACT-R as it defines the influence of competitors on an item's activation at the time of retrieval.
+
+The final activation component assigns a penalty for mismatches. Some activation is subtracted for each retrieval cue $j$ that is not matched:
+\begin{equation}\label{eq:pm}
+	P_i = \sum_j PM_{ji}
+\end{equation}
+$P$ is the \index{mismatch penalty parameter} \textit{mismatch penalty parameter} (MP). $M_{ji}$ is the similarity between cue value $j$ and the value in the corresponding slot of item $i$. The similarity $M_{ji}$ is a value between $0$ (identity) and $-1$ (maximum difference).
+This way, the more dissimilar a feature value of an item is to the cue value, the more activation is subtracted for this item.
+If, for example, one defines some similarity between the color values \textit{red} and \textit{orange}, orange items would be less penalized than, e.g., blue items when cueing for a \actrcue{red}.
+
+The item that is finally retrieved in a particular trial is the one that happens to have the highest activation. The time to retrieve an item $i$ is a function of its activation $A_i$:
+\begin{equation}\label{eq:rt}
+	RT = Fe^{-(f\times A_i)}
+\end{equation}
+where $F$ is the \index{latency factor} \textit{latency factor} (LF) and $f$ the \textit{latency exponent}. 
+If no item has an activation above a certain threshold $\tau$, retrieval fails. The duration of a failed retrieval is calculated by the same equation (\ref{eq:rt}) with $A_i$ substituted with $\tau$.
+
+
+\section{The Lewis \& Vasishth (2005) model}
+The \index{computational model} computational model of parsing difficulty developed by \cite{LewisVasishth2005} adopts ACT-R's general principles, a limited focus of attention and cue-based retrieval of memory items subject to fluctuating activation as a function of decay and retrieval history and similarity-based retrieval interference. An essential property of \index{cue-based retrieval} cue-based retrieval in contrast to structural search is that serial order information is not used in the search mechanism \citep{McElree2006,Ratcliff1978}. \cite{LewisVasishth2005} argue that this serves the speed of \index{language processing} language processing where most dependencies can be established without serial order information, purely based on the items features and recency in terms of activation decay over time. The lack of immediate serial order information in incremental sentence processing  explains severe comprehension difficulty in cases where this information is needed, such as in double center-embeddings such as Example~(\ref{ex:centeremb}):
+
+\begin{exe}
+\ex \label{ex:centeremb}
+The book that the editor who the receptionist married admired ripped.
+\end{exe}  
+%
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/lv05-fig1-structure}
+	\caption{Figure~1 of \cite{LewisVasishth2005}. The figure shows the representation of chunks (maximal projections of phrases) that constitute a syntactic tree. The figure is coprighted by Wiley, and is reused with permission, license number 4782371233287.}
+	\label{fig:lv05chunks}
+\end{figure}
+
+The model of \cite{LewisVasishth2005} implements knowledge of parsing in the form of production rules that incrementally build a structural representation in the fashion of a left-corner parser following X-bar syntax rules \citep{Chomsky1986}. 
+Figure~\ref{fig:lv05chunks} from \cite{LewisVasishth2005} shows how sentence structure is represented in memory. Syntactic constituents are stored as single chunks being related to each other through feature slots for \emph{specifier}, \emph{complement}, and \emph{head}.
+New structure is built at a new input word and then attached into previously built structure by retrieving a syntactic object that matches certain search cues like gender, number, syntactic category, and also information as to whether the relevant constituent is embedded or contains a gap waiting to be filled. 
+%% TODO: example?
+%
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/lv05-fig2-buffers}
+	\caption{Figure~2 of \cite{LewisVasishth2005}. The figure shows the processing cycle of the parsing algorithm. The figure is copyrighted by Wiley, and is reused with permission, license number 4782380063983.}
+	\label{fig:lv05buffers}
+\end{figure}
+%
+The productions essentially operate on four buffers, each holding one chunk: A control buffer (the goal buffer), a lexical buffer holding the lexicon entry corresponding to the current word, a retrieval buffer holding the syntactic chunk retrieved from memory, and a buffer for creating new structure.
+%``These chunks also double as a representa- tion of the information in the control stack; a feature “next- goal” on each constituent chunk specifies the goal-category that should be pursued once the constituent is complete.''
+The goal buffer contains some syntactic expectation in the form of a syntactic category that is necessary in order to complete the currently pursued structure.
+Figure~\ref{fig:lv05buffers} from \cite{LewisVasishth2005} illustrates the cycle carried out at each input word: First, the corresponding lexical entry is accessed in the lexicon in declarative memory. Based on the lexical entry and on the current goal category, the cues for retrieving a matching constituent are specified and retrieval is initiated. Finally, a new syntactic node is created and attached to the one retrieved. Attention is then sent to the next word. The essential step is memory retrieval. Through ACT-R's independently motivated principles of cue-based working memory access, the simulations in \cite{LewisVasishth2005} provide quantitative predictions for effects of distance, structural interference, and embedding type in sentence comprehension.
+
+% TODO: ambiguity resolution
+
+% Using the model's predictions of parsing duration,  explained effects of distance and structural interference in sentence processing in terms of independently motivated principles of working memory access.  
+The \index{parsing architecture} parsing architecture has been further used to model important aspects of sentence comprehension such as anti-locality \citep{VasishthLewis2006}, intrusive interference in negative polarity constructions \citep{VasishthBruessowLewis2008}, interference effects in reflexive processing \citep{PatilVasishthLewis2012,ParkerPhillips2014,JaegerEngelmannVasishth2015} and subject-verb processing
+\citep{WagersLauPhillips2009,DillonMishlerSloggett2013}, and impaired sentence comprehension in aphasia \citep{PatilEtAl2016,MaetzigEtAltopics2018}.
+
+\subsection{A priori predictions of the model} \label{lv05predictions}
+
+Figure~\ref{fig:plotmatch} shows the range of predicted retrieval time (in milliseconds) for target match and mismatch conditions respectively, for a range of parameter values. 
+
+<<predictions,echo=FALSE,include=FALSE>>=
+## cue weight 1:
+load("data/lv05pspaceEVcuewt1.Rd")
+means1<-lv05pspaceEVcuewt1
+## cue weight 2:
+load("data/lv05pspaceEVcuewt2.Rd")
+means2<-lv05pspaceEVcuewt2
+## cue weight 4:
+load("data/lv05pspaceEVcuewt4.Rd")
+means4<-lv05pspaceEVcuewt4
+
+means<-rbind(means1,means2,means4)
+
+means$Target <- factor(means$Target, labels=c("Target-Match", 
+                                              "Target-Mismatch"))
+
+match<-subset(means,Target=='Target-Match')
+mismatch<-subset(means,Target=='Target-Mismatch')
+
+match_reduced<-match[,c(3,5,7,9,10,11,19)]
+#dim(match_reduced)
+#head(match_reduced)
+#summary(match_reduced)
+## plot only the predictions for the LF parameter range actually used in EJV2019 paper.
+
+match_reduced$ans<-factor(match_reduced$ans)
+#levels(match_reduced$ans)[levels(match_reduced$ans)==0.1]  <- "Noise: 0.1"
+#levels(match_reduced$ans)[levels(match_reduced$ans)==0.2]  <- "Noise: 0.2"
+#levels(match_reduced$ans)[levels(match_reduced$ans)==0.3]  <- "Noise: 0.3"
+
+match_reduced$mp<-factor(match_reduced$mp)
+#levels(match_reduced$mp)[levels(match_reduced$mp)=="0.15"]  <- "Mismatch penalty: 0.15"
+#levels(match_reduced$mp)[levels(match_reduced$mp)=="0.25"]  <- "Mismatch penalty: 0.25"
+#levels(match_reduced$mp)[levels(match_reduced$mp)=="0.35"]  <- "Mismatch penalty: 0.35"
+
+match_reduced$threshold<-factor(match_reduced$rth)
+#match_reduced$mas<-factor(match_reduced$mas)
+
+match_reduced$cueweighting<-factor(match_reduced$cueweighting)
+levels(match_reduced$cueweighting)[levels(match_reduced$cueweighting)=="1"]  <- "Cue-weights: 1:1"
+levels(match_reduced$cueweighting)[levels(match_reduced$cueweighting)=="2"]  <- "Cue-weights: 2:1"
+levels(match_reduced$cueweighting)[levels(match_reduced$cueweighting)=="4"]  <- "Cue-weights: 4:1"
+
+
+plot_match<-ggplot(match_reduced, aes(x=lf, 
+                                      y=Effect, 
+                         color = mas)) +
+  #scale_shape_manual(values=c(0,16,2))+
+  #scale_colour_manual(values=c("gray10","gray30","gray60"))+
+  #scale_colour_gradient(low="gray10", high="gray60",trans="reverse")+
+  geom_point(size=3,position=position_jitter(width=0.01, height=0.01))+
+  #facet_wrap( ~ factor(ans)+factor(mp), nrow=3)+
+    theme_bw()+xlab("latency factor")+ylab("Interference  effect  (ms)")+theme(axis.title.y = element_text(angle = 90))+ggtitle("Target match")+theme(
+    legend.position = c(.1, .95),
+    legend.justification = c("left", "top"),
+    legend.box.just = "left",
+    legend.margin = margin(6, 6, 6, 6)
+    )
+
+plot_match+facet_wrap( ~ cueweighting, ncol=3)+
+  theme(strip.text = element_text(face="bold", size=rel(1.5)),
+              strip.background = element_rect(fill="lightblue", colour="black",size=1))
+
+## mismatch data:
+mismatch_reduced<-mismatch[,c(3,5,7,9,10,11,19)]
+
+mismatch_reduced$ans<-factor(mismatch_reduced$ans)
+#levels(mismatch_reduced$ans)[levels(mismatch_reduced$ans)==0.1]  <- "Noise: 0.1"
+#levels(mismatch_reduced$ans)[levels(mismatch_reduced$ans)==0.2]  <- "Noise: 0.2"
+#levels(mismatch_reduced$ans)[levels(mismatch_reduced$ans)==0.3]  <- "Noise: 0.3"
+
+mismatch_reduced$mp<-factor(mismatch_reduced$mp)
+#levels(mismatch_reduced$mp)[levels(mismatch_reduced$mp)=="0.15"]  <- "Mismatch penalty: 0.15"
+#levels(mismatch_reduced$mp)[levels(mismatch_reduced$mp)=="0.25"]  <- "Mismatch penalty: 0.25"
+#levels(mismatch_reduced$mp)[levels(mismatch_reduced$mp)=="0.35"]  <- "Mismatch penalty: 0.35"
+
+mismatch_reduced$threshold<-factor(mismatch_reduced$rth)
+#mismatch_reduced$mas<-factor(mismatch_reduced$mas)
+
+mismatch_reduced$cueweighting<-factor(mismatch_reduced$cueweighting)
+levels(mismatch_reduced$cueweighting)[levels(mismatch_reduced$cueweighting)=="1"]  <- "Cue-weights: 1:1"
+levels(mismatch_reduced$cueweighting)[levels(mismatch_reduced$cueweighting)=="2"]  <- "Cue-weights: 2:1"
+levels(mismatch_reduced$cueweighting)[levels(mismatch_reduced$cueweighting)=="4"]  <- "Cue-weights: 4:1"
+
+plot_mismatch<-ggplot(mismatch_reduced, aes(x=lf, 
+                                      y=Effect, 
+                         #shape = mas, 
+                         color = mas)) +
+  #scale_shape_manual(values=c(0,16,2))+
+  #scale_colour_manual(values=c("gray10","gray30","gray60"))+
+  #scale_colour_gradient(low="gray10", high="gray60",trans="reverse")+
+  geom_point(size=3,position=position_jitter(width=0.01, height=0.01))+
+  #facet_wrap( ~ factor(ans)+factor(mp), nrow=3)+
+    theme_bw()+magnifytext(sze=20)+xlab("latency factor")+
+  ylab("Interference effect (ms)")+
+  theme(axis.title.y = element_text(angle = 90))+ggtitle("Target mismatch")+
+  theme(
+    legend.position = c(.95, .5),
+    legend.justification = c("right", "top"),
+    legend.box.just = "left",
+    legend.margin = margin(6, 6, 6, 6)
+    )
+
+plot_mismatch+facet_wrap( ~ cueweighting, ncol=3)+
+  theme(strip.text = element_text(face="bold", size=rel(1.5)),
+              strip.background = element_rect(fill="lightblue", colour="black",size=1))
+
+#multiplot(plot_match,plot_mismatch,cols=2)
+@
+
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=10cm]{figures/priorpredictions}
+\caption{Predicted reading times of the LV05 model for the target-match and mismatch configurations, where the noise parameter has value 0.2; the mismatch penalty parameter has value 0.15; retrieval threshold has value -1.5;  the LF parameter values come from a Normal distribution with mean 0.3 and standard deviation 0.1; and the maximum associative strength comes from a Normal distribution with mean 1.5 and standard deviation 0.25.}\label{fig:plotmatch}
+\end{figure}
+
+\subsection{Predictions of the Lewis \& Vasishth (2005) model for target-match and target-mismatch configurations} \label{core03predictions}
+
+\begin{figure}[!htbp]
+\includegraphics[width=\textwidth]{figures/tableLV05pred}
+    \caption{Spreading activation according to ACT-R/LV05 in the four conditions shown in Example~\ref{ex:c03sturt03:exp2}. Line weights indicate the amount of spreading activation from a cue to an item. Black oval boxes represent a feature match. Gray oval boxes indicate features matching an `overloaded' cue (\actrcue{MASC} in b), and white boxes indicate a mismatch. The figure is by Engelmann and Vasishth, 2019; available at http://dx.doi.org/10.6084/m9.figshare.9305456 under a CC-BY4.0 license.}\label{fig:c03ACTRpred}
+\end{figure}
+
+
+See Figure~\ref{fig:c03ACTRpred} for a graphical representation of the model predictions for Example~\ref{ex:c03sturt03:exp2}. The oval boxes indicate matching (black or gray) or mismatching (white) features of an item with respect to the retrieval cues. The darker the boxes, the better the match of the item and the higher its \index{activation level} \textbf{activation level}.
+
+\begin{exe}
+\ex\label{ex:c03sturt03:exp2}
+\begin{xlist}
+% \vspace{0.3cm}
+\item \textit{Target-match; distractor-mismatch}\\
+The surgeon\featuresetNP{+MASC}{+CCOM} who treated Jennifer\featuresetNP{-MASC}{-CCOM} had pricked himself\featureset{MASC}{CCOM}\dots
+\item \textit{Target-match; distractor-match}\\
+The surgeon\featuresetNP{+MASC}{+CCOM} who treated Jonathan\featuresetNP{+MASC}{-CCOM} had pricked himself\featureset{MASC}{CCOM}\dots
+\item \textit{Target-mismatch; distractor-mismatch}\\
+The surgeon\featuresetNP{-FEM}{+CCOM} who treated Jonathan\featuresetNP{-FEM}{-CCOM} had pricked herself\featureset{FEM}{CCOM}\dots
+\item \textit{Target-mismatch; distractor-match}\\
+The surgeon\featuresetNP{-FEM}{+CCOM} who treated Jennifer\featuresetNP{+FEM}{-CCOM} had pricked herself\featureset{FEM}{CCOM}\dots
+\end{xlist}
+\end{exe}
+
+
+The relative activation levels of memory items in ACT-R determine which item will be retrieved. All items available in memory enter into a race at the time of retrieval, such that the one which happens to have the highest activation is retrieved. Thus, only one ``winning'' item is ever retrieved in any one trial. The higher the activation of the ``winning'' item, the faster the retrieval time.  Each item $i$ has a \index{base-level activation} \textbf{base-level activation} $B_i$  that reflects past usage by accounting for all reactivation events ($t_j$ represents the time elapsed since the $j$-th activation) and a time-based decay with rate $d$ (this usually has the default value $0.5$ in ACT-R):
+
+\begin{eqnarray}
+  B_i = \text{ln}(\sum_{j=1}^n t_j^{-d}) + \beta_i \label{eq:bl}
+\end{eqnarray}
+
+\noindent
+In the above equation, $\beta_i$ is the resting-state activation for item $i$, and $n$ indexes the number of times that the item $i$ has been retrieved in the past.
+
+In addition to the base-level activation, \index{spreading activation} \textbf{spreading activation} is added to every (partially) matching item at the time of retrieval. The spreading activation component is the main source of similarity-based interference effects in ACT-R. 
+An item receives spreading activation from all matching cues $j$ depending on the \index{associative strength} \emph{associative strength} $S_{ji}$ between cue $j$ and item $i$ and the cue's weight $W_{j}$; see Equations~\ref{eq:spread} and \ref{eq:assoc}. $W_j$ is standardly set to \revFE{$1/\textit{number of cues}$}, meaning that all cues are weighted equally. We are adopting this standard assumption throughout this work.  The implications of cue-weighting are discussed in \citep{VasishthEtAlTiCS2019,JaegerMertzenVanDykeVasishth2019}. 
+
+\begin{equation}
+      S_i = \sum_j W_{j} S_{ji} \label{eq:spread}
+\end{equation}
+
+The arrows in Figure~\ref{fig:c03ACTRpred} show how activation from the retrieval cues is distributed to the target and the distractor based on their features. The thickness of the lines with arrows indicates the amount of spreading activation that is added to an item due to that feature.
+In Figure~\ref{fig:c03ACTRpred}a (cf.\ Example~\ref{ex:c03sturt03:exp2}a), the target is a full match for the set of retrieval cues, \actrcue{masc} and \actrcue{ccom}. Both cues are also \emph{unambiguous} because they are matched by the target only and not by the distractor. The target thus receives the maximal amount of spreading activation at retrieval. By contrast, 
+in the interference condition b in Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:c03sturt03:exp2}, the gender cue is matched by the distractor in addition to the target. Thus, the \actrcue{MASC} cue is now \emph{ambiguous}, or ``overloaded'' \citep{WatkinsWatkins1975}. This \textbf{cue overload} has the consequence that the activation from this cue is now split between the target and the distractor. 
+This follows from Equation \ref{eq:assoc}: The associative strength between a cue and an item is reduced in relation to the \emph{fan} --- the number of items associated with the cue (\textit{MAS} is the value of the \emph{maximum associative strength}).
+
+\begin{equation}
+  S_{ji} = \textit{MAS} - \text{ln}(\textit{fan}_{j}) \label{eq:assoc}%\\
+\end{equation}
+
+Each cue distributes the \emph{limited} available activation equally between all matching items (with the maximally available amount being $W_j\times\textit{MAS}$).
+The more competitor items are present that match a cue $j$, the weaker the association $S_{ji}$ of this cue with the item $i$. In other words, each competitor \revFE{reduces the spreading activation to the target by some amount and thus makes it harder to be distinguished} from the other items.
+This is called the \textbf{fan effect} \citep{anderson1974retrieval}. 
+In our example (Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:sturt03:exp2}), the fan effect causes a reduction of the spreading activation received by the target in b in comparison with a, thus reducing the target's total activation, which is the sum of the base-level $B_i$ and the spreading activation $S_i$ plus Gaussian noise $\epsilon_i$, where $\epsilon_i$ is sampled from a normal distribution with mean 0 and some standard deviation $\sigma$ (Equation~\ref{eq:act}). 
+
+\begin{equation}
+  A_i = B_i + S_i + \epsilon_i  \hbox{, where } \epsilon_i \sim Normal(0,\sigma)  \label{eq:act}
+\end{equation}
+
+A decrease in activation causes the retrieval time \revFE{(also called \index{retrieval latency} \emph{retrieval latency})} \textit{RT}$_i$ to increase. As shown in Equation~\ref{eq:rtrep}, the \revFE{retrieval latency} of an item is a negative exponential function of its activation at the time of retrieval, where $F$ and $f$ are two scaling parameters --- the \emph{latency factor} and the \emph{latency exponent}, respectively.
+
+\begin{equation}
+  \textit{RT}_i = Fe^{-(f\times A_i)} \label{eq:rtrep}
+\end{equation}
+
+Hence, the similarity in gender between target and distractor in target-match configurations shown in Figure~\ref{fig:ACTRpred} a vs.\ b predicts a slower retrieval latency due to the fan effect, \revFE{i.e., inhibitory interference}. \index{inhibitory interference}
+\revFE{
+At any retrieval event, only the item with the highest activation at that moment is retrieved, and only when its activation is equal or above the retrieval threshold $\tau$. Therefore, the processing time at the word where the retrieval is triggered is dependent only on the time it takes to retrieve the item that happens to have a higher activation, i.e., the winner.
+Due to the Gaussian noise component in Equation~\ref{eq:act}, activation fluctuates, such that there is always the possibility --- depending on the relative difference in activation between target and distractor --- of a \textbf{misretrieval}, i.e., that the distractor is erroneously retrieved instead of the target. 
+Therefore, because of the increased distractor activation in \ref{fig:c03ACTRpred}b, there is a higher probability for misretrievals in b compared to a.}\footnote{%
+In an alternative model of cue-based retrieval proposed by \cite{McElree2006}, the direct-access model, interference is only reflected in a decreased retrieval probability of the target but not in retrieval time. 
+  Effects observed in reading times are then explained as a by-product of changes in the retrieval probabilities. The idea here is that misretrievals may trigger a reanalysis process that inflates reading times \citep{McElree1993}. For an implementation and quantitative comparison of the direct-access model \citep{McElree2006} with the LV05 model, see \cite{NicenboimRetrieval2018}.}
+
+In target-mismatch configurations (c and d of Fig.~\ref{fig:c03ACTRpred} and Ex.~\ref{ex:c03sturt03:exp2}), the predictions for \index{retrieval latency} retrieval latencies are different from those in target-match configurations.
+In c and d, the target is only a partial match as it does not exhibit the correct gender feature \match{fem}. When the distractor matches the gender in d, there is, however, no reduction in the target's activation. The reason is that both cues \actrcue{fem} and \actrcue{ccom} are only matched by one item each and are thus not ambiguous. Hence, no fan effect and no inhibitory interference is predicted.
+However, since target and distractor now both receive the same amount of spreading activation --- each matches exactly one cue --- their activation levels are relatively close to each other. 
+Because activation fluctuates due to the random noise component in Equation~\ref{eq:act}, \revV{when two items receive the same amount of spreading activation from their match with the retrieval cues, the winning item at the time of retrieval is chosen randomly with a probability of around 0.5}.
+Since the winner is always the item with the highest activation --- i.e., the shortest retrieval latency --- at the time of retrieval, this fulfills the conditions of a \index{race process} \emph{race process}. As shown in Figure~\ref{fig:raceproc}, in a race process, when the finishing times of two items' retrieval times can be described by distributions that have similar means, the retrieval times of the winner (which can differ from trial to trial) will have a distribution that has a smaller mean than the means of the two items' retrieval time distributions. This is called \index{statistical facilitation} \textbf{statistical facilitation} \citep{raab1962division}. A race process therefore has the effect that, \textit{on average} over multiple trials, the retrieval latency is shorter when the two competing items have similar mean retrieval times than when there is a clear winner due to a bigger difference in retrieval latency as is the case in condition c \citep[e.g.,][]{LogacevVasishth2015}.
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=.9\textwidth]{figures/fig-raceproc1}
+\caption{An illustration of a race process involving two distributions that represent retrieval time distributions of two items. When the two distributions have similar means (Figure A), the distribution of the retrieval times of the winner (which may differ from trial to trial) will have a distribution with a mean that is lower than the mean of the two distributions involved in the race (statistical facilitation). When one distribution has a much smaller mean than the other distribution's mean (Figure B), the distribution of the winner's retrieval times will have the same mean as that of the distribution of the item with the smaller mean.}\label{fig:raceproc}
+\end{figure}
+
+
+Because of this statistical facilitation, the prediction for target-mismatch configurations in Figure \ref{fig:lv05plots}d vs. \ref{fig:lv05plots}c is a speed-up on average over multiple trials, i.e., facilitatory interference.
+
+
+
+
+\subsection{Comparison of the LV05 prediction space with the results of the meta-analysis}
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.8\textwidth]{figures/fig-lv05plots1} 
+\caption{Prediction space for the interference effect in ACT-R in target-match (circles, solid line) and target-mismatch configurations (triangles, broken line). Interference is plotted in terms of the difference in mean retrieval latencies between the interference (distractor-match) and the no-interference (distractor-mismatch) condition, and as a function of the latency factor $F$. Positive values indicate longer mean retrieval latencies in the interference condition (\emph{inhibitory interference}) due to cue-overload (fan effect) from a partially matching distractor; negative values indicate shorter mean retrieval latencies in the interference condition (\emph{facilitatory interference}) due to retrievals of the partially matching distractor on trials where the distractor is highly activated and hence fast. Each individual data point represents the mean interference effect of 6,000 iterations with one out of 10,980 different parameter settings (each in target-match and target-mismatch configurations; i.e., there are 21,960 data points plotted in total). Each parameter setting is a combination of the following parameter values: latency factor $\protect F \in \{0, 0.01, ..., 0.6\}$, noise parameter $\protect \textit{ANS} \in \{0.1, 0.2, 0.3\}$, maximum associative strength $\protect \textit{MAS} \in \{1,2,3,4\}$, mismatch penalty $\protect \textit{MP} \in \{0,1,2\}$, retrieval threshold $\protect \tau \in \{-2,-1.5,...,0\}$.}\label{fig:lv05plots}
+\end{figure}
+
+\subsubsection{Methods}
+\label{sec:generalmethods}
+All simulations reported here were run in \R{} \citep{R2016} using the ACT-R equations specified above or --- for the extended model --- specified in chapter~\ref{c02prominence}.All model parameters and their values --- if not specified otherwise --- are summarized in the appendix for chapter~\ref{c02prominence}. Simulations were run over a number of trials (and in some cases for a number of parameter values) such that results always represent means. Each iteration generated retrieval time predictions for the four conditions shown in Figure~\ref{fig:c03ACTRpred}, which were simulated by specifying the respective match between cues and target and distractor respectively as follows: 
+At retrieval, two memory items were available and two retrieval cues were specified. The first (structural) cue was matched by one memory item in all conditions, which distinguished this item as the target.\footnote{We acknowledge that the representation of the structural binding requirement as a single cue is a simplification. Theoretically, anaphor binding would require an item to be c-commanding and within the anaphor's binding domain. In some of the studies simulated here, the distractor mismatches both of the requirements and in some studies it mismatches only one of them. 
+	However, the number of overloaded cues that stay unchanged across conditions (i.e., match the same items in all conditions) does not affect the predictions because an interference effect arises in the model due to the difference in matched cues between conditions. In the case where the distractor mismatches two structural cues instead of one, the distractor would receive less spreading activation in all conditions. As a consequence, the predicted sizes of the effects would be smaller. Qualitatively, however, the results would not change.}
+The second cue was matched by the target in conditions a and b (target-match) and by the distractor in conditions b and d (distractor-match).
+The predicted interference effect was determined for target-match and target-mismatch configurations separately by subtracting the retrieval latency in the distractor-mismatch condition (no interference) from that of the distractor-match condition (interference).  
+
+
+\subsubsection{Results}
+Figure~\ref{fig:lv05plots} shows the range of possible predictions for the interference effect in target-match and target-mismatch configurations based on the four conditions shown in Figure~\ref{fig:c03ACTRpred}.
+The simulations covered the range of values for the most relevant ACT-R parameters (see figure caption), which were chosen such that the simulated parameter space included all values commonly used in ACT-R simulations.
+
+Values above zero indicate \index{inhibitory interference} \emph{inhibitory} interference (slow-down) and values below zero indicate \index{facilitatory interference} \emph{facilitatory} interference (speed-up). 
+Along the x-axis of Figure~\ref{fig:lv05plots}, increasing values of the latency factor $F$ are plotted, which is usually the most freely varied parameter in ACT-R models and simply scales the retrieval latency. 
+While there is variation in the mean interference effect along different parameter values, the figure clearly shows that the predictions of the LV05 model are restricted to \emph{inhibitory interference} in \emph{target-match} configurations (caused by the fan effect) and \emph{facilitatory interference} in \emph{target-mismatch} configurations (caused by the race process between target and distractor).\footnote{
+\revisedII{
+	Note that, in Figure~\ref{fig:lv05plots}, there are $334$ out of $10980$ simulated data points in target-mismatch configurations that show \textit{inhibitory} interference. These are associated with a specific parameter configuration, namely, with a high retrieval threshold ($0$) and a low maximum associative strength ($1$). These outcomes are therefore most likely related to retrieval failures. For this reason, and because the effects are small and make up only $3\%$ of target-mismatch data points, we do not consider inhibitory target-mismatch effects a systematic prediction of LV05.
+}
+}
+
+
+% TODO: Include cunnings and sturt
+
+
+How well do these predictions fare compared to the evidence published in the literature? It turns out that the answer is: not very well. 
+\revSV{
+A comprehensive systematic review and meta-analysis of reading studies on interference by \cite{JaegerEngelmannVasishth2017} provides a basis for comparing model predictions with available data. This meta-analysis took into account $77$ published experimental comparisons that investigated target-match and target-mismatch configurations for three dependency types.
+Table~\ref{tab:resultsMeta1} summarizes the quantitative results of the meta-analysis.
+
+
+\begin{table}[!htbp]
+\begin{center}
+{\small
+\begin{tabular}{lllccc}
+    \hline
+Dependency            & Target                        & Estimate ($\bar{b}$)                                                                                                      & LV05                     & +IP       & +MAC \\
+\hline
+% All                 & Interference                  & Match                                                                                                                     & \textit{no interference} & \xmark \\
+%                     &                               & Mismatch                                                                                                                  & \textit{no interference} & \xmark \\
+
+\multirow{2}{1.7cm}{Subject-verb
+\newline non-agreement}
+                      & Match                         & {\renewcommand{\ensuremath}{} % Sexpr creates an ensuremath object which tikz cant handle; therefore overright ensuremath
+\begin{tikzpicture}
+\draw (-1.8,0.5) -- (1.8,0.5);% x-axis (at y=0.5 to have space for error bars above and below; numbers will be scaled such that the x-axis represents -35 to +35ms => multiply each number with 1.8/xrangeA)
+\draw (0.1290244,0.34) -- (0.0790244,0.34) -- (0.0790244,0.66) -- (0.1290244,0.66);% credible interval left (x-axis is at y=0.5)
+\draw (1.192439,0.34) -- (1.242439,0.34) -- (1.242439,0.66) -- (\ensuremath{1.192439},0.66) ;%credible interval right
+\draw (0,0.39) -- (0,0.61)% vertical line at 0
+       ; %(0,0.5) node[below]{\footnotesize{$0$}};% label 0
+\filldraw (0.5795122,0.5) circle (0.06cm);% the mean
+\end{tikzpicture} }   & \cmark                        &                                                                                                                           & \\
+                      &                               &                                                                                                                           &                          &           & \\
+                      &                               &                                                                                                                           &                          &           & \\
+
+\multirow{2}{1.7cm}{Subject-verb
+\newline agreement}    
+                      & Match                         & {\renewcommand{\ensuremath}{} % Sexpr creates an ensuremath object which tikz cant handle; therefore overright ensuremath
+\begin{tikzpicture}
+\draw (-1.8,0.5) -- (1.8,0.5);% x-axis (at y=0.5 to have space for error bars above and below; numbers will be scaled such that the x-axis represents -35 to +35ms => multiply each number with 1.8/xrangeA)
+\draw (-0.6480488,0.34) -- (-0.6980488,0.34) -- (-0.6980488,0.66) -- (-0.6480488,0.66);% credible interval left (x-axis is at y=0.5)
+\draw (0.094878,0.34) -- (0.144878,0.34) -- (0.144878,0.66) -- (\ensuremath{0.094878},0.66) ;%credible interval right
+\draw (0,0.39) -- (0,0.61)% vertical line at 0
+       ; %(0,0.5) node[below]{\footnotesize{$0$}};% label 0
+\filldraw (-0.2853659,0.5) circle (0.06cm);% the mean
+\end{tikzpicture} }   & \xmark                        & \cmark                                                                                                                    & \\
+
+                      & Mismatch                      & {\renewcommand{\ensuremath}{} % Sexpr creates an ensuremath object which tikz cant handle; therefore overright ensuremath
+\begin{tikzpicture}
+\draw (-1.8,0.5) -- (1.8,0.5);% x-axis (at y=0.5 to have space for error bars above and below; numbers will be scaled such that the x-axis represents -35 to +35ms => multiply each number with 1.8/xrangeA)
+\draw (-1.5392683,0.34) -- (-1.5892683,0.34) -- (-1.5892683,0.66) -- (-1.5392683,0.66);% credible interval left (x-axis is at y=0.5)
+\draw (-0.427561,0.34) -- (-0.377561,0.34) -- (-0.377561,0.66) -- (\ensuremath{-0.427561},0.66) ;%credible interval right
+\draw (0,0.39) -- (0,0.61)% vertical line at 0
+       ; %(0,0.5) node[below]{\footnotesize{$0$}};% label 0
+\filldraw (-0.9614634,0.5) circle (0.06cm);% the mean
+\end{tikzpicture} }   & \cmark                        &                                                                                                                           & \\
+                      &                               &                                                                                                                           &                          &           & \\
+
+\multirow{2}{1.7cm}{Reflexives/
+\newline Reciprocals} & Match                         & {\renewcommand{\ensuremath}{} % Sexpr creates an ensuremath object which tikz cant handle; therefore overright ensuremath
+\begin{tikzpicture}
+\draw (-1.8,0.5) -- (1.8,0.5);% x-axis (at y=0.5 to have space for error bars above and below; numbers will be scaled such that the x-axis represents -35 to +35ms => multiply each number with 1.8/xrangeA)
+\draw (-0.2221951,0.34) -- (-0.2721951,0.34) -- (-0.2721951,0.66) -- (-0.2221951,0.66);% credible interval left (x-axis is at y=0.5)
+\draw (0.2134146,0.34) -- (0.2634146,0.34) -- (0.2634146,0.66) -- (\ensuremath{0.2134146},0.66) ;%credible interval right
+\draw (0,0.39) -- (0,0.61)% vertical line at 0
+       ; %(0,0.5) node[below]{\footnotesize{$0$}};% label 0
+\filldraw (0.0043902,0.5) circle (0.06cm);% the mean
+\end{tikzpicture} }   & \xmark                        & \cmark                                                                                                                    & \\
+                      & Mismatch                      & {\renewcommand{\ensuremath}{} % Sexpr creates an ensuremath object which tikz cant handle; therefore overright ensuremath
+\begin{tikzpicture}
+\draw (-1.8,0.5) -- (1.8,0.5);% x-axis (at y=0.5 to have space for error bars above and below; numbers will be scaled such that the x-axis represents -35 to +35ms => multiply each number with 1.8/xrangeA)
+\draw (0.0017073,0.34) -- (-0.0482927,0.34) -- (-0.0482927,0.66) -- (0.0017073,0.66);% credible interval left (x-axis is at y=0.5)
+\draw (0.9114634,0.34) -- (0.9614634,0.34) -- (0.9614634,0.66) -- (\ensuremath{0.9114634},0.66) ;%credible interval right
+\draw (0,0.39) -- (0,0.61)% vertical line at 0
+       ; %(0,0.5) node[below]{\footnotesize{$0$}};% label 0
+\filldraw (0.4697561,0.5) circle (0.06cm);% the mean
+\end{tikzpicture} }   & \xmark                        &                                                                                                                           & \cmark \\
+                      &                               &                                                                                                                           &                          &           & \\
+% SCALE
+&                     & {\renewcommand{\ensuremath}{}
+\begin{tikzpicture}
+\draw [thick] (-1.8,0.5) -- (1.8,0.5);% x-axis (at y=0.5 to have space for error bars above and below; numbers will be scaled such that the x-axis represents -35 to +35ms => multiply each number with 1.8/35)
+\draw (-0.8780488,0.39) -- (-0.8780488,0.61);% vertical line at -20
+\draw (0,0.39) -- (0,0.61);% vertical line at 0
+\draw (0.8780488,0.39) -- (0.8780488,0.61); % vertical line at +20
+\node[label={\footnotesize 0}] (0) at (0,-.15) {}; % label at 0
+\node[label={\footnotesize 20}] (20) at (0.8780488,-.15) {}; % label +20
+\node[label={\footnotesize -20}] (-20) at (-0.8780488,-.15) {}; % label -20
+\node[label={\footnotesize ms}] (0) at (1.7,-.15) {};       
+\end{tikzpicture} }   &                               &   & \\
+\hline
+\end{tabular}
+}
+\end{center}
+\caption{Results of the J\"ager et al.\ (2017)  meta-analysis showing mean effect estimates $\bar{b}$
+with Bayesian 95\% credible intervals in the Estimates column. The range specified by a 95\% credible interval contains the true value of the estimated parameter with 95\% certainty, given the model and the data. A positive interference effect means inhibition, a negative one facilitation. Results are compared with the predictions of cue-based retrieval as implemented in the LV05 ACT-R model,  and the additional contributions of the extensions \emph{item prominence} (IP) and \emph{multi-associative cues} (MAC), which are discussed in chapter~\ref{c02prominence}.}\label{tab:resultsMeta1}
+\end{table}%
+
+
+The table shows the mean effect estimates   
+and 95\% credible intervals, which mark the uncertainty of the estimates.\footnote{
+	95\% credible intervals are computed within the Bayesian data analysis framework \citep{Gelman14}. The range specified by a 95\% credible interval contains the range of plausible values of the estimated parameter with 95\% certainty, given the model and the data.
+}} 
+
+In \cite{JaegerEngelmannVasishth2017}, subject-verb dependencies were divided into \textit{agreement} dependencies \citep[e.g.,][]{WagersLauPhillips2009,Pearlmutter1999} and \textit{non-agreement} dependencies \citep[e.g.,][]{VanDyke2007,VanDykeMcElree2011}, because these constitute two distinct lines of research and usually show different patterns. While agreement studies have focused on effects of number attraction, non-agreement studies investigated interference effects involving other semantic and syntactic cues.
+Reflexive-antecedent and reciprocal-antecedent dependencies were treated as one category in the meta-analysis because both follow a similar syntactic constraint and the data of only two publications on reciprocals were available when the \cite{JaegerEngelmannVasishth2017} article was published.
+
+Clearly, the model cannot account for all the findings of the meta-analysis shown in Table~\ref{tab:resultsMeta1}. 
+In \emph{target-match} configurations, the predicted inhibitory effect was found only for non-agreement subject-verb dependencies. The other dependency types did not provide enough evidence for any effect in target-match configurations; however, these cases may not necessarily be problematic for the model because of the generally low power of the published studies  \citep[see][for discussion]{NicenboimEtAlCogSci2018,JaegerEngelmannVasishth2017,VasishthMertzenJaegerGelman2018,JaegerMertzenVanDykeVasishth2019}. 
+Most problematic for the model predictions in target-match configurations are individual studies that found a facilitatory effect. 
+For \emph{target-mismatch} configurations, the prediction of a facilitatory effect is only supported by subject-verb agreement studies; reflexive-/reciprocal-antecedent dependencies show inhibition. For non-agreement subject-verb dependencies, no target-mismatch data were available at the time of the meta-analysis. However, two recent studies show evidence for the predicted facilitatory effect in target-mismatch configurations in reflexives \citep{parker2017reflexive} and in non-agreement subject-verb dependencies \citep{CunningsSturt2018}. \revised{Furthermore, we have recently established in a relatively large-sample (181 participants) eyetracking experiment \citep{JaegerMertzenVanDykeVasishth2019} that in total fixation time, target-mismatch configurations in English reflexives show facilitation effects, as predicted by the ACT-R model. Compare this to one of the studies in the meta-analysis  \citep{DillonMishlerSloggett2013}, which had a relatively small sample size (40 participants) and found no evidence for facilitatory interference in the target-mismatch reflexive construction.}
+
+As discussed in \cite{JaegerEngelmannVasishth2017}, one important observation here is that in both \index{target-match configuration} \index{target-mismatch configurations}
+target-match and target-mismatch configurations, the individual results of different studies show a considerable range of variability, ranging from facilitatory to inhibitory interference.
+Later, in chapter~\ref{c02prominence}, we will explore to what extent an extension of LV05 with independently motivated assumptions can explain the observed variability.
+We will do this in two parts: We first look at the principal consequences of taking into account \index{item prominence} item prominence, i.e., the strength of the distractor's representation in memory relative to the target's, and then explore possible cases and consequences of multi-associative cues. In both sections, we compare empirical evidence with the prediction space of the revised model that we present. By accounting for item prominence and cue associations on the level of individual studies, the revised model is able to explain some of the facilitatory effects in subject-verb agreement target-match configurations and inhibitory effects in reflexive/reciprocal dependency target-mismatch configurations (as indicated in columns six and seven in Table~\ref{tab:resultsMeta1}). The apparent absence of a clear effect in the results of the meta-analysis for reflexive/reciprocal dependency target-match configurations can be explained by a mixture of inhibitory and facilitatory effects predicted by the revised model in a principled way as a result of different levels of distractor prominence in individual studies.
+We then spell out how our revisions to the model are implemented and, finally, present quantitative simulations of the individual studies included in the \cite{JaegerEngelmannVasishth2017} meta-analysis, comparing the estimates from the empirical data with the results of both LV05 and the revised model.
+%%END of paper extract
+
+%% start of new modeling post 2019
+
+\newpage
+
+\section{Parameter estimation given data}
+
+In this section, we illustrate how model predictions can be derived by learning from data, using a parameter estimation approach called \index{Approximate Bayesian Computation} Approximate Bayesian Computation or ABC. The ABC approach is useful when the model cannot easily be  expressed as a likelihood. In the discussion below, we illustrate how ABC can be used in future work to evaluate model predictions, for predicting both average effects and individual-level effects.
+
+The section below reuses material from \cite{VasishthMethodsX2019}, which is copyrighted by Elsevier and published under a Creative Commons CC-BY license.
+
+\subsection{Bayesian parameter estimation}
+
+In the \index{Bayesian parameter estimation} Bayesian parameter estimation framework, given a vector of data $y$ and a vector of model parameters $\theta$ that have prior distributions $p(\theta)$ defined on them, a likelihood function for the data $p(y\mid \theta)$ and the priors allow us to compute the posterior distribution of the parameters given the data,  $p(\theta\mid y)$. This is possible because of Bayes' rule, which states that the posterior is proportional to the likelihood times the prior:
+
+\begin{equation}
+p(\theta\mid y ) \propto p(y\mid \theta)p(\theta)
+\end{equation}
+
+The posterior distributions of parameters are generally computed using Monte Carlo Markov Chain methods. Examples are Gibbs sampling, Metropolis-Hastings, and (more recently) Hamiltonian Monte Carlo \citep{lunn2012bugs,Gelman14}.
+
+The likelihood and the priors together constitute the model, which we will call $\mathcal{M}$ hereafter. Given a particular model  $\mathcal{M}$, one important question we usually have is: what predictions does the model make? The model makes two kinds of predictions: a priori predictions, before any data have been taken into account; and a posteriori predictions, after the data have been taken into account.  The distributions of these two kinds of predictions are called \index{prior predictive distributions} \textit{prior predictive distributions}, and \index{posterior predictive distributions} \textit{posterior predictive distributions}, respectively. 
+
+The prior predictive distribution can be computed by drawing random samples of the parameters $\tilde{\theta}$ from $p(\theta)$, and then using these values to simulate data $\tilde{y}$ from the likelihood $p(y\mid \tilde{\theta})$. 
+
+The posterior predictive distribution $p(y_{pred}\mid y)$ can be computed once we have the posterior distribution of the parameters, $p(\theta \mid y)$. Here, we assume that past and future observations are conditionally independent given $\theta$.
+
+\begin{equation}
+p(y_{pred}\mid y) = \int p(y_{pred} \mid \theta) p(\theta \mid y)\, d\theta
+\end{equation}
+
+An important point to note here is that we are conditioning $y_{pred}$ only on $y$. We do not condition on the unknown parameters $\theta$; we simply integrate these unknown parameters out. This allows us to take the uncertainty of the posterior distributions of the parameters into account, giving us more realistic estimates of the predictions from the model. Contrast this with a situation where we condition on, e.g.,  maximum likelihood estimates of the parameters; that is,  we condition on a point value, not taking the uncertainty of that estimate into account.
+
+\subsection{Approximate Bayesian Computation}
+
+Approximate Bayesian Computation (ABC) \citep{SissonABC} is a method for estimating posterior distributions of parameters in a model. ABC is useful when Bayes' rule cannot be employed to draw samples from the posterior distributions; this situation arises when the generative model cannot be easily expressed as a likelihood function. For extensive treatments of the theory and practical aspects of ABC, see \cite{SissonABC,palestro2018likelihood}.  The algorithm used here is rejection sampling; see Listing~\ref{alg:abcrejection} for pseudo-code describing the algorithm.
+
+
+\subsubsection{Step 1: Define a prior for the parameter}
+
+We begin by defining a prior distribution on the latency factor in the cue-based retrieval model. Several priors can be considered here: a Uniform prior or a Beta prior are examples. For illustration, we use the Beta(2,6) prior. As shown in Figure~\ref{fig:betaprior}, this is a relatively uninformative prior which downweights very small and very large values of the latency factor parameter.
+
+\begin{figure}[!htbp]
+\centering
+<<betaprior,echo=FALSE,eval=TRUE,fig.height=5>>=
+library(ggplot2)
+x_temp<-rbeta(1000000,2,6)
+latency_factor_prior<-data.frame(x_temp=x_temp)
+prior_lf<-ggplot(latency_factor_prior,aes(x=x_temp))+geom_histogram(aes(y=..density..),position="identity",fill="gray",binwidth=0.01)+theme_bw()+theme(strip.text.x = element_text(size = 16, colour = "black", angle = 0))+
+  xlab("latency factor")+
+  ggtitle("Prior on latency factor")+theme_bw()+
+  magnifytext(sze=12)
+prior_lf
+@
+\caption{A Beta(2,6) prior on the latency factor.}\label{fig:betaprior}
+\end{figure}
+
+
+\subsubsection{The estimates from data for ungrammatical conditions}
+
+In the ungrammatical conditions of the \cite{DillonMishlerSloggett2013} data, the estimate of the interference effect in agreement conditions is -60 ms, Credible interval (CrI) [-112, -5] ms. Taking a normal approximation, this implies an effect coming from the distribution $Normal(-60,33^2)$.
+Similarly, the estimate of the interference effect in reflexive conditions is -18 ms, CrI [-72, 36] ms, which corresponds approximately to the $Normal(-18,27^2)$.
+
+\begin{algorithm}[H]
+\SetAlgoLined
+%\KwResult{Write here the result }
+\KwIn{Tolerance bounds $lower$ and $upper$ from data}
+\Begin{\For{$i$ in 1:N\_Simulations}{
+  Take one sample from prior $\pi(\theta)$\;
+  Generate predicted mean effect $\tilde{\bar{y}} \sim Model(\theta)$\;
+  \If{$lower \leq \tilde{\bar{y}} \leq upper$}{
+  $\hbox{Save } \theta \hbox{ value as sample from posterior}$\;
+  }
+  \Else{Discard $\theta$ sample\;
+  }
+}
+}
+\caption{ABC using rejection sampling. Shown is the case where we need to sample posterior values for a single parameter $\theta$. Each iteration of the  algorithm consists of drawing a single random sample from a prior distribution for the parameter (here, $Beta(2,6)$), and then generating the predicted mean effect from the model using that sampled parameter value. If the predicted mean effect is near the observed data (in our implementation, if the predicted effect lies within one standard error of the mean effect of interest), then accept the sampled parameter value; otherwise reject that sampled value. This process is repeated until we have sufficient samples from the posterior distribution of the parameter. These samples therefore constitute the posterior distribution of the parameter.} \label{alg:abcrejection}
+\end{algorithm}
+
+We can use these normal approximations to define a lower and upper bound for the ABC algorithm: one standard deviation about the observed mean. The acceptance criterion of the ABC algorithm is that the predicted value generated by the model lies within one standard deviation of the sample mean from the data.
+
+<<dillonestimates,echo=FALSE>>=
+## our data from one subject in one pair of conditions (difference in means):
+xbar_au_d13<- -60
+## 1 SD above and below mean
+lower_au_d13 <- -93
+upper_au_d13 <- -27
+
+xbar_ru_d13<- -18
+## 1 SD above and below mean
+lower_ru_d13 <- -45
+upper_ru_d13 <- 9
+@
+
+In the \cite{JaegerMertzenVanDykeVasishth2019} data, 
+the estimate of the interference effect in agreement conditions is -22 [-46, 3], which can be approximated by the following normal distribution: $Normal(-22,13^2)$. The estimate in reflexive conditions is -23 [-48, 2], which can be approximated as  $Normal(-23,13^2)$.
+  
+<<dillonerepstimates,echo=FALSE>>=
+## our data from one subject in one pair of conditions (difference in means):
+xbar_au_d13rep<- -22
+## 1 SD above and below mean
+lower_au_d13rep <- -35
+upper_au_d13rep <- -9
+
+xbar_ru_d13rep<- -23
+## 1 SD above and below mean
+lower_ru_d13rep <- -36
+upper_ru_d13rep <- -10
+@
+
+\subsubsection{Step 2: Compute posterior distributions of the latency factor using ABC rejection sampling}
+
+Figure~\ref{fig:lfvalues} shows the posterior distributions of the latency factor parameter for ungrammatical agreement and reflexive conditions in \cite{DillonMishlerSloggett2013} and \cite{JaegerMertzenVanDykeVasishth2019}. The estimates for the \cite{DillonMishlerSloggett2013} data-set have wider uncertainty than those for \cite{JaegerMertzenVanDykeVasishth2019} because the uncertainty of the facilitatory interference effects in the data is relatively large.
+
+<<loaddata,echo=FALSE>>=
+load("models/au_lf_D13.Rda")
+au_lf_D13<-lf_posterior[-which(lf_posterior==-1)]
+load("models/ru_lf_D13.Rda")
+ru_lf_D13<-lf_posterior[-which(lf_posterior==-1)]
+load("models/au_lf_D13rep.Rda")
+au_lf_D13rep<-lf_posterior[-which(lf_posterior==-1)]
+load("models/ru_lf_D13rep.Rda")
+ru_lf_D13rep<-lf_posterior[-which(lf_posterior==-1)]
+
+condition<-c(rep("agreement",length(au_lf_D13)),
+rep("reflexive",length(ru_lf_D13)),
+rep("agreement",length(au_lf_D13rep)),
+rep("reflexive",length(ru_lf_D13rep)))
+
+expt<-c(rep("Dillon et al, 2013",length(au_lf_D13)),
+rep("Dillon et al, 2013",length(ru_lf_D13)),
+rep("Jäger et al, 2019",length(au_lf_D13rep)),
+rep("Jäger et al, 2019",length(ru_lf_D13rep)))
+
+lf<-c(au_lf_D13,ru_lf_D13,au_lf_D13rep,ru_lf_D13rep)
+
+lf_data<-data.frame(expt=expt,condition=condition,lf=lf)
+
+#round(with(lf_data,tapply(lf,IND=list(expt,condition),mean)),4)
+@
+
+\begin{figure}[!htbp]
+\centering
+<<plotlf,echo=FALSE,fig.width=7,fig.height=5>>=
+ggplot(lf_data,aes(x=lf,y=..density..)) +
+  xlab("latency factor")+
+  geom_histogram(position="identity",binwidth=0.025,fill="gray")+
+  geom_density()+
+  facet_grid(.~expt+condition)+theme_bw()+magnifytext()
+@
+\caption{The posterior distributions of the latency factor parameters for agreement and reflexive conditions using the original Dillon et al., 2013 data (40 participants, 48 items) and our own Jäger et al., 2019 replication data (181 participants, 48 items).}\label{fig:lfvalues}
+\end{figure}
+
+\subsubsection{Step 3: Generate posterior predicted data}
+
+Having estimated the posterior distributions of the latency factor for the two data-sets in the two conditions (agreement and reflexives), we can now  generate posterior predicted data from the model. We use the posterior distributions of the latency factor to generate the posterior predictive distribution of the interference effect in these experimental conditions.
+These posterior predictive distributions are shown in Figure~\ref{fig:ppmeansvalues}. 
+
+\begin{figure}[!htbp]
+\centering
+<<plotppdistrns,echo=FALSE,fig.width=7,fig.height=5>>=
+load("models/au_predicted_meansD13.Rda")
+load("models/ru_predicted_meansD13.Rda")
+load("models/au_predicted_meansD13rep.Rda")
+load("models/ru_predicted_meansD13rep.Rda")
+
+ppmeans<-c(au_predicted_means,ru_predicted_means,au_predicted_means_rep,ru_predicted_means_rep)
+
+
+condition<-c(rep("agreement",length(au_predicted_means)),
+             rep("reflexive",length(ru_predicted_means)),
+             rep("agreement",length(au_predicted_means_rep)),
+             rep("reflexive",length(ru_predicted_means_rep)))
+
+expt <- c(rep("Dillon et al., 2013",length(au_predicted_means)),
+          rep("Dillon et al., 2013",length(ru_predicted_means)),
+          rep("Jäger et al, 2019",length(au_predicted_means_rep)),
+          rep("Jäger et al, 2019",length(ru_predicted_means_rep))
+          )
+
+
+ppmeans_df<-data.frame(expt,condition,ppmeans)
+
+ggplot(ppmeans_df,aes(x=ppmeans,y=..density..)) +
+  xlab("Predicted facilitatory interference effect (ms)")+
+  geom_histogram(position="identity",binwidth=10,fill="gray")+
+  geom_density()+
+  facet_grid(.~expt+condition)+theme_bw()+magnifytext()
+@
+\caption{The posterior predictive distributions of the facilitatory interference in ungrammatical agreement and reflexive conditions, derived using the posterior distributions of the latency factor parameter.}\label{fig:ppmeansvalues}
+\end{figure}
+
+The ABC method can be generalized using other, more efficent sampling approaches (e.g., Metropolis-Hastings) to sample the posterior from more than one parameter. The method can be computationally expensive but the advantages afforded by taking parameter uncertainty into account in the predictions is very valuable.
+
+In future work, we plan to use ABC for more extensive modelling of individual-level differences.
+
+\section{Concluding remarks}
+
+The source code for the model spelt out here is available in several different forms from the following website: https://vasishth.github.io/RetrievalModels/. Once the parameters are constrained to either their default values or through mildly informative prior distributions, as illustrated above, the model makes fairly constrained predictions. As discussed in chapter \ref{c00}, what is missing for evaluating this model is properly powered data \citep{rp}. Once such data become available, it will become possible to test the a priori predictions of the model. Because the creation of such benchmark data has just begun \citep{VasishthMertzenJaegerGelman2018,JaegerMertzenVanDykeVasishth2019,MertzenEtAlAMLaP2019}, we must leave such an evaluation for future work. 
