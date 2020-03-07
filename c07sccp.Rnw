@@ -48,7 +48,7 @@ We can now determine whether the observed data are underlyingly coming from a tw
 
 The \cite{NicenboimRetrieval2018} computational implementation of the direct-access model in Stan \citep{stan:2017} is available from the book's home page: https://vasishth.github.io/RetrievalModels/.
 
-\section{Comparing the predictions of the direct-access model and the activation model}\label{nicenboiminhint}
+\section{Comparing the predictive performances of the models}\label{nicenboiminhint}
 
 \subsection{Inhibitory interference}
 
@@ -106,19 +106,44 @@ As a consequence, for each trial, participants provided a reading time at the ve
 
 The experiment showed the expected inhibitory interference effect; the estimated slowdown in (\ref{ex:HI}) vs.\ (\ref{ex:LI}) was 9 ms, with a 95\% credible interval spanning 0-18 ms.  
 
-In order to evaluate the relative predictive accuracy of the activation model and the direct-access model, \cite{NicenboimRetrieval2018} carried out a model comparison using the above data. The predictive performance of the two models was evaluated using k-fold cross validation \citep{vehtari2012survey,vehtari2016LOOwaic}. 
+In order to evaluate the relative predictive accuracy of the activation model and the direct-access model, \cite{NicenboimRetrieval2018} carried out a model comparison using the above data. The predictive performance of the two models was evaluated using k-fold cross validation \citep{vehtari2012survey,vehtari2016LOOwaic}.  
+
+
+
 Figure \ref{fig:daactcomparison} shows a comparison of the relative predictive fits from the hierarchical Bayesian models implementing the activation model, and McElree's direct-access model as a finite mixture process. The violin plots show posterior predictive distributions from the model; their width represents the density of the predicted mean reading times. The black circles show the empirically observed mean reading times. The four types of reading times refer to four different kinds of question responses that the participants could give in the experiment \citep{nicenboimexploratory}. 
 
 The figure shows that the activation model overestimates the reading times in the incorrect responses, compared to the direct-access model. Although not shown here, this overestimation is due to the activation model assuming a single variance component for both correct and incorrect responses. When that assumption is relaxed, both models show similar predictive accuracy \citep{NicenboimRetrieval2018}.
 
-
 %% Created in retrieval_models.Rmd in github stancon_talks/2017/Contributed-Talks/07_nicenboim, search for "Plot for TiCS paper:"
 \begin{figure}[!htbp]
-\begin{center}
-\includegraphics[height=9cm]{figures/activationdacomparison2.jpg}
-\end{center}
-\caption{A comparison of observed sample means with the posterior predictive distributions of the activation and direct-access models.} \label{fig:daactcomparison}
+\centering
+\includegraphics[width=\textwidth]{figures/activationdacomparisonBW}
+<<brunoplots,echo=FALSE,eval=FALSE,cache=FALSE>>=
+load(file="data/predictedactivation.Rda")
+plot_rt_ab <- 
+          ggplot(pred_mean_RT_by_winner, aes(x = factor(winner), y = RT)) + 
+          geom_violin() +
+          scale_y_continuous(name = "Log-scaled RT at the verb", trans =log_trans(), 
+            limits = c(400, 1450), breaks = seq(450, 1450, 100))+ 
+          geom_point(data = mean_RT_by_winner, aes(x =factor(winner), y = RT), 
+            shape = 4, size = 3) + xlab("Response") + 
+          ggtitle("Activation-based model \n (heterogeneous variances)") + theme(axis.text.x=element_text(size = 12))+theme_bw()
+rm(pred_mean_RT_by_winner)
+
+load(file="data/predictedda.Rda")
+plot_rt_da <- 
+      ggplot(pred_mean_RT_by_winner, aes(x = factor(winner), y = RT)) + 
+      geom_violin() +
+      scale_y_continuous(name = "Log-scaled RT at the verb", trans =log_trans(), 
+        limits = c(400, 1450), breaks = seq(450, 1450, 100)) + 
+      geom_point(data = mean_RT_by_winner, aes(x =factor(winner), y = RT), 
+        shape = 4, size = 3) + xlab("Response") +
+         ggtitle("Direct-access model") + theme(axis.text.x=element_text(size = 12))+theme_bw()
+multiplot(plot_rt_ab,plot_rt_da,cols=2)
+@
+\caption{A comparison of observed sample means with the posterior predictive distributions of the activation-based model, and the direct-access model. The figure is adapted from the online materials available from StanCon 2017 conference talk by Bruno Nicenboim and Shravan Vasishth, which are under a CC-BY 4.0 licence.}
 \end{figure}
+
 
 In summary, the direct-access model exhibited a better predictive performance compared to the activation model. The reason that the direct-access model outperformed the activation model is that the latter predicts that in inhibitory interference experimental designs, retrievals of the incorrect chunk should be slower than the retrievals of the correct chunk. In the data-set used for model comparison \citep{nicenboimexploratory}, incorrect retrievals had faster reading time than correct retrievals. This pattern is  predicted by the direct-access model because correct retrievals are a mixture of an initially correct retrieval and an initial retrieval failure followed by a second retrieval attempt; the presence of trials with a costly second retrieval attempt take more time on average than incorrect trials.
 
