@@ -1,4 +1,3 @@
-
 \chapter[Reanalysis and underspecification]{Reanalysis and underspecification in sentence comprehension: Modelling eye movements} \label{c04}
 
 \section{Introduction}
@@ -34,7 +33,6 @@ In addition to Interface I, \emph{Time Out}, that was presented in the previous 
 A simulation with Interfaces I and II replicates the results of \cite{Staub2010a}, who found effects of memory and expectation in distinct locations of object- vs.\ subject-relative clauses. 
 Interface III, \index{Underspecification} \emph{Underspecification}, aborts a costly attachment alternatively to signaling a time-out depending on the task-relevance of the attachment relation.
 A second simulation illustrates at the example of \cite{MalsburgVasishth2013} how underspecification results from an interaction of eye movement control with parsing and individual differences in working memory capacity.
-% Interface type I is a passive control strategy, while II and III are active interventions by the parser. 
 While Interfaces I and II are interventions by the parser that interrupt the otherwise autonomous saccade programming, Interface III is rather an intervention in the other direction: In the case of underspecification, the parser is cut off by time pressure imposed by eye movement control.
 Finally, a possible Interface IV: \index{Subvocalization} \emph{Subvocalization} is proposed. As another alternative to Time Out, a word ready for integration could be stored in phonological memory \citep{BaddeleyHitch1974,Baddeley2003} for a very short time until there is free capacity of the sentence processor. This could be used in future work to model spill-over effects of parsing difficulty.
 
@@ -88,7 +86,7 @@ The \cite{Staub2010a} experiment is a good test case for the model developed in 
 Therefore, a natural next step is to implement a mechanism that interfaces moments of garden-path with eye movement behavior. This is pursued in the next subsection.
 
 
-\subsection{Simulation: Modeling the Staub (2010) data}
+\subsection{Simulation: Modelling the Staub (2010) data}
 When integrating a word that is ambiguous in its function in the current parse, an incremental serial parser commits to one possible continuation. By doing so, the parser creates a kind of \emph{expectation} for subsequent words to conform with this commitment. If the upcoming material cannot coherently be integrated, the earlier decision has to be reanalyzed.
 When encountering a relative pronoun, the \cite{LewisVasishth2005} parser acts according to a subject preference, always creating an SRC structure.
 When finding an NP to follow the relative pronoun (the subject NP of an ORC), the parsing rules execute a \emph{reanalysis} of the pre-built \index{SRC structure} SRC structure as a \emph{gapped} \index{ORC structure} ORC structure. In particular, this means that the relative pronoun is made available as a filler that can be retrieved as the object at the ORC verb. For that, an additional retrieval of the relativizer DP has to be executed. 
@@ -103,16 +101,14 @@ The Reanalysis interface is defined as follows:
 \begin{description}
   \item[Reanalysis] Any rule that changes the attachment of a previously created syntactic object in memory triggers an immediate attention shift towards a point in the sentence that is related to the object in question. 
 \end{description}
-%
+
 The specific target of the attention shift and the potentially accompanying regression needs further research. As \cite{MalsburgVasishth2011,MalsburgEtAl2015} and others before them \citep{MeseguerCarreirasClifton2002,greenmitchellJML06} have pointed out, it is still unclear how regression paths behave in reanalysis.
 Consequently, for the current simulations, the model is restricted to specifying the source of the regression and not the target. A least-commitment implementation was chosen that selects any target to the left of the current fixation.
-%A possible implementation of target selection in reanalysis will be discussed in the Outlook section. % of Chapter~\ref{chap:concl}.
 
 \subsection{Results}
 
 \begin{figure}[tb]
   \centering
-%\includegraphics[width=10cm]{figures/staubsror}  
 <<staub10modelRT,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE,fig.height=3,fig.width=5>>=
 
 require(em2)
@@ -212,11 +208,8 @@ p+theme(legend.position="top",legend.key=element_blank(),panel.grid.minor.y=elem
 \caption[Model predictions for reading times in subject- and object-relative clauses.]{Model predictions for reading times in subject- and object-relative clauses at the relativel clause NP, the relative clause verb, and the  main verb. The data are from Table 1 of Staub (2010), and are shown in gray. Error bars represent 95\% confidence intervals from the model simulations. This is a zero-parameter fit: no parameter estimation was done to fit the model to the data.} \label{fig:staubmodel:rt}
 \end{figure}
 
-
-
 \begin{figure}[tb]
   \centering
-%\includegraphics[width=10cm]{figures/staubreg}  
 <<staub10modelREG,echo=FALSE, warning=FALSE,error=FALSE, message=FALSE, fig.width=5,fig.height=4, out.width='0.7\\textwidth'>>=
 # ,out.width='0.45\\textwidth'
 
@@ -243,21 +236,15 @@ dodge2 <- position_dodge(width=.9)
   # ,panel.grid.minor.x=element_line(color="gray60")
   ,panel.grid.minor.x=element_blank()
   ,panel.grid.major.x=element_blank()
-  # ,plot.margin = unit(c(0.5, 0.5, 0.5, 0.5), "cm")
   )
 )
 
 @
 \caption[Predicted first-pass regressions from the model for subject- and object-relative clauses.]{Model predictions for first-pass regressions in subject- and object-relative clauses at embedded NP, embedded verb, and main verb. The data are from Staub (2010) and are shown as triangles. Error bars represent 95\% confidence intervals from the model simulations. This is a zero-parameter fit: no parameter estimation was done to fit the model to the data.} \label{fig:staubmodel:reg}
 \end{figure}
-% TODO: black/gray legend
 
-Simulations were performed using the parameter values that have been estimated with the Time Out model on the Potsdam Sentence Corpus. 
-% to-do
-%, summarized in Table~\ref{tab:params}. 
-Each sentence of Example~(\ref{ex:staub10}) was run $200$ times.
+Simulations were performed using the parameter values that have been estimated with the Time Out model on the Potsdam Sentence Corpus. Each sentence of Example~(\ref{ex:staub10}) was run $200$ times.
 
-% \noindent
 Figure~\ref{fig:staubmodel:rt} shows mean reading times for first-fixation duration, gaze duration, and go-past time in comparison with the data (in gray). 
 In first fixations and gaze durations, the \cite{Staub2010a} data shows reading time differences only on the embedded verb, the \index{ORC} ORC being slower than the \index{SRC} SRC. In go-past times, more regressions occur at this point in the ORC than the SRC.
 
@@ -269,7 +256,7 @@ As for reading times, the model predictions for regressions pattern with the dat
 \subsection{Discussion}
 The simulation tested the model on specific predictions for English relative clauses. No parameter fitting to the data was performed. The model with parameters as estimated on the Potsdam Sentence Corpus generated predictions that  qualitatively reproduce the theoretically important patterns in the data. The Time Out interface developed in the previous chapter predicts memory-based differences and magnitudes in three different reading time measures in three regions remarkably well. This shows that the parameter estimates that were computed for the Potsdam Sentence Corpus of German can be used for experimentally controlled comparisons of memory-related complexities in English. The newly introduced Reanalysis interface II, which is similar to \cite{ReichleWarrenMcConnell2009}'s rapid integration failure, correctly predicts increased first-pass regressions due to an invalidated prediction. 
 
-In sum, \cite{Staub2010a} proposes that the qualitatively distinct effects on the RC noun phrase and the RC verb indicate distinct sources of difficulty, namely expectation and memory, respectively. These two sources of difficulty can be explained within the cue-based retrieval model, without recourse to additional modeling assumptions involving \index{probabilistic predictions} probabilistic predictions. Note that the mechanism of interaction in the model is in both cases the same: The parser intervenes in the forward movement of the eyes, triggering a regression. However, the timing differs in that the intervention happens earlier for violated expectations: memory-induced time-outs are triggered after recognition of the next word, but reanalysis regressions are triggered as soon as the parser detects that the input is unexpected. Due to this timing difference, the time-out regressions on the verb are mostly cancelled before they are executed, because the memory processes are not delayed long enough before normal reading is resumed. The planning and cancelling of regressions thus leads to inflated reading times. By contrast, reanalysis is triggered earlier and the parser has to perform additional actions for revising structure, which leaves enough time for the regression to be completed. 
+In sum, \cite{Staub2010a} proposes that the qualitatively distinct effects on the RC noun phrase and the RC verb indicate distinct sources of difficulty, namely expectation and memory, respectively. These two sources of difficulty can be explained within the cue-based retrieval model, without recourse to additional modelling assumptions involving \index{probabilistic predictions} probabilistic predictions. Note that the mechanism of interaction in the model is in both cases the same: The parser intervenes in the forward movement of the eyes, triggering a regression. However, the timing differs in that the intervention happens earlier for violated expectations: memory-induced time-outs are triggered after recognition of the next word, but reanalysis regressions are triggered as soon as the parser detects that the input is unexpected. Due to this timing difference, the time-out regressions on the verb are mostly cancelled before they are executed, because the memory processes are not delayed long enough before normal reading is resumed. The planning and cancelling of regressions thus leads to inflated reading times. By contrast, reanalysis is triggered earlier and the parser has to perform additional actions for revising structure, which leaves enough time for the regression to be completed. 
 This is an example of a simple mechanism producing complex behavior: The same mechanism --- triggering a regression ---  produces qualitatively different effects under certain circumstances, based on the relative timing between parsing and eye-movement control. One aspect that is not captured in the model is the effect of eye-movement control constraints on regressive eye movements \citep{EngbertNuthmannRichter2005}. In order to incorporate the effect of eye-movement control, a comprehensive integration of a parsing model and an eye-movement control model like SWIFT is needed. At the time of writing, this research is ongoing \citep{Rabe2019}.
 
 The model predictions thus capture the major findings of Staub's study. However, the model is very simplified and consequently deviates in its predictions in some ways from the data.
@@ -286,24 +273,7 @@ A likely mechanism for delaying parsing processes in this way is to hold words t
 The good-enough approach to sentence processing \citep{FerreiraFerraroBailey2002,SanfordSturt2002} suggests that readers strategically adapt their efforts to task demands with the consequence of sometimes not arriving at a complete parse. 
 This implies that readers leave some structural relations underspecified in order to save processing time if the effort does not seem necessary for the task at hand.
 
-% and available resources, with the consequence of omitting processes that are less important either for the current goal \cite{SwetsDesmetClifton2008} or for building a coherent structure (as postulated by construal, \cite{CarreirasClifton1993,FrazierClifton1997}).
-
-% Some dependency relations are less important for the current task than others and might stay incomplete under time pressure. The time pressure in reading is imposed by the eye movement control system. The mechanism producing underspecification is the same as for Time Outs regressions:
-
-% The difference to the Time Out mechanism is that, with underspecification, the eye movement proceeds uninterrupted. 
-% \cite{SwetsDesmetClifton2008}:
-% \begin{quotation} ``According to construal [Frazier \& Clifton, 1996], syntactic relations can be divided into primary and secondary types. Whereas  primary relations (roughly, arguments) are immediately attached […],  secondary relations (roughly, adjuncts), including relative clauses and other modifiers initially are indeterminately ‘associated’ with the current thematic domain, at which point other information can be called upon to resolve the association into a determinate attachment.'' 
-% \end{quotation}
-
-% The rate of underspecification is affected by task demands like the type of comprehension questions \cite{SwetsDesmetClifton2008} and by working memory capacity \cite{MalsburgVasishth2013}.
-
-
-% \subsection{Underspecification and Individual Differences}
-
-An example of underspecification is the finding that some ambiguous attachment relations are read faster than their unambiguous counterparts. 
-% (Traxler et al., 1998; van Gompel, Pickering, & Traxler, 2001; Traxler, 2007; Swets et al., 2008).
-% TODO: explanations: race vs. underspecification
-For example, \cite{TraxlerPickeringClifton1998} and \cite{Traxler2007} studied sentences like (\ref{ex:traxler07}c) that were globally ambiguous with regard to the attachment of the relative clause to one of the noun phrases \textit{sister} or \textit{writer} and compared them to sentences where the relative clause was unambiguously attached \emph{high} (\ref{ex:traxler07}a) or \emph{low} (\ref{ex:traxler07}b).
+An example of underspecification is the finding that some ambiguous attachment relations are read faster than their unambiguous counterparts. For example, \cite{TraxlerPickeringClifton1998} and \cite{Traxler2007} studied sentences like (\ref{ex:traxler07}c) that were globally ambiguous with regard to the attachment of the relative clause to one of the noun phrases \textit{sister} or \textit{writer} and compared them to sentences where the relative clause was unambiguously attached \emph{high} (\ref{ex:traxler07}a) or \emph{low} (\ref{ex:traxler07}b).
 
 \begin{exe}
 \ex\label{ex:traxler07}
@@ -319,15 +289,6 @@ Both studies found an ambiguity advantage at the disambiguation region \textit{b
 \index{low-capacity readers} 
 Low-capacity readers, in contrast, showed no such preference. According to \cite{Traxler2007}, it might be that low-capacity readers leave the attachment underspecified or the selection of the attachment site is the product of a balance between a high-attachment preference and recency.
 
-
-
-% \begin{description}    
-% \item[\cite{Traxler2007}:] The modeling indicated that determinately attached sentences were harder to process than globally ambiguous sentences, that working memory did not affect processing of the relative clause itself, but that working memory did moderate how easy it was to integrate the relative clause with the preceding sentence context.
-%  \begin{itemize}
-%   \item Ambiguity advantage (at disambiguation)
-%   \item WMC: slow-down for low capacity
-%  \end{itemize} 
-
 \cite{KemperCrowKemtes2004} studied a main clause/relative clause ambiguity such as (\ref{ex:kemper04}). 
 
 \begin{exe}
@@ -342,13 +303,7 @@ Low-capacity readers, in contrast, showed no such preference. According to \cite
 
 In (\ref{ex:kemper04}a) and (\ref{ex:kemper04}b), the role of \textit{warned} is temporarily ambiguous between the main verb and the embedded verb of a reduced relative clause. In (\ref{ex:kemper04}b), the ambiguity is resolved towards the non-preferred reduced-relative reading. In (\ref{ex:kemper04}c), the verb \textit{spoke} unambiguously induces a main verb reading. Kemper and colleagues found the expected difficulty at \textit{conducted} in the non-preferred condition (\ref{ex:kemper04}b). However, in contrast to the studies by Traxler and colleagues, they found no ambiguity advantage. An analysis of working memory differences showed that low-capacity readers had more difficulty resolving the ambiguity, which was indicated by slower reading and higher regression rates at the disambiguating region.
 
-
-
 A possible account of when attachments are underpecified and thus an explanation for the difference between Traxler's experiments and \cite{KemperCrowKemtes2004} is offered by \emph{construal} \citep{CarreirasClifton1993,FrazierClifton1997}. This theory differentiates between ``primary'' and ``nonprimary'' relations, where primary roughly stands for relations that are obligatory for deriving a coherent message (e.g., verbs and their arguments). The attachment of primary relations is always carried out according to garden-path theory \citep{Frazier1987} while the definite attachment of nonprimary relations can be suspended by loosely associating it with the last theta domain \citep{FrazierClifton1997}.
-
-
-
-% \subsection{The Influence of Task demands}
 
 More evidence for construal and the good-enough account \citep{FerreiraFerraroBailey2002,SanfordSturt2002} comes from a self-paced reading study by \cite{SwetsDesmetClifton2008}. Similar to \cite{TraxlerPickeringClifton1998} and \cite{Traxler2007}, Swets and colleagues studied ambiguous relative clause attachments as in Example (\ref{ex:swets08}).
 
@@ -363,36 +318,6 @@ More evidence for construal and the good-enough account \citep{FerreiraFerraroBa
 
 \cite{SwetsDesmetClifton2008} manipulated task demands by using either superficial comprehension questions or questions that specifically queried the interpretation of the relative clause. The results showed an ambiguity advantage in (\ref{ex:swets08}a) vs.\ (b) and (c) at the disambiguating reflexive only when questions were superficial, indicating that question type affected the readers preference to leave the RC attachment underspecified. 
 In addition, in the condition with questions targeting the relative clause (RC question condition), question response times were elevated for ambiguous sentences. This indicates that even in the RC-question condition the attachment was sometimes left unspecified and had to be resolved during the question answering phase. In the RC-question condition, a disambiguation towards NP1 (\ref{ex:swets08}b) resulted in longest reading times, pointing to a preference towards NP2 in the initial attachment, which had to be revised at the reflexive. For a detailed analysis of the \cite{SwetsDesmetClifton2008} data and the compatibility with assumptions about underspecification, see \cite{LogacevMultiple,LogacevVasishthQJEP2016}.
-
-
-%  \begin{itemize}
-%   \item Globally ambiguous in condition a.
-%   \item Type of comprehension questions manipulated.
-%   \item Ambiguity advantage (at disambiguation) only when questions were superficial.
-%   \item elevated response times when answering questions about sentences in which the attachment site for the relative clause was ambiguous rather than disambiguated.
-%   \item Question response times slower for amb. sentences, but only in RC question cond.
-%   \item For superficial questions: 
-%    \begin{itemize}
-%     \item At rel. pron. attachment stays underspecified.
-%     \item Attachment sometimes is resolved later in the unambiguous cond. Unamb. stays underspecified.
-%   \end{itemize}
-%   \item For rel.clause questions 
-%    \begin{itemize}
-%     \item At rel. pron. attachment mostly low.
-%     \item At dismab. area, N1 is hardest (reanalysis?)
-%   \end{itemize}
-%  \end{itemize} 
-
-% RC question: Did the maid/princess/son scratch in public?
-% Superficial question: Was anyone humiliated/proud? 
-
-% Att.type(amb, N1, N2) x quest.type(occas, RC, superf) x quest.NP(NP1, Np2)
-
-
-% \begin{quotation}
-% ``The slow response times found in the ambiguous condition suggest that definitive attachments were probably not established when the sentence was read. Instead, they had to be established during the question-answering phase of the trial, resulting in long response times for the questions.
-% In order to explain the slow answers to questions in the ambiguous condition, we must acknowledge that in the absence of gender disambiguation, the task demands of the relative clause question condition appear to have forced a fully specified attachment and interpretation on some trials but not on others.''
-% \end{quotation}
 
 In related work, \cite{MalsburgVasishth2013} found evidence for the influence of working memory capacity on the preferences for underspecification.
 They conducted an eye-tracking experiment using the stimuli of a Spanish study by \cite{MeseguerCarreirasClifton2002} and analyzed the participants' individual scanpaths \citep{MalsburgVasishth2011} and working memory capacity. \index{working memory capacity}
@@ -464,17 +389,13 @@ data=subset(d.means.t3,variable=="FPRT.c.exp"))
   )
 )
 @
-%
   \caption[Ambiguity advantage in the pre-verbal region for low-capacity readers in the data of von der Malsburg and Vasishth (2013).]{Ambiguity advantage for low- vs.\ high-capacity readers in the data of von der Malsburg and Vasishth (2013). Shown are gaze durations in the pre-verbal region (\textit{cuando/si los directores}) for ambiguous (a and b) and unambiguous (c) conditions, grouped by high and low working memory capacity as measured by the operation span task.  Error bars represent 95\% confidence intervals.}\label{fig:mv13data:rt}
 \end{figure}
 
 
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=10cm]{figures/malsburgdatarer} 
-%
 <<mv13datarer, include=TRUE,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=6,fig.height=4, out.width='0.7\\textwidth'>>=
-
 ## mean rereading
 mlt <- melt(data, id=c("cond","wmc"), measure=c("isa","acc"), na.rm=T)
 cst <- cast(mlt, variable+cond+wmc ~ ., function(x) c(M=mean(x), N=length(x)))
@@ -506,48 +427,12 @@ colnames(d.means.p2)[3] <- "WMC"
   )
 )
 @
-%
   \caption[Proportions of sentence rereading by working memory capacity in the data of von der Malsburg and Vasishth (2013).]{Proportions of sentence rereading in the data of von der Malsburg and Vasishth (2013) for ambiguous high (a), low (b), and unambiguous (c) conditions, grouped by high and low working memory capacity. Error bars represent 95\% confidence intervals.}
   \label{fig:mv13data:rer}
 \end{figure}
 
 Von der Malsburg and Vasishth found an ambiguity advantage in the pre-verbal region \textit{cuando los directores}: First-pass reading times (gaze durations) were faster in ambiguous vs.\ unambiguous conditions. This effect was driven mainly by low-capacity readers (see Figure~\ref{fig:mv13data:rt}). The observed ambiguity advantage in low capacity readers is consistent with the assumption of \cite{Traxler2007} that low-capacity readers underspecify more often. Further support for this assumption comes from the proportions of rereading of the whole sentence after seeing the disambiguating region (see Figure~\ref{fig:mv13data:rer}). 
 For high-capacity readers, the rereading proportion was highest for condition (a), where the disambiguation was towards the more distant high attachment. In contrast, low-capacity readers showed no statistically significant difference in rereading proportions between conditions. According to \cite{MalsburgVasishth2013}, this suggests that high-capacity readers complete the attachment of the adjunct more often and thus have to reanalyze later, whereas low-capacity readers have no need for reanalysis because they tend to leave the attachment unspecified in the ambiguous conditions. The reason for reanalysis occurring predominantly in the high-attachment condition is that the conditional interpretation with a low attachment is initially preferred with the word \textit{cuando}.
-
-
-% \begin{enumerate}
-% \item 65\% of answers for questions about experimental sentences were correct. In the high-attachment condition, 58\% of the questions were answered correctly. In both low-attachment conditions, 70\% of the questions were answered correctly.
-% \item First pass reading times in the pre-verbal region were longer in the unambiguous condition than in the ambiguous conditions.
-% \item the difference between ambiguous and unambiguous sentences was larger in low-capacity readers than in high-capacity readers
-% \item Three scanpath patterns:
-% \subitem \textbf{Checking:} We see a set of eye movement patterns that involve briefly going back to the disambiguation region before proceeding to the end of the sentence (checking)
-% \subitem \textbf{rereading:} the eyes go back to the beginning of the sentence and reread the material so far
-% \subitem \textbf{Rapid regressions:} the eyes \textbf{rapidly regress} from the verb region to the pre-verbal region
-% \end{enumerate}
-
-
-% \paragraph{Sentence rereading}
-% \begin{enumerate}
-% \item rereading occurs more often in the high-attachment condition
-% \item if more time was spend reading the pre-verbal region, the difference between high- and low-attachment sentences was larger
-% \item participants with a high memory capacity reread more often in the high-attachment condition than those with low capacity
-% \item HC readers reread the same amount in LOW and UNAMB
-% \item LC readers showed no difference between three conditions
-% \end{enumerate}
-
-% \paragraph{Checking}
-% \begin{enumerate}
-% \item checking regressions occurred significantly more often in the temporarily ambiguous conditions
-% \item could be confidence checking (bicknell)
-% \end{enumerate}
-
-% \paragraph{Rapid regressions from the verb}
-% \begin{enumerate}
-% \item more frequent in the unambiguous condition. This difference was larger for HC participants.
-% \item could be time out
-% \end{enumerate}
-
-
 
 The evidence summarized above suggests that ambiguous attachment relations are strategically underspecified, and that readers with low working memory capacity leave an attachment underspecified more often than high-capacity readers do. 
 It is not clear, however, how this adaptation works. Is it necessary to assume that low-capacity readers use a different parsing strategy, or can the difference be explained by a common mechanism? So far, there exists no detailed, computationally implemented model of the good-enough account that could clarify this issue.
@@ -557,9 +442,6 @@ In particular, for nonprimary relations in the sense of \cite{FrazierClifton1997
 Thus, underspecification is not a deterministic process but dynamically adapts to the relative timing of the attachment process and autonomous low-level eye movement processes. If an attachment is easy and proceeds fast in relation to the ``default'' reading speed (in the sense of \emph{uninterrupted} reading), the attachment is completed. If, however, the attachment could not be made without interrupting the progress of the eyes, it is abandoned in a trade-off with reading speed. 
 An influence of working memory differences is predicted by the assumption that, compared to high-capacity readers, low-capacity readers take longer on average to complete the attachment, resulting in more cancellations that leave the attachment underspecified.
 
-% We implemented a model where the process of determining the attachment site of an ambiguous adjunct is subject to this interaction between parsing and eye movements. Specifically, an ongoing attachment process is canceled if it is not completed by the time the next word has been identified and is ready for integration. 
-
-
 \subsection{Simulation: Modelling the von der Malsburg and Vasishth (2013) data}
 Here, we report an implementation of the model that defines \emph{good-enough} parsing as the result of an interaction between the parser and eye-movement control, as explained above. For non-obligatory relations, the time to attach is constrained by the time needed by saccade programming and low-level processes to identify the next word:
 
@@ -568,36 +450,23 @@ Here, we report an implementation of the model that defines \emph{good-enough} p
 \end{description}
 
 This implementation naturally predicts an influence of working memory capacity. Here, memory capacity is implemented in terms of the  goal buffer source activation parameter $W$ in ACT-R.
-Working memory capacity has been modelled in this way before: \cite{DailyLovettReder2001} modeled individual differences in the digit-span task \citep{LovettRederLebiere1999} in ACT-R by manipulating the source activation $W$ for the goal buffer.  
+Working memory capacity has been modelled in this way before: \cite{DailyLovettReder2001} modelled individual differences in the digit-span task \citep{LovettRederLebiere1999} in ACT-R by manipulating the source activation $W$ for the goal buffer.  
 In the context of language comprehension, \cite{VanRijVanRijnHendriks2013} used this method by manipulating $W$ for modelling individual differences in pronoun interpretation.
-The amount of activation $W$ is equally distributed between sources $j$ in the goal buffer, i.e., the chunks that spread activation to related memory items. Thus, the value of $W$ defines how strongly relevant information from the goal buffer is used for memory retrieval. Therefore, higher values of $W$ improve speed and accuracy of retrieval processes. In this way, the term working memory capacity is defined as a measure of how well an individual is able to separate information in memory that is relevant to the current task from currently irrelevant information --- a kind of focusing of cognitive attention.
+The amount of activation $W$ is equally distributed between sources $j$ in the goal buffer, i.e., the chunks that spread activation to related memory items. Thus, the value of $W$ defines how strongly relevant information from the goal buffer is used for memory retrieval. Therefore, higher values of $W$ improve speed and accuracy of retrieval processes. In this way, the term working memory capacity \index{working memory capacity} is defined as a measure of how well an individual is able to separate information in memory that is relevant to the current task from currently irrelevant information --- a kind of focusing of cognitive attention.
 % !!! This means that activation spread is less when there are more slots in the goal buffer (filled slots, those with nil do not count) !!!
-% TODO: cite bruno's Frontiers paper?
 
 As an example simulation, the \cite{LewisVasishth2005} model was extended with parsing rules for sentence constructions as used by \cite{MalsburgVasishth2013} and defined the adjunct attachment as non-obligatory.
 In particular, when attaching the adjunct, the parser creates the structure for the adjunct clause and then signals that integration is complete, so that no time-out rule will fire. It then attempts to retrieve both potential attachment sites. 
-%starting with the highest in the tree. 
 This process is faster and more accurate for high-capacity readers because, with a high source activation $W$, the retrieval cues  
-%\textit{embedded} and \textit{not-embedded} 
 activate the correct retrieval targets more strongly.
-% \item Since the embedded IP is higher activated, it will mostly be retrieved, resulting in a low-attachment preference. 
 Thus, high-capacity readers are predicted by the model to underspecify less often than low-capacity readers.
 
-An important observation here is that the mechanism is the same for all readers: As soon as the next word is ready for integration, an ongoing attachment process is abandoned. %No time-out is initiated because the integration-complete signal is already been given before attachment was attempted. 
+An important observation here is that the mechanism is the same for all readers: As soon as the next word is ready for integration, an ongoing attachment process is abandoned.  
 Following \cite{SwetsDesmetClifton2008}, an abandoned attachment is not corrected later in the sentence. However, if an attachment was made, disambiguating information that contradicts the attachment decision leads to a repair operation, triggering a regression towards the beginning of the sentence (this assumption is based on the finding by von der Malsburg and Vasishth (2013) that repair processes tend to trigger re-reading of a sentence).
-% When wrong attachment leads to garden path at the verb, the attachment is revised and a regression is triggered towards the beginning of the sentence, leading to a rereading of the sentence.
-% If no attachment was made, no revision occurs.
-
-
-% \subsubsection{Modeling Individual Differences in Working Memory Capacity}
-% \cite{JustCarpenter1992} developed a capacity-based computational theory of linguistic working memory. 
-% \cite{KingJust1991} showed that working memory capacity as measured by the reading span task \cite{DanemanCarpenter1980} affects sentence comprehension. 
 
 Sixty participants were simulated reading the three attachment conditions of \cite{MalsburgVasishth2013}, HIGH, LOW, and UNAMB, 20 times each.
 EMMA parameters and the latency factor were left at values estimated in the simulations involving the Potsdam Sentence Corpus evaluation. Other parameters were set to the values used in \cite{LewisVasishth2005}. However, two parameters were changed for this simulation. First, \emph{Mismatch penalty} MP was set to \texttt{NIL} to switch off partial matching. This was done in order to reduce interference and misretrievals as this was not relevant here. Second, the \emph{maximum associative strength} parameter MAS had to be increased from $1.5$ to $3.5$ in order to have enough spreading activation from the goal buffer for differences in $W$ to have an effect.
 For simulating individual differences in working memory capacity, the method of \cite{DailyLovettReder2001} was used to randomly assign to $W$ a value drawn from a normal distribution with mean $=1.0$ and standard deviation $=0.25$. 
-
-
 
 \subsection{Results}
 
@@ -717,7 +586,6 @@ m$timeout[is.na(m$timeout)] <- 0
 m$enc.prev <- c(m$enc[dim(m)[1]],m$enc[1:dim(m)[1]-1])
 m$enc.next <- c(m$enc[2:dim(m)[1]], m$enc[1])
 
-
 ##
 ## REGIONS OF INTEREST
 ##
@@ -737,14 +605,9 @@ m$roi <- factor(m$roi, levels=c("Matrix", "Compl", "pre-conj", "CONJ", "DET", "N
 # levels(m$roi)
 roilabels <- c("Compl", "pre-conj", "CONJ", "DET", "N", "V","SP1", "SP2", "SP3")
 
-# save(m, file="mv13/m.RData")
-# save(trialinfo, file="mv13/m.trials.RData")
-# save(subjects, file="mv13/m.subjects.RData")
-
-
-##'
-##' DATA CLEAN-UP
-##'
+##
+## DATA CLEAN-UP
+##
 #load("m.RData")
 m.all <- m
 m <- subset(m, fail==0)
@@ -789,13 +652,10 @@ effect <- predict(lm4) - coef(lm4)[1]
 m$FPRT.corr[m$pos==10 & m$FPRT>0 & m$cond!="UNAMB"] <- ((m$FPRT[m$pos==10 & m$FPRT>0 & m$cond!="UNAMB"]^.5)-effect)^2
 
 #save(m, file="mv13/m.RData")
-
 @
 
 \begin{figure}[!htbp]
-  \centering
-%\includegraphics[width=10cm]{figures/malsburgmodelambadv}  
-%
+\centering
 <<mv13modelambadv,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=5,fig.height=3, out.width='0.8\\textwidth'>>=
 
 ## Ambiguity advantage ##
@@ -834,15 +694,12 @@ data=droplevels(subset(means.t3, (roi%in%c("CONJ") & variable%in%c("FPRT.corr"))
   )
 )
 @
-%
   \caption[Predicted gaze durations by source activation at ambiguous and unambiguous attachments.]{Model predictions for gaze durations at \textit{cuando}/\textit{si} for ambiguous (a and b) and unambiguous (c) conditions, grouped by high and low goal buffer source activation $W$. Error bars represent 95\% confidence intervals.} \label{fig:mv13model:rt}
 \end{figure}
 
 
 \begin{figure}[!htbp]
   \centering
-%\includegraphics[width=10cm]{figures/modeltimeout}  
-  %
 <<mv13modeltimeout,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=5,fig.height=3, out.width='0.8\\textwidth'>>=
 
 ## Probabilities
@@ -875,7 +732,6 @@ colnames(means.p)[4] <- "W"
 )
 
 @
-%
   \caption[Predicted time-out proportions by source activation at ambiguous and unambiguous attachments.]{Predicted time-out proportions for ambiguous high (a), low (b), and unambiguous (c) conditions, grouped by high and low goal buffer source activation $W$. Error bars represent 95\% confidence intervals.} \label{fig:mv13model:timeout}
 \end{figure}
 
@@ -890,8 +746,6 @@ The timing difference between low- and high-capacity readers in the unambiguous 
 
 \begin{figure}[!htbp]
   \centering
-%\includegraphics[width=10cm]{figures/mv13modelrer}  
-%
 <<mv13modelrer,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=6,fig.height=4, out.width='0.7\\textwidth'>>=
 
 ## Trial Probabilities
@@ -927,15 +781,12 @@ colnames(means.p2)[3] <- "W"
  )
 
 @
-%
-  \caption[Predicted proportions of sentence rereading by source activation at ambiguous and unambiguous attachments.]{Predicted proportions of sentence rereading for ambiguous high (a), low (b), and unambiguous (c) conditions, grouped by high and low goal buffer source activation $W$. Error bars represent 95\% confidence intervals.}
+\caption[Predicted proportions of sentence rereading by source activation at ambiguous and unambiguous attachments.]{Predicted proportions of sentence rereading for ambiguous high (a), low (b), and unambiguous (c) conditions, grouped by high and low goal buffer source activation $W$. Error bars represent 95\% confidence intervals.}
   \label{fig:mv13model:rer}
 \end{figure}
 
 \begin{figure}[!htbp]
 \centering
-%\includegraphics[width=10cm]{figures/mv13modelatt}  
-%
 <<mv13modelatt, include=TRUE, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=6,fig.height=4, out.width='0.7\\textwidth'>>=
 
 ## Probabilities
@@ -968,8 +819,7 @@ colnames(means.p)[4] <- "W"
 )
 
 @
-%
-  \caption[Predicted attachment proportions by source activation at ambiguous and unambiguous attachments.]{Predicted attachment proportions for ambiguous high (a), low (b), and unambiguous (c) conditions, grouped by high and low goal buffer source activation $W$. Error bars represent 95\% confidence intervals.}
+\caption[Predicted attachment proportions by source activation at ambiguous and unambiguous attachments.]{Predicted attachment proportions for ambiguous high (a), low (b), and unambiguous (c) conditions, grouped by high and low goal buffer source activation $W$. Error bars represent 95\% confidence intervals.}
   \label{fig:mv13model:att}
 \end{figure}
 
@@ -998,7 +848,6 @@ The utility learning module of ACT-R would be suitable for this kind of model. I
 U_i(n) = U_i(n-1) + \alpha[R_i(n)-U_i(n-1)]
 \end{equation}
 where $\alpha$ is the learning rate set by a parameter, $R_i(n)$ is the reward value given to production $i$ at time $n$.
-% The learning occurs when a reward is triggered, and all productions that have fired since the last reward are updated. The effective reward of a production i is the reward value received at time n minus the time since the selection of production i (unless overridden by use of the :reward-hook parameter).
 
 This mechanism would ensure a balance between speed and accuracy according to individual differences and task demands.
 For low capacity readers, the utility for attachment would automatically turn out generally lower and thus compensate for slower memory processes. As a result, reading speed of low-capacity readers would be more or less the same as of high-capacity readers. This adaptive, yet simple mechanism of global good-enough processing make the prediction that low-capacity readers do not generally read slower than high-capacity readers; this prediction should be tested in future work.
