@@ -112,13 +112,13 @@ Figure~\ref{fig:plotmatch} shows the range of predicted retrieval time (in milli
 
 <<predictions,echo=FALSE,include=FALSE>>=
 ## cue weight 1:
-load("data/lv05pspaceEVcuewt1.Rd")
+load("chapter3_simulations/lv05pspaceEVcuewt1.Rd")
 means1<-lv05pspaceEVcuewt1
 ## cue weight 2:
-load("data/lv05pspaceEVcuewt2.Rd")
+load("chapter3_simulations/lv05pspaceEVcuewt2.Rd")
 means2<-lv05pspaceEVcuewt2
 ## cue weight 4:
-load("data/lv05pspaceEVcuewt4.Rd")
+load("chapter3_simulations/lv05pspaceEVcuewt4.Rd")
 means4<-lv05pspaceEVcuewt4
 
 means<-rbind(means1,means2,means4)
@@ -584,13 +584,13 @@ upper_ru_d13rep <- -10
 Figure~\ref{fig:lfvalues} shows the posterior distributions of the latency factor parameter for ungrammatical agreement and reflexive conditions in \cite{DillonMishlerSloggett2013} and \cite{JaegerMertzenVanDykeVasishth2019}. The estimates for the \cite{DillonMishlerSloggett2013} data-set have wider uncertainty than those for \cite{JaegerMertzenVanDykeVasishth2019} because the uncertainty of the facilitatory interference effects in the data is relatively large.
 
 <<loaddata,echo=FALSE>>=
-load("models/au_lf_D13.Rda")
+load("chapter3_simulations/au_lf_D13.Rda")
 au_lf_D13<-lf_posterior[-which(lf_posterior==-1)]
-load("models/ru_lf_D13.Rda")
+load("chapter3_simulations/ru_lf_D13.Rda")
 ru_lf_D13<-lf_posterior[-which(lf_posterior==-1)]
-load("models/au_lf_D13rep.Rda")
+load("chapter3_simulations/au_lf_D13rep.Rda")
 au_lf_D13rep<-lf_posterior[-which(lf_posterior==-1)]
-load("models/ru_lf_D13rep.Rda")
+load("chapter3_simulations/ru_lf_D13rep.Rda")
 ru_lf_D13rep<-lf_posterior[-which(lf_posterior==-1)]
 
 condition<-c(rep("agreement",length(au_lf_D13)),
@@ -630,10 +630,10 @@ These posterior predictive distributions are shown in Figure~\ref{fig:ppmeansval
 \begin{figure}[!htbp]
 \centering
 <<plotppdistrns,echo=FALSE,fig.width=7,fig.height=5>>=
-load("models/au_predicted_meansD13.Rda")
-load("models/ru_predicted_meansD13.Rda")
-load("models/au_predicted_meansD13rep.Rda")
-load("models/ru_predicted_meansD13rep.Rda")
+load("chapter3_simulations/au_predicted_meansD13.Rda")
+load("chapter3_simulations/ru_predicted_meansD13.Rda")
+load("chapter3_simulations/au_predicted_meansD13rep.Rda")
+load("chapter3_simulations/ru_predicted_meansD13rep.Rda")
 
 ppmeans<-c(au_predicted_means,ru_predicted_means,au_predicted_means_rep,ru_predicted_means_rep)
 
