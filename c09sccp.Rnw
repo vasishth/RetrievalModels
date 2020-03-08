@@ -1,6 +1,4 @@
-
 \chapter{Future directions} \label{c09}
-
 
 In this closing chapter, we briefly discuss what we see as some of the important open problems that the next generation of researchers could pursue.
 
@@ -25,7 +23,9 @@ In the present work, we provide  all the benchmark reading data available to us 
 
 Although \cite{NicenboimRetrieval2018}, \cite{VasishthChopinRyderNicenboimCogSci2017}, and \cite{LissonEtAl2020} have made some initial attempts to compare the predictions of the Lewis and Vasishth activation-based model and McElree's direct-access model against benchmark data, a broader investigation is needed. For example, \cite{MertzenEtAlAMLaP2019} has developed large-sample data from English, German, and Russian on proactive interference effects; such data can serve as useful test-sets for model comparisons.
 
-\section{The need for direct-replication studies}
+\section{The need for larger-sample direct-replication studies}
+
+Conceptual replication refers to an  experiment that attempts to replicate some published result, but not with exactly the same design as the original experiment. Instead, the experiment is changed in some way, the goal usually being to uncover some novel finding.  Although such conceptual replications are common in psycholinguistics and  other areas involving experimental research on cognition, direct replications are not regarded as useful or informative.\footnote{The first author found this out the hard way, by trying to publish a direct replication of \cite{HsiaoGibson2003} for nine years; after many rejections from mainstream journals, the direct replication was published in PLoS ONE \citep{VasishthChenLi2013}.} As a consequence, there exist very few published direct replication attempts of supposedly well-known results. One reason for this absence of direct replications is that they are not valued as much  as ``novel'' research. However, as recently pointed out by \cite{wilson2020science}, direct replications are the only way to validate scientific hypotheses.
 
 As we have discussed at length in the earlier part of this book, the evidence for similarity-based interference is largely based on underpowered experiments. Currently, there have not been many attempts at obtaining larger-sample estimates of the predicted effects. A very informative direction for future work would be to attempt to systematically conduct direct replications of the claimed effects, summarized for example in \cite{JaegerEngelmannVasishth2017}, preferably with data from languages other than only English.
 
