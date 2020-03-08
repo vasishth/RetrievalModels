@@ -11,7 +11,7 @@ The direct-access model was motivated by research from the cognitive psychology 
 \includegraphics[height=5cm,width=7cm]{figures/c05DA.jpg}
 \end{center}
 %%to-do: rewrite
-\caption{A schematic illustration of the direct-access model. For sentences like (\ref{ex:vandyke07}a), the model assumes that once a search is initiated in memory using a set of retrieval cues (here, subject and animate), one of two events can happen. Either the correct item is retrieved from memory, or the incorrect item, which matches some of the retrieval cues, is misretrieved. In the case of a misretrieval, either processing ends with a misretrieval, or a reanalysis step is initiated that leads to a correct retrieval. This reanalysis step costs time, and therefore leads to slowdowns in processing on average. The figure is by Vasishth, 2019; it is available from http://10.6084/m9.figshare.9396515 under a CC-BY4.0 license.} \label{fig:da}
+\caption{A schematic illustration of the direct-access model. For sentences like (\ref{ex:vandyke07}a), the model assumes that once a search is initiated in memory using a set of retrieval cues (here, subject and animate), one of two events can happen. Either the correct item is retrieved from memory, or the incorrect item, which matches some of the retrieval cues, is misretrieved. In the case of a misretrieval, either processing ends with a misretrieval, or a reanalysis step is initiated that leads to a correct retrieval. This reanalysis step costs time, and therefore leads to slowdowns in processing on average. The figure is by Vasishth, 2019 and is under a CC-BY4.0 license; it is available from http://10.6084/m9.figshare.9396515.} \label{fig:da}
 \end{figure}
 
 The term ``direct-access'' refers to the assumption that search in memory is driven by directly accessing items in memory that match the features used as retrieval cues. The time taken to complete a retrieval is assumed to be constant regardless of when the item was previously encountered. \cite{LewisVasishthVanDyke2006} point out that  ``[t]he estimate of memory retrieval times from the SAT [Speed-accuracy tradeoff] studies is about 80–90 ms.'' This type of  search process is often referred to as a content-addressable cue-based search. The term content-addressable refers to the use of retrieval cues (bundles of feature-value specifications such as [subject: yes, animate: yes]) to search for items in memory using their feature specifications. 
@@ -141,7 +141,7 @@ plot_rt_da <-
          ggtitle("Direct-access model") + theme(axis.text.x=element_text(size = 12))+theme_bw()
 multiplot(plot_rt_ab,plot_rt_da,cols=2)
 @
-\caption{A comparison of observed sample means with the posterior predictive distributions of the activation-based model, and the direct-access model. The figure is adapted from the online materials available from StanCon 2017 conference talk by Bruno Nicenboim and Shravan Vasishth, which are under a CC-BY 4.0 licence.}
+\caption{A comparison of observed sample means with the posterior predictive distributions of the activation-based model, and the direct-access model. The figure is adapted from the online materials available from StanCon 2017 conference talk by Bruno Nicenboim and Shravan Vasishth, which are under a CC-BY 4.0 licence.}\label{fig:daactcomparison}
 \end{figure}
 
 
@@ -249,7 +249,7 @@ Continuing with our exploration of  competing accounts of retrieval, we explore 
 
 \section{Encoding interference in agreement attraction} \label{encint}
 
-As discussed earlier iin the book, sentences such as (\ref{example1}) can lead to an illusion of grammaticality.\footnote{An  extended version of this section appeared as \cite{VasishthEtAlICCM2017} in the Proceedings of the International Conference on Cognitive Modelling, held at the University of Warwick, Coventry, UK.}
+As discussed earlier iin the book, sentences such as (\ref{c07example1}) can lead to an illusion of grammaticality.\footnote{An  extended version of this section appeared as \cite{VasishthEtAlICCM2017} in the Proceedings of the International Conference on Cognitive Modelling, held at the University of Warwick, Coventry, UK.}
 The sentence is
 ungrammatical because of the lack of number agreement between
 the subject \textit{key} and the auxiliary \textit{are}.
@@ -258,59 +258,59 @@ Note that the second noun, \textit{cabinets}, and the auxiliary \textit{are} agr
 \begin{exe} 
 \ex
 \begin{xlist}
-\item \label{example1}
+\item \label{c07example1}
 The key to the cabinets are on the table.
-\item \label{example2}
+\item \label{c07example2}
 The key to the cabinet are on the table.
 \end{xlist}
 \end{exe}
 
 The illusion has the effect that
- the auxiliary \textit{are} is read faster in (\ref{example1}) compared to the equally ungrammatical sentence (\ref{example2}) \citep[see][for a review]{JaegerEngelmannVasishth2017}. In contrast to (\ref{example1}), in (\ref{example2}) the second noun (\textit{cabinet}) is singular and does not agree with the auxilary in number.
+ the auxiliary \textit{are} is read faster in (\ref{c07example1}) compared to the equally ungrammatical sentence (\ref{c07example2}) \citep[see][for a review]{JaegerEngelmannVasishth2017}. In contrast to (\ref{c07example1}), in (\ref{c07example2}) the second noun (\textit{cabinet}) is singular and does not agree with the auxilary in number.
 
-Several explanations have been proposed for the illusion of grammaticality in (\ref{example1}) vs.\ (\ref{example2}).
+Several explanations have been proposed for the illusion of grammaticality in (\ref{c07example1}) vs.\ (\ref{c07example2}).
 We discuss two of these here.
 
-The feature percolation account proposes that in (\ref{example1}) the plural feature on \textit{cabinets} can, in some proportion of trials, move or percolate up to the head noun \textit{key}  \citep[see][for recent evidence for this model]{patson2016misinterpretations}. The head noun now has the plural feature, leading to an illusion of grammaticality compared to (\ref{example2}), where no such feature percolation occurs. 
-Another prominent explanation, due to \cite{WagersLauPhillips2009}, is the retrieval interference account. Here, in ungrammatical sentences like (\ref{example1}), a singular verb would be predicted; but when the plural verb \textit{are} is encountered, a cue-based retrieval process is triggered: The verb triggers a search for a noun that is plural marked and is a subject. A parallel cue-based associative memory access leads to the retrieval of a partially matching noun in memory (\textit{cabinets}) that agrees in number but is not the subject. This partial match leads to a successful retrieval and an illusion of grammaticality.\footnote{Notice that the cue-based retrieval account may a priori be implausible because it predicts that an incorrect dependency is built between \textit{cabinets} and \textit{are}; building such a dependency would imply that the sentence has the implausible meaning that the cabinets are on the table. The reader should detect such an implausible meaning and this should lead to a slowdown rather than facilitation.} 
+The feature percolation account proposes that in (\ref{c07example1}) the plural feature on \textit{cabinets} can, in some proportion of trials, move or percolate up to the head noun \textit{key}  \citep[see][for recent evidence for this model]{patson2016misinterpretations}. The head noun now has the plural feature, leading to an illusion of grammaticality compared to (\ref{c07example2}), where no such feature percolation occurs. 
+Another prominent explanation, due to \cite{WagersLauPhillips2009}, is the retrieval interference account. Here, in ungrammatical sentences like (\ref{c07example1}), a singular verb would be predicted; but when the plural verb \textit{are} is encountered, a cue-based retrieval process is triggered: The verb triggers a search for a noun that is plural marked and is a subject. A parallel cue-based associative memory access leads to the retrieval of a partially matching noun in memory (\textit{cabinets}) that agrees in number but is not the subject. This partial match leads to a successful retrieval and an illusion of grammaticality.\footnote{Notice that the cue-based retrieval account may a priori be implausible because it predicts that an incorrect dependency is built between \textit{cabinets} and \textit{are}; building such a dependency would imply that the sentence has the implausible meaning that the cabinets are on the table. The reader should detect such an implausible meaning and this should lead to a slowdown rather than facilitation.} 
 
 There is evidence for both these accounts: a facilitatory effect is generally present in the published data. 
 A question then arises: if we take the position that a dependency between \textit{cabinets} and \textit{are} is not plausible, could there be an explanation for the facilitation that does not need reference to a cue-based retrieval process?
 
 As discussed earlier in chapter \ref{c01}, the facilitatory effect is robustly seen in at least 10 published studies (self-paced reading or eyetracking). The explanation we presented in chapter \ref{c02} was in terms of a race process within the ACT-R based model. Next, we consider an alternative explanation in terms of encoding interference.
 
-Consider the ungrammatical example sentences again. In example~(\ref{example2}),
-both the nouns are marked singular, whereas in example~(\ref{example1}) the nouns have different number marking. 
+Consider the ungrammatical example sentences again. In example~(\ref{c07example2}),
+both the nouns are marked singular, whereas in example~(\ref{c07example1}) the nouns have different number marking. 
 As discussed in \cite{VillataFranck},
-the similarity in number of the two nouns in (\ref{example2}) could be the underlying cause for increased processing difficulty, compared to (\ref{example1}).
-The identical number marking in (\ref{example2}) could lead to increased confusability between the two nouns, leading to longer reading times at the moment when a subject noun is to be accessed at the auxiliary verb. 
+the similarity in number of the two nouns in (\ref{c07example2}) could be the underlying cause for increased processing difficulty, compared to (\ref{c07example1}).
+The identical number marking in (\ref{c07example2}) could lead to increased confusability between the two nouns, leading to longer reading times at the moment when a subject noun is to be accessed at the auxiliary verb. 
 The feature overwriting model of \cite{Nairne1990} formalizes this idea. To quote (p.\ 252):
 \textit{An individual feature of a primary memory trace is assumed to be overwritten, with probability $F$, if that feature is matched in a subsequently occurring event. Interference occurs on a feature-by-feature basis, so that, if feature $b$ matches feature $a$, the latter will be lost with probability $F$}.
 
-The Nairne proposal has a natural interpretation as a finite mixture process. Specifically, feature overwriting could occur with a higher probability in example~(\ref{example2}) compared to (\ref{example1}). This assumption implies that the reading times in both (\ref{example2}) and (\ref{example1}) are generated from a mixture of two distributions. 
+The Nairne proposal has a natural interpretation as a finite mixture process. Specifically, feature overwriting could occur with a higher probability in example~(\ref{c07example2}) compared to (\ref{c07example1}). This assumption implies that the reading times in both (\ref{c07example2}) and (\ref{c07example1}) are generated from a mixture of two distributions. 
 In a particular trial, if no feature overwriting occurs, the reading time would come from a Lognormal distribution with some location and scale parameters; this situation would result in 
 minimal processing difficulty in  carrying out a retrieval and detecting the ungrammaticality. In other trials,
 when feature overwriting does occur, 
 the reading time would have a larger location parameter, and possibly also a larger scale parameter; this would represent the cases where additional difficulty occurred due to feature overwriting. 
 
-An explicit assumption here is that feature overwriting could occur in both (\ref{example2}) and (\ref{example1}), but the proportion would be higher in (\ref{example2}). It is also possible to assume that feature overwriting only occurs in 
-(\ref{example2}), but we leave the investigation of this and other alternative models to future work. 
+An explicit assumption here is that feature overwriting could occur in both (\ref{c07example2}) and (\ref{c07example1}), but the proportion would be higher in (\ref{c07example2}). It is also possible to assume that feature overwriting only occurs in 
+(\ref{c07example2}), but we leave the investigation of this and other alternative models to future work. 
 
 Thus, in the mixture model implementation of the Nairne proposal, one distribution will have a larger location parameter (and perhaps also a larger scale parameter).
 In the modelling presented below, one goal is to estimate the mixing proportions of these distributions.
-When reporting the results below, we will refer to the proportion of the slow reading time distributions in (\ref{example2}) as \texttt{prob\_hi}, and in (\ref{example1}) \texttt{prob\_lo}. The suffixes \texttt{hi} and \texttt{lo} here refer to whether we expect confusability to be high or low.
+When reporting the results below, we will refer to the proportion of the slow reading time distributions in (\ref{c07example2}) as \texttt{prob\_hi}, and in (\ref{c07example1}) \texttt{prob\_lo}. The suffixes \texttt{hi} and \texttt{lo} here refer to whether we expect confusability to be high or low.
 
 To summarize, the feature percolation, cue-based retrieval, and 
-feature overwriting models all predict facilitation in the ungrammatical sentences (\ref{example1}) compared to (\ref{example2}), but the underlying generative process assumed in each model is different. Feature percolation and feature overwriting can be seen as finite mixture models of different types, and cue-based retrieval can be seen as implemented by the standard hierarchical model.
+feature overwriting models all predict facilitation in the ungrammatical sentences (\ref{c07example1}) compared to (\ref{c07example2}), but the underlying generative process assumed in each model is different. Feature percolation and feature overwriting can be seen as finite mixture models of different types, and cue-based retrieval can be seen as implemented by the standard hierarchical model.
 Our goal here is to implement all the three proposals as statistical models and then compare their relative fit to the data in order to adjudicate between them.
 
 
 \subsection{An evaluation of the Nairne proposal}
 
-We fit homogeneous and heterogeneous variance hierarchical mixture models to the 10 reading time data-sets that compared reading times at the auxiliary or the following region for sentences like (\ref{example1}) and (\ref{example2}). 
+We fit homogeneous and heterogeneous variance hierarchical mixture models to the 10 reading time data-sets that compared reading times at the auxiliary or the following region for sentences like (\ref{c07example1}) and (\ref{c07example2}). 
 
 The data were assumed to be generated from a two-mixture Lognormal distribution with either a homogeneous variance in both mixture distributions, or heterogeneous variances. 
-Thus, for the high confusability condition (\ref{example2}), we considered two models:
+Thus, for the high confusability condition (\ref{c07example2}), we considered two models:
 
 \begin{equation}
 \begin{split}
@@ -338,7 +338,7 @@ y_{ij}
 \noindent
 In both models, 
 $y_{ij}$ 
-is the reading time in milliseconds from subject $i$ and item $j$.  The probability  \texttt{prob\_hi} represents the mixing probability of the distribution that generates the slow reading times corresponding to trials where feature overwriting occurred (\ref{example2}). Although not shown, another mixture distribution is defined for example (\ref{example1}); here, 
+is the reading time in milliseconds from subject $i$ and item $j$.  The probability  \texttt{prob\_hi} represents the mixing probability of the distribution that generates the slow reading times corresponding to trials where feature overwriting occurred (\ref{c07example2}). Although not shown, another mixture distribution is defined for example (\ref{c07example1}); here, 
 \texttt{prob\_lo} represents the mixing probability of the distribution that generates the slower reading times corresponding to the trials where feature overwriting occurred. 
 
 The homogeneous variance model assumes that both mixture distributions have the same standard deviation $\sigma_e$.  The heterogeneous mixture model assumes that the mixture distribution that leads to the slower reading times is assumed to have both a different mean ($\beta+\delta$) and a different standard deviation ($\sigma_{e'}$) than the other distribution.
@@ -346,7 +346,7 @@ Alternative models can be fit which relax these assumptions, but we leave these 
 
 
 As a baseline, we fit a model corresponding to the retrieval interference account,  and the 
-feature percolation proposal. The latter also assumes a mixture distribution, but only for the condition corresponding to  example (\ref{example1}). Recall that the claim is that in ungrammatical sentences, in some proportion of trials the plural feature on the distractor \textit{cabinets} moves up to the head noun. In (\ref{example2}), no such mixture process should occur because percolation never occurs; hence a standard hierarchical LogNormal distribution can be assumed here. We therefore defined the following generative process for (\ref{example1}):
+feature percolation proposal. The latter also assumes a mixture distribution, but only for the condition corresponding to  example (\ref{c07example1}). Recall that the claim is that in ungrammatical sentences, in some proportion of trials the plural feature on the distractor \textit{cabinets} moves up to the head noun. In (\ref{c07example2}), no such mixture process should occur because percolation never occurs; hence a standard hierarchical LogNormal distribution can be assumed here. We therefore defined the following generative process for (\ref{c07example1}):
 
 \begin{equation}
 \begin{split}
@@ -361,7 +361,7 @@ y_{ij} \sim& \hbox{prob\_perc} \cdot LogNormal(\beta+\gamma+u_i+w_j,\sigma_{e}^2
 \noindent
 Note that in the specification above the parameter $\gamma$, which represents the change in the location parameter, is constrained in the model to be negative; this is because the assumption in the feature percolation proposal is that percolation leads to faster reading time.
 
-For sentences like (\ref{example2}), in which no percolation is assumed to occur, we simply assumed a LogNormal generative process:
+For sentences like (\ref{c07example2}), in which no percolation is assumed to occur, we simply assumed a LogNormal generative process:
 
 \begin{equation}
 y_{ij} \sim LogNormal(\beta+u_i+w_j,\sigma_{e}^2)
@@ -399,19 +399,19 @@ Table~\ref{tab:allcomparisons} also shows that the homogeneous variance feature 
 
 Since the model comparisons are transitive (if model A is better than B, and C is better than B, then C is better than A), we can conclude that, among the models compared, the heterogeneous variance feature overwriting model characterises these data the best. 
 In summary, overall there is good motivation to assume that in the
-condition with two singular nouns (example~\ref{example2}), a proportion of trials comes from a distribution with a larger mean and larger standard deviation, and this proportion is higher than in the condition with one singular and one plural noun (example~\ref{example2}). 
+condition with two singular nouns (example~\ref{c07example2}), a proportion of trials comes from a distribution with a larger mean and larger standard deviation, and this proportion is higher than in the condition with one singular and one plural noun (example~\ref{c07example2}). 
 
 \subsection{Discussion}
 
 We implemented as a statistical model the proposal that nouns with similar feature marking (here, number) may be more confusable due to feature overwriting in some proportion of trials, which in turn leads to occasional increase in difficulty in accessing the correct noun when a dependency is to be completed between the subject and the verb. By fitting Bayesian hierarchical two-mixture models, we showed that 9 out of the 10 data-sets showed evidence for this increased confusability in one condition over the other. 
 
-The feature overwriting account for the ungrammatical sentences (\ref{example1}, \ref{example2}) appears to be superior to both the retrieval interference and feature percolation accounts. 
+The feature overwriting account for the ungrammatical sentences (\ref{c07example1}, \ref{c07example2}) appears to be superior to both the retrieval interference and feature percolation accounts. 
 
 \subsubsection{Some limitations}
 
 An interesting future direction would be to evaluate the predictions of these models for grammatical sentences such as those considered in \cite{VillataFranck}. The overall pattern observed in the literature is that, with one exception \citep{nicenboimexploratory}, no differences are seen in the grammatical conditions \citep[see, e.g., the meta-analysis results reported in][]{JaegerEngelmannVasishth2017}. However, as discussed in chapter~\ref{c00}, it is likely that the studies that investigated the grammatical constructions were underpowered; if so, there may not be enough data from each study to draw any conclusions from the absence of an effect. Nevertheless, in principle it is possible that the feature overwriting process can explain the data better than the alternative accounts. 
 
-As mentioned earlier, the retrieval interference proposal has an a priori difficulty that may rule it out: it implies that whenever \textit{cabinets} is erroneously retrieved in (\ref{example1}), the reader should conclude that the cabinets are on the table. This interpretation should make no sense to the reader because cabinets are usually not placed on tables.  Thus, even if the reader misretrieves \textit{cabinets} in (\ref{example1}), they should register that something is wrong with the resulting meaning. As a consequence, if subjects do register this anomaly and assuming that this step costs time, facilitation (faster reading time) may not necessarily be observed at the verb (auxiliary or main verb, depending on the experiment) or a subsequent region in (\ref{example1}) vs.\ (\ref{example2}). 
+As mentioned earlier, the retrieval interference proposal has an a priori difficulty that may rule it out: it implies that whenever \textit{cabinets} is erroneously retrieved in (\ref{c07example1}), the reader should conclude that the cabinets are on the table. This interpretation should make no sense to the reader because cabinets are usually not placed on tables.  Thus, even if the reader misretrieves \textit{cabinets} in (\ref{c07example1}), they should register that something is wrong with the resulting meaning. As a consequence, if subjects do register this anomaly and assuming that this step costs time, facilitation (faster reading time) may not necessarily be observed at the verb (auxiliary or main verb, depending on the experiment) or a subsequent region in (\ref{c07example1}) vs.\ (\ref{c07example2}). 
 One could, however, defend the cue-based retrieval account on the grounds that the comprehender is not interpreting the meaning of the sentence but is relying only on some type of syntactic local coherence \cite{taboretal04} to parse the sentence. Given the evidence in the literature for underspecification in comprehension \citep{SwetsDesmetClifton2008,MalsburgVasishth2013}, this could be an argument for the cue-based retrieval account. Future research should focus on disentangling these two competing accounts.  
 
 One argument against the feature overwriting account is that one cannot explain the facilitatory interference effects found in \cite{CunningsSturt2018}; see the discussion relating to example~\ref{ex:CunningsSturt2018} on page~\pageref{ex:CunningsSturt2018}. In the Cunnings and Sturt design, there cannot be a feature overwrite between the nouns in question that can explain the differences in reading time observed at the verb. 
