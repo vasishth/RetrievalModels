@@ -58,7 +58,7 @@ More prominent items would thus have an elevated activation level prior to retri
 In the same way, prominence could include other factors that we do not consider here: For example, thematic role \citep{Arnold2001}, contrastive focus \citep{CowlesWalenskiKluender2007}, first mention \citep{GernsbacherHargreaves1988}, and animacy \citep{FukumuraVanGompel2011} are known to affect discourse saliency and might thus influence an item's activation in memory. 
 We focus here on the effects of grammatical position and discourse status, which have been discussed in the literature on memory interference in dependency resolution \citep{VanDykeMcElree2011,CunningsFelser2013,PatilVasishthLewis2016,Sturt2003}.
 
-In the model, instead of modeling each additional hypothesized retrieval or reactivation event, we simply add a term to the base-level activation that is a function of the grammatical role or discourse status of the memory item. Because of our revised assumption 2$'$, according to which the magnitude of the interference caused by a distractor in the model depends on its activation relative to the target, a sentence containing a high-prominence distractor should show a different interference effect than a sentence with a low-prominence distractor, even if the target and the retrieval cues are the same.
+In the model, instead of modelling each additional hypothesized retrieval or reactivation event, we simply add a term to the base-level activation that is a function of the grammatical role or discourse status of the memory item. Because of our revised assumption 2$'$, according to which the magnitude of the interference caused by a distractor in the model depends on its activation relative to the target, a sentence containing a high-prominence distractor should show a different interference effect than a sentence with a low-prominence distractor, even if the target and the retrieval cues are the same.
 Expressed in ACT-R terms, a high prominence status results in an increased \emph{base-level activation} $B_{i}$, which is the activation of an item before \emph{spreading activation} $S_{i}$ is added as the result of the retrieval cues.\label{prominenceimplementationpageref}
 
 The full details on the implementation will be presented in the section beginning on page \pageref{sec:impl}. Here, we already show the results of simulations with the extended model in order to illustrate the general predictions as a function of prominence.
@@ -144,7 +144,6 @@ How do these predictions match up with the data?
 In the literature on target-match interference configurations with high-prominence distractors, there is some evidence for both (A) inhibitory effects as well as (B) facilitatory effects. 
 For the remainder of this section, we summarize this evidence in comparison with the predictions shown in Figure~\ref{fig:prominenceNew}.
 
-
 \paragraph{A: Target-match inhibition}
 In an eyetracking and a speed-accuracy trade-off experiment with target-match configurations, \cite{VanDykeMcElree2011} found that a distractor noun phrase in the subject position of a subordinate clause, such as \textit{the witness} (vs.\ \textit{motion}) in \ref{ex:vandyke11subjobj}a, causes inhibitory interference at the main verb \textit{compromised}, while no such effect was present when the distractor \textit{the witness} was in object position as in \ref{ex:vandyke11subjobj}b.
 
@@ -156,16 +155,13 @@ In an eyetracking and a speed-accuracy trade-off experiment with target-match co
 \end{xlist}
 \end{exe}  
 
-
 \cite{PatilVasishthLewis2016} found an interference effect at the reflexive in an eyetracking experiment using sentences as in \ref{ex:patil} with the distractor \textit{Fred} in subject position, which was a modification of \cite{Sturt2003} (shown in \ref{ex:sturt:exp2}) where the distractor was in object position.
 
-% % Patil et al.: retroactive, subject, but not topicalized
 \begin{exe} 
 \ex\label{ex:patil}
 The tough soldier that \textbf{Fred}/Katie treated in the military hospital introduced himself to all the nurses.
 \end{exe}  
-% %
-% % Sturt exp 2
+
 \begin{exe} 
 \ex\label{ex:sturt:exp2}
 The surgeon who treated \textbf{Jonathan}/Jennifer had pricked himself with a used syringe needle. 
@@ -181,9 +177,8 @@ while reading/comprehending the target sentence
 \paragraph{B: Target-match facilitation}
 Expt 1 by \cite{Sturt2003} and Expt 2 by \cite{CunningsFelser2013} found \index{facilitatory interference} \emph{facilitatory interference} in target-match configurations when the distractor was in subject position \emph{and} had been made the discourse topic using a context sentence.
 Cunnings and Felser used sentences such as Example~\ref{ex:cf13:ex2} and the baseline condition shown in Example~\ref{ex:cf13:ex2baseline}, where the distractor noun phrase was introduced in a context sentence and was co-referred to in the target sentence through the pronoun \textit{he}. 
-The authors hypothesized that the distractor was more prominently encoded due to reactivation at the anaphor, and that this
-may have increased the probability of observing an interference effect at the reflexive (pp.\ 212-213). 
-%
+The authors hypothesized that the distractor was more prominently encoded due to reactivation at the anaphor, and that this may have increased the probability of observing an interference effect at the reflexive (pp.\ 212-213). 
+
 \begin{exe} 
 \ex\label{ex:cf13:ex2}
 \textbf{James} has worked at the army hospital for years. \\
@@ -196,7 +191,6 @@ The soldier that \textbf{he} treated on the ward wounded himself while on duty i
 \end{exe}
 
 A distractor that is a discourse topic and is also in subject position would arguably be more prominent than if it were just in subject position but not a discourse topic. The qualitative difference of the target-match effects described above is thus predicted by our model. As explained above, a distractor that is more activated than the target causes an increasing number of misretrievals of the highly-activated distractor, which has a faster retrieval latency and therefore yields a facilitatory interference effect on average when the speed-up is strong enough to counter-act the fan effect (right-hand side of point d in Fig.~\ref{fig:promEnsMatch}).
-
 
 In summary, the integration of prominence in the form of base-level  activation (assumption 1$'$) and the fan effect being a function of distractor activation (assumption 2$'$) can explain \emph{inhibitory} interference effects in target-match configurations with a prominent distractor that were not found with a non-prominent distractor \citep{VanDykeMcElree2011,PatilVasishthLewis2016,JaegerEngelmannVasishth2015}, and \emph{facilitatory} interference effects in target-match configurations with a highly prominent distractor that was in subject position \emph{and} the discourse topic \citep{CunningsFelser2013,Sturt2003}.
 The original LV05 model neither predicts facilitatory interference effects in target-match configurations nor the systematic absence of an effect under certain conditions.
@@ -213,7 +207,7 @@ The distractor \textit{Jennifer} receives the same amount of activation through 
 This leads to statistical facilitation in the way explained earlier.
 
 In ACT-R models, a match between a cue and a feature is \index{binary match} binary and \index{categorical match} categorical: A feature and a cue can only match or not match, there is no gradation; and a gender cue can only be matched by gender features (\texttt{masc}, \texttt{fem}, \texttt{neut}) and is not associated at all with features of a different category.
-Such categorical one-to-one relations are, of course, a simplification made for modeling, but they are not well motivated when we accept that language acquisition is essentially a gradual process of learning the mapping from form to meaning on the basis of contextual cues \citep[see, e.g.,][]{bybee2006usage,langacker1987foundations,tomasello2003constructing}. The strength and distinctiveness of representational associations are thus dependent on \emph{similarities} with other associations.
+Such categorical one-to-one relations are, of course, a simplification made for modelling, but they are not well motivated when we accept that language acquisition is essentially a gradual process of learning the mapping from form to meaning on the basis of contextual cues \citep[see, e.g.,][]{bybee2006usage,langacker1987foundations,tomasello2003constructing}. The strength and distinctiveness of representational associations are thus dependent on \emph{similarities} with other associations.
 In that sense, retrieval cues represent abstract knowledge about the features that successfully identify the correct retrieval target, as derived from experience with a certain dependency context. Hence, cue-feature associations evolve as graded associations between a retrieval context and any features of the correct target resulting from a process of learning relevant discriminations between features. 
 As a result, it is possible that, in certain situations, a cue can be associated with \emph{multiple} feature values to varying degrees. 
 
@@ -221,7 +215,6 @@ Now, there is no specific reason why, in the sentence ``the surgeon who treated 
 But consider, for example, the sentence ``the nurse who cared for the children had pricked each other''.
 The relevant retrieval cues for the reciprocal \textit{each other} are \actrcue{CCOM} and \actrcue{PLURAL}. The cue \actrcue{CCOM} is matched by the syntactically correct target \textit{the nurse} and \actrcue{PLURAL} is matched by the distractor \textit{the children}.
 The difference between reciprocals, such as \textit{each other}, and reflexives, such as \textit{herself}, is that the correct target in a reciprocal context \emph{always} exhibits the features \match{plur} and \match{ccom}, while there are several possible forms in a reflexive context, e.g., \textit{himself}, \textit{herself}, \textit{itself}, and \textit{themselves}, which all trigger different combinations of the syntactic cue with gender and number cues, as listed in Table~\ref{tbl:featurecombinations}.
-
 
 \begin{table}[htbp]
 	\centering
@@ -243,14 +236,12 @@ The difference between reciprocals, such as \textit{each other}, and reflexives,
 	\label{tbl:featurecombinations}
 \end{table}
 
-
 The \actrcue{CCOM} cue in reflexive contexts would therefore not be strongly associated with, e.g., the \match{FEM} feature because this would activate the wrong items whenever the form of the reflexive is not \textit{herself} but \textit{himself} or \textit{themselves}, etc. Therefore, the reflexive context requires syntactic, gender and number features to be discriminated.
 In reciprocal contexts, however, the correct target has to be plural. In this case, if the \actrcue{CCOM} cue were to be associated with the \match{PLURAL} feature, it would always activate the correct target. 
 Because \match{CCOM} and \match{PLURAL} \emph{co-occur} frequently in similar contexts for reciprocal-antecedent dependencies, a strong discrimination is less required than in reflexive contexts. Instead, it might even be more efficient to also activate plural items with the \actrcue{ccom} cue and vice versa. 
 This reasoning builds on the ideas of classical conditioning \citep{RescorlaWagner1972}, where two stimuli that require similar responses in similar contexts become less discriminated than when they elicit different responses.
 As a consequence, the cues \actrcue{ccom} and \actrcue{plural} in reciprocal-antecedent dependencies would be less \textbf{discriminative} than the cues in reflexive-antecedent dependencies and would therefore both be associated to some degree with both the features \match{ccom} and \match{plur}. We will say that, in this situation, two cues are \index{cross-associated cue} \textbf{cross-associated} due to \textbf{feature co-occurrence}.
 A similar situation arises for the Chinese reflexive \textit{ziji} (also shown in Table~\ref{tbl:featurecombinations}), which requires an animate and c-commanding target. Thus, in the case of \textit{ziji}, \actrcue{ccom} would be cross-associated with \actrcue{anim}.
-
 
 For an illustration of the predictions that would arise from cross-associated cues, consider Figure~\ref{fig:newmodelcueconf}. The figure shows the no-interference (c) and interference (d) conditions in \emph{target-mismatch} configurations when cues are cross-associated in contrast to Figure~\ref{fig:ACTRpred}, where no cross-association was present.
 
@@ -265,7 +256,6 @@ In the target-mismatch/distractor-mismatch condition c, the target therefore rec
 In the target-mismatch/distractor-match condition d, the target carries \match{ccom} and the distractor carries \match{plur}. As a consequence, both cues now share their activation between target and distractor, i.e., they are overloaded. 
 This leads to a similar situation as in target-match configurations shown earlier in condition b of Figure~\ref{fig:ACTRpred}: As spreading activation is shared between target and distractor, inhibitory interference, i.e., a \emph{fan effect}, arises. This is because both items are less activated in d than the target is in c and will be retrieved slower in d vs.\ c.\footnote{The reader may wonder why a facilitatory race effect does not emerge in target-mismatch when cross-associated cues induce a fan effect: after all, both the target and distractor again have similar activations. A similar activation of target and distractor is   a prerequisite for a race-based statistical facilitation. 
 For a race-induced facilitation, however, the target would have to be similarly activated in both conditions c and d, as is the case without cross-association (Figure~\ref{fig:ACTRpred}). With cross-association, the target has higher activation in c, whereas in d, the activation is shared with the distractor and therefore reduced. Therefore, the target's activation in c is much higher relative to the activations in condition d of the two racing items (i.e., the target and the distractor). Hence, the target in c will be retrieved faster on average than the winner of the race in condition d, and consequently no facilitation effect will be observed in d vs.\ c.} 
-% predicting inhibitory interference for cross-associated cues in target-mismatch conditions due to the fan effect.
 
 In order to explore the quantitative consequences for the predicted interference effect, we implemented cross-associated cues in an extension of LV05 and ran simulations with a range of values for the \emph{cross-association level}.
 As the results in Figure~\ref{fig:cueconf} clearly show, an increasing cross-association level causes an inhibitory fan effect in target-mismatch configurations that eliminates the facilitatory effect.
@@ -305,28 +295,10 @@ p_conf <- (ggplot(data=subset(means), aes(cl, Effect, linetype=Target))
 p_conf
 
 @
-%
- \caption{Predicted target-match and target-mismatch interference effects (distractor-match minus  distractor-mismatch) as a function of the cross-association level c. Lines and shaded area show mean and range of the effect, respectively, for parameter values of the latency factor F ranging from 0.2 to 0.4, and distractor prominence ranging from -0.5, 0, 0.5, running 5,000 iterations each; other parameters were fixed as \textit{ANS}$\protect =0.2$, \textit{MAS}$\protect =2$, \textit{MP}$\protect =0$. Positive values indicate longer mean retrieval latencies (inhibition) in the interference condition due to cue-overload (fan effect). Negative values indicate shorter mean retrieval latencies (facilitation) in the interference condition due to misretrievals of the distractor.}\label{fig:cueconf} 
+\caption{Predicted target-match and target-mismatch interference effects (distractor-match minus  distractor-mismatch) as a function of the cross-association level c. Lines and shaded area show mean and range of the effect, respectively, for parameter values of the latency factor F ranging from 0.2 to 0.4, and distractor prominence ranging from -0.5, 0, 0.5, running 5,000 iterations each; other parameters were fixed as \textit{ANS}$\protect =0.2$, \textit{MAS}$\protect =2$, \textit{MP}$\protect =0$. Positive values indicate longer mean retrieval latencies (inhibition) in the interference condition due to cue-overload (fan effect). Negative values indicate shorter mean retrieval latencies (facilitation) in the interference condition due to misretrievals of the distractor.}\label{fig:cueconf} 
 \end{figure}
 
-
-
-
-
-% Translated into ACT-R terms, discriminating features at retrieval means there are distinct cues activating each feature. If features are not discriminated at all, they are activated by the same cue, i.e., they are treated as one and the same feature by the retrieval process. Depending on the specific feature co-occurrence rate, there are gradations between these two extremes. Some features might be very similar but not identical in terms of relevance to the retrieval task.
-% There would then be two cues that are to a certain degree activating both of the features. We will say that, in this case, the cues are \emph{cross-associated}.
-% The stronger the association between a cue and a feature, the more efficient the cue is for discriminating items with that feature in memory.\footnote{
-% 	In the context of the ACT-R architecture, an associative relation between cues and features, though not implemented, is a rather straightforward assumption. In ACT-R, any two memory items can be assigned a mutual similarity. This includes feature values and cue values as these are items in memory, too. 
-% 	Similarities are used, for example, in the equation for a component called \emph{mismatch penalty}, which we do not discuss here. 
-% 	% It enables the model to retrieve items that do not match the retrieval cues but might nevertheless be similar (e.g., an orange item when using the retrieval cue \actrcue{red}). 
-% 	We propose that the same similarity values should be included in the computation of the fan effect.
-% }
-
-
-
 The cross-association level $c$ takes values between $0$ and $1$, where $c = 0$ means that two features are maximally discriminated (distinct cues activate distinct features) and $c = 1$ means that their corresponding features are treated as functionally identical, i.e., each cue activates both features.
-% In order to quantify the confusion level for a specific context, such as reciprocal-antecedent vs.\ reflexive-antecedent dependencies, one could carry out a corpus analysis counting co-occurrence frequencies.
-% For an illustration of the difference in confusion levels between two dependency contexts, consider the following simplification:
 
 More formally, $c_{kl}(Context)$ is the cross-association level $c$ with respect to features $k$ and $l$ in a particular retrieval context (e.g., English reciprocals), and is equal to the strength with which each feature is associated with the corresponding cue of the other feature. 
 For example, if the cross-association level of \match{ccom} and \match{plural} in reciprocals equals $0.5$, it means that the \actrcue{ccom} cue is associated with the \match{plural} feature with strength $0.5$ and the \actrcue{plural} cue is associated with the \match{ccom} feature with strength $0.5$. 
@@ -336,9 +308,7 @@ If, however, $c=1.0$, plural and c-command would not be discriminated at all as 
 This effectively means that we would not think of two cues in this case but only one that is associated equally with two features.
 
 Theoretically, the cross-association level $c$ reflects the
-relative frequency of co-occurrence of both features, relative to the frequency of occurrence of either of the features.
-%as target identifiers relative to their individual frequency with respect to a certain retrieval context over the course of learning.
-For example, consider 
+relative frequency of co-occurrence of both features, relative to the frequency of occurrence of either of the features. For example, consider 
 Table~\ref{tbl:featurecombinations}, which shows several co-occurring features. 
 We could say that the cross-association level $c_{kl}(Context)$ is the ratio of all feature combinations with both $k$ and $l$ with respect to all combinations with at least $k$ or $l$, given a particular context:
 
@@ -381,35 +351,24 @@ A_i \propto S_i \hbox{ where } S_i = \sum\limits_{j \in \textit{Cues}} W_j S_{ji
   
 For each cue $j$, the standard ACT-R calculation of $S_{ji}$ is based on its fan, which is defined as the number of items that match this cue. 
 Instead of this simplified definition, we base our implementation on the more general definition of $S_{ji}$ \citep[p.\ 129]{SchneiderAnderson2012}. This general definition states that the association between cue $j$ and item $i$ reflects the probability of the item being needed (i.e., is the target of the retrieval) given cue $j$:\footnote{We thank Klaus Oberauer for his helpful comments, which led to the present implementation.}
+
 \begin{equation}
 	S_{ji} = \hbox{MAS} + \hbox{ln}[P(i|j)]
 \end{equation}
 
 The standard equation (which is usually used in ACT-R implementations) that calculates the fan as the number of matching items makes the simplifying assumption that all items associated with cue $j$ are equally likely (i.e., \textit{useful} in the context of cue $j$), such that $P(i|j) = 1/\textit{fan}_j$. It is important to note here that the probability $P(i|j)$ for item $i$ is only defined when it is associated with cue $j$.
 
-%Hence, for two items that are equally useful, $P(i|j) = \frac{1}{2} = 0.5$ and the associative strength $S_{ji}$ can be simplified as $\textit{MAS} + \text{ln}(1/\textit{fan}_j)$, which is equivalent to $\textit{MAS} - \text{ln}(\textit{fan}_j)$.
-%; this is how the standard equation (\ref{eq:assoc2}) arises.
-% 
-% \begin{equation}
-% 	S_{ji} = S - \text{ln}(\textit{fan}_j)
-% \end{equation}
-% 
-
 In order to reflect differences in encoding strength between items (\emph{prominence}) and cross-associations between cues, we define $P(i|j)$ here as the \index{match quality} \textbf{match quality} $Q_{ji}$ (which will be defined further below) of item $i$ with cue $j$ in proportion to the match quality $Q_{jv}$ of all active memory items $v$ with $j$:
-% 
+
 \begin{equation} \label{eq:newfan}
 	P(i|j) = \frac{Q_{ji}}{\sum\limits_{v \in Items} Q_{jv}}
 \end{equation}
-%
-The next two subsections will explain how this leads to multi-associative cues and the influence of item prominence on the fan effect.
 
+The next two subsections will explain how this leads to multi-associative cues and the influence of item prominence on the fan effect.
 
 \subsection{Multi-associative cues}
 We assume that a cue can have variable discrimination, i.e., it can be associated with multiple features to different degrees. The associative strength between a cue $j$ and a feature $k$ is given by $M_{jk}$, which takes values between $0$ (not associated) and $1$ (maximally associated). 
-% In standard ACT-R, $M_{jk}$ could take only $0$ (`not matching') or $1$ (`matching') as values. In our proposal, $M_{jk}$ can take any value from $0$ to $1$.
 The individual match quality $Q_{ji}$ of cue $j$ with a specific item $i$ then depends on the associative strength between $j$ and all features $K_i$ of $i$. 
-% , weighted by the \emph{general saliency} of the item.
-% The saliency is discussed below; for now, we only focus on the first term ($\sum_{k \in K_i} M_{jk}$):
 
 \begin{equation}
     Q_{ji} = \sum_{k \in K_i} M_{jk} \label{eq:Qji}
@@ -426,15 +385,6 @@ For the worked-out examples below, assume that an item $i$ has feature f$1$ but 
 	\caption{Standard target-mismatch/distractor-match condition without cross-associated cues.}
 	\label{fig:implFig1}
 \end{figure}
-
-
-% \begin{verbatim}
-% Figure xxx
-%              TARGET i        DISTRACTOR i'       CUES
-%              f1  --------------------------------- q1            
-%                              f2 ------------------ c2
-% \end{verbatim}
-
 
 \begin{enumerate}
 \item
@@ -490,19 +440,6 @@ Now consider the activation spread to item $i$ when the cross-association level 
 	\label{fig:implFig2}
 \end{figure}
 
-
-% \begin{verbatim}
-% Figure yyy
-%              TARGET i        DISTRACTOR i'       CUES
-%              f1  --------------------------------- q1 
-%             |               .......................|
-%             |               |         
-%             |               f2 ------------------ c2
-%             |......................................|               
-% \end{verbatim}
-
-
-
 Now, $P(i|q1)$ is not $1$ but $1/1.5$ or $2/3$.  
 
 \begin{equation} \label{eq:newfannoxassoc3}
@@ -535,7 +472,6 @@ Here, $Q_{q2,i} = 0.5$ because of the cross-association of $0.5$ of  cue q$2$ wi
 
 We now use $P(i|q2)$ to calculate the \index{spreading activation} spreading activation  $S_{q2,i}$ that item $i$ receives from cue $q2$. Similar to  $S_{q1,i}$, $S_{q2,i}$ will also be smaller than \textit{MAS}: 
 
-
 \begin{equation}
 S_{q2,i} = \textit{MAS} + \text{ln}\left[\frac{1}{3} \right] = \textit{MAS} + [\Sexpr{round(log(0.5/1.5),2)}] = \textit{MAS} - \Sexpr{-1*round(log(0.5/1.5),2)} 
 \end{equation}
@@ -554,63 +490,7 @@ Having computed $S_{q1,i}$ and $S_{q2,i}$, the total amount of spreading activat
 
 \label{crossasspageref}
 Because the  spreading activation $S_i$ received by item $i$ will have a value less than MAS, activation of item $i$ will go down due to the presence of the matching distractor, leading to inhibitory interference even in a target-mismatch configuration, when the cross-association level is sufficiently high.\footnote{The actual level that leads to detectable inhibitory interference depends on the specific situation being simulated and the values of other ACT-R parameters.}
-
 \end{enumerate}
-
-% Figure~\ref{fig:cueconf} illustrates the effect of an increasing cue confusion level. In target-mismatch configurations, a higher cue confusion causes an inhibitory fan effect that eliminates the facilitatory effect.
-
-% \begin{figure}[!htbp]
-% \centering
-% %
-% <<cueconf2, include=TRUE, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=10,fig.height=5, out.width='\\textwidth'>>=
-
-% load("cueconfmeans.Rd")
-% require(dplyr)
-% require(ggplot2)
-% # prommeans <- rename(prommeans, QCF=qcf)
-% means <- cueconfmeans %>% filter(qcf==1 & dbl==0) %>% mutate(cl=(cuesim+1))
-% means$Target <- factor(means$Target, labels=c("Target-Match", "Target-Mismatch"))
-
-% p_conf <- (ggplot(data=subset(means), aes(cl, Effect, linetype=Target))
-%     + xlab("Cue confusion level C")
-%     + ylab("Interference effect (ms)")
-%     + geom_hline(aes(yintercept=0), colour="gray10")
-% # + geom_point()
-%     + geom_line(size=1)
-%     + guides(linetype=guide_legend(title=""))
-%     + background_grid(major = "xy", minor = "none")
-%     + theme(legend.position="top")
-%     + annotate("text", x=.05, y=35, label="INHIBITION", size=4, col="gray35", hjust=0)
-%     + annotate("text", x=.05, y=-30, label="FACILITATION", size=4, col="gray35", hjust=0)
-% )
-
-
-% load("prommeans.Rd")
-% require(dplyr)
-% prommeans <- rename(prommeans, QCF=qcf)
-% prommeans$Target <- factor(prommeans$Target, labels=c("Target-Match", "Target-Mismatch"))
-
-% p_prom <- (ggplot(data=subset(prommeans, QCF==10), aes(dbl, Effect, linetype=Target))
-%     + xlab("Prominence difference (Distractor - Target)")
-%     + ylab("Interference effect (ms)")
-%     + geom_hline(aes(yintercept=0), colour="gray10")
-% # + geom_point()
-%     + geom_line(size=1)
-%     + guides(linetype=guide_legend(title=""))
-%     + background_grid(major = "xy", minor = "none")
-%     + theme(legend.position="top")
-%     + annotate("text", x=-2.7, y=25, label="INHIBITION", size=4, col="gray35", hjust=0)
-%     + annotate("text", x=-2.7, y=-65, label="FACILITATION", size=4, col="gray35", hjust=0)
-% )
-
-% plot_grid(p_conf, p_prom, labels = c("A", "B"))
-
-% @
-% %
-%  \caption{Predictions of the extended model. A) Predicted interference effect as a function of the cue confusion level $C$. B) Predicted interference effect as a function of distractor prominence $p_{dstr}$ with fixed target prominence.}
-%  \label{fig:cueconf2} 
-% \end{figure}
-
 
 \subsection{Prominence}
 We assume that the prominence of an item is reflected in its base-level activation, which also reflects how recently the item has been retrieved or created.
@@ -630,13 +510,11 @@ We therefore introduce a \index{saliency component} \emph{saliency component} as
 
 The saliency component (the second factor) is a logistic function that bounds the base-level activation value between $0$ and $1$, such that it functions as a scaling factor for $Q_{ji}$.
 In the denominator, $\tau$ is the retrieval threshold, and $q$ is a scaling constant that  scales how strongly the match quality $Q_{ji}$ is affected by an item's saliency. It can be used to switch the quality correction on and off and thus make our model identical to standard ACT-R: When $q = 0$, the item's base-level activation including prominence is not reflected in $P(i|j)$. Furthermore, when $q = 0$ and all cues are \emph{maximally discriminative} (i.e., exactly one feature matches one cue), $P(i|j) = 1/\textit{fan}_j$, in which case the model behavior is identical to standard ACT-R.
-% which is the simplified equation standardly used in ACT-R.
 If, however, $q>0$, the base-level activation of an item---and with it the item's prominence---affects the associative strength between the retrieval cues and the item. 
 
 Figure~\ref{fig:prominenceNew} shown earlier illustrates the relationship between distractor prominence and the interference effect as predicted by the extended model, assuming that target prominence is a fixed value. 
  In addition to the facilitatory effect of highly activated distractors in target-match predicted also by standard ACT-R, 
 the extended model additionally predicts that the fan effect only arises for sufficiently activated distractors (cf.\ the rising inhibition in target-match configurations in the figure). 
-% This could explain the right-shift of the inhibitory interference effect in target-match configurations of non-agreement subject-verb dependencies due to a retroactive distractor (cf.\ Table~\ref{tab:resultsMeta2}) in addition to the stimuli-dependent explanation given in the previous section.
 
 In sum, we define the probability of a memory item $i$ being needed given cue $j$, $P(i|j)$, with respect to the item's base-level activation, which in turn depends on its prominence, and its association with cue $j$, $M_{ji}$. The equations ensure that cues can be of variable discrimination (i.e., can be associated with one or more features), and that more  prominent items are more strongly associated with the cues and, hence, receive more spreading activation. Since $P(i|j)$ is a probability that takes into account all memory items, both the discrimination of cues and the prominence of the item itself and of all of its competitors affect the fan effect, i.e., the strength of inhibitory interference. 
 The equations for the total spreading activation for item $i$ (Eq.~\ref{eq:spread}) and the retrieval latency (Eq.~\ref{eq:rt}) remain the same as in the original implementation.
@@ -670,7 +548,6 @@ dat <- read.csv2("data/c02/MetaAnalysisData.csv", stringsAsFactors=FALSE)
 
 # General overview
 dat$Prominence2 <- factor(dat$Prominence2, levels=c("other","subj_OR_topic","subj_AND_topic"), labels=c("low","medium","high"))
-# datSum <- filter(dat, Method_Measure!="ET_RRT") %>% with(table(DepType,TargetType))
 datSum <- filter(dat, Method_Measure!="ET_RRT") %>% group_by(DepType, Prominence2, TargetType) %>% summarise(N=n()) %>% spread(TargetType, N)
 
 colnames(datSum) = c("Dependency","Prominence", "Match", "Mismatch")
@@ -678,7 +555,6 @@ datSum$Mismatch[is.na(datSum$Mismatch)] <- 0
 # datSum[,3:4] <- round(datSum[,3:4])
 datSum <- as.data.frame(sapply(datSum, function(x) as.character(x)))
 datSum$Dependency <- c("Subj-verb agr.", "", "Subj-verb nonagr.", "", "Reciprocals", "", "Reflexives", "", "")
-# $
 
 promIntTab <- dat %>% select(Publication, IntType, Prominence2) %>% distinct() %>% with(table(Prominence2, IntType))
 promIntTab <- promIntTab[c(1,3,2),]
@@ -715,8 +591,6 @@ ggplot(subset(dat, Method_Measure!="ET_RRT"), aes(TargetType, fill=fct_rev(Promi
 \label{fig:datasummary}
 \end{figure}
 
-%%% yyy
-
 \subsection{Method}
 
 The extended model as described above was implemented in \R{} \citep{R2016}. Prominence and multi-associative cues could be switched off such that the model behavior is then equivalent to LV05.
@@ -727,10 +601,10 @@ The model was run for 5000 iterations on each experiment and yielded the mean ef
 
 
 \paragraph{Parameter estimation}
-In order to ensure common parameter settings within experiments, the $77$ data points used in the meta-analysis were modeled in $51$ \emph{experimental sets}, such that parameters were held constant between target-match and target-mismatch conditions of the same experiment. Certain parameters were estimated by running the model iteratively while changing the parameter value within a pre-specified range (details are discussed below). 
+In order to ensure common parameter settings within experiments, the $77$ data points used in the meta-analysis were modelled in $51$ \emph{experimental sets}, such that parameters were held constant between target-match and target-mismatch conditions of the same experiment. Certain parameters were estimated by running the model iteratively while changing the parameter value within a pre-specified range (details are discussed below). 
 The best value was determined by finding the lowest mean-squared error between the simulated and experimental effects using grid search.
 
-As is common practice in ACT-R modeling, we estimated the latency factor $F \in \{0.1, 0.125, ..., 0.25\}$ (see Equation~\ref{eq:rt}) for each experiment in both models to scale the numerical results into a range that is comparable with the data.
+As is common practice in ACT-R modelling, we estimated the latency factor $F \in \{0.1, 0.125, ..., 0.25\}$ (see Equation~\ref{eq:rt}) for each experiment in both models to scale the numerical results into a range that is comparable with the data.
 In the extended model, the distractor prominence parameter $p_{dstr}$ was estimated across experiments for each of three prominence categories within dependency types: \emph{low} (neither subject nor topic), \emph{medium} (subject \emph{or} topic), and \emph{high} (subject \emph{and} topic).
 For each of these categories, $p_{dstr}$ was restricted to a certain range that was determined according to the pattern in Figure~\ref{fig:prominenceNew} as follows:
 Medium prominence was constrained to be close to the target prominence ($p_{trgt} = 0$) in the area where the distractor has an influence on the fan effect of the target ($p_{dstr} \in \{-1, -0.9, ..., 2\}$); low prominence was constrained to be smaller than the target prominence ($\{-2.5, -2.4, ..., 0\}$); and high prominence was bound to values higher than the target prominence and above the point where in Figure~\ref{fig:prominenceNew} the target-match fan effect begins to disappear ($\{1, 1.1, ..., 4\}$).
@@ -750,7 +624,6 @@ We ran simulations both with the original LV05 model and with the extended model
 Because \cite{LewisVasishth2005} speculated that model fit might improve without the decay component of ACT-R,\footnote{
     \cite{LewisVasishth2005} write on p.\ 408: ``Any structural or quantitative change to the model that moves in the direction of decreased emphasis on decay and increased emphasis on interference would likely yield better fits.''}
 we also ran variants of both models without the decay component.
-% Interference effects were computed within target-match and target-mismatch conditions as the difference between distractor-match (high interference) and distractor-mismatch (low interference) conditions, averaged over $5000$ iterations per simulation. 
 
 <<fittable, eval=FALSE, include=TRUE, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, results='asis'>>=
 library(xtable)
@@ -779,7 +652,7 @@ restab$Dependency <- c("Subj-verb agreement", "Subj-verb non-agrmnt", "Reflexive
 
 
 print(xtable(restab, align="llrrrr",
-    caption="Root-mean-square deviation between modeling results and observed data, averaged within dependency type and model (best values in bold). The superscript no dec means that the decay parameter is set to 0.",
+    caption="Root-mean-square deviation between modelling results and observed data, averaged within dependency type and model (best values in bold). The superscript no dec means that the decay parameter is set to 0.",
     label="tab:simfit"
     ), type = "latex", sanitize.text.function = function(x){x}, only.contents=FALSE, booktabs=TRUE, include.rownames=FALSE, caption.placement="top")
 
@@ -799,7 +672,7 @@ non-agreement & & & & \\
 Reciprocal & & & & \\  
 \hline
 \end{tabular}
-\caption{Root-mean-square deviation between modeling results and observed data, averaged within dependency type and model (best values in bold). The superscript no dec means that the decay parameter is set to 0.} \label{tab:simfit}
+\caption{Root-mean-square deviation between modelling results and observed data, averaged within dependency type and model (best values in bold). The superscript no dec means that the decay parameter is set to 0.} \label{tab:simfit}
 \end{table}
 
 Table~\ref{tab:simfit} summarizes the fit for all four model configurations in terms of the root-mean-square deviation, averaged within dependency types.
@@ -808,11 +681,6 @@ Except for non-agreement subject-verb dependencies, the use of decay did not imp
 With respect to the extended model, decay only improved the fit for non-agreement subject-verb dependencies but, for the other dependency types, produced a worse fit compared to the model without decay. 
 Since decay generally does not improve the fit, this suggests that the information about the linear order of target and distractor (pro- vs.\ retroactive interference) may not be useful as a predictor in the models and data considered here. 
 We revisit this point in the General Discussion.
-
-
-
-
-
 
 <<promtable, eval=FALSE,include=TRUE, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, results='asis'>>=
 
@@ -831,14 +699,10 @@ promtab <- bestproms %>% filter(bll==0.5) %>% select(Dependency=DepType, Promine
 	mutate(Dependency = factor(Dependency, levels = c("agreement", "nonagreement", "refl", "reci"), labels = c("agreement", "nonagreement", "reflexives", "reciprocals"))) %>%
 	spread(Prominence, dprom) %>% group_by(Dependency) %>% summarise_each(funs="mean(., na.rm=TRUE)")
 
-# promtab3 <- simres %>% filter(psc==1 & bll==0.5) %>% select(Publication, Measure, Dependency=DepType, Prominence, dprom) %>% distinct() %>% spread(Prominence, dprom) %>% select(-(Publication:Measure)) %>% group_by(Dependency) %>% summarise_each(funs="mean(., na.rm=TRUE)")
-
-
 print(xtable(promtab, align="llrrr",
     caption="Estimated values for prominence parameter $p_{dstr}$ in the extended model, labelled LV05+IP+MAC (with decay), for three prominence levels.",
     label="tab:promtab"
     ), type = "latex", sanitize.text.function = function(x){x}, only.contents=FALSE, booktabs=TRUE, include.rownames=FALSE, caption.placement="top")
-
 @
 
 \begin{table}[ht]
@@ -858,7 +722,6 @@ agreement & 0.00 & 1.70 &  \\
 \end{tabular}
 \end{table}
 
-
 <<simOther, eval=FALSE,include=TRUE, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE>>=
 
 
@@ -872,7 +735,7 @@ promtab2 <- simres %>% filter(psc==1 & bll==0) %>% select(Publication, Measure, 
 
 promtab3 <- simres %>% filter(psc==1 & bll==0.5) %>% select(Publication, Measure, DepType, Prominence, dprom) %>% distinct() %>% spread(DepType, dprom) %>% select(-(Publication:Measure)) %>% group_by(Prominence) %>% summarise_each(funs="mean(., na.rm=TRUE)")
 
-#' Cue confusion
+#Cue confusion
 tabconf <- simres %>% filter(psc==1 & bll==0 & cuesim>-1 & (DepType=="reci" | Lang=="CN")) %>% select(Publication, DepType, Lang, cuesim) %>% group_by(Publication, DepType, Lang) %>% summarise(CueConf = mean(cuesim))
 
 @
@@ -915,7 +778,7 @@ info <- simres %>% filter(psc==1 & bll==0.5) %>% select(Publication, lf)
 # info$dprom2 <- dprom$dprom
 allsims <- left_join(allsims, info)
 
-## Add indeces
+## Add indices
 expsIndexed <- read.csv("data/experiments-indexed.csv")
 indeces <- select(expsIndexed, expindex = Index, Publication)
 allsims <- left_join(allsims, indeces)
@@ -929,15 +792,15 @@ allsims$index <- factor(allsims$Publication, labels=1:nExps)
 allsims$index <- as.numeric(as.character(allsims$index))
 
 
-#' Remove mismatch predictions when no mismatch data
-#' (but keep non-agreement mismatch predictions)
+# Remove mismatch predictions when no mismatch data
+# (but keep non-agreement mismatch predictions)
 mismatchExps <- filter(allsims, Dataset=="Data" & Target=="Mismatch")$Publication %>% droplevels()
 allsims <- filter(allsims, !(Target=="Mismatch" & Dataset!="Data" & !Publication%in%mismatchExps & DepType != "nonagreement"))
 
-#' Target type factor labels
+# Target type factor labels
 allsims <- allsims %>% mutate(Target = factor(Target, labels = c("Target-match", "Target-mismatch")))
 
-#' Selected experiments for later plot
+# Selected experiments for later plot
 allsims$select <- FALSE
 allsims <- mutate(allsims, select = ifelse(Publication%in%c("KushEtAl14", "JaegerEtAl15E1", "Sturt03E1", "CunningsEtAl13E2LO"), TRUE, FALSE))
 selectExps <- filter(allsims, Dataset=="Data" & select) %>% select(Publication, expindex) %>% distinct()
@@ -964,68 +827,21 @@ In terms of the facilitatory effect in subject-verb agreement target-match confi
 \centering
 \includegraphics[width=\textwidth]{figures/fig-simresults}
 <<simresults, eval=FALSE,include=TRUE, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=8,fig.height=5, out.width='\\textwidth'>>=
-# xbreaks <- c(1,11,12,18,19,24,25,30,31,35,36,41,42,49)
-# xlabs <- allsims %>% filter(index%in%xbreaks) %>% select(index, dprom) %>% distinct() %>% with(dprom)
-
-# xbreaks <- unique(allsims$index)
-# xlabs <- unique(allsims$dprom)
-# xlabs <- round(xlabs/.5)*.5
-
-# (ggplot(subset(allsims), aes(factor(index), Effect, shape=Dataset, col=Dataset, size=Dataset, group=Target))
-#     + facet_grid(Target~DepType2+Prominence, scales="free")
-#     + geom_hline(aes(yintercept=0), colour="gray10")
-#     + geom_point(stat="identity", position=position_dodge(0))
-#     + geom_smooth(data=subset(allsims, Dataset=="Extended model"), se=FALSE, method=loess, size=0.3, show.legend=FALSE, linetype="solid")
-#     + geom_errorbar(aes(ymin=Effect-SE, ymax=Effect+SE), width=0, show.legend=FALSE, position=position_dodge(0), size=0.4)
-#     + scale_shape_manual(values=c(17,2,16))
-#     + scale_color_manual(values=c("black","black","gray50"))
-#     + scale_size_manual(values=c(1.5,3,2))
-#     # + scale_shape_manual(values=c(2,16))
-#     # + scale_color_manual(values=c("black","gray50"))
-#     # + scale_size_manual(values=c(3,2))
-#     # + scale_x_continuous(breaks=allsims$insex, labels=indeces$expindex)
-#     + theme(legend.title=element_blank(), axis.text.x=element_text(angle=0, size=7))
-#     # + theme(legend.title=element_blank(), axis.text.x=element_text(angle=45, size=7))
-#     # + theme(legend.title=element_blank(), axis.text.x=element_blank(), axis.ticks.x=element_blank(), axis.line.x = element_blank(), axis.title.x=element_blank())
-#     + ylab("Interference effect (ms)")
-#     # + xlab("Distractor prominence parameter")
-#     + xlab("Experiment index")
-#     + background_grid(major = "y", minor = "y")
-#     + theme(legend.position="top")
-# )
-
 ylabs <- c(-300,-100,-20,-5,0,5,20,100)
 
 (ggplot(subset(allsims), aes(Prominence, logEffect, group=Dataset, shape=Dataset, col=Dataset, linetype=Dataset))
     + facet_grid(Target~DepType2, scales="free")
     + geom_hline(aes(yintercept=0), colour="gray10")
     + geom_point(aes(size=Dataset), stat="summary", fun.y="mean")
-    + geom_point(size = 0.8, position = position_jitter(0.01), data=subset(allsims, Dataset=="Data"), show.legend = FALSE)
-    # + geom_linerange(stat="summary", size=0.3, fun.y="mean")
-    # + geom_smooth(data=subset(allsims, Dataset=="Extended model"), se=FALSE, method=loess, size=0.3, show.legend=FALSE, linetype="solid")
-    # + geom_smooth(se=FALSE, method=loess, size=0.3, show.legend=FALSE, linetype="solid")
-    + geom_line(stat="summary", size=0.3, fun.y="mean", show.legend = FALSE)
-    # + geom_errorbar(aes(ymin=Effect-SE, ymax=Effect+SE), width=0, show.legend=FALSE, position=position_dodge(0), size=0.4)
-    + scale_shape_manual(values=c(16,17,2))
+    + geom_point(size = 0.8, position = position_jitter(0.01), data=subset(allsims, Dataset=="Data"), show.legend = FALSE) + 
+    geom_line(stat="summary", size=0.3, fun.y="mean", show.legend = FALSE) + scale_shape_manual(values=c(16,17,2))
     + scale_color_manual(values=c("gray50","black","black"))
-    + scale_size_manual(values=c(2,2.5,3.5))
-    # + scale_shape_manual(values=c(2,16))
-    # + scale_color_manual(values=c("black","gray50"))
-    # + scale_size_manual(values=c(3,2))
-    # + scale_x_continuous(breaks=allsims$insex, labels=indeces$expindex)
-    + theme_classic()
-    + theme(legend.title=element_blank())
-    # + theme(legend.title=element_blank(), axis.text.x=element_text(angle=45, size=7))
-    # + theme(legend.title=element_blank(), axis.text.x=element_blank(), axis.ticks.x=element_blank(), axis.line.x = element_blank(), axis.title.x=element_blank())
-		+ scale_y_continuous(breaks=convert2log10(ylabs), labels=ylabs)
+    + scale_size_manual(values=c(2,2.5,3.5)) + theme_classic()
+    + theme(legend.title=element_blank()) + scale_y_continuous(breaks=convert2log10(ylabs), labels=ylabs)
     + ylab("Interference effect (log ms)")
-    # + xlab("Distractor prominence parameter")
     + xlab("Distractor prominence")
-    # + background_grid(major = "y", minor = "y")
     + theme(legend.position="top")
 )
-
-
 
 @
 %
@@ -1033,24 +849,17 @@ ylabs <- c(-300,-100,-20,-5,0,5,20,100)
   }
   \label{fig:simresults} 
 \end{figure}
-%
-
-
 
 A key difference between the two models is that the LV05 cannot explain the data that show facilitation in target-match or inhibition in target-mismatch configurations. The extended model, however, can account for these patterns when they can be explained by distractor prominence and cross-associated cues.
-% Therefore, while the means of the effects predicted by LV05 seen in Figure~\ref{fig:simresultsBayesMeans} do not vary much between individual experiments, the means predicted by LV05+IP+MAC are the result of principled variation between individual experiments. We explain this point next.
-
 
 This becomes more apparent when presenting the means by distractor prominence levels as in Figure~\ref{fig:simresults}. Here, the simulated means are compared to the \textit{sample means} estimated from the \textit{individual} studies' data, which are classified by dependency type and prominence category (see Table~\ref{tab:exps}). Such a display of the studies' sample means is very different from the estimates from the meta-analysis of \cite{JaegerEngelmannVasishth2017}, which summarize what we have learnt from the collection of studies on each dependency type.
 The reason that we are not using the estimates in this figure is that, due to the sparsity of the data, these were not available by prominence level and dependency type in the meta-analysis.
 
-% Compare Figure~\ref{fig:simresults} with Figure~\ref{fig:simresultsBayesMeans}. 
 Although the extended model does not show a facilitatory effect in \emph{subject-verb agreement} target-match configurations on average (collapsing over all prominence levels in Figure~\ref{fig:simresultsBayesMeans}), Figure~\ref{fig:simresults} shows that it produces the correct result for those studies that are categorized as having higher distractor prominence.
 This result of facilitatory interference arises because the prominence parameter $p_{dstr}$ in the LV05+IP+MAC model was estimated to be higher on average for medium prominence experiments compared to low prominence experiments, as summarized in Table~\ref{tab:promtab}. 
 
 For \emph{non-agreement subject-verb dependencies}, the fit did not improve in the LV05+IP+MAC model, because the data only contain target-match configurations, for which the results --- mainly inhibitory interference --- are perfectly compatible with LV05. There are also no differences between prominence categories in the data. Consequently, the prominence parameter was not estimated to be different between low and medium prominent distractors.
 
-% \paragraph{Reflexive-/reciprocal-antecedent dependencies}
 The most interesting results are observed in \index{reflexive dependencies} \emph{reflexive and reciprocal dependencies}. \index{reciprocal dependencies}
 Looking at the means separately for each prominence category shows that the extended model offers an explanation for why the target-match and target-mismatch effects on average seem to deviate from the predictions of LV05.
 As can be seen in Figure~\ref{fig:simresults}, the average effects in reflexive/reciprocal target-match configurations show increasing inhibition from low to medium prominence and facilitatory interference in high prominence. This is exactly the pattern that our prominence model predicts (see Figure~\ref{fig:prominenceNew} shown earlier). Consequently, the extended model matches this pattern while LV05 does not.
@@ -1067,13 +876,10 @@ Thus, the explanation for the inhibitory effect seen on average in reflexive/rec
 library(dplyr)
 library(tidyr)
 require(ggplot2)
-# require(cowplot)
 
 simdat <- read.csv("data/simresults-batch-restr2.csv", stringsAsFactors=FALSE)
 simdat <- left_join(simdat, bestproms) %>% filter(!(psc==1 & Dataset!="Data" & dprom!=bestprom))
-# simdatRRT <- read.csv("simresults-batch-rrt-restr.csv", stringsAsFactors=FALSE)
 simdat$Measure[simdat$Measure=="FPRT" | simdat$Measure=="RT"] <- "Gaze / SPR"
-# simdat <- bind_rows(simdat, filter(simdatRRT, Measure=="RRT"))
 
 simdat$Dataset[simdat$psc==0] <- "LV05"
 simdat$Dataset[simdat$Dataset=="Model"] <- "LV05+IP+MAC"
@@ -1083,7 +889,6 @@ simdat$Dataset <- factor(simdat$Dataset, levels=c("Data", "LV05", "LV05+IP+MAC")
 simdatSlct <- filter(simdat, bll!=0 & Publication%in%c(
 	"KushEtAl14", "JaegerEtAl15E1", "Sturt03E1", "CunningsEtAl13E2LO"))
 
-# levels <- unique(arrange(filter(simdatSlct, Target == "Match" & Dataset == "Data" & Measure!="RRT"), desc(Effect))$Publication)
 levels <- c("KushEtAl14", "JaegerEtAl15E1", "Sturt03E1", "CunningsEtAl13E2LO")
 labels <- c("KushEtAl14", "JaegerEtAl15", "Sturt03", "CunningsEtAl13")
 simdatSlct$Publication=factor(simdatSlct$Publication, levels=levels, labels=labels)
@@ -1093,37 +898,24 @@ simdatSlct <- arrange(simdatSlct, Publication)
 simdatSlct <- mutate(simdatSlct, SE = ifelse(SE<2, NA, SE))
 simdatSlct <- mutate(simdatSlct, logEffect = convert2log10(Effect))
 
-#' Interference plot
+# Interference plot
 dodge <- position_dodge(0.3)
 (intPlot <- ggplot(simdatSlct, aes(Target, logEffect, group=Dataset, shape=Dataset, col=Dataset, size=Dataset, linetype=Dataset))
 	+ geom_hline(aes(yintercept=0), colour="gray10")
   + geom_line(size=0.3, position=position_dodge(0.05), show.legend=FALSE)
 	+ geom_point(stat="identity", position=position_dodge(0.05))
-	# + stat_summary(fun.y="mean", geom="bar", position=dodge)
-	# + geom_errorbar(aes(ymin=Effect-SE, ymax=Effect+SE), position=dodge, width=0, show.legend=FALSE)
-	# + stat_summary(fun.data="mean_cl_normal", width=0, geom="errorbar", show.legend=FALSE, position=dodge)
-	# + theme_grey(base_size=18)
 	+ theme_classic()
 	+ scale_shape_manual(values=c(16,17,2))
 	+ scale_color_manual(values=c("gray50","black","black"))
   + scale_size_manual(values=c(2,2.5,3.5))
 	+ theme(legend.title=element_blank())
-	# + scale_color_grey()
 	+ ylab("Interference effect (log ms)")
 	+ scale_y_continuous(breaks=convert2log10(ylabs), labels=ylabs)
-	# + coord_cartesian(ylim=c(-60,60))
-	# + background_grid(major = "xy", minor = "y")
 	+ theme(legend.position="top")
 	+ facet_grid(.~Publication)
-    # + annotate("text", x=0.5, y=100, label="INHIBITION", size=3, col="gray35", hjust=0)
-    # + annotate("text", x=0.5, y=-60, label="FACILITATION", size=3, col="gray35", hjust=0)
 	)
-
 @
-%
   \caption{Reading time data and simulation results of LV05 and the extended model, labelled LV05+IP+MAC, for interference effects in target-match and target-mismatch configurations of four individual studies: \cite{KushPhillips2014}; \cite[][Exp.\ 1]{JaegerEngelmannVasishth2015}; \cite[][Exp.\ 1]{Sturt2003}; and \cite[][Exp.\ 2, participants with low working memory]{CunningsFelser2013}.
-  % The numbers in the panel titles refer to the experiment index in Table~\ref{tab:exps} in the Appendix.
-  % and Figures~\ref{fig:simresults} and \ref{fig:promvalues}.
   }
   \label{fig:simresultsSlct} 
 \end{figure}
@@ -1131,19 +923,16 @@ dodge <- position_dodge(0.3)
 
 Finally, for a better understanding of what drives the differences between the two models, we show four exemplary cases in Figure~\ref{fig:simresultsSlct}, where the data \emph{qualitatively} deviates from the predictions of the original LV05 model. 
 The studies by \cite{KushPhillips2014} on reciprocals and by \cite{JaegerEngelmannVasishth2015} on Chinese reflexives are two cases of low feature discrimination as explained in the section on multi-associative cues. As a result of the cue-feature cross-association, LV05+IP+MAC shows \emph{inhibitory} interference effects in target-mismatch configurations, whereas LV05 shows facilitation. 
-The model parameter for the cross-association level was estimated at 0.7 for both reciprocals \citep{KushPhillips2014} and 
-%at tabconf$CueConf[1]+1 for 
-\textit{ziji} \citep{JaegerEngelmannVasishth2015}.
+The model parameter for the cross-association level was estimated at 0.7 for both reciprocals \citep{KushPhillips2014} and \textit{ziji} \citep{JaegerEngelmannVasishth2015}.
 \cite{CunningsFelser2013} and \cite{Sturt2003} are examples of \emph{facilitatory} effects in target-match configurations, which only the extended model accounts for as a consequence of high distractor prominence values.
 
 However, \cite{CunningsFelser2013} is also an example of a pattern that is not compatible with either of the two tested models. The inhibitory target-mismatch effect is not fit by LV05+IP+MAC because no increased cross-association is assumed in English reflexives. And even if the cross-association level was assumed to be elevated in this case, it would be impossible to simulate an inhibitory target-mismatch effect and a facilitatory target-match effect at the same time. 
 Hence, under the assumptions of the two cue-based retrieval models tested here, the data of \cite{CunningsFelser2013} are not compatible with any model. We return to this point in the General Discussion.
 
-
 \section{General Discussion}
 The aims of this work were to investigate the quantitative predictions of the \cite{LewisVasishth2005} model and to investigate the consequences of memory accessibility and context-dependent cue-feature associations in the light of the available evidence from reading studies on interference effects in dependency resolution.
 We have presented an implemented model of prominence and multi-associative cues as an extension to the cue-based retrieval model of LV05. 
-The extension consisted of three revisions of previously simplifying assumptions of ACT-R/LV05 modeling:
+The extension consisted of three revisions of previously simplifying assumptions of ACT-R/LV05 modelling:
 
 \begin{enumerate}
   \item[1$'$.] The base-level activation of items in memory (i.e., accessibility) is affected by --- in addition to recency --- their prominence in the current context, i.e., their  relevance/salience in terms of syntactic relations in a sentence or information-structural and discourse properties.
@@ -1194,7 +983,7 @@ To summarize, Table~\ref{tab:resultsMeta1} suggested that the LV05 model makes t
 
 A major contribution of the present work is 
 that it spells out, for the first time, 
-the predictions of the LV05 model with reference to all the evidence that was available from reading studies at the time of writing. The modeling presented here is highly constrained:
+the predictions of the LV05 model with reference to all the evidence that was available from reading studies at the time of writing. The modelling presented here is highly constrained:
 (i) The presented model is built on independently motivated --- and, in terms of ACT-R, domain-independently validated --- assumptions about \index{memory retrieval} memory retrieval, \index{item prominence} item prominence, and multi-associative cues, which are sensitive to experimental design choices; (ii) the model predictions are restricted by interactions between variables such as prominence, \index{recency} recency, and cue-feature cross-association; and (iii) the parameters are fixed within a given experiment, thus ruling out certain patterns of target-match and target-mismatch effects. 
 An important prediction of the model in this respect is that the previously unexplained observations of facilitation in target-match or inhibition in target-mismatch can be explained under certain conditions, but,  as explained above, seeing both \textit{in the same experiment} is impossible according to the model's predictions.
 Constrained predictions such as these are important because they make the theory falsifiable in principle.
@@ -1216,13 +1005,7 @@ In case distractor and target both match the subject cue, the fan effect reduces
 
 Hence, the predictions of the syntactic weighting account regarding syntactic position are similar to the predictions of our prominence account: A distractor in subject position compared to object position increases the inhibitory interference effect in target-match configurations and the facilitatory effect in target-mismatch configurations. 
 However, the predictions of syntactic weighting are only valid when it can be assumed that grammatical position is part of the retrieval cues. 
-In contrast, the predictions of our prominence account are independent of cue combinatorics and the match quality of the distractor at retrieval. Instead, the predictions rest on the assumption that items in subject position have a higher relevance for interpreting a sentence and are, thus, maintained more actively in memory \citep{Chafe1976, KeenanComrie1977,grosz95, Brennan1995}. In the same way, this account of prominence can be extended to discourse status or other contributing factors that we have not considered here: For example, thematic role \citep{Arnold2001}, \index{contrastive focus} contrastive focus \citep{CowlesWalenskiKluender2007}, \index{first mention} first mention \citep{GernsbacherHargreaves1988}, and \index{animacy} animacy \citep{FukumuraVanGompel2011} are known to affect \index{discourse saliency} discourse saliency and might thus influence distractor prominence. 
-% The results of our meta-analysis in \cite{JaegerEngelmannVasishth2017} and the simulations in the current article both suggest that the interference effect is more affected by discourse saliency than grammatical position. This is outside the scope of an account based on cue weighting.
-Importantly, our account predicts a facilitatory effect in target-match configurations as a consequence of high distractor prominence. This cannot be explained in terms of cue combinatorics. \index{cue combinatorics}
-
-
-
-
+In contrast, the predictions of our prominence account are independent of cue combinatorics and the match quality of the distractor at retrieval. Instead, the predictions rest on the assumption that items in subject position have a higher relevance for interpreting a sentence and are, thus, maintained more actively in memory \citep{Chafe1976, KeenanComrie1977,grosz95, Brennan1995}. In the same way, this account of prominence can be extended to discourse status or other contributing factors that we have not considered here: For example, thematic role \citep{Arnold2001}, \index{contrastive focus} contrastive focus \citep{CowlesWalenskiKluender2007}, \index{first mention} first mention \citep{GernsbacherHargreaves1988}, and \index{animacy} animacy \citep{FukumuraVanGompel2011} are known to affect \index{discourse saliency} discourse saliency and might thus influence distractor prominence. Importantly, our account predicts a facilitatory effect in target-match configurations as a consequence of high distractor prominence. This cannot be explained in terms of cue combinatorics. \index{cue combinatorics}
 
 \subsection{Multi-associative cues}
 The principle of \index{multi-associative cues} multi-associative cues states that cues can be associated with multiple features to different degrees depending on experience with the linguistic context. Crossed cue-feature associations between two cues predict inhibitory interference in target-mismatch conditions for dependency environments with \index{high feature-co-occurrence} high feature-co-occurrence in comparison to environments with \index{low feature-co-occurrence} low feature-co-occurrence. 
@@ -1232,7 +1015,7 @@ Their model is an implementation of the \cite{RescorlaWagner1972} equations for 
 
 A possible way to test the multi-associative cues hypothesis for English in a controlled experiment would be to directly compare reflexives and reciprocals, manipulating the number cue in both.
 An example design we have also suggested in \cite{JaegerEngelmannVasishth2015} is shown in Example~\ref{ex:cueconf}.
-%
+
 \begin{exe}
 \ex\label{ex:cueconf}
 \begin{xlist}
@@ -1246,18 +1029,11 @@ The \textit{nurse} who cared for the \textit{children} had pricked \textit{each 
 The \textit{nurse} who cared for the \textit{child} had pricked \textit{each other} \dots
 \end{xlist}
 \end{exe}  
-%
 
-Under the multi-associative cues hypothesis, a reduced facilitatory effect or an inhibitory effect is predicted for the reciprocal \textit{each other} compared to the reflexive \textit{themselves}.
-%
-In order to derive a finer-grained metric that predicts differences in cue-feature cross-association levels between different dependency environments, co-occurrence frequencies could be computed from a corpus in which sufficient dependency information is available.
-%
-
+Under the multi-associative cues hypothesis, a reduced facilitatory effect or an inhibitory effect is predicted for the reciprocal \textit{each other} compared to the reflexive \textit{themselves}. In order to derive a finer-grained metric that predicts differences in cue-feature cross-association levels between different dependency environments, co-occurrence frequencies could be computed from a corpus in which sufficient dependency information is available.
 
 Our theory of multi-associative cues predicts a higher cross-association level for both reciprocals and the Chinese reflexive \textit{ziji} compared to English reflexives. This could explain the result of \cite{KushPhillips2014}, who found inhibitory interference in target-mismatch conditions in Hindi reciprocals, as well as our finding of an inhibitory target-mismatch effect for \textit{ziji} in Experiment 1 of \cite{JaegerEngelmannVasishth2015}.
-The modeling results (Figure~\ref{fig:simresults}) showed that these two studies were sufficient to cause the average target-mismatch effect to be inhibitory in low and medium prominence reflexive/reciprocal studies. 
-% However, the specific account of multi-associative cues pursued here does not account for the finding that 
-According to the meta-analysis in \cite{JaegerEngelmannVasishth2017}, the overall interference effect in target-mismatch configurations studies of reflexive- and reciprocal-antecedent dependencies is inhibitory  (see Table~\ref{tab:resultsMeta1}). Importantly, this overall inhibitory effect was found even when excluding the Chinese reflexives study of \cite{JaegerEngelmannVasishth2015}, which had a larger-than-usual sample size and could therefore have unduly influenced the meta-analysis.
+The modelling results (Figure~\ref{fig:simresults}) showed that these two studies were sufficient to cause the average target-mismatch effect to be inhibitory in low and medium prominence reflexive/reciprocal studies. According to the meta-analysis in \cite{JaegerEngelmannVasishth2017}, the overall interference effect in target-mismatch configurations studies of reflexive- and reciprocal-antecedent dependencies is inhibitory  (see Table~\ref{tab:resultsMeta1}). Importantly, this overall inhibitory effect was found even when excluding the Chinese reflexives study of \cite{JaegerEngelmannVasishth2015}, which had a larger-than-usual sample size and could therefore have unduly influenced the meta-analysis.
 Due to the two studies with cross-associated cues, the extended model predicted a tendency for an inhibitory effect on average in target-mismatch configurations, but not one as strong  as the meta-analysis found. 
 A less conservative simulation with a freely varying cross-association parameter would, however, result in an overall increased cross-association level for reflexives compared to subject-verb agreement dependencies (subject-verb agreement showed an overall facilitatory effect in target-mismatch configurations).
 In support for a theory of higher feature-co-occurrence and, thus, a higher cross-association level in reflexive-antecedent than in subject-verb dependencies in general, one could argue that reflexive-antecedent dependencies have a rather restrictive set of cues that define the target, whereas subject-verb dependencies occur in a wide range of contexts in which various semantic cues in addition to morpho-syntactic ones might be used \citep[cf.][]{VanDyke2006}.
@@ -1271,19 +1047,13 @@ There is one experiment on reflexives that controlled for participants' \index{w
 Note, however, that, even if it was the case that low-capacity readers experience higher cross-association, for reasons explained above, the current model could not predict an \textit{inhibitory} target-mismatch effect at the same time as a \textit{facilitatory} target-match effect as is the case in \cite{CunningsFelser2013}.
 Since there is only one experiment testing low-capacity readers on target-mismatch configurations, a hypothesis of cue-feature associations being adaptive to individual capacity limits is currently speculative, and high-powered planned experiments should be carried out in order to test this hypothesis.
 
-% \subsection{Cue strength}
 Other factors besides feature-co-occurrence that affect the strength of cue associations have not been considered here.
 Most prominently, it has been claimed that syntactic cues are weighted more strongly than semantic cues  \citep[e.g.,][]{Nicol1988, Sturt2003,VanDyke2007,VanDykeMcElree2011}. 
 A stronger weighting for syntactic cues might actually be subsumed by co-occurrence, assuming that syntactic cues are more reliable (i.e., have a higher co-occurrence) in a certain construction than semantic cues.
 
 Other associations may, however, go beyond pure co-occurrence. 
-For example, an experiment conducted by \cite{VanDyke2006} showed interference effects based on similarities between nouns that tap into world knowledge, such as the property of being \emph{fixable}.
-% In addition to markedness asymmetries within features such as plural vs.\ singular, a hierarchy between features (person > number > gender) has been proposed, e.g., by \cite{CarminatiNella2005}.
-Some cues may be stronger than others based on their semantics and pragmatics: \cite{CarminatiNella2005} has proposed a hierarchy between features, such that \textit{person} $>$ \textit{number} $>$ \textit{gender}.
-Additionally, in English, \textit{number} has a regular, general affixal realization on nouns and verbs whereas \textit{animacy} and \textit{gender} don't. 
-% Finally, binary features such as c-command, subject, or animacy could be stronger than features with more possible values such as gender (in English) or case.
-The effects of semantically, pragmatically, or morphologically motivated differences between retrieval cues remain to be investigated.
-
+For example, an experiment conducted by \cite{VanDyke2006} showed interference effects based on similarities between nouns that tap into world knowledge, such as the property of being \emph{fixable}. Some cues may be stronger than others based on their semantics and pragmatics: \cite{CarminatiNella2005} has proposed a hierarchy between features, such that \textit{person} $>$ \textit{number} $>$ \textit{gender}.
+Additionally, in English, \textit{number} has a regular, general affixal realization on nouns and verbs whereas \textit{animacy} and \textit{gender} don't. The effects of semantically, pragmatically, or morphologically motivated differences between retrieval cues remain to be investigated.
 
 \subsection{Some limitations of the present work} \label{limitations}
 
@@ -1292,13 +1062,6 @@ The principal goals of this work are to (a) evaluate the predictions of the Lewi
 We have left underspecified how prominence might work more generally for co-reference resolution. As \cite{kaiser2008interpreting} showed, in a language like Finnish, pronouns and demonstratives exhibit different amounts of sensitivity to word order and syntactic role in determining the antecedent. Specifically, the Finnish pronoun \textit{h\"an}, `he/she,' prefers to choose syntactic subjects as an antecedent regardless of word order, but the demonstrative \textit{t\"am\"a}, `this,' is sensitive to both word order and syntactic role, so that object-verb-subject order would lead to an approximately equal preference for the object and the subject as antecedent, but subject-verb-object order would lead to a subject preference. Clearly, being able to account for pronouns vs.\ demonstratives in a cue-based architecture requires making the assumption that non-canonical word order makes fronted object nouns more prominent and that subjects are prominent even when they are not in sentence-initial position. Our work in this paper has nothing to say about what happens with non-canonical word order, where information structure plays a crucial role. However, we do not claim to provide a comprehensive theory or model of prominence in this paper. 
 
 Similarly, the idea of cue-association is proposed in the context of Hindi reciprocals and Chinese reflexives. How generally applicable is cue-association? Ideally, one should present independent evidence for this proposal, using an experiment design such as Example \ref{ex:cueconf} above. As we have discussed earlier, our proposal should be seen as a tentative one that needs empirical verification through appropriately powered studies.
-
-
-
-
-
-
-
 
 \newpage
 
