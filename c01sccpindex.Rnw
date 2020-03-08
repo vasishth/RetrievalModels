@@ -4,11 +4,8 @@
 
 A large body of work in cognitive science is concerned with
 understanding the constraints on human language comprehension and
-production. Although questions about language processing fall within the relatively narrow confines of psycholinguistics, there are deep connections between language processing and independently developed research on memory processes within cognitive psychology. This book
-is about a particular set of computational models of sentence
-comprehension processes
-\citep{LewisVasishth2005,EngelmannJaegerVasishth2019} that seek to
-explain how one particular conception of working memory constraints
+production. Although questions about language processing fall within the relatively narrow confines of psycholinguistics, there are deep connections between language processing and independently developed research on memory processes within cognitive psychology. This book is about a particular set of computational models of sentence
+comprehension processes \citep{LewisVasishth2005,EngelmannJaegerVasishth2019} that seek to explain how one particular conception of working memory constraints
 comes into play when we comprehend a sentence. The aim is to use an
 independently developed process model of human information processing  \index{ACT-R}
 (ACT-R) to account for some of the cognitive processes that unfold
@@ -24,7 +21,7 @@ reproducibility, and to allow others to use and extend the
 computational models presented here, all the associated data and code
 for this book have been made available from the following repository:
 
-https://github.com/vasishth/sccp.
+https://github.com/vasishth/RetrievalModels.
 
 In the next few subsections, we quickly survey some important aspects of previous research on sentence processing, focusing on two important and closely related ideas: the role of working memory constraints and the role of predictive processing.
 
