@@ -1,0 +1,90 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/extras/base-level-inhibition
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2011-04-26T16:08:13.554188Z
+1019
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+free-recall.lisp
+file
+
+
+
+
+2011-06-20T11:33:37.000000Z
+697e15d2b256bc3c42ba55864d90d2d8
+2009-08-21T13:19:55.836308Z
+781
+db30
+
+Cogsci09-Lebiere-Best.pdf
+file
+
+
+
+
+2011-06-20T11:33:37.000000Z
+4ce3a6a5170a59f510d9c84b477e2e75
+2009-08-21T13:19:55.836308Z
+781
+db30
+has-props
+
+readme.txt
+file
+
+
+
+
+2011-06-20T11:33:37.000000Z
+27be599544be3cabeaf8ad565dd9af63
+2009-08-21T13:19:55.836308Z
+781
+db30
+
+bl-inhibition.lisp
+file
+
+
+
+
+2011-06-20T11:33:37.000000Z
+a9cd9887dd55b9483f338605c14a202a
+2011-04-26T16:08:13.554188Z
+1019
+db30
+
+Cogsci 2009 Lebiere Final Revised.pdf
+file
+
+
+
+
+2011-06-20T11:33:37.000000Z
+5a90fefef860871755ea728d73c2197b
+2009-08-21T13:19:55.836308Z
+781
+db30
+has-props
+

@@ -1,0 +1,80 @@
+#|Warning: Creating chunk START of default type chunk |#
+#|Warning: Creating chunk NEXT of default type chunk |#
+#|Warning: Creating chunk RETRIEVE-IT of default type chunk |#
+#|Warning: Creating chunk DONE of default type chunk |#
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.000   PROCEDURAL             PRODUCTION-SELECTED P1 
+     0.000   PROCEDURAL             QUERY-BUFFER-ACTION GOAL 
+     0.050   PROCEDURAL             PRODUCTION-FIRED P1 
+     0.050   PROCEDURAL             MODULE-REQUEST GOAL 
+     0.050   PROCEDURAL             MODULE-REQUEST RETRIEVAL 
+     0.050   PROCEDURAL             CLEAR-BUFFER GOAL 
+     0.050   PROCEDURAL             CLEAR-BUFFER RETRIEVAL 
+     0.050   GOAL                   CREATE-NEW-BUFFER-CHUNK GOAL ISA GOAL 
+     0.050   GOAL                   SET-BUFFER-CHUNK GOAL GOAL0 
+     0.050   DECLARATIVE            START-RETRIEVAL 
+Chunk A matches
+Computing activation for chunk A
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing activation spreading from buffers
+  Spreading 1.0 from buffer GOAL chunk GOAL0-0
+    sources of activation are: (START)
+    Spreading activation  0.0 from source START level  1.0 times Sji 0.0
+Total spreading activation: 0.0
+Adding transient noise 0.0
+Adding permanent noise 0.0
+Chunk A has an activation of: 0.0
+Chunk A has the current best activation 0.0
+Chunk A with activation 0.0 is the best
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.050   DECLARATIVE            RETRIEVED-CHUNK A 
+     1.050   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL A 
+     1.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.050   PROCEDURAL             PRODUCTION-SELECTED P2 
+     1.050   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+     1.050   PROCEDURAL             BUFFER-READ-ACTION RETRIEVAL 
+     1.100   PROCEDURAL             PRODUCTION-FIRED P2 
+     1.100   PROCEDURAL             MOD-BUFFER-CHUNK GOAL 
+     1.100   PROCEDURAL             MODULE-REQUEST IMAGINAL 
+     1.100   PROCEDURAL             CLEAR-BUFFER IMAGINAL 
+     1.100   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.300   IMAGINAL               CREATE-NEW-BUFFER-CHUNK IMAGINAL ISA TARGET 
+     1.300   IMAGINAL               SET-BUFFER-CHUNK IMAGINAL TARGET0 
+     1.300   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.300   PROCEDURAL             PRODUCTION-SELECTED P3 
+     1.300   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+     1.300   PROCEDURAL             BUFFER-READ-ACTION IMAGINAL 
+     1.350   PROCEDURAL             PRODUCTION-FIRED P3 
+     1.350   PROCEDURAL             MOD-BUFFER-CHUNK GOAL 
+     1.350   PROCEDURAL             CLEAR-BUFFER IMAGINAL 
+     1.350   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.350   PROCEDURAL             PRODUCTION-SELECTED P4 
+     1.350   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+     1.400   PROCEDURAL             PRODUCTION-FIRED P4 
+     1.400   PROCEDURAL             MOD-BUFFER-CHUNK GOAL 
+     1.400   PROCEDURAL             MODULE-REQUEST RETRIEVAL 
+     1.400   PROCEDURAL             CLEAR-BUFFER RETRIEVAL 
+     1.400   DECLARATIVE            START-RETRIEVAL 
+Chunk TARGET0-0 matches
+Computing activation for chunk TARGET0-0
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing activation spreading from buffers
+  Spreading 1.0 from buffer GOAL chunk GOAL0-0
+    sources of activation are: (DONE A-0)
+    Spreading activation  0.0 from source DONE level  0.5 times Sji 0.0
+    Spreading activation  2.1534264 from source A-0 level  0.5 times Sji 4.306853
+Total spreading activation: 2.1534264
+Adding transient noise 0.0
+Adding permanent noise 0.0
+Chunk TARGET0-0 has an activation of: 2.1534264
+Chunk TARGET0-0 has the current best activation 2.1534264
+Chunk TARGET0-0 with activation 2.1534264 is the best
+     1.400   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.516   DECLARATIVE            RETRIEVED-CHUNK TARGET0-0 
+     1.516   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL TARGET0-0 
+     1.516   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.516   ------                 Stopped because no events left to process 

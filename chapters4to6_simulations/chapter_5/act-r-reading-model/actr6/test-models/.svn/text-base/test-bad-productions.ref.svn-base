@@ -1,0 +1,90 @@
+#|Warning: RHS !bind!, !eval!, and/or !output! actions of production BAD-ORDER had to be reordered because of interdependencies of variables.
+ If those actions have side effects check the actions carefully to ensure proper operation. |#
+#|Warning: Creating chunk NOT-A-CHUNK-YET of default type chunk |#
+#|Warning: RHS !bind!, !eval!, and/or !output! actions of production BAD-ORDER had to be reordered because of interdependencies of variables.
+ If those actions have side effects check the actions carefully to ensure proper operation. |#
+#|Warning: Creating chunk NOT-A-CHUNK-YET of default type chunk |#
+#|Warning: No production defined for (CIRCULAR-REFERENCE-REJECTED
+                                      =GOAL>
+                                      ISA
+                                      TEST
+                                      SLOT1
+                                      2
+                                      ==>
+                                      !BIND!
+                                      =X
+                                      (+ =Y 1)
+                                      !BIND!
+                                      =Y
+                                      (- =Z 2)
+                                      !BIND!
+                                      =Z
+                                      (+
+                                       =X
+                                       3)) because there are circular references in the explicit RHS !bind!'s. |#
+#|Warning: Invalid slot-name TEST in call to define-chunk-spec. |#
+#|Warning: Invalid syntax in =GOAL> condition. |#
+#|Warning: No production defined for (BAD-BUFFER-NAME-REJECTED
+                                      =GOAL>
+                                      ISA
+                                      TEST
+                                      SLOT1
+                                      2
+                                      =NOT-A-BUFFER>
+                                      ISA
+                                      TEST
+                                      ==>). |#
+#|Warning: Production is missing the ==> separator. |#
+#|Warning: No production defined for (MISSING-SEPARATOR-REJECTED
+                                      =GOAL>
+                                      ISA
+                                      TEST
+                                      SLOT1
+                                      2). |#
+#|Warning: First element to define-chunk-spec isn't the symbol ISA. (SLOT1
+                                                                     2) |#
+#|Warning: Invalid syntax in =GOAL> condition. |#
+#|Warning: No production defined for (MISSING-ISA-REJECTED
+                                      =GOAL>
+                                      SLOT1
+                                      2
+                                      ==>). |#
+#|Warning: Cannot modify buffer IMAGINAL if not matched on LHS. |#
+#|Warning: No production defined for (UN-TESTED-MODIFY-REJECTED
+                                      =GOAL>
+                                      ISA
+                                      TEST
+                                      SLOT1
+                                      2
+                                      ==>
+                                      =IMAGINAL>
+                                      SLOT1
+                                      NIL). |#
+#|Warning: Invalid slot-name * in call to define-chunk-spec. |#
+#|Warning: Invalid syntax in =GOAL> condition. |#
+#|Warning: No production defined for (ILLEGAL-MODIFIER-REJECTED
+                                      =GOAL>
+                                      ISA
+                                      TEST
+                                      *
+                                      SLOT1
+                                      2
+                                      ==>). |#
+#|Warning: First item on RHS is not a valid command |#
+#|Warning: No production defined for (UNKNOWN-RHS-ACTION-REJECTED
+                                      =GOAL>
+                                      ISA
+                                      TEST
+                                      SLOT1
+                                      2
+                                      ==>
+                                      !WHATS-THIS!
+                                      (+ =GOAL 3)). |#
+     0.000   GOAL                   SET-BUFFER-CHUNK GOAL G1 REQUESTED NIL 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED BAD-ORDER 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.100   PROCEDURAL             PRODUCTION-FIRED UNDEFINED-CHUNK 
+     0.100   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.150   PROCEDURAL             PRODUCTION-FIRED FINISH 
+     0.150   ------                 BREAK-EVENT Stopped by !stop! 

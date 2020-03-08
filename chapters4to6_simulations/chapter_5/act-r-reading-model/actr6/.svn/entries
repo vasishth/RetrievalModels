@@ -1,0 +1,82 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2011-06-17T18:53:39.356049Z
+1087
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+other-files
+dir
+
+devices
+dir
+
+docs
+dir
+
+load-act-r-6.lisp
+file
+
+
+
+
+2011-06-20T11:34:16.000000Z
+95eecab687db26e0a2a87516ea862d83
+2011-04-28T15:29:44.404048Z
+1030
+db30
+
+framework
+dir
+
+core-modules
+dir
+
+tools
+dir
+
+test-models
+dir
+
+commands
+dir
+
+tutorial
+dir
+
+environment
+dir
+
+extras
+dir
+
+modules
+dir
+
+support
+dir
+
+examples
+dir
+

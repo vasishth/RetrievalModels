@@ -1,0 +1,177 @@
+
+******************************
+Without ppm (default symbolic matching):
+******************************
+
+
+Production CONSTANT-SLOT-TEST does NOT match.
+(P CONSTANT-SLOT-TEST
+   =GOAL>
+       ISA GOAL
+       STATE STATE1
+ ==>
+   =GOAL>
+       STATE STATEB
+)
+It fails because: 
+The STATE slot of the chunk in the GOAL buffer does not have the value STATE1.
+
+Production VARIABLE-SLOT-TEST does NOT match.
+(P VARIABLE-SLOT-TEST
+   =RETRIEVAL>
+       ISA GOAL
+       STATE =VAR
+   =GOAL>
+       ISA GOAL
+       STATE =VAR
+ ==>
+   =GOAL>
+       STATE STATEC
+)
+It fails because: 
+The value in the STATE slot of the chunk in the GOAL buffer does not satisfy the constraints.
+
+Production VARIABLIZED-SLOT-CONSTANT-VAL does NOT match.
+(P* VARIABLIZED-SLOT-CONSTANT-VAL
+   =GOAL>
+       ISA GOAL
+       =SLOT STATE3
+   =IMAGINAL>
+       ISA GOAL
+       SLOT =SLOT
+ ==>
+   =GOAL>
+       STATE STATED
+)
+It fails because: 
+The value in the STATE slot (the value of the =SLOT variable) of the chunk of the GOAL buffer does not satisfy the constraints.
+
+Production VARIABLIZED-SLOT-AND-VAL does NOT match.
+(P* VARIABLIZED-SLOT-AND-VAL
+   =GOAL>
+       ISA GOAL
+       =SLOT =VAL
+   =IMAGINAL>
+       ISA GOAL
+       SLOT =SLOT
+       STATE =VAL
+ ==>
+   =GOAL>
+       STATE STATEE
+)
+It fails because: 
+The value in the STATE slot of the chunk in the IMAGINAL buffer does not satisfy the constraints.
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.000   ------                 Stopped because no events left to process 
+
+******************************
+With ppm enabled:
+******************************
+
+
+Production CONSTANT-SLOT-TEST partially matches the current state:
+(P CONSTANT-SLOT-TEST
+   =GOAL>
+       ISA GOAL
+       STATE [STATE1, STATEA, -0.1]
+ ==>
+   =GOAL>
+       STATE STATEB
+)
+
+Production VARIABLE-SLOT-TEST partially matches the current state:
+(P VARIABLE-SLOT-TEST
+   =RETRIEVAL>
+       ISA GOAL
+       STATE STATE2
+   =GOAL>
+       ISA GOAL
+       STATE [STATE2, STATEA, -0.2]
+ ==>
+   =GOAL>
+       STATE STATEC
+)
+
+Production VARIABLIZED-SLOT-CONSTANT-VAL partially matches the current state:
+(P* VARIABLIZED-SLOT-CONSTANT-VAL
+   =GOAL>
+       ISA GOAL
+       STATE [STATE3, STATEA, -0.3]
+   =IMAGINAL>
+       ISA GOAL
+       SLOT STATE
+ ==>
+   =GOAL>
+       STATE STATED
+)
+
+Production VARIABLIZED-SLOT-AND-VAL partially matches the current state:
+(P* VARIABLIZED-SLOT-AND-VAL
+   =GOAL>
+       ISA GOAL
+       STATE STATEA
+   =IMAGINAL>
+       ISA GOAL
+       SLOT STATE
+       STATE [STATEA, STATE4, -0.4]
+ ==>
+   =GOAL>
+       STATE STATEE
+)
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED CONSTANT-SLOT-TEST 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.100   PROCEDURAL             PRODUCTION-FIRED VARIABLE-SLOT-TEST 
+     0.100   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.150   PROCEDURAL             PRODUCTION-FIRED VARIABLIZED-SLOT-CONSTANT-VAL 
+     0.150   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.200   PROCEDURAL             PRODUCTION-FIRED VARIABLIZED-SLOT-AND-VAL 
+     0.200   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.200   ------                 Stopped because no events left to process 
+
+******************************
+With ppm enabled and using the hook to show values as it goes:
+******************************
+
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+ppm hook called with values:
+CONSTANT-SLOT-TEST ((GOAL STATE STATE1 STATEA -0.1))
+ppm hook called with values:
+VARIABLE-SLOT-TEST ((GOAL STATE STATE2 STATEA -0.2))
+ppm hook called with values:
+VARIABLIZED-SLOT-CONSTANT-VAL ((GOAL STATE STATE3 STATEA -0.3))
+ppm hook called with values:
+VARIABLIZED-SLOT-AND-VAL ((IMAGINAL STATE STATEA STATE4 -0.4))
+     0.050   PROCEDURAL             PRODUCTION-FIRED CONSTANT-SLOT-TEST 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+ppm hook called with values:
+CONSTANT-SLOT-TEST ((GOAL STATE STATE1 STATEB -0.2))
+ppm hook called with values:
+VARIABLE-SLOT-TEST ((GOAL STATE STATE2 STATEB -0.1))
+ppm hook called with values:
+VARIABLIZED-SLOT-CONSTANT-VAL ((GOAL STATE STATE3 STATEB -0.2))
+ppm hook called with values:
+VARIABLIZED-SLOT-AND-VAL ((IMAGINAL STATE STATEB STATE4 -0.3))
+     0.100   PROCEDURAL             PRODUCTION-FIRED VARIABLE-SLOT-TEST 
+     0.100   PROCEDURAL             CONFLICT-RESOLUTION 
+ppm hook called with values:
+CONSTANT-SLOT-TEST ((GOAL STATE STATE1 STATEC -0.3))
+ppm hook called with values:
+VARIABLE-SLOT-TEST ((GOAL STATE STATE2 STATEC -0.2))
+ppm hook called with values:
+VARIABLIZED-SLOT-CONSTANT-VAL ((GOAL STATE STATE3 STATEC -0.1))
+ppm hook called with values:
+VARIABLIZED-SLOT-AND-VAL ((IMAGINAL STATE STATEC STATE4 -0.2))
+     0.150   PROCEDURAL             PRODUCTION-FIRED VARIABLIZED-SLOT-CONSTANT-VAL 
+     0.150   PROCEDURAL             CONFLICT-RESOLUTION 
+ppm hook called with values:
+CONSTANT-SLOT-TEST ((GOAL STATE STATE1 STATED -0.4))
+ppm hook called with values:
+VARIABLE-SLOT-TEST ((GOAL STATE STATE2 STATED -0.3))
+ppm hook called with values:
+VARIABLIZED-SLOT-CONSTANT-VAL ((GOAL STATE STATE3 STATED -0.2))
+ppm hook called with values:
+VARIABLIZED-SLOT-AND-VAL ((IMAGINAL STATE STATED STATE4 -0.1))
+     0.200   PROCEDURAL             PRODUCTION-FIRED VARIABLIZED-SLOT-AND-VAL 
+     0.200   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.200   ------                 Stopped because no events left to process 

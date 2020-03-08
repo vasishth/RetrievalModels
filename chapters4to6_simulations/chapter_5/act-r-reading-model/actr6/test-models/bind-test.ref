@@ -1,0 +1,19 @@
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.000   PROCEDURAL             PRODUCTION-SELECTED P1 
+     0.000   PROCEDURAL             QUERY-BUFFER-ACTION GOAL 
+     0.050   PROCEDURAL             PRODUCTION-FIRED P1 
+     0.050   PROCEDURAL             MODULE-REQUEST GOAL 
+     0.050   PROCEDURAL             CLEAR-BUFFER GOAL 
+     0.050   GOAL                   CREATE-NEW-BUFFER-CHUNK GOAL ISA GOAL 
+     0.050   GOAL                   SET-BUFFER-CHUNK GOAL GOAL0 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-SELECTED P2 
+     0.050   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+     0.100   PROCEDURAL             PRODUCTION-FIRED P2 
+THE ANSWERS ARE 4 FREE BUSY 
+     0.100   PROCEDURAL             MODULE-REQUEST GOAL 
+     0.100   PROCEDURAL             CLEAR-BUFFER GOAL 
+     0.100   GOAL                   CREATE-NEW-BUFFER-CHUNK GOAL ISA CHUNK 
+     0.100   GOAL                   SET-BUFFER-CHUNK GOAL CHUNK0 
+     0.100   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.100   ------                 Stopped because no events left to process 

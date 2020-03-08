@@ -1,0 +1,52 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/devices/acl
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2011-04-28T17:34:13.688042Z
+1034
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+device.lisp
+file
+
+
+
+
+2011-06-20T11:32:38.000000Z
+bc12891879e1d8df84fe979688e44503
+2008-07-12T14:23:25.935886Z
+628
+db30
+
+uwi.lisp
+file
+
+
+
+
+2011-06-20T11:32:38.000000Z
+633b8c50d36e0247382d9863d81560c7
+2011-04-28T17:34:13.688042Z
+1034
+db30
+

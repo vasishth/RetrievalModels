@@ -1,0 +1,71 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/environment/GUI
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2011-06-14T16:39:19.566336Z
+1084
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+dialogs
+dir
+
+init
+dir
+
+logo.gif
+file
+
+
+
+
+2011-06-20T11:32:56.000000Z
+39b4b9aeec2c76d104c81e627efecdbc
+2005-04-20T14:29:40.697676Z
+68
+db30
+has-props
+
+starter.tcl
+file
+
+
+
+
+2011-06-20T11:32:56.000000Z
+61c3d55d31d7614d954fb9c5656147a7
+2010-07-20T16:41:00.143284Z
+884
+db30
+
+server.tcl
+file
+
+
+
+
+2011-06-20T11:32:56.000000Z
+6fe8f91c7e1ea0181eb010eddaa26f62
+2011-06-14T16:03:26.226360Z
+1083
+db30
+

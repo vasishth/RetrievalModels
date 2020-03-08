@@ -1,0 +1,47 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/environment/Start%20Environment%20OSX.app/Contents
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2010-03-11T04:57:25.982897Z
+843
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+MacOS
+dir
+
+Info.plist
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+8232830473a4318a14df9af71580f049
+2010-03-11T04:57:25.982897Z
+843
+db30
+has-props
+
+Resources
+dir
+

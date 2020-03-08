@@ -1,0 +1,40 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/extras/old-vision/devices/mcl
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2008-01-03T13:32:14.501186Z
+541
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+device.lisp
+file
+
+
+
+
+2011-06-20T11:33:27.000000Z
+23369611efa07d2d87d624b6265e12ba
+2008-01-03T13:32:14.501186Z
+541
+db30
+

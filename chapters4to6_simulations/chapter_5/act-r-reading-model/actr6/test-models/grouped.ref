@@ -1,0 +1,1192 @@
+     0.000   GOAL                   SET-BUFFER-CHUNK GOAL GOAL REQUESTED NIL 
+     0.050   PROCEDURAL             PRODUCTION-FIRED RECALL-FIRST-GROUP 
+Computing activation for chunk GROUP1
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: FIRST
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise 0.13675894
+Adding permanent noise 0.0
+Chunk GROUP1 has an activation of: 0.13675894
+Chunk GROUP1 has the current best activation 0.13675894
+Computing activation for chunk GROUP2
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise -0.36428827
+Adding permanent noise 0.0
+Chunk GROUP2 has an activation of: -0.8642883
+Computing activation for chunk GROUP3
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -1.0
+Adding transient noise -0.2693139
+Adding permanent noise 0.0
+Chunk GROUP3 has an activation of: -1.2693139
+Chunk GROUP1 with activation 0.13675894 is the best
+     0.922   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL GROUP1 
+     0.972   PROCEDURAL             PRODUCTION-FIRED START-RECALL-OF-GROUP 
+Removing recently retrieved chunks:
+Computing activation for chunk ITEM1
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP1
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: FIRST
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise 0.15103722
+Adding permanent noise 0.0
+Chunk ITEM1 has an activation of: 0.15103722
+Chunk ITEM1 has the current best activation 0.15103722
+Computing activation for chunk ITEM2
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP1
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise 0.069821134
+Adding permanent noise 0.0
+Chunk ITEM2 has an activation of: -0.43017888
+Computing activation for chunk ITEM3
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP1
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -1.0
+Adding transient noise 0.14088637
+Adding permanent noise 0.0
+Chunk ITEM3 has an activation of: -0.85911363
+Computing activation for chunk ITEM4
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: FIRST
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise 0.05243059
+Adding permanent noise 0.0
+Chunk ITEM4 has an activation of: -0.94756943
+Computing activation for chunk ITEM5
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise -0.31867743
+Adding permanent noise 0.0
+Chunk ITEM5 has an activation of: -1.8186774
+Computing activation for chunk ITEM6
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise -0.010031511
+Adding permanent noise 0.0
+Chunk ITEM6 has an activation of: -2.0100315
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: FIRST
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise 0.11004096
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -0.88995904
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise -0.087834366
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -1.5878344
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise -0.27916592
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -2.279166
+Chunk ITEM1 with activation 0.15103722 is the best
+     1.832   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM1 
+     1.882   PROCEDURAL             PRODUCTION-FIRED HARVEST-FIRST-ITEM 
+Removing recently retrieved chunks:
+ITEM1
+Computing activation for chunk ITEM2
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP1
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: SECOND
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise 0.21117316
+Adding permanent noise 0.0
+Chunk ITEM2 has an activation of: 0.21117316
+Chunk ITEM2 has the current best activation 0.21117316
+Computing activation for chunk ITEM3
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP1
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: THIRD
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise -0.2579252
+Adding permanent noise 0.0
+Chunk ITEM3 has an activation of: -0.7579252
+Computing activation for chunk ITEM4
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: FIRST
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise 0.18635121
+Adding permanent noise 0.0
+Chunk ITEM4 has an activation of: -1.3136488
+Computing activation for chunk ITEM5
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: SECOND
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise 0.09208258
+Adding permanent noise 0.0
+Chunk ITEM5 has an activation of: -0.90791744
+Computing activation for chunk ITEM6
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: THIRD
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise -0.2433808
+Adding permanent noise 0.0
+Chunk ITEM6 has an activation of: -1.7433808
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: FIRST
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise -0.044656888
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -1.5446569
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: SECOND
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise -0.32374045
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -1.3237405
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: THIRD
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise 0.3447194
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -1.1552806
+Chunk ITEM2 with activation 0.21117316 is the best
+     2.692   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM2 
+     2.742   PROCEDURAL             PRODUCTION-FIRED HARVEST-SECOND-ITEM 
+Removing recently retrieved chunks:
+ITEM2
+ITEM1
+Computing activation for chunk ITEM3
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP1
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: THIRD
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise 0.054178327
+Adding permanent noise 0.0
+Chunk ITEM3 has an activation of: 0.054178327
+Chunk ITEM3 has the current best activation 0.054178327
+Computing activation for chunk ITEM4
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: FIRST
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.070455424
+Adding permanent noise 0.0
+Chunk ITEM4 has an activation of: -1.9295446
+Computing activation for chunk ITEM5
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise 0.4367461
+Adding permanent noise 0.0
+Chunk ITEM5 has an activation of: -1.0632539
+Computing activation for chunk ITEM6
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: THIRD
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise -0.12969466
+Adding permanent noise 0.0
+Chunk ITEM6 has an activation of: -1.1296947
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: FIRST
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.008897956
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -1.9911021
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise 0.5769801
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -0.9230199
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: THIRD
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise -0.013996686
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -1.0139967
+Chunk ITEM3 with activation 0.054178327 is the best
+     3.689   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM3 
+     3.739   PROCEDURAL             PRODUCTION-FIRED HARVEST-THIRD-ITEM 
+Removing recently retrieved chunks:
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM4
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: FIRST
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.06433529
+Adding permanent noise 0.0
+Chunk ITEM4 has an activation of: -1.9356647
+Chunk ITEM4 has the current best activation -1.9356647
+Computing activation for chunk ITEM5
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: SECOND
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.20129296
+Adding permanent noise 0.0
+Chunk ITEM5 has an activation of: -1.798707
+Chunk ITEM5 is now the current best with activation -1.798707
+Computing activation for chunk ITEM6
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP2
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.012909991
+Adding permanent noise 0.0
+Chunk ITEM6 has an activation of: -1.98709
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: FIRST
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.08643487
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -1.9135652
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: SECOND
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.61234313
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -1.3876569
+Chunk ITEM8 is now the current best with activation -1.3876569
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP1  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.04211715
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -1.9578829
+No chunk above the retrieval threshold: -0.5
+     5.388   DECLARATIVE            RETRIEVAL-FAILURE 
+     5.438   PROCEDURAL             PRODUCTION-FIRED SECOND-GROUP 
+Computing activation for chunk GROUP1
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: FIRST
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise 0.5466406
+Adding permanent noise 0.0
+Chunk GROUP1 has an activation of: 0.046640575
+Chunk GROUP1 has the current best activation 0.046640575
+Computing activation for chunk GROUP2
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: SECOND
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise 0.20518214
+Adding permanent noise 0.0
+Chunk GROUP2 has an activation of: 0.20518214
+Chunk GROUP2 is now the current best with activation 0.20518214
+Computing activation for chunk GROUP3
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: THIRD
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise -0.10046266
+Adding permanent noise 0.0
+Chunk GROUP3 has an activation of: -0.6004627
+Chunk GROUP2 with activation 0.20518214 is the best
+     6.252   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL GROUP2 
+     6.302   PROCEDURAL             PRODUCTION-FIRED START-RECALL-OF-GROUP 
+Removing recently retrieved chunks:
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM4
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP2
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: FIRST
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise 0.10134824
+Adding permanent noise 0.0
+Chunk ITEM4 has an activation of: 0.10134824
+Chunk ITEM4 has the current best activation 0.10134824
+Computing activation for chunk ITEM5
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP2
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise 0.2320161
+Adding permanent noise 0.0
+Chunk ITEM5 has an activation of: -0.2679839
+Computing activation for chunk ITEM6
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP2
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -1.0
+Adding transient noise -0.2875944
+Adding permanent noise 0.0
+Chunk ITEM6 has an activation of: -1.2875944
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: FIRST
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise -0.25107583
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -1.2510759
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise 0.03683985
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -1.4631602
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise -0.22955993
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -2.22956
+Chunk ITEM4 with activation 0.10134824 is the best
+     7.206   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM4 
+     7.256   PROCEDURAL             PRODUCTION-FIRED HARVEST-FIRST-ITEM 
+Removing recently retrieved chunks:
+ITEM4
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM5
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP2
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: SECOND
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise -0.59634924
+Adding permanent noise 0.0
+Chunk ITEM5 has an activation of: -0.59634924
+Chunk ITEM5 has the current best activation -0.59634924
+Computing activation for chunk ITEM6
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP2
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: THIRD
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise 0.11740411
+Adding permanent noise 0.0
+Chunk ITEM6 has an activation of: -0.3825959
+Chunk ITEM6 is now the current best with activation -0.3825959
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: FIRST
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise 0.220579
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -1.279421
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: SECOND
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise -0.120972864
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -1.1209729
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: THIRD
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise -0.0050342656
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -1.5050342
+Chunk ITEM6 with activation -0.3825959 is the best
+     8.722   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM6 
+     8.772   PROCEDURAL             PRODUCTION-FIRED HARVEST-SECOND-ITEM 
+Removing recently retrieved chunks:
+ITEM6
+ITEM4
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM5
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP2
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise 0.12282996
+Adding permanent noise 0.0
+Chunk ITEM5 has an activation of: -0.37717003
+Chunk ITEM5 has the current best activation -0.37717003
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: FIRST
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise -0.30046844
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -2.3004684
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -1.5
+Adding transient noise -0.11982964
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -1.6198297
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: THIRD
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score -1.0
+Adding transient noise 0.11231533
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -0.8876847
+Chunk ITEM5 with activation -0.37717003 is the best
+    10.230   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM5 
+    10.280   PROCEDURAL             PRODUCTION-FIRED HARVEST-THIRD-ITEM 
+Removing recently retrieved chunks:
+ITEM6
+ITEM5
+ITEM4
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: FIRST
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise -0.110641316
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -2.1106412
+Chunk ITEM7 has the current best activation -2.1106412
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: SECOND
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise 0.07375429
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -1.9262457
+Chunk ITEM8 is now the current best with activation -1.9262457
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP2  Chunk's slot value: GROUP3
+  similarity: -1.0
+  effective similarity value is -1.0
+  comparing slot POSITION
+  Requested: = FOURTH  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -2.0
+Adding transient noise -0.29278216
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -2.292782
+No chunk above the retrieval threshold: -0.5
+    11.929   DECLARATIVE            RETRIEVAL-FAILURE 
+    11.979   PROCEDURAL             PRODUCTION-FIRED THIRD-GROUP 
+Computing activation for chunk GROUP1
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: FIRST
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -1.0
+Adding transient noise 0.26552698
+Adding permanent noise 0.0
+Chunk GROUP1 has an activation of: -0.734473
+Chunk GROUP1 has the current best activation -0.734473
+Computing activation for chunk GROUP2
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise 0.025742572
+Adding permanent noise 0.0
+Chunk GROUP2 has an activation of: -0.47425744
+Chunk GROUP2 is now the current best with activation -0.47425744
+Computing activation for chunk GROUP3
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = LIST  Chunk's slot value: LIST
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: THIRD
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise -0.14845482
+Adding permanent noise 0.0
+Chunk GROUP3 has an activation of: -0.14845482
+Chunk GROUP3 is now the current best with activation -0.14845482
+Chunk GROUP3 with activation -0.14845482 is the best
+    13.139   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL GROUP3 
+    13.189   PROCEDURAL             PRODUCTION-FIRED START-RECALL-OF-GROUP 
+Removing recently retrieved chunks:
+ITEM6
+ITEM5
+ITEM4
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM7
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP3  Chunk's slot value: GROUP3
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: FIRST
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise -0.16726315
+Adding permanent noise 0.0
+Chunk ITEM7 has an activation of: -0.16726315
+Chunk ITEM7 has the current best activation -0.16726315
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP3  Chunk's slot value: GROUP3
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: SECOND
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise -0.43808702
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -0.938087
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP3  Chunk's slot value: GROUP3
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = FIRST  Chunk's slot value: THIRD
+  similarity: -1.0
+  effective similarity value is -1.0
+Total similarity score -1.0
+Adding transient noise 0.12005301
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -0.879947
+Chunk ITEM7 with activation -0.16726315 is the best
+    14.371   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM7 
+    14.421   PROCEDURAL             PRODUCTION-FIRED HARVEST-FIRST-ITEM 
+Removing recently retrieved chunks:
+ITEM7
+ITEM6
+ITEM5
+ITEM4
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM8
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP3  Chunk's slot value: GROUP3
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: SECOND
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise -0.08969619
+Adding permanent noise 0.0
+Chunk ITEM8 has an activation of: -0.08969619
+Chunk ITEM8 has the current best activation -0.08969619
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP3  Chunk's slot value: GROUP3
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = SECOND  Chunk's slot value: THIRD
+  similarity: -0.5
+  effective similarity value is -0.5
+Total similarity score -0.5
+Adding transient noise -0.10476942
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -0.6047694
+Chunk ITEM8 with activation -0.08969619 is the best
+    15.515   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ITEM8 
+    15.565   PROCEDURAL             PRODUCTION-FIRED HARVEST-SECOND-ITEM 
+Removing recently retrieved chunks:
+ITEM8
+ITEM7
+ITEM6
+ITEM5
+ITEM4
+ITEM3
+ITEM2
+ITEM1
+Computing activation for chunk ITEM9
+Computing base-level
+Starting with blc: 0.0
+Total base-level: 0.0
+Computing partial matching component
+  comparing slot PARENT
+  Requested: = GROUP3  Chunk's slot value: GROUP3
+  similarity: 0.0
+  effective similarity value is 0.0
+  comparing slot POSITION
+  Requested: = THIRD  Chunk's slot value: THIRD
+  similarity: 0.0
+  effective similarity value is 0.0
+Total similarity score 0.0
+Adding transient noise -0.5353896
+Adding permanent noise 0.0
+Chunk ITEM9 has an activation of: -0.5353896
+Chunk ITEM9 has the current best activation -0.5353896
+No chunk above the retrieval threshold: -0.5
+    17.214   DECLARATIVE            RETRIEVAL-FAILURE 
+    17.214   ------                 Stopped because no events left to process 

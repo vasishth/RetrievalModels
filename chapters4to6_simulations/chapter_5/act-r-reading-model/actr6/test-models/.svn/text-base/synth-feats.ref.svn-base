@@ -1,0 +1,697 @@
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 25  30)  NEW   TEXT           "this"            RED             VISUAL-LOCATION0
+( 53  30)  NEW   TEXT           "is"              BLACK           VISUAL-LOCATION1
+( 70  30)  NEW   TEXT           "a"               BLACK           VISUAL-LOCATION2
+(101  30)  NEW   TEXT           "phrase"          BLACK           VISUAL-LOCATION3
+     0.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION VISUAL-LOCATION0-0 REQUESTED NIL 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL-LOCATION 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   VISION                 Encoding-complete VISUAL-LOCATION0-0-0 WORD 
+     0.135   VISION                 SET-BUFFER-CHUNK VISUAL TEXT0 
+     0.135   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   ------                 Stopped because no events left to process 
+VISUAL: TEXT0-0 [TEXT0]
+TEXT0-0
+  ISA TEXT
+   SCREEN-POS  VISUAL-LOCATION0-0-0
+   VALUE  "this"
+   STATUS  NIL
+   COLOR  RED
+   HEIGHT  10
+   WIDTH  28
+
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 25  30)  T     TEXT           "this"            RED             VISUAL-LOCATION0
+( 53  30)  NEW   TEXT           "is"              BLACK           VISUAL-LOCATION1
+( 70  30)  NEW   TEXT           "a"               BLACK           VISUAL-LOCATION2
+(101  30)  NEW   TEXT           "phrase"          BLACK           VISUAL-LOCATION3
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 25  30)  NEW   TEXT           "this"            RED             VISUAL-LOCATION0
+( 53  30)  NEW   TEXT           "is"              BLACK           VISUAL-LOCATION1
+( 70  30)  NEW   TEXT           "a"               BLACK           VISUAL-LOCATION2
+(101  30)  NEW   TEXT           "phrase"          BLACK           VISUAL-LOCATION3
+     0.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION VISUAL-LOCATION0-0 REQUESTED NIL 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL-LOCATION 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   VISION                 Encoding-complete VISUAL-LOCATION0-0-0 PHRASE 
+     0.135   VISION                 SET-BUFFER-CHUNK VISUAL PHRASE!0 
+     0.135   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   ------                 Stopped because no events left to process 
+VISUAL: PHRASE!0-0 [PHRASE!0]
+PHRASE!0-0
+  ISA PHRASE!
+   SCREEN-POS  VISUAL-LOCATION0-0-0
+   VALUE  "this is a phrase"
+   STATUS  NIL
+   COLOR  BLACK
+   HEIGHT  NIL
+   WIDTH  NIL
+   OBJECTS  (TEXT0 TEXT1 TEXT2 TEXT3)
+   WORDS  ("this" "is" "a" "phrase")
+   COLORS  (RED BLACK BLACK BLACK)
+
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 25  30)  T     TEXT           "this"            RED             VISUAL-LOCATION0
+( 53  30)  T     TEXT           "is"              BLACK           VISUAL-LOCATION1
+( 70  30)  T     TEXT           "a"               BLACK           VISUAL-LOCATION2
+(101  30)  T     TEXT           "phrase"          BLACK           VISUAL-LOCATION3
+#|Warning: Creating chunk SYMMETRIC of default type chunk |#
+#|Warning: Creating chunk VERTICAL-C2 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-C1 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-T0 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-R2 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-L2 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-C2 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-C1 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-R1 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-L1 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-L0 of default type chunk |#
+#|Warning: Creating chunk RIGHT-FACING of default type chunk |#
+#|Warning: Creating chunk BACK-DIAGONAL-L2 of default type chunk |#
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 14  30)  NEW   NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE1
+( 14  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE3
+( 14  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE0
+( 14  30)  NEW   NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE2
+( 21  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE4
+( 21  30)  NEW   NIL            VERTICAL-R1       RED             CHAR-PRIMITIVE9
+( 21  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE10
+( 21  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE5
+( 21  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE7
+( 21  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE8
+( 21  30)  NEW   NIL            VERTICAL-L2       RED             CHAR-PRIMITIVE6
+( 28  30)  NEW   NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE14
+( 28  30)  NEW   NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE13
+( 28  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE11
+( 28  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE15
+( 28  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE12
+( 35  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE19
+( 35  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE21
+( 35  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE17
+( 35  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE16
+( 35  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE20
+( 35  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE22
+( 35  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE18
+( 49  30)  NEW   NIL            VERTICAL-C1       BLACK           CHAR-PRIMITIVE26
+( 49  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE24
+( 49  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE23
+( 49  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE27
+( 49  30)  NEW   NIL            VERTICAL-C2       BLACK           CHAR-PRIMITIVE25
+( 56  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE33
+( 56  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE29
+( 56  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE32
+( 56  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE28
+( 56  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE34
+( 56  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE30
+( 56  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE31
+( 69  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE38
+( 69  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE40
+( 69  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE39
+( 69  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE41
+( 69  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE42
+( 69  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE35
+( 69  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE36
+( 69  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE37
+( 83  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE45
+( 83  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE49
+( 83  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE48
+( 83  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE43
+( 83  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE47
+( 83  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE44
+( 83  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE46
+( 90  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE53
+( 90  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE52
+( 90  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE56
+( 90  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE54
+( 90  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE55
+( 90  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE51
+( 90  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE50
+( 97  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE64
+( 97  30)  NEW   NIL            BACK-DIAGONAL-L2  BLACK           CHAR-PRIMITIVE58
+( 97  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE61
+( 97  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE57
+( 97  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE59
+( 97  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE63
+( 97  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE62
+( 97  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE60
+(104  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE70
+(104  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE68
+(104  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE67
+(104  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE65
+(104  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE71
+(104  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE66
+(104  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE69
+(104  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE72
+(111  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE77
+(111  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE74
+(111  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE76
+(111  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE78
+(111  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE75
+(111  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE79
+(111  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE73
+(118  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE82
+(118  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE83
+(118  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE85
+(118  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE81
+(118  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE84
+(118  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE80
+     0.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION CHAR-PRIMITIVE2-0 REQUESTED NIL 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL-LOCATION 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   VISION                 Encoding-complete CHAR-PRIMITIVE2-0-0 LETTER 
+     0.135   VISION                 SET-BUFFER-CHUNK VISUAL VISUAL-OBJECT0 
+     0.135   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   ------                 Stopped because no events left to process 
+VISUAL: VISUAL-OBJECT0-0 [VISUAL-OBJECT0]
+VISUAL-OBJECT0-0
+  ISA VISUAL-OBJECT
+   SCREEN-POS  CHAR-PRIMITIVE2-0-0
+   VALUE  "T"
+   STATUS  NIL
+   COLOR  RED
+   HEIGHT  NIL
+   WIDTH  NIL
+
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 14  30)  T     NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE1
+( 14  30)  T     NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE3
+( 14  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE0
+( 14  30)  T     NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE2
+( 21  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE4
+( 21  30)  NEW   NIL            VERTICAL-R1       RED             CHAR-PRIMITIVE9
+( 21  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE10
+( 21  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE5
+( 21  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE7
+( 21  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE8
+( 21  30)  NEW   NIL            VERTICAL-L2       RED             CHAR-PRIMITIVE6
+( 28  30)  NEW   NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE14
+( 28  30)  NEW   NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE13
+( 28  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE11
+( 28  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE15
+( 28  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE12
+( 35  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE19
+( 35  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE21
+( 35  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE17
+( 35  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE16
+( 35  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE20
+( 35  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE22
+( 35  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE18
+( 49  30)  NEW   NIL            VERTICAL-C1       BLACK           CHAR-PRIMITIVE26
+( 49  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE24
+( 49  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE23
+( 49  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE27
+( 49  30)  NEW   NIL            VERTICAL-C2       BLACK           CHAR-PRIMITIVE25
+( 56  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE33
+( 56  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE29
+( 56  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE32
+( 56  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE28
+( 56  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE34
+( 56  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE30
+( 56  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE31
+( 69  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE38
+( 69  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE40
+( 69  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE39
+( 69  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE41
+( 69  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE42
+( 69  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE35
+( 69  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE36
+( 69  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE37
+( 83  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE45
+( 83  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE49
+( 83  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE48
+( 83  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE43
+( 83  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE47
+( 83  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE44
+( 83  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE46
+( 90  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE53
+( 90  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE52
+( 90  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE56
+( 90  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE54
+( 90  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE55
+( 90  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE51
+( 90  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE50
+( 97  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE64
+( 97  30)  NEW   NIL            BACK-DIAGONAL-L2  BLACK           CHAR-PRIMITIVE58
+( 97  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE61
+( 97  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE57
+( 97  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE59
+( 97  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE63
+( 97  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE62
+( 97  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE60
+(104  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE70
+(104  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE68
+(104  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE67
+(104  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE65
+(104  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE71
+(104  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE66
+(104  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE69
+(104  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE72
+(111  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE77
+(111  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE74
+(111  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE76
+(111  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE78
+(111  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE75
+(111  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE79
+(111  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE73
+(118  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE82
+(118  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE83
+(118  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE85
+(118  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE81
+(118  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE84
+(118  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE80
+#|Warning: Creating chunk SYMMETRIC of default type chunk |#
+#|Warning: Creating chunk VERTICAL-C2 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-C1 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-T0 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-R2 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-L2 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-C2 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-C1 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-R1 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-L1 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-L0 of default type chunk |#
+#|Warning: Creating chunk RIGHT-FACING of default type chunk |#
+#|Warning: Creating chunk BACK-DIAGONAL-L2 of default type chunk |#
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 14  30)  NEW   NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE1
+( 14  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE3
+( 14  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE0
+( 14  30)  NEW   NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE2
+( 21  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE4
+( 21  30)  NEW   NIL            VERTICAL-R1       RED             CHAR-PRIMITIVE9
+( 21  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE10
+( 21  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE5
+( 21  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE7
+( 21  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE8
+( 21  30)  NEW   NIL            VERTICAL-L2       RED             CHAR-PRIMITIVE6
+( 28  30)  NEW   NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE14
+( 28  30)  NEW   NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE13
+( 28  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE11
+( 28  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE15
+( 28  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE12
+( 35  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE19
+( 35  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE21
+( 35  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE17
+( 35  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE16
+( 35  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE20
+( 35  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE22
+( 35  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE18
+( 49  30)  NEW   NIL            VERTICAL-C1       BLACK           CHAR-PRIMITIVE26
+( 49  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE24
+( 49  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE23
+( 49  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE27
+( 49  30)  NEW   NIL            VERTICAL-C2       BLACK           CHAR-PRIMITIVE25
+( 56  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE33
+( 56  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE29
+( 56  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE32
+( 56  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE28
+( 56  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE34
+( 56  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE30
+( 56  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE31
+( 69  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE38
+( 69  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE40
+( 69  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE39
+( 69  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE41
+( 69  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE42
+( 69  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE35
+( 69  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE36
+( 69  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE37
+( 83  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE45
+( 83  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE49
+( 83  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE48
+( 83  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE43
+( 83  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE47
+( 83  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE44
+( 83  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE46
+( 90  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE53
+( 90  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE52
+( 90  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE56
+( 90  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE54
+( 90  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE55
+( 90  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE51
+( 90  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE50
+( 97  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE64
+( 97  30)  NEW   NIL            BACK-DIAGONAL-L2  BLACK           CHAR-PRIMITIVE58
+( 97  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE61
+( 97  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE57
+( 97  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE59
+( 97  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE63
+( 97  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE62
+( 97  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE60
+(104  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE70
+(104  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE68
+(104  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE67
+(104  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE65
+(104  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE71
+(104  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE66
+(104  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE69
+(104  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE72
+(111  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE77
+(111  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE74
+(111  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE76
+(111  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE78
+(111  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE75
+(111  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE79
+(111  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE73
+(118  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE82
+(118  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE83
+(118  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE85
+(118  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE81
+(118  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE84
+(118  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE80
+     0.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION CHAR-PRIMITIVE2-0 REQUESTED NIL 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL-LOCATION 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   VISION                 Encoding-complete CHAR-PRIMITIVE2-0-0 WORD 
+     0.135   VISION                 SET-BUFFER-CHUNK VISUAL TEXT0 
+     0.135   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   ------                 Stopped because no events left to process 
+VISUAL: TEXT0-0 [TEXT0]
+TEXT0-0
+  ISA TEXT
+   SCREEN-POS  CHAR-PRIMITIVE2-0-0
+   VALUE  "this"
+   STATUS  NIL
+   COLOR  RED
+   HEIGHT  NIL
+   WIDTH  NIL
+
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 14  30)  T     NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE1
+( 14  30)  T     NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE3
+( 14  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE0
+( 14  30)  T     NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE2
+( 21  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE4
+( 21  30)  T     NIL            VERTICAL-R1       RED             CHAR-PRIMITIVE9
+( 21  30)  T     NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE10
+( 21  30)  T     NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE5
+( 21  30)  T     NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE7
+( 21  30)  T     NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE8
+( 21  30)  T     NIL            VERTICAL-L2       RED             CHAR-PRIMITIVE6
+( 28  30)  T     NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE14
+( 28  30)  T     NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE13
+( 28  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE11
+( 28  30)  T     NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE15
+( 28  30)  T     NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE12
+( 35  30)  T     NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE19
+( 35  30)  T     NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE21
+( 35  30)  T     NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE17
+( 35  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE16
+( 35  30)  T     NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE20
+( 35  30)  T     NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE22
+( 35  30)  T     NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE18
+( 49  30)  NEW   NIL            VERTICAL-C1       BLACK           CHAR-PRIMITIVE26
+( 49  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE24
+( 49  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE23
+( 49  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE27
+( 49  30)  NEW   NIL            VERTICAL-C2       BLACK           CHAR-PRIMITIVE25
+( 56  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE33
+( 56  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE29
+( 56  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE32
+( 56  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE28
+( 56  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE34
+( 56  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE30
+( 56  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE31
+( 69  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE38
+( 69  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE40
+( 69  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE39
+( 69  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE41
+( 69  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE42
+( 69  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE35
+( 69  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE36
+( 69  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE37
+( 83  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE45
+( 83  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE49
+( 83  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE48
+( 83  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE43
+( 83  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE47
+( 83  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE44
+( 83  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE46
+( 90  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE53
+( 90  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE52
+( 90  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE56
+( 90  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE54
+( 90  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE55
+( 90  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE51
+( 90  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE50
+( 97  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE64
+( 97  30)  NEW   NIL            BACK-DIAGONAL-L2  BLACK           CHAR-PRIMITIVE58
+( 97  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE61
+( 97  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE57
+( 97  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE59
+( 97  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE63
+( 97  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE62
+( 97  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE60
+(104  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE70
+(104  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE68
+(104  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE67
+(104  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE65
+(104  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE71
+(104  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE66
+(104  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE69
+(104  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE72
+(111  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE77
+(111  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE74
+(111  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE76
+(111  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE78
+(111  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE75
+(111  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE79
+(111  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE73
+(118  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE82
+(118  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE83
+(118  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE85
+(118  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE81
+(118  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE84
+(118  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE80
+#|Warning: Creating chunk SYMMETRIC of default type chunk |#
+#|Warning: Creating chunk VERTICAL-C2 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-C1 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-T0 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-R2 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-L2 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-C2 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-C1 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-R1 of default type chunk |#
+#|Warning: Creating chunk VERTICAL-L1 of default type chunk |#
+#|Warning: Creating chunk HORIZONTAL-L0 of default type chunk |#
+#|Warning: Creating chunk RIGHT-FACING of default type chunk |#
+#|Warning: Creating chunk BACK-DIAGONAL-L2 of default type chunk |#
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 14  30)  NEW   NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE1
+( 14  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE3
+( 14  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE0
+( 14  30)  NEW   NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE2
+( 21  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE4
+( 21  30)  NEW   NIL            VERTICAL-R1       RED             CHAR-PRIMITIVE9
+( 21  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE10
+( 21  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE5
+( 21  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE7
+( 21  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE8
+( 21  30)  NEW   NIL            VERTICAL-L2       RED             CHAR-PRIMITIVE6
+( 28  30)  NEW   NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE14
+( 28  30)  NEW   NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE13
+( 28  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE11
+( 28  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE15
+( 28  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE12
+( 35  30)  NEW   NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE19
+( 35  30)  NEW   NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE21
+( 35  30)  NEW   NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE17
+( 35  30)  NEW   NIL            SYMMETRIC         RED             CHAR-PRIMITIVE16
+( 35  30)  NEW   NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE20
+( 35  30)  NEW   NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE22
+( 35  30)  NEW   NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE18
+( 49  30)  NEW   NIL            VERTICAL-C1       BLACK           CHAR-PRIMITIVE26
+( 49  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE24
+( 49  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE23
+( 49  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE27
+( 49  30)  NEW   NIL            VERTICAL-C2       BLACK           CHAR-PRIMITIVE25
+( 56  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE33
+( 56  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE29
+( 56  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE32
+( 56  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE28
+( 56  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE34
+( 56  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE30
+( 56  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE31
+( 69  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE38
+( 69  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE40
+( 69  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE39
+( 69  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE41
+( 69  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE42
+( 69  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE35
+( 69  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE36
+( 69  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE37
+( 83  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE45
+( 83  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE49
+( 83  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE48
+( 83  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE43
+( 83  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE47
+( 83  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE44
+( 83  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE46
+( 90  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE53
+( 90  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE52
+( 90  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE56
+( 90  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE54
+( 90  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE55
+( 90  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE51
+( 90  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE50
+( 97  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE64
+( 97  30)  NEW   NIL            BACK-DIAGONAL-L2  BLACK           CHAR-PRIMITIVE58
+( 97  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE61
+( 97  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE57
+( 97  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE59
+( 97  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE63
+( 97  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE62
+( 97  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE60
+(104  30)  NEW   NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE70
+(104  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE68
+(104  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE67
+(104  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE65
+(104  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE71
+(104  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE66
+(104  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE69
+(104  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE72
+(111  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE77
+(111  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE74
+(111  30)  NEW   NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE76
+(111  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE78
+(111  30)  NEW   NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE75
+(111  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE79
+(111  30)  NEW   NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE73
+(118  30)  NEW   NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE82
+(118  30)  NEW   NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE83
+(118  30)  NEW   NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE85
+(118  30)  NEW   NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE81
+(118  30)  NEW   NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE84
+(118  30)  NEW   NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE80
+     0.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION CHAR-PRIMITIVE2-0 REQUESTED NIL 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL-LOCATION 
+     0.050   PROCEDURAL             CLEAR-BUFFER VISUAL 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   VISION                 Encoding-complete CHAR-PRIMITIVE2-0-0 PHRASE 
+     0.135   VISION                 SET-BUFFER-CHUNK VISUAL PHRASE!0 
+     0.135   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.135   ------                 Stopped because no events left to process 
+VISUAL: PHRASE!0-0 [PHRASE!0]
+PHRASE!0-0
+  ISA PHRASE!
+   SCREEN-POS  CHAR-PRIMITIVE2-0-0
+   VALUE  "this is a phrase"
+   STATUS  NIL
+   COLOR  BLACK
+   HEIGHT  NIL
+   WIDTH  NIL
+   OBJECTS  (TEXT0 TEXT1 TEXT2 TEXT3)
+   WORDS  ("this" "is" "a" "phrase")
+   COLORS  (RED BLACK BLACK BLACK)
+
+Loc        Att   Kind           Value             Color           ID
+---------  ---   -------------  ----------------  --------------  -------------
+( 14  30)  T     NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE1
+( 14  30)  T     NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE3
+( 14  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE0
+( 14  30)  T     NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE2
+( 21  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE4
+( 21  30)  T     NIL            VERTICAL-R1       RED             CHAR-PRIMITIVE9
+( 21  30)  T     NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE10
+( 21  30)  T     NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE5
+( 21  30)  T     NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE7
+( 21  30)  T     NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE8
+( 21  30)  T     NIL            VERTICAL-L2       RED             CHAR-PRIMITIVE6
+( 28  30)  T     NIL            VERTICAL-C1       RED             CHAR-PRIMITIVE14
+( 28  30)  T     NIL            VERTICAL-C2       RED             CHAR-PRIMITIVE13
+( 28  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE11
+( 28  30)  T     NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE15
+( 28  30)  T     NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE12
+( 35  30)  T     NIL            HORIZONTAL-C2     RED             CHAR-PRIMITIVE19
+( 35  30)  T     NIL            VERTICAL-L1       RED             CHAR-PRIMITIVE21
+( 35  30)  T     NIL            HORIZONTAL-L0     RED             CHAR-PRIMITIVE17
+( 35  30)  T     NIL            SYMMETRIC         RED             CHAR-PRIMITIVE16
+( 35  30)  T     NIL            HORIZONTAL-C1     RED             CHAR-PRIMITIVE20
+( 35  30)  T     NIL            HORIZONTAL-T0     RED             CHAR-PRIMITIVE22
+( 35  30)  T     NIL            VERTICAL-R2       RED             CHAR-PRIMITIVE18
+( 49  30)  T     NIL            VERTICAL-C1       BLACK           CHAR-PRIMITIVE26
+( 49  30)  T     NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE24
+( 49  30)  T     NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE23
+( 49  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE27
+( 49  30)  T     NIL            VERTICAL-C2       BLACK           CHAR-PRIMITIVE25
+( 56  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE33
+( 56  30)  T     NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE29
+( 56  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE32
+( 56  30)  T     NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE28
+( 56  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE34
+( 56  30)  T     NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE30
+( 56  30)  T     NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE31
+( 69  30)  T     NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE38
+( 69  30)  T     NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE40
+( 69  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE39
+( 69  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE41
+( 69  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE42
+( 69  30)  T     NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE35
+( 69  30)  T     NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE36
+( 69  30)  T     NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE37
+( 83  30)  T     NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE45
+( 83  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE49
+( 83  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE48
+( 83  30)  T     NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE43
+( 83  30)  T     NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE47
+( 83  30)  T     NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE44
+( 83  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE46
+( 90  30)  T     NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE53
+( 90  30)  T     NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE52
+( 90  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE56
+( 90  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE54
+( 90  30)  T     NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE55
+( 90  30)  T     NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE51
+( 90  30)  T     NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE50
+( 97  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE64
+( 97  30)  T     NIL            BACK-DIAGONAL-L2  BLACK           CHAR-PRIMITIVE58
+( 97  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE61
+( 97  30)  T     NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE57
+( 97  30)  T     NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE59
+( 97  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE63
+( 97  30)  T     NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE62
+( 97  30)  T     NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE60
+(104  30)  T     NIL            VERTICAL-R1       BLACK           CHAR-PRIMITIVE70
+(104  30)  T     NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE68
+(104  30)  T     NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE67
+(104  30)  T     NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE65
+(104  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE71
+(104  30)  T     NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE66
+(104  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE69
+(104  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE72
+(111  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE77
+(111  30)  T     NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE74
+(111  30)  T     NIL            HORIZONTAL-C2     BLACK           CHAR-PRIMITIVE76
+(111  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE78
+(111  30)  T     NIL            VERTICAL-R2       BLACK           CHAR-PRIMITIVE75
+(111  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE79
+(111  30)  T     NIL            SYMMETRIC         BLACK           CHAR-PRIMITIVE73
+(118  30)  T     NIL            VERTICAL-L2       BLACK           CHAR-PRIMITIVE82
+(118  30)  T     NIL            HORIZONTAL-C1     BLACK           CHAR-PRIMITIVE83
+(118  30)  T     NIL            HORIZONTAL-T0     BLACK           CHAR-PRIMITIVE85
+(118  30)  T     NIL            HORIZONTAL-L0     BLACK           CHAR-PRIMITIVE81
+(118  30)  T     NIL            VERTICAL-L1       BLACK           CHAR-PRIMITIVE84
+(118  30)  T     NIL            RIGHT-FACING      BLACK           CHAR-PRIMITIVE80

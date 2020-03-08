@@ -1,0 +1,52 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/devices/virtual
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2011-04-28T17:34:13.688042Z
+1034
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+device.lisp
+file
+
+
+
+
+2011-06-20T11:32:38.000000Z
+3b87c7f3e8c5d48c15bdc9577511bd30
+2011-04-28T17:34:13.688042Z
+1034
+db30
+
+uwi.lisp
+file
+
+
+
+
+2011-06-20T11:32:38.000000Z
+782727917cc3ae0ec14f67257a7e8b47
+2008-07-07T16:56:43.727241Z
+625
+db30
+

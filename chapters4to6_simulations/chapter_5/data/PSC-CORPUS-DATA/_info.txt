@@ -1,0 +1,9 @@
+psc_em.RData
+ psc fixations
+
+psc_words.Rda
+ extensive word information on surpr and retr
+
+datak100.txt
+ em'ed psc corpus with extra information in surpr and retr
+ ...MISSING WORDS!

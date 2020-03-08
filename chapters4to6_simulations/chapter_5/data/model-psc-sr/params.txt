@@ -1,0 +1,15 @@
+:ESC T (default NIL) : Enable Subsymbolic Computations
+:ER NIL (default NIL) : Enable Randomness
+:DAT 0.05 (default 0.05) : Default Action Time
+:VISUAL-ATTENTION-LATENCY 0.085 (default 0.085) : Time for a shift of visual attention
+:VISUAL-ENCODING-FACTOR 0.003 (default 0.01) : Visual encoding factor-EMMA
+:VISUAL-ENCODING-EXPONENT 0.4 (default 1.0) : Visual encoding exponent-EMMA
+:SACCADE-PREPARATION-TIME 0.115 (default 0.006) : Default visual preparation time for EMMA
+:LF 0.2 (default 1.0) : Latency Factor
+:SURPRISAL-FACTOR 5.0E-4 (default 0.001) : Scaling constant for surprisal
+:SURPRISAL-HL-FACTOR 0.01
+:Retrieval-ON T
+:Surprisal-ON T
+:Surprisal-HL-ON NIL
+:Time-Out T
+:Saccadic-Suppression T

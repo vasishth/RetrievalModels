@@ -1,0 +1,21 @@
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START 
+     0.050   PROCEDURAL             CLEAR-BUFFER GOAL 
+     0.050   PROCEDURAL             CLEAR-BUFFER RETRIEVAL 
+     0.050   GOAL                   SET-BUFFER-CHUNK GOAL CHUNK0 
+     0.050   DECLARATIVE            START-RETRIEVAL 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.050   DECLARATIVE            RETRIEVAL-FAILURE 
+     1.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.050   ------                 Stopped because no events left to process 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START 
+     0.050   PROCEDURAL             CLEAR-BUFFER GOAL 
+     0.050   PROCEDURAL             CLEAR-BUFFER RETRIEVAL 
+     0.050   GOAL                   SET-BUFFER-CHUNK GOAL CHUNK0 
+     0.050   DECLARATIVE            START-RETRIEVAL 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.550   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.050   DECLARATIVE            RETRIEVAL-FAILURE 
+     1.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     1.050   ------                 Stopped because no events left to process 

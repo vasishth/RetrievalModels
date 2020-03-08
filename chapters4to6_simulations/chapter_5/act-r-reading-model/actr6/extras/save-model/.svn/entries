@@ -1,0 +1,52 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/extras/save-model
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2011-01-07T20:44:56.126330Z
+958
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+save-chunks-and-productions.lisp
+file
+
+
+
+
+2011-06-20T11:33:40.000000Z
+1cc708d3c63e39efbf5f5ce3b3bc0a98
+2010-06-15T14:17:41.546514Z
+878
+db30
+
+readme.txt
+file
+
+
+
+
+2011-06-20T11:33:40.000000Z
+ff8527bf39436d85a958da93f948cd7b
+2011-01-07T20:44:56.126330Z
+958
+db30
+

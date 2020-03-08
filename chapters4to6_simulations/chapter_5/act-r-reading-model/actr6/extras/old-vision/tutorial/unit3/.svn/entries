@@ -1,0 +1,54 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/extras/old-vision/tutorial/unit3
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2008-01-03T13:32:14.501186Z
+541
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+unit3_exp.doc
+file
+
+
+
+
+2011-06-20T11:33:30.000000Z
+ff8c2aae54336afaca3bc6b7b0ec870e
+2008-01-03T13:32:14.501186Z
+541
+db30
+has-props
+
+unit3.doc
+file
+
+
+
+
+2011-06-20T11:33:30.000000Z
+80aa8f2f965bc041cfe7ea30425ff1cb
+2008-01-03T13:32:14.501186Z
+541
+db30
+has-props
+

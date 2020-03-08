@@ -1,0 +1,842 @@
+     0.000   GOAL                   SET-BUFFER-CHUNK GOAL GOAL REQUESTED NIL 
+     0.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC0 REQUESTED NIL 
+     0.050   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  No previous production to compose with.
+  Setting previous production to RETRIEVE-OPERATOR.
+     0.050   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP1 
+     0.100   PROCEDURAL             PRODUCTION-FIRED READ-ARG1 
+Production Compilation process started for READ-ARG1
+  Production RETRIEVE-OPERATOR and READ-ARG1 are being composed.
+  New production:
+
+(P PRODUCTION0
+  "RETRIEVE-OPERATOR & READ-ARG1 - OP1"
+   =GOAL>
+       ISA TASK
+       STATE START
+       STEP READY
+   =VISUAL-LOCATION>
+       ISA VISUAL-LOCATION
+   ?VISUAL>
+       STATE FREE
+ ==>
+   =GOAL>
+       STATE STIMULUS-READ
+       STEP ARG1
+   +VISUAL>
+       ISA MOVE-ATTENTION
+       SCREEN-POS =VISUAL-LOCATION
+   +IMAGINAL>
+       ISA ARGS
+       ARG1 FILL
+)
+Parameters for production PRODUCTION0:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to READ-ARG1.
+     0.185   VISION                 SET-BUFFER-CHUNK VISUAL TEXT0 
+     0.300   IMAGINAL               SET-BUFFER-CHUNK IMAGINAL ARGS0 
+     0.350   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG1 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+     0.400   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  New production:
+
+(P* PRODUCTION1
+  "ENCODE & RETRIEVE-OPERATOR"
+   =GOAL>
+       ISA TASK
+       STEP =WHICH-SLOT
+       STATE =STATE
+   =IMAGINAL>
+       ISA ARGS
+       =WHICH-SLOT FILL
+   =VISUAL>
+       ISA TEXT
+       VALUE =VAL
+ ==>
+   =IMAGINAL>
+       =WHICH-SLOT =VAL
+   =GOAL>
+       STEP RETRIEVING-OPERATOR
+   +RETRIEVAL>
+       ISA OPERATOR
+       PRE =STATE
+)
+Parameters for production PRODUCTION1:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+     0.400   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP2 
+     0.450   PROCEDURAL             PRODUCTION-FIRED RETIREVE-ASSOCIATE 
+Production Compilation process started for RETIREVE-ASSOCIATE
+  Production RETRIEVE-OPERATOR and RETIREVE-ASSOCIATE are being composed.
+  New production:
+
+(P PRODUCTION2
+  "RETRIEVE-OPERATOR & RETIREVE-ASSOCIATE - OP2"
+   =GOAL>
+       ISA TASK
+       STATE STIMULUS-READ
+       STEP READY
+   =IMAGINAL>
+       ISA ARGS
+       ARG1 =STIMULUS
+ ==>
+   =IMAGINAL>
+       ARG2 FILL
+   =GOAL>
+       STATE RECALLED
+       STEP RETRIEVING-RESPONSE
+   +RETRIEVAL>
+       ISA ARGS
+       ARG1 =STIMULUS
+)
+Parameters for production PRODUCTION2:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETIREVE-ASSOCIATE.
+     2.640   DECLARATIVE            RETRIEVAL-FAILURE 
+     2.690   PROCEDURAL             PRODUCTION-FIRED RETRIEVAL-ARG2-UNSUCCESSFUL 
+Production Compilation process started for RETRIEVAL-ARG2-UNSUCCESSFUL
+  Cannot compile RETIREVE-ASSOCIATE and RETRIEVAL-ARG2-UNSUCCESSFUL because the time between them exceeds the threshold time.
+  Setting previous production to RETRIEVAL-ARG2-UNSUCCESSFUL.
+     2.740   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RETRIEVAL-ARG2-UNSUCCESSFUL and RETRIEVE-OPERATOR are being composed.
+  New production:
+
+(P PRODUCTION3
+  "RETRIEVAL-ARG2-UNSUCCESSFUL & RETRIEVE-OPERATOR"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-RESPONSE
+       STATE =STATE
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 FILL
+   ?RETRIEVAL>
+       STATE ERROR
+ ==>
+   =IMAGINAL>
+       ARG2 NIL
+   =GOAL>
+       STEP RETRIEVING-OPERATOR
+   +RETRIEVAL>
+       ISA OPERATOR
+       PRE =STATE
+)
+Parameters for production PRODUCTION3:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+     2.740   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP3 
+     2.790   PROCEDURAL             PRODUCTION-FIRED RESPOND-TO-RETRIEVAL-FAILURE 
+Production Compilation process started for RESPOND-TO-RETRIEVAL-FAILURE
+  Production RETRIEVE-OPERATOR and RESPOND-TO-RETRIEVAL-FAILURE are being composed.
+  New production:
+
+(P PRODUCTION4
+  "RETRIEVE-OPERATOR & RESPOND-TO-RETRIEVAL-FAILURE - OP3"
+   =GOAL>
+       ISA TASK
+       STATE RECALLED
+       STEP READY
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 NIL
+ ==>
+   =IMAGINAL>
+   =GOAL>
+       STATE WAIT
+       STEP READY
+)
+Parameters for production PRODUCTION4:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RESPOND-TO-RETRIEVAL-FAILURE.
+     2.840   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RESPOND-TO-RETRIEVAL-FAILURE and RETRIEVE-OPERATOR are being composed.
+  New production:
+
+(P PRODUCTION5
+  "RESPOND-TO-RETRIEVAL-FAILURE & RETRIEVE-OPERATOR"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-OPERATOR
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 NIL
+   =RETRIEVAL>
+       ISA OPERATOR
+       ACTION TEST-ARG2
+       ARG2 =STATE
+ ==>
+   =IMAGINAL>
+   =GOAL>
+       STATE =STATE
+       STEP RETRIEVING-OPERATOR
+   +RETRIEVAL>
+       ISA OPERATOR
+       PRE =STATE
+)
+Parameters for production PRODUCTION5:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+     2.840   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP5 
+     5.000   ------                 Stopped because time limit reached 
+     5.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC2 REQUESTED NIL 
+     5.135   PROCEDURAL             PRODUCTION-FIRED READ-ARG2 
+Production Compilation process started for READ-ARG2
+  Cannot compile RETRIEVE-OPERATOR and READ-ARG2 because the time between them exceeds the threshold time.
+  Setting previous production to READ-ARG2.
+     5.220   VISION                 SET-BUFFER-CHUNK VISUAL TEXT1 
+     5.270   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG2 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+     5.320   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION1
+Parameters for production PRODUCTION1:
+ :utility -0.171
+ :u   2.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+     5.320   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP6 
+     5.370   PROCEDURAL             PRODUCTION-FIRED COMPLETE-TASK 
+Production Compilation process started for COMPLETE-TASK
+  Production RETRIEVE-OPERATOR and COMPLETE-TASK are being composed.
+  New production:
+
+(P PRODUCTION7
+  "RETRIEVE-OPERATOR & COMPLETE-TASK - OP6"
+   =GOAL>
+       ISA TASK
+       STATE NEW-TRIAL
+       STEP READY
+ ==>
+   =GOAL>
+       STEP RETRIEVING-OPERATOR
+   +GOAL>
+       ISA TASK
+       STATE START
+       STEP READY
+)
+Parameters for production PRODUCTION7:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward 20.000
+  Setting previous production to COMPLETE-TASK.
+     5.370   GOAL                   SET-BUFFER-CHUNK GOAL TASK0 
+     5.420   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production COMPLETE-TASK and RETRIEVE-OPERATOR are being composed.
+  New production:
+
+(P PRODUCTION8
+  "COMPLETE-TASK & RETRIEVE-OPERATOR"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-OPERATOR
+   =RETRIEVAL>
+       ISA OPERATOR
+       ACTION COMPLETE-TASK
+       POST =STATE
+ ==>
+   +RETRIEVAL>
+       ISA OPERATOR
+       PRE =STATE
+   +GOAL>
+       ISA TASK
+       STATE =STATE
+       STEP RETRIEVING-OPERATOR
+)
+Parameters for production PRODUCTION8:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward 20.000
+  Setting previous production to RETRIEVE-OPERATOR.
+     5.420   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP1 
+    10.000   ------                 Stopped because time limit reached 
+    10.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC4 REQUESTED NIL 
+    10.135   PROCEDURAL             PRODUCTION-FIRED READ-ARG1 
+Production Compilation process started for READ-ARG1
+  Cannot compile RETRIEVE-OPERATOR and READ-ARG1 because the time between them exceeds the threshold time.
+  Setting previous production to READ-ARG1.
+    10.220   VISION                 SET-BUFFER-CHUNK VISUAL TEXT2 
+    10.335   IMAGINAL               SET-BUFFER-CHUNK IMAGINAL ARGS1 
+    10.385   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG1 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+    10.435   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION1
+Parameters for production PRODUCTION1:
+ :utility  1.986
+ :u   4.152
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    10.436   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP2 
+    10.486   PROCEDURAL             PRODUCTION-FIRED RETIREVE-ASSOCIATE 
+Production Compilation process started for RETIREVE-ASSOCIATE
+  Production RETRIEVE-OPERATOR and RETIREVE-ASSOCIATE are being composed.
+  Recreating production PRODUCTION2
+Parameters for production PRODUCTION2:
+ :utility -0.236
+ :u   2.999
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETIREVE-ASSOCIATE.
+    12.676   DECLARATIVE            RETRIEVAL-FAILURE 
+    12.726   PROCEDURAL             PRODUCTION-FIRED RETRIEVAL-ARG2-UNSUCCESSFUL 
+Production Compilation process started for RETRIEVAL-ARG2-UNSUCCESSFUL
+  Cannot compile RETIREVE-ASSOCIATE and RETRIEVAL-ARG2-UNSUCCESSFUL because the time between them exceeds the threshold time.
+  Setting previous production to RETRIEVAL-ARG2-UNSUCCESSFUL.
+    12.776   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RETRIEVAL-ARG2-UNSUCCESSFUL and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION3
+Parameters for production PRODUCTION3:
+ :utility  0.028
+ :u   2.291
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    12.776   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP3 
+    12.826   PROCEDURAL             PRODUCTION-FIRED RESPOND-TO-RETRIEVAL-FAILURE 
+Production Compilation process started for RESPOND-TO-RETRIEVAL-FAILURE
+  Production RETRIEVE-OPERATOR and RESPOND-TO-RETRIEVAL-FAILURE are being composed.
+  Recreating production PRODUCTION4
+Parameters for production PRODUCTION4:
+ :utility -0.274
+ :u   2.999
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RESPOND-TO-RETRIEVAL-FAILURE.
+    12.876   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RESPOND-TO-RETRIEVAL-FAILURE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION5
+Parameters for production PRODUCTION5:
+ :utility -0.139
+ :u   2.295
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    12.880   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP5 
+    15.000   ------                 Stopped because time limit reached 
+    15.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC6 REQUESTED NIL 
+    15.135   PROCEDURAL             PRODUCTION-FIRED READ-ARG2 
+Production Compilation process started for READ-ARG2
+  Cannot compile RETRIEVE-OPERATOR and READ-ARG2 because the time between them exceeds the threshold time.
+  Setting previous production to READ-ARG2.
+    15.220   VISION                 SET-BUFFER-CHUNK VISUAL TEXT3 
+    15.270   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG2 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+    15.320   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION1
+Parameters for production PRODUCTION1:
+ :utility  4.144
+ :u   5.873
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    15.322   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP6 
+    15.372   PROCEDURAL             PRODUCTION-FIRED COMPLETE-TASK 
+Production Compilation process started for COMPLETE-TASK
+  Production RETRIEVE-OPERATOR and COMPLETE-TASK are being composed.
+  Recreating production PRODUCTION7
+Parameters for production PRODUCTION7:
+ :utility -0.186
+ :u   2.999
+ :at  0.050
+ :reward 20.000
+  Setting previous production to COMPLETE-TASK.
+    15.372   GOAL                   SET-BUFFER-CHUNK GOAL TASK1 
+    15.422   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production COMPLETE-TASK and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION8
+Parameters for production PRODUCTION8:
+ :utility  0.238
+ :u   2.716
+ :at  0.050
+ :reward 20.000
+  Setting previous production to RETRIEVE-OPERATOR.
+    15.422   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP1 
+    20.000   ------                 Stopped because time limit reached 
+    20.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC8 REQUESTED NIL 
+    20.135   PROCEDURAL             PRODUCTION-FIRED READ-ARG1 
+Production Compilation process started for READ-ARG1
+  Cannot compile RETRIEVE-OPERATOR and READ-ARG1 because the time between them exceeds the threshold time.
+  Setting previous production to READ-ARG1.
+    20.220   VISION                 SET-BUFFER-CHUNK VISUAL TEXT4 
+    20.335   IMAGINAL               SET-BUFFER-CHUNK IMAGINAL ARGS2 
+    20.385   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG1 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+    20.435   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION1
+Parameters for production PRODUCTION1:
+ :utility  5.836
+ :u   7.604
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    20.439   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP2 
+    20.489   PROCEDURAL             PRODUCTION-FIRED RETIREVE-ASSOCIATE 
+Production Compilation process started for RETIREVE-ASSOCIATE
+  Production RETRIEVE-OPERATOR and RETIREVE-ASSOCIATE are being composed.
+  Recreating production PRODUCTION2
+Parameters for production PRODUCTION2:
+ :utility  2.927
+ :u   5.652
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETIREVE-ASSOCIATE.
+    21.177   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ARGS0-0 
+    21.227   PROCEDURAL             PRODUCTION-FIRED RETRIEVAL-ARG2-SUCCESSFUL 
+Production Compilation process started for RETRIEVAL-ARG2-SUCCESSFUL
+  Production RETIREVE-ASSOCIATE and RETRIEVAL-ARG2-SUCCESSFUL are being composed.
+  New production:
+
+(P PRODUCTION19
+  "RETIREVE-ASSOCIATE & RETRIEVAL-ARG2-SUCCESSFUL - ARGS0-0"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-OPERATOR
+   =IMAGINAL>
+       ISA ARGS
+       ARG1 "zinc"
+   =RETRIEVAL>
+       ISA OPERATOR
+       ACTION ASSOCIATE
+       ARG1 FILLED
+       ARG2 FILL
+       POST =STATE
+ ==>
+   =IMAGINAL>
+       ARG2 "9"
+   =GOAL>
+       STATE =STATE
+       STEP READY
+)
+Parameters for production PRODUCTION19:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVAL-ARG2-SUCCESSFUL.
+    21.277   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RETRIEVAL-ARG2-SUCCESSFUL and RETRIEVE-OPERATOR are being composed.
+  New production:
+
+(P PRODUCTION20
+  "RETRIEVAL-ARG2-SUCCESSFUL & RETRIEVE-OPERATOR"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-RESPONSE
+       STATE =STATE
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 FILL
+   =RETRIEVAL>
+       ISA ARGS
+       ARG2 =VAL
+ ==>
+   =IMAGINAL>
+       ARG2 =VAL
+   =GOAL>
+       STEP RETRIEVING-OPERATOR
+   +RETRIEVAL>
+       ISA OPERATOR
+       PRE =STATE
+)
+Parameters for production PRODUCTION20:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    21.278   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP3 
+    21.328   PROCEDURAL             PRODUCTION-FIRED RESPOND-TO-RETRIEVAL-SUCCESS 
+Production Compilation process started for RESPOND-TO-RETRIEVAL-SUCCESS
+  Production RETRIEVE-OPERATOR and RESPOND-TO-RETRIEVAL-SUCCESS are being composed.
+  New production:
+
+(P PRODUCTION21
+  "RETRIEVE-OPERATOR & RESPOND-TO-RETRIEVAL-SUCCESS - OP3"
+   =GOAL>
+       ISA TASK
+       STATE RECALLED
+       STEP READY
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 =VAL
+ ==>
+   =IMAGINAL>
+   =GOAL>
+       STATE RESPOND
+       STEP READY
+)
+Parameters for production PRODUCTION21:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RESPOND-TO-RETRIEVAL-SUCCESS.
+    21.378   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RESPOND-TO-RETRIEVAL-SUCCESS and RETRIEVE-OPERATOR are being composed.
+  New production:
+
+(P PRODUCTION22
+  "RESPOND-TO-RETRIEVAL-SUCCESS & RETRIEVE-OPERATOR"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-OPERATOR
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 =VAL
+   =RETRIEVAL>
+       ISA OPERATOR
+       ACTION TEST-ARG2
+       ARG1 =STATE
+ ==>
+   =IMAGINAL>
+   =GOAL>
+       STATE =STATE
+       STEP RETRIEVING-OPERATOR
+   +RETRIEVAL>
+       ISA OPERATOR
+       PRE =STATE
+)
+Parameters for production PRODUCTION22:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    21.379   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP4 
+    21.429   PROCEDURAL             PRODUCTION-FIRED TYPE-ARG2 
+Production Compilation process started for TYPE-ARG2
+  Production RETRIEVE-OPERATOR and TYPE-ARG2 are being composed.
+  New production:
+
+(P PRODUCTION23
+  "RETRIEVE-OPERATOR & TYPE-ARG2 - OP4"
+   =GOAL>
+       ISA TASK
+       STATE RESPOND
+       STEP READY
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 =VAL
+   ?MANUAL>
+       STATE FREE
+ ==>
+   =IMAGINAL>
+   =GOAL>
+       STATE WAIT
+       STEP READY
+   +MANUAL>
+       ISA PRESS-KEY
+       KEY =VAL
+)
+Parameters for production PRODUCTION23:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to TYPE-ARG2.
+    21.429   MOTOR                  PRESS-KEY 9 
+    21.479   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production TYPE-ARG2 and RETRIEVE-OPERATOR are being composed.
+  New production:
+
+(P PRODUCTION24
+  "TYPE-ARG2 & RETRIEVE-OPERATOR"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-OPERATOR
+   =IMAGINAL>
+       ISA ARGS
+       ARG2 =VAL
+   =RETRIEVAL>
+       ISA OPERATOR
+       ACTION TYPE
+       ARG2 RESPONSE
+       POST =STATE
+   ?MANUAL>
+       STATE FREE
+ ==>
+   =IMAGINAL>
+   =GOAL>
+       STATE =STATE
+       STEP RETRIEVING-OPERATOR
+   +RETRIEVAL>
+       ISA OPERATOR
+       PRE =STATE
+   +MANUAL>
+       ISA PRESS-KEY
+       KEY =VAL
+)
+Parameters for production PRODUCTION24:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    21.480   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP5 
+    25.000   ------                 Stopped because time limit reached 
+    25.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC10 REQUESTED NIL 
+    25.135   PROCEDURAL             PRODUCTION-FIRED READ-ARG2 
+Production Compilation process started for READ-ARG2
+  Cannot compile RETRIEVE-OPERATOR and READ-ARG2 because the time between them exceeds the threshold time.
+  Setting previous production to READ-ARG2.
+    25.220   VISION                 SET-BUFFER-CHUNK VISUAL TEXT5 
+    25.270   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG2 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+    25.320   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION1
+Parameters for production PRODUCTION1:
+ :utility  7.156
+ :u   8.989
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    25.321   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP6 
+    25.371   PROCEDURAL             PRODUCTION-FIRED COMPLETE-TASK 
+Production Compilation process started for COMPLETE-TASK
+  Production RETRIEVE-OPERATOR and COMPLETE-TASK are being composed.
+  Recreating production PRODUCTION7
+Parameters for production PRODUCTION7:
+ :utility  2.890
+ :u   5.652
+ :at  0.050
+ :reward 20.000
+  Setting previous production to COMPLETE-TASK.
+    25.371   GOAL                   SET-BUFFER-CHUNK GOAL TASK2 
+    25.421   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production COMPLETE-TASK and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION8
+Parameters for production PRODUCTION8:
+ :utility  2.738
+ :u   5.144
+ :at  0.050
+ :reward 20.000
+  Setting previous production to RETRIEVE-OPERATOR.
+    25.422   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP1 
+    30.000   ------                 Stopped because time limit reached 
+    30.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC12 REQUESTED NIL 
+    30.135   PROCEDURAL             PRODUCTION-FIRED READ-ARG1 
+Production Compilation process started for READ-ARG1
+  Cannot compile RETRIEVE-OPERATOR and READ-ARG1 because the time between them exceeds the threshold time.
+  Setting previous production to READ-ARG1.
+    30.220   VISION                 SET-BUFFER-CHUNK VISUAL TEXT6 
+    30.335   IMAGINAL               SET-BUFFER-CHUNK IMAGINAL ARGS3 
+    30.385   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG1 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+    30.435   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION1
+Parameters for production PRODUCTION1:
+ :utility  8.760
+ :u  10.324
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    30.438   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP2 
+    30.488   PROCEDURAL             PRODUCTION-FIRED RETIREVE-ASSOCIATE 
+Production Compilation process started for RETIREVE-ASSOCIATE
+  Production RETRIEVE-OPERATOR and RETIREVE-ASSOCIATE are being composed.
+  Recreating production PRODUCTION2
+Parameters for production PRODUCTION2:
+ :utility  5.739
+ :u   7.794
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETIREVE-ASSOCIATE.
+    30.725   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL ARGS1-0 
+    30.775   PROCEDURAL             PRODUCTION-FIRED RETRIEVAL-ARG2-SUCCESSFUL 
+Production Compilation process started for RETRIEVAL-ARG2-SUCCESSFUL
+  Production RETIREVE-ASSOCIATE and RETRIEVAL-ARG2-SUCCESSFUL are being composed.
+  New production:
+
+(P PRODUCTION30
+  "RETIREVE-ASSOCIATE & RETRIEVAL-ARG2-SUCCESSFUL - ARGS1-0"
+   =GOAL>
+       ISA TASK
+       STEP RETRIEVING-OPERATOR
+   =IMAGINAL>
+       ISA ARGS
+       ARG1 "xray"
+   =RETRIEVAL>
+       ISA OPERATOR
+       ACTION ASSOCIATE
+       ARG1 FILLED
+       ARG2 FILL
+       POST =STATE
+ ==>
+   =IMAGINAL>
+       ARG2 "8"
+   =GOAL>
+       STATE =STATE
+       STEP READY
+)
+Parameters for production PRODUCTION30:
+ :utility    NIL
+ :u   0.000
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVAL-ARG2-SUCCESSFUL.
+    30.825   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RETRIEVAL-ARG2-SUCCESSFUL and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION20
+Parameters for production PRODUCTION20:
+ :utility -0.010
+ :u   2.232
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    30.827   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP3 
+    30.877   PROCEDURAL             PRODUCTION-FIRED RESPOND-TO-RETRIEVAL-SUCCESS 
+Production Compilation process started for RESPOND-TO-RETRIEVAL-SUCCESS
+  Production RETRIEVE-OPERATOR and RESPOND-TO-RETRIEVAL-SUCCESS are being composed.
+  Recreating production PRODUCTION21
+Parameters for production PRODUCTION21:
+ :utility  0.239
+ :u   3.273
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RESPOND-TO-RETRIEVAL-SUCCESS.
+    30.927   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production RESPOND-TO-RETRIEVAL-SUCCESS and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION22
+Parameters for production PRODUCTION22:
+ :utility  0.132
+ :u   2.236
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    30.928   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP4 
+    30.978   PROCEDURAL             PRODUCTION-FIRED TYPE-ARG2 
+Production Compilation process started for TYPE-ARG2
+  Production RETRIEVE-OPERATOR and TYPE-ARG2 are being composed.
+  Recreating production PRODUCTION23
+Parameters for production PRODUCTION23:
+ :utility  0.102
+ :u   3.273
+ :at  0.050
+ :reward    NIL
+  Setting previous production to TYPE-ARG2.
+    30.978   MOTOR                  PRESS-KEY 8 
+    31.028   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production TYPE-ARG2 and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION24
+Parameters for production PRODUCTION24:
+ :utility -0.034
+ :u   2.240
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    31.029   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP5 
+    35.000   ------                 Stopped because time limit reached 
+    35.000   VISION                 SET-BUFFER-CHUNK VISUAL-LOCATION LOC14 REQUESTED NIL 
+    35.135   PROCEDURAL             PRODUCTION-FIRED READ-ARG2 
+Production Compilation process started for READ-ARG2
+  Cannot compile RETRIEVE-OPERATOR and READ-ARG2 because the time between them exceeds the threshold time.
+  Setting previous production to READ-ARG2.
+    35.220   VISION                 SET-BUFFER-CHUNK VISUAL TEXT7 
+    35.270   PROCEDURAL             PRODUCTION-FIRED ENCODE 
+Production Compilation process started for ENCODE
+  Buffer VISUAL prevents composition of these productions
+  Production READ-ARG2 and ENCODE cannot be composed.
+  Setting previous production to ENCODE.
+    35.320   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production ENCODE and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION1
+Parameters for production PRODUCTION1:
+ :utility 10.288
+ :u  11.392
+ :at  0.050
+ :reward    NIL
+  Setting previous production to RETRIEVE-OPERATOR.
+    35.321   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP6 
+    35.371   PROCEDURAL             PRODUCTION-FIRED COMPLETE-TASK 
+Production Compilation process started for COMPLETE-TASK
+  Production RETRIEVE-OPERATOR and COMPLETE-TASK are being composed.
+  Recreating production PRODUCTION7
+Parameters for production PRODUCTION7:
+ :utility  5.567
+ :u   7.794
+ :at  0.050
+ :reward 20.000
+  Setting previous production to COMPLETE-TASK.
+    35.371   GOAL                   SET-BUFFER-CHUNK GOAL TASK3 
+    35.421   PROCEDURAL             PRODUCTION-FIRED RETRIEVE-OPERATOR 
+Production Compilation process started for RETRIEVE-OPERATOR
+  Production COMPLETE-TASK and RETRIEVE-OPERATOR are being composed.
+  Recreating production PRODUCTION8
+Parameters for production PRODUCTION8:
+ :utility  5.131
+ :u   7.290
+ :at  0.050
+ :reward 20.000
+  Setting previous production to RETRIEVE-OPERATOR.
+    35.426   DECLARATIVE            SET-BUFFER-CHUNK RETRIEVAL OP1 
+    40.000   ------                 Stopped because time limit reached 

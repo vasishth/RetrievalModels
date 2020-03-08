@@ -1,0 +1,1383 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mood",
+				"mood"
+			],
+			[
+				"re",
+				"retrieval"
+			],
+			[
+				"comp",
+				"comp-of"
+			],
+			[
+				"mod",
+				"modifier"
+			],
+			[
+				"isa",
+				"ISA"
+			],
+			[
+				"subj",
+				"subjunctive"
+			],
+			[
+				"in",
+				"indicative"
+			],
+			[
+				"all-",
+				"all-moods"
+			],
+			[
+				"cue",
+				"cue2"
+			],
+			[
+				"wm",
+				"wm-retrieval"
+			],
+			[
+				"lex",
+				"lexical-retrieval"
+			],
+			[
+				"le",
+				"lex"
+			],
+			[
+				"modi",
+				"modif-of"
+			],
+			[
+				"syn",
+				"syn-obj"
+			],
+			[
+				"waiting",
+				"waiting-for-cat"
+			],
+			[
+				"Num",
+				"number-lex"
+			],
+			[
+				"gen",
+				"gender-lex"
+			],
+			[
+				"nu",
+				"number"
+			],
+			[
+				"tens",
+				"tense-lex"
+			],
+			[
+				"num",
+				"number-lex"
+			],
+			[
+				"set",
+				"set-word-location"
+			],
+			[
+				"tar",
+				"target-loc"
+			],
+			[
+				"text",
+				"text-retrieval"
+			],
+			[
+				"screen-",
+				"screen-pos"
+			],
+			[
+				"target",
+				"target-word"
+			],
+			[
+				"nex",
+				"next-word"
+			],
+			[
+				"ne",
+				"next-word"
+			],
+			[
+				"attend-",
+				"attend-to"
+			],
+			[
+				"wai",
+				"waiting-for-finite"
+			],
+			[
+				"wait",
+				"waiting-for-cat"
+			],
+			[
+				"IP",
+				"IPb"
+			],
+			[
+				"head",
+				"head-word"
+			],
+			[
+				"visu",
+				"visual-location"
+			],
+			[
+				"model",
+				"model-warnings"
+			],
+			[
+				"save",
+				"SAVE-BUFFER-HISTORY"
+			],
+			[
+				"print",
+				"print-interface-params"
+			],
+			[
+				"atta",
+				"attachment"
+			],
+			[
+				"tra",
+				"trace-to-file"
+			],
+			[
+				"sho",
+				"show-window"
+			],
+			[
+				"time",
+				"timeout-items"
+			],
+			[
+				"pus",
+				"push-last"
+			],
+			[
+				"fixation",
+				"fixation-table"
+			],
+			[
+				"para",
+				"paramset"
+			],
+			[
+				"param-s",
+				"param-set"
+			],
+			[
+				"outpu",
+				"output-setting-mappings"
+			],
+			[
+				"sgp",
+				"sgp-fct"
+			],
+			[
+				"output",
+				"output-setting"
+			],
+			[
+				"map",
+				"map-output-settings"
+			],
+			[
+				"run-e",
+				"run-experiment-em"
+			],
+			[
+				"fix",
+				"fixations"
+			],
+			[
+				"goal",
+				"goalchunk"
+			],
+			[
+				"last-",
+				"last-retr-loc"
+			],
+			[
+				"pos",
+				"poslist"
+			],
+			[
+				"attached",
+				"attached-pos"
+			],
+			[
+				"current",
+				"current-ip"
+			],
+			[
+				"curre",
+				"current-ip"
+			],
+			[
+				"attac",
+				"attached-items"
+			],
+			[
+				"params",
+				"params"
+			],
+			[
+				"command",
+				"command-output"
+			],
+			[
+				"comma",
+				"command-output"
+			],
+			[
+				"medium",
+				"MEDIUM"
+			],
+			[
+				"nil",
+				"NIL"
+			],
+			[
+				"val",
+				"val"
+			],
+			[
+				"load",
+				"load-sp"
+			],
+			[
+				"t",
+				"t"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/interface-emma.lisp",
+			"settings":
+			{
+				"buffer_size": 15737,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/interface-experiment.lisp",
+			"settings":
+			{
+				"buffer_size": 6039,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/interface.lisp",
+			"settings":
+			{
+				"buffer_size": 9185,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/model-readpsc-timeout-v5.lisp",
+			"settings":
+			{
+				"buffer_size": 9278,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/model-readpsc-timeout-v6.lisp",
+			"settings":
+			{
+				"buffer_size": 10210,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "interface-emma.lisp",
+			"settings":
+			{
+				"buffer_size": 15737,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "interface-experiment.lisp",
+			"settings":
+			{
+				"buffer_size": 6039,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "interface.lisp",
+			"settings":
+			{
+				"buffer_size": 9185,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "model-readpsc-timeout.lisp",
+			"settings":
+			{
+				"buffer_size": 10210,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sentences-psc.lisp",
+			"settings":
+			{
+				"buffer_size": 54753,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sentences-Salvucci2001.lisp",
+			"settings":
+			{
+				"buffer_size": 11004,
+				"line_ending": "CR"
+			}
+		},
+		{
+			"file": "shortcuts.lisp",
+			"settings":
+			{
+				"buffer_size": 209,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "estimation.lisp",
+			"settings":
+			{
+				"buffer_size": 4943,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/sentences-psc.lisp",
+			"settings":
+			{
+				"buffer_size": 54753,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/sentences-Salvucci2001.lisp",
+			"settings":
+			{
+				"buffer_size": 11004,
+				"line_ending": "CR"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/shortcuts.lisp",
+			"settings":
+			{
+				"buffer_size": 209,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/estimation.lisp",
+			"settings":
+			{
+				"buffer_size": 4943,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"trai",
+				"Trailing Spaces: Toggle Trailing Spaces"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Toggle Trailing Spaces"
+			],
+			[
+				"toggle tr",
+				"Trailing Spaces: Toggle Trailing Spaces"
+			],
+			[
+				"toggl",
+				"Trailing Spaces: Toggle Trailing Spaces"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Toggle Trailing Spaces"
+			],
+			[
+				"model",
+				"Snippet: modeline"
+			],
+			[
+				"",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"repl sett",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Disable Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 79.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/felix/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/commands.actr",
+		"/Users/felix/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/constants.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/spanish/productions-spanish.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/experiment-control.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/productions-basic-plus new.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/spanish/output/subjects.txt",
+		"/Users/felix/.slate",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/support-interface.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/support-parser.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/spanish/experiments/e2-p110-r2/attachments.txt",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/german/productions-german.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/spanish/experiments/e2-p110-r2/enctimes.txt",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/spanish/experiments/e2-p110-r2/fixations.txt",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/staub10/sentences-staub10.lisp",
+		"/Volumes/Macintosh HD/ARCHIV/vlab/Projects/friedlundET/data/s001_1.txt",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/productions-basic-plus.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/interface-emma.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/_old/productions-basic-plus 2.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Umesh Models-NonPredictive-SBI-Thesis/sent-4/productions.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/german/productions-german-additionals-predictive.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/german/sentences-german.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/staub10/chunks-staub10.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/productions-basic-noemma.lisp",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/hindiproductions.actr",
+		"/Users/felix/newtest.lisp",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/productions-basic.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/productions-lv05.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/productions-basic-plus 2.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/+sp-npi.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/vd11/support-lexicon-vd11.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/read-src-psc/model-readpsc-timeout-v6.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/productions-german.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Umesh Models-Predictive/sent-4/productions.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Umesh Models-Predictive/stuff.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Umesh Models-Predictive/sent-7/productions.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Umesh Models-Predictive/sent-130/productions.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/interface.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/stuff.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/chunks-lv05.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/productions.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/productions-vd11.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/sp.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/constants.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/chunks.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/commands.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/lex-support.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/patches.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/interface-code.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/experiment-control-original.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/sentences-vd11.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/lex-support-vd11.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/+sp-vd11.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/sentences-staub10.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/chunks-vd11.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/model.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/productions-basic.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/productions-german.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/productions-vd11-3.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/+sp-lv05.lisp",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/sentences-npi.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/productions-npi.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/chunks-npi.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/hindichunks.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/hindiproductions.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/_old/+sp-old.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/_old/+sp.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/sentences-vd11.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/_Modules/newest EMMA/emma-p.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/productions-german.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/+sp-old.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/sentences-npi.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/_Modules/newest parsing module/parsing-module.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/interface-experiment-orig.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/SentenceParser.sublime-workspace",
+		"/Applications/actr6/start-actr.sh",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/read-src-psc/workflow.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/original-experiment-code.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/gg-exp1-results",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/test-results",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/test-sentences.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/Original LewisVasishthCogSci05Model/all-experiments",
+		"/Applications/actr6/load.lisp",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/User/SublimeREPL.sublime-settings",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/read-src-psc/report/report.R",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/#interface.lisp#",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/Lisp/Comments.tmPreferences",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/Lisp/Lisp.tmLanguage",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/Lisp/Comments.tmPreferences.cache",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/Lisp/Lisp.sublime-settings",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/User/EmacsModelines.sublime-settings",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/Emacs-like Modelines/EmacsModelines.sublime-settings",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/SublimeCodeIntel/Default (OSX).sublime-keymap",
+		"/Users/felix/Library/Application Support/Sublime Text 2/Packages/lispindent/Default (OSX).sublime-keymap",
+		"/Users/felix/load-actr.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/sentences-lv05.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/support-lexicon.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/untitled",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/sp-lv05.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/stuff.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/sp-old.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/sp.lisp",
+		"/Users/felix/Dropbox/FelixE/LewisVasishthCogSci05Model/sp.actr",
+		"/Users/felix/Dropbox/FelixE/LewisVasishthCogSci05Model/patches.actr",
+		"/Users/felix/Dropbox/FelixE/LewisVasishthCogSci05Model/interface-code.actr",
+		"/Users/felix/Dropbox/FelixE/LewisVasishthCogSci05Model/hindiproductions.actr",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParser3/sp.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/really-all-experiments",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/noisecomp.data",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/ProdHist-vd11a.ps",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/model.dx32fsl",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/NPI-analysis.R",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/sp.dx32fsl",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/Trees-vd11.txt",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/PortedParserEMMA/v6pred.data",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/_Modules/newest EMMA/emma-plus.lisp",
+		"/Applications/actr6-newest/load.lisp",
+		"/Applications/actr6-newest/start-actr.sh",
+		"/Applications/actr6/actr.lisp",
+		"/Applications/actr6-newest/support/ccl-simple-view.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/_Modules/newest EMMA/emma.orig.lisp",
+		"/Applications/actr6-newest/extras/emma/emma.lisp",
+		"/Users/felix/Dropbox/Workspace/ACT-R_EMMA/_Modules/newest EMMA/emma-plus2.lisp",
+		"/Users/felix/Downloads/RMCL 5.2.1/MCL Help",
+		"/Applications/actr6-newest/docs/template.lisp"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"kempe",
+			"buffer",
+			"chunk",
+			"attend-",
+			"attend",
+			"attend-",
+			"last-",
+			"attend-to",
+			"none",
+			"nonw",
+			"embedded ",
+			"embedded",
+			"SET-RETRIEVAL-CUES-INPUT-PREP-NP-MODIFIER",
+			"reco",
+			"write-he",
+			"write-her",
+			"%",
+			"~f",
+			"rand",
+			"params",
+			"*experiment*",
+			"*iteration*",
+			"*item*",
+			"*item",
+			"unatt",
+			"01",
+			"(set-current-ip) ",
+			"attach-mes",
+			"attach",
+			"unless",
+			"=",
+			"equal",
+			"eq",
+			"if ",
+			"if",
+			"ne",
+			"neq",
+			"not",
+			"ne",
+			"not",
+			"!",
+			"stop-reading",
+			"stop",
+			"HIGH 10",
+			"attach-vp",
+			"syn-obj4",
+			"mood",
+			"defun push-las",
+			"push-las",
+			"push.las",
+			"params",
+			"high",
+			"attach-m",
+			"attac",
+			"set-end",
+			"se-",
+			"input-N",
+			"NP",
+			"ip",
+			"SET-RETRIEVAL-CUES-INPUT-PREP",
+			"SET-RETRIEVAL-CUES-GOAL-VP-EMBEDDED-INPUT-V",
+			"ATTACH-SUBJECT-NP-SINGULAR-ANY-CASE-EMBEDDED",
+			"ATTACH-DP-AS-SUBJECT-OF-PREDICTED-EMBEDDED-IP",
+			"ATTACH-CP-AS-COMPLEMENT-SUBJ",
+			"SET-RETRIEVAL-CUES-IP-EMBEDDED-GOAL-INPUT-DET",
+			"SET-RETRIEVAL-CUES-GOAL-CP-INPUT-COMP",
+			"german",
+			"ATTACH",
+			"FIND-NEXT-WORD-/-A",
+			"FILL-SLOTS",
+			"LEXICAL-RETRIEVAL-REQUEST-/-L2",
+			"SHIFT-ATTENTION-/-L1",
+			"ATTACH",
+			"FILL-SLOTS",
+			"FIND-NEXT-WORD-/-A",
+			"LEXICAL-RETRIEVAL-REQUEST-/-L2",
+			"SHIFT-ATTENTION-/-L1",
+			"hoped",
+			"ATTACH-DP-AS-SUBJECT-OF-PREDICTED-IP",
+			"IP-gapped-goal",
+			"IP-gap-goal",
+			"IP-gapped-goal",
+			"IP-gap-goal",
+			"IP-gapped-goal",
+			"- attend-to",
+			" word",
+			"\"free\"",
+			"report-regr",
+			"start-regr",
+			"report",
+			"start-regression",
+			"dp-as-subject-of-pred",
+			"as-subject",
+			"attach-cp-as-modifier",
+			"retrieval",
+			"ATTACH-DP-AS-OBJECT",
+			"ATTACH-AUX-VERB-GAP",
+			"comp",
+			"=comp",
+			"none",
+			"input-pr",
+			"ATTACH",
+			"FILL-SLOTS",
+			"FIND-NEXT-WORD-/-A",
+			"LEXICAL-RETRIEVAL-REQUEST-/-L2",
+			"SHIFT-ATTENTION-/-L1",
+			"regre",
+			"check",
+			"regression",
+			"lexical-r",
+			"last-par",
+			"last-l",
+			"regress",
+			"unex",
+			"ATTACH",
+			"FILL-SLOTS",
+			"FIND-NEXT-WORD-/-A",
+			"SHIFT-ATTENTION-/-L1",
+			"LEXICAL-RETRIEVAL-REQUEST-/-L2",
+			"FIND-FIRST-WORD",
+			"OR",
+			"ATTACH-VP-TRANSITIVE-DP-OBJECT-GAP",
+			"SET-RETRIEVAL-CUES-GOAL-VP-INPUT-V",
+			"vp",
+			"ip",
+			"repair",
+			"waiting-for-cat2",
+			"SET-RETRIEVAL-CUES-NO-GOAL-INPUT-I"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"*attached-items*",
+			"*attached-positions*",
+			"*attached-items-plist*",
+			"*attached-regions*",
+			"*attach-times*",
+			"*attach-times-plist*",
+			"\n  !eval! (set-end-time)\n)\n",
+			"concatenate",
+			"pscT5"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 12,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/interface-emma.lisp",
+					"settings":
+					{
+						"buffer_size": 15737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/interface-experiment.lisp",
+					"settings":
+					{
+						"buffer_size": 6039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/interface.lisp",
+					"settings":
+					{
+						"buffer_size": 9185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 3.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/model-readpsc-timeout-v5.lisp",
+					"settings":
+					{
+						"buffer_size": 9278,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/model-readpsc-timeout-v6.lisp",
+					"settings":
+					{
+						"buffer_size": 10210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "interface-emma.lisp",
+					"settings":
+					{
+						"buffer_size": 15737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "interface-experiment.lisp",
+					"settings":
+					{
+						"buffer_size": 6039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "interface.lisp",
+					"settings":
+					{
+						"buffer_size": 9185,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "model-readpsc-timeout.lisp",
+					"settings":
+					{
+						"buffer_size": 10210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "sentences-psc.lisp",
+					"settings":
+					{
+						"buffer_size": 54753,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "sentences-Salvucci2001.lisp",
+					"settings":
+					{
+						"buffer_size": 11004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "shortcuts.lisp",
+					"settings":
+					{
+						"buffer_size": 209,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "estimation.lisp",
+					"settings":
+					{
+						"buffer_size": 4943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/sentences-psc.lisp",
+					"settings":
+					{
+						"buffer_size": 54753,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1198.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/sentences-Salvucci2001.lisp",
+					"settings":
+					{
+						"buffer_size": 11004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/shortcuts.lisp",
+					"settings":
+					{
+						"buffer_size": 209,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/Volumes/Macintosh HD/ARCHIV/Papers/TopiCS/4 FINAL-SUBMISSION/act-r-reading-model/estimation.lisp",
+					"settings":
+					{
+						"buffer_size": 4943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lisp/Lisp.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 704.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 211.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"+",
+				"+sp-lv05.lisp"
+			],
+			[
+				"sup",
+				"support-lexicon.lisp"
+			],
+			[
+				"chun",
+				"chunks-lv05.lisp"
+			],
+			[
+				"ex",
+				"experiment-control-original.lisp"
+			],
+			[
+				"supp",
+				"support-interface.lisp"
+			],
+			[
+				"",
+				"experiment-control.lisp"
+			],
+			[
+				"in",
+				"interface.lisp"
+			],
+			[
+				"pars",
+				"support-parser.lisp"
+			],
+			[
+				"mo",
+				"model.lisp"
+			],
+			[
+				"mod",
+				"model.lisp"
+			],
+			[
+				"e",
+				"experiment-control.lisp"
+			],
+			[
+				"emm",
+				"interface-emma.lisp"
+			],
+			[
+				"emma",
+				"interface-emma.lisp"
+			],
+			[
+				"inter",
+				"interface.lisp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/Users/felix/Workspace/ACT-R_EMMA/ACTR6SentenceParserWithEMMA/extensions/spanish/spanish.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true
+}

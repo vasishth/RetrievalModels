@@ -1,0 +1,296 @@
+     0.000   GOAL                   SET-BUFFER-CHUNK GOAL GOAL REQUESTED NIL 
+     0.000   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.000   PROCEDURAL             PRODUCTION-SELECTED START-TIMER 
+     0.000   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+     0.050   PROCEDURAL             PRODUCTION-FIRED START-TIMER 
+     0.050   PROCEDURAL             MOD-BUFFER-CHUNK GOAL 
+     0.050   PROCEDURAL             MODULE-REQUEST TEMPORAL 
+     0.050   PROCEDURAL             CLEAR-BUFFER TEMPORAL 
+     0.050   TEMPORAL               create-new-buffer-chunk isa time 
+     0.050   TEMPORAL               SET-BUFFER-CHUNK TEMPORAL TIME0 
+     0.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     0.050   PROCEDURAL             PRODUCTION-SELECTED WAIT 
+     0.050   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+     0.063   TEMPORAL               Incrementing time ticks to 1 
+     0.063   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.063   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.078   TEMPORAL               Incrementing time ticks to 2 
+     0.078   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.078   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.094   TEMPORAL               Incrementing time ticks to 3 
+     0.094   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.094   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.112   TEMPORAL               Incrementing time ticks to 4 
+     0.112   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.112   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.132   TEMPORAL               Incrementing time ticks to 5 
+     0.132   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.132   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.155   TEMPORAL               Incrementing time ticks to 6 
+     0.155   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.155   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.180   TEMPORAL               Incrementing time ticks to 7 
+     0.180   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.180   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.209   TEMPORAL               Incrementing time ticks to 8 
+     0.209   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.209   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.238   TEMPORAL               Incrementing time ticks to 9 
+     0.238   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.238   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.268   TEMPORAL               Incrementing time ticks to 10 
+     0.268   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.268   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.302   TEMPORAL               Incrementing time ticks to 11 
+     0.302   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.302   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.338   TEMPORAL               Incrementing time ticks to 12 
+     0.338   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.338   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.377   TEMPORAL               Incrementing time ticks to 13 
+     0.377   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.377   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.421   TEMPORAL               Incrementing time ticks to 14 
+     0.421   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.421   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.468   TEMPORAL               Incrementing time ticks to 15 
+     0.468   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.468   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.520   TEMPORAL               Incrementing time ticks to 16 
+     0.520   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.520   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.578   TEMPORAL               Incrementing time ticks to 17 
+     0.578   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.578   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.643   TEMPORAL               Incrementing time ticks to 18 
+     0.643   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.643   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.715   TEMPORAL               Incrementing time ticks to 19 
+     0.715   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.715   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.796   TEMPORAL               Incrementing time ticks to 20 
+     0.796   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.796   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.886   TEMPORAL               Incrementing time ticks to 21 
+     0.886   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.886   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     0.984   TEMPORAL               Incrementing time ticks to 22 
+     0.984   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     0.984   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     1.095   TEMPORAL               Incrementing time ticks to 23 
+     1.095   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     1.095   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     1.210   TEMPORAL               Incrementing time ticks to 24 
+     1.210   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     1.210   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     1.330   TEMPORAL               Incrementing time ticks to 25 
+     1.330   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     1.330   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     1.467   TEMPORAL               Incrementing time ticks to 26 
+     1.467   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     1.467   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     1.612   TEMPORAL               Incrementing time ticks to 27 
+     1.612   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     1.612   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     1.774   TEMPORAL               Incrementing time ticks to 28 
+     1.774   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     1.774   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     1.951   TEMPORAL               Incrementing time ticks to 29 
+     1.951   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     1.951   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     2.149   TEMPORAL               Incrementing time ticks to 30 
+     2.149   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     2.149   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     2.370   TEMPORAL               Incrementing time ticks to 31 
+     2.370   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     2.370   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     2.612   TEMPORAL               Incrementing time ticks to 32 
+     2.612   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     2.612   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     2.870   TEMPORAL               Incrementing time ticks to 33 
+     2.870   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     2.870   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     3.167   TEMPORAL               Incrementing time ticks to 34 
+     3.167   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     3.167   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     3.490   TEMPORAL               Incrementing time ticks to 35 
+     3.490   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     3.490   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     3.851   TEMPORAL               Incrementing time ticks to 36 
+     3.851   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     3.851   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     4.251   TEMPORAL               Incrementing time ticks to 37 
+     4.251   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     4.251   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     4.686   TEMPORAL               Incrementing time ticks to 38 
+     4.686   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     4.686   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     5.164   TEMPORAL               Incrementing time ticks to 39 
+     5.164   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     5.164   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     5.680   TEMPORAL               Incrementing time ticks to 40 
+     5.680   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     5.680   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     6.246   TEMPORAL               Incrementing time ticks to 41 
+     6.246   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     6.246   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     6.874   TEMPORAL               Incrementing time ticks to 42 
+     6.874   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     6.874   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     7.539   TEMPORAL               Incrementing time ticks to 43 
+     7.539   TEMPORAL               MODULE-MOD-REQUEST TEMPORAL 
+     7.539   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.050   PROCEDURAL             PRODUCTION-FIRED WAIT 
+     8.050   PROCEDURAL             MOD-BUFFER-CHUNK GOAL 
+     8.050   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.050   PROCEDURAL             PRODUCTION-SELECTED READ 
+     8.050   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+     8.050   PROCEDURAL             BUFFER-READ-ACTION TEMPORAL 
+     8.100   PROCEDURAL             PRODUCTION-FIRED READ 
+43
+     8.100   PROCEDURAL             MOD-BUFFER-CHUNK GOAL 
+     8.100   PROCEDURAL             MODULE-REQUEST TEMPORAL 
+     8.100   PROCEDURAL             CLEAR-BUFFER TEMPORAL 
+     8.100   TEMPORAL               create-new-buffer-chunk isa time 
+     8.100   TEMPORAL               SET-BUFFER-CHUNK TEMPORAL TIME1 
+     8.100   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.100   ------                 Stopped because time limit reached 
+     8.113   TEMPORAL               Incrementing time ticks to 1 
+     8.113   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.113   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.127   TEMPORAL               Incrementing time ticks to 2 
+     8.127   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.127   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.142   TEMPORAL               Incrementing time ticks to 3 
+     8.142   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.142   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.160   TEMPORAL               Incrementing time ticks to 4 
+     8.160   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.160   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.181   TEMPORAL               Incrementing time ticks to 5 
+     8.181   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.181   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.203   TEMPORAL               Incrementing time ticks to 6 
+     8.203   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.203   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.228   TEMPORAL               Incrementing time ticks to 7 
+     8.228   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.228   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.255   TEMPORAL               Incrementing time ticks to 8 
+     8.255   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.255   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.287   TEMPORAL               Incrementing time ticks to 9 
+     8.287   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.287   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.321   TEMPORAL               Incrementing time ticks to 10 
+     8.321   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.321   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.359   TEMPORAL               Incrementing time ticks to 11 
+     8.359   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.359   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.401   TEMPORAL               Incrementing time ticks to 12 
+     8.401   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.401   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.445   TEMPORAL               Incrementing time ticks to 13 
+     8.445   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.445   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.493   TEMPORAL               Incrementing time ticks to 14 
+     8.493   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.493   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.544   TEMPORAL               Incrementing time ticks to 15 
+     8.544   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.544   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.602   TEMPORAL               Incrementing time ticks to 16 
+     8.602   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.602   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.665   TEMPORAL               Incrementing time ticks to 17 
+     8.665   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.665   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.733   TEMPORAL               Incrementing time ticks to 18 
+     8.733   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.733   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.807   TEMPORAL               Incrementing time ticks to 19 
+     8.807   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.807   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.890   TEMPORAL               Incrementing time ticks to 20 
+     8.890   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.890   PROCEDURAL             CONFLICT-RESOLUTION 
+     8.981   TEMPORAL               Incrementing time ticks to 21 
+     8.981   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     8.981   PROCEDURAL             CONFLICT-RESOLUTION 
+     9.087   TEMPORAL               Incrementing time ticks to 22 
+     9.087   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     9.087   PROCEDURAL             CONFLICT-RESOLUTION 
+     9.199   TEMPORAL               Incrementing time ticks to 23 
+     9.199   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     9.199   PROCEDURAL             CONFLICT-RESOLUTION 
+     9.324   TEMPORAL               Incrementing time ticks to 24 
+     9.324   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     9.324   PROCEDURAL             CONFLICT-RESOLUTION 
+     9.462   TEMPORAL               Incrementing time ticks to 25 
+     9.462   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     9.462   PROCEDURAL             CONFLICT-RESOLUTION 
+     9.612   TEMPORAL               Incrementing time ticks to 26 
+     9.612   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     9.612   PROCEDURAL             CONFLICT-RESOLUTION 
+     9.775   TEMPORAL               Incrementing time ticks to 27 
+     9.775   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     9.775   PROCEDURAL             CONFLICT-RESOLUTION 
+     9.957   TEMPORAL               Incrementing time ticks to 28 
+     9.957   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+     9.957   PROCEDURAL             CONFLICT-RESOLUTION 
+    10.156   TEMPORAL               Incrementing time ticks to 29 
+    10.156   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    10.156   PROCEDURAL             CONFLICT-RESOLUTION 
+    10.379   TEMPORAL               Incrementing time ticks to 30 
+    10.379   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    10.379   PROCEDURAL             CONFLICT-RESOLUTION 
+    10.623   TEMPORAL               Incrementing time ticks to 31 
+    10.623   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    10.623   PROCEDURAL             CONFLICT-RESOLUTION 
+    10.883   TEMPORAL               Incrementing time ticks to 32 
+    10.883   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    10.883   PROCEDURAL             CONFLICT-RESOLUTION 
+    11.174   TEMPORAL               Incrementing time ticks to 33 
+    11.174   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    11.174   PROCEDURAL             CONFLICT-RESOLUTION 
+    11.490   TEMPORAL               Incrementing time ticks to 34 
+    11.490   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    11.490   PROCEDURAL             CONFLICT-RESOLUTION 
+    11.833   TEMPORAL               Incrementing time ticks to 35 
+    11.833   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    11.833   PROCEDURAL             CONFLICT-RESOLUTION 
+    12.196   TEMPORAL               Incrementing time ticks to 36 
+    12.196   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    12.196   PROCEDURAL             CONFLICT-RESOLUTION 
+    12.584   TEMPORAL               Incrementing time ticks to 37 
+    12.584   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    12.584   PROCEDURAL             CONFLICT-RESOLUTION 
+    12.980   TEMPORAL               Incrementing time ticks to 38 
+    12.980   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    12.980   PROCEDURAL             CONFLICT-RESOLUTION 
+    13.407   TEMPORAL               Incrementing time ticks to 39 
+    13.407   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    13.407   PROCEDURAL             CONFLICT-RESOLUTION 
+    13.858   TEMPORAL               Incrementing time ticks to 40 
+    13.858   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    13.858   PROCEDURAL             CONFLICT-RESOLUTION 
+    14.356   TEMPORAL               Incrementing time ticks to 41 
+    14.356   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    14.356   PROCEDURAL             CONFLICT-RESOLUTION 
+    14.916   TEMPORAL               Incrementing time ticks to 42 
+    14.916   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    14.916   PROCEDURAL             CONFLICT-RESOLUTION 
+    15.509   TEMPORAL               Incrementing time ticks to 43 
+    15.509   TEMPORAL               MOD-BUFFER-CHUNK TEMPORAL 
+    15.509   PROCEDURAL             CONFLICT-RESOLUTION 
+    15.509   PROCEDURAL             PRODUCTION-SELECTED WAIT2 
+    15.509   PROCEDURAL             BUFFER-READ-ACTION GOAL 
+    15.509   PROCEDURAL             BUFFER-READ-ACTION TEMPORAL 
+    15.559   PROCEDURAL             PRODUCTION-FIRED WAIT2 
+    15.559   PROCEDURAL             MODULE-REQUEST TEMPORAL 
+    15.559   PROCEDURAL             CLEAR-BUFFER GOAL 
+    15.559   PROCEDURAL             CLEAR-BUFFER TEMPORAL 
+    15.559   TEMPORAL               Clear 
+    15.559   PROCEDURAL             CONFLICT-RESOLUTION 
+    15.559   ------                 Stopped because no events left to process 

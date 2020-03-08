@@ -1,0 +1,155 @@
+8
+
+dir
+1087
+svn://jordan.psy.cmu.edu/usr/local/svnroot/actr6/environment
+svn://jordan.psy.cmu.edu/usr/local/svnroot
+
+
+
+2011-06-14T16:39:19.566336Z
+1084
+db30
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+138765e7-a0e9-0310-87f6-9ca992f4eb68
+
+env-module.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+d149a97c6162beff3052c11f8b35685e
+2011-05-27T13:55:48.800462Z
+1062
+db30
+
+Start Environment.exe
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+0b49d2cb84b3b69b7c8c4b3d4b3ede8d
+2010-03-11T04:30:00.881988Z
+840
+db30
+has-props
+
+GUI
+dir
+
+mcl-fix.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+5104ce1dbc57de625ea62713f053481d
+2005-04-20T16:31:18.731132Z
+70
+db30
+
+handler-class.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+344a39ff994411350bb6702e0d98641f
+2011-05-25T17:47:30.579456Z
+1060
+db30
+
+handlers.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+363ef0bda4f38ff6b5c127f80ff14051
+2011-05-27T13:55:48.800462Z
+1062
+db30
+
+stepper-control.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+4cdf5de5593e711c1ef99987e990438f
+2011-06-01T17:30:44.748764Z
+1068
+db30
+
+Start Environment OSX.app
+dir
+
+env-device.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+eaa8cc6f210a448c3c97b2ebcae74d1e
+2011-05-24T16:19:01.806922Z
+1058
+db30
+
+server.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+04134ba81730014368f432b8db5bcdc0
+2011-06-01T18:23:12.856106Z
+1069
+db30
+
+environment-cmds.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+f494225d92abe3a51db1109b140514e0
+2011-05-25T17:47:30.579456Z
+1060
+db30
+
+standalone.lisp
+file
+
+
+
+
+2011-06-20T11:33:18.000000Z
+c39dc5c75974277dd4d028ccd1c8bab9
+2011-05-24T16:19:01.806922Z
+1058
+db30
+

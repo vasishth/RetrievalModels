@@ -1,0 +1,69 @@
+:ESC NIL (default NIL) : Enable Subsymbolic Computations
+:ER NIL (default NIL) : Enable Randomness
+:LF 1.0 (default 1.0) : Latency Factor
+:DAT 0.05 (default 0.05) : Default Action Time
+:VISUAL-ATTENTION-LATENCY 0.085 (default 0.085) : Time for a shift of visual attention
+:VISUAL-ENCODING-FACTOR 0.002 (default 0.01) : Visual encoding factor-EMMA
+:VISUAL-ENCODING-EXPONENT 0.4 (default 1.0) : Visual encoding exponent-EMMA
+Prep-Time: 0.135
+Saccadic-Suppression: NIL
+Retrieval-ON: NIL
+Surprisal-ON: NIL
+Retrieval-Factor: 0.8
+Surprisal-Factor: 4
+Time-Out Regressions NIL
+
+
+Gaze-Durations
+-----------------------------------------------------
+Data		293	272	256	234	214
+Model		279	255	262	235	218
+
+Correlation:	0.958
+RMSE:		0.079
+
+First-Fixation-Durations
+-----------------------------------------------------
+Data		248	233	230	223	208
+Model		272	250	256	234	218
+
+Correlation:	0.974
+RMSE:		0.140
+
+Single-Fixation-Durations
+-----------------------------------------------------
+Data		265	249	243	235	216
+Model		275	250	258	234	218
+
+Correlation:	0.961
+RMSE:		0.060
+
+Skip-Probabilities
+-----------------------------------------------------
+Data		0.10	0.13	0.22	0.55	0.67
+Model		0.10	0.18	0.30	0.51	0.68
+
+Correlation:	0.986
+RMSE:		0.105
+
+One-Fixation-Probabilities
+-----------------------------------------------------
+Data		0.68	0.70	0.68	0.44	0.32
+Model		0.86	0.80	0.69	0.49	0.32
+
+Correlation:	0.960
+RMSE:		0.239
+
+Two-Fixation-Probabilities
+-----------------------------------------------------
+Data		0.20	0.16	0.10	0.02	0.01
+Model		0.03	0.02	0.02	0.00	0.00
+
+Correlation:	0.977
+RMSE:		0.260
+
+Left-to-Right:	96.9%
+Mean-COR:		0.969
+Mean-RMSE:		0.147
+Scores:		(0.30101484 0.30635417 0.17929879 0.118579745 0.28081065 0.28492478)
+Mean-Variance-Score:		(0.24516384 0.0050128177)
