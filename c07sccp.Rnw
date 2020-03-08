@@ -10,7 +10,6 @@ The direct-access model was motivated by research from the cognitive psychology 
 \begin{center}
 \includegraphics[height=5cm,width=7cm]{figures/c05DA.jpg}
 \end{center}
-%%to-do: rewrite
 \caption{A schematic illustration of the direct-access model. For sentences like (\ref{ex:vandyke07}a), the model assumes that once a search is initiated in memory using a set of retrieval cues (here, subject and animate), one of two events can happen. Either the correct item is retrieved from memory, or the incorrect item, which matches some of the retrieval cues, is misretrieved. In the case of a misretrieval, either processing ends with a misretrieval, or a reanalysis step is initiated that leads to a correct retrieval. This reanalysis step costs time, and therefore leads to slowdowns in processing on average. The figure is by Vasishth, 2019 and is under a CC-BY4.0 license; it is available from http://10.6084/m9.figshare.9396515.} \label{fig:da}
 \end{figure}
 
@@ -108,8 +107,6 @@ The experiment showed the expected inhibitory interference effect; the estimated
 
 In order to evaluate the relative predictive accuracy of the activation model and the direct-access model, \cite{NicenboimRetrieval2018} carried out a model comparison using the above data. The predictive performance of the two models was evaluated using k-fold cross validation \citep{vehtari2012survey,vehtari2016LOOwaic}.  
 
-
-
 Figure \ref{fig:daactcomparison} shows a comparison of the relative predictive fits from the hierarchical Bayesian models implementing the activation model, and McElree's direct-access model as a finite mixture process. The violin plots show posterior predictive distributions from the model; their width represents the density of the predicted mean reading times. The black circles show the empirically observed mean reading times. The four types of reading times refer to four different kinds of question responses that the participants could give in the experiment \citep{nicenboimexploratory}. 
 
 The figure shows that the activation model overestimates the reading times in the incorrect responses, compared to the direct-access model. Although not shown here, this overestimation is due to the activation model assuming a single variance component for both correct and incorrect responses. When that assumption is relaxed, both models show similar predictive accuracy \citep{NicenboimRetrieval2018}.
@@ -143,7 +140,6 @@ multiplot(plot_rt_ab,plot_rt_da,cols=2)
 @
 \caption{A comparison of observed sample means with the posterior predictive distributions of the activation-based model, and the direct-access model. The figure is adapted from the online materials available from StanCon 2017 conference talk by Bruno Nicenboim and Shravan Vasishth, which are under a CC-BY 4.0 licence.}\label{fig:daactcomparison}
 \end{figure}
-
 
 In summary, the direct-access model exhibited a better predictive performance compared to the activation model. The reason that the direct-access model outperformed the activation model is that the latter predicts that in inhibitory interference experimental designs, retrievals of the incorrect chunk should be slower than the retrievals of the correct chunk. In the data-set used for model comparison \citep{nicenboimexploratory}, incorrect retrievals had faster reading time than correct retrievals. This pattern is  predicted by the direct-access model because correct retrievals are a mixture of an initially correct retrieval and an initial retrieval failure followed by a second retrieval attempt; the presence of trials with a costly second retrieval attempt take more time on average than incorrect trials.
 
@@ -186,9 +182,9 @@ tycoon invite GAP DE official { have bad intentions}\\
 \end{xlist}
 \end{exe}
 
-The distance account therefore predicts that in Chinese, the head noun should be read slower in subject relatives compared to object relatives. We will refer to this as the object relative advantage. The first study to claim that this expected pattern is indeed observed in Chinese is \cite{HsiaoGibson2003}. A  subsequent study \citep{gibsonwu} also showed the same object-relative advantage,and this pattern was replicated in a  direct replication attempt \cite{VasishthetalPLoSOne2013}.  There are several empirical difficulties  with the claimed object relative advantage; these are discussed elsewhere \citep{VasishthetalPLoSOne2013,WuKaiserVasishth2017,JagerChenLi2015}. 
+The distance account therefore predicts that in Chinese, the head noun should be read slower in subject relatives compared to object relatives. We will refer to this as the object relative advantage. The first study to claim that this expected pattern is indeed observed in Chinese is \cite{HsiaoGibson2003}. A  subsequent study \citep{gibsonwu} also showed the same object-relative advantage,and this pattern was replicated in a  direct replication attempt \cite{VasishthChenLi2013}.  There are several empirical difficulties  with the claimed object relative advantage; these are discussed elsewhere \citep{VasishthChenLi2013,WuKaiserVasishth2017,JagerChenLi2015}. 
 
-For the present purposes, we focus on the observed object relative advantage reported in \cite{gibsonwu} and the replication reported in \cite{VasishthetalPLoSOne2013}; the data from \cite{HsiaoGibson2003} were not available. \cite{VasishthChopinRyderNicenboimCogSci2017}  asked the question: is the observed  object relative advantage explained better by the distance account, or  by the direct-access model as defined above? One can use k-fold cross-validation  to answer this question.
+For the present purposes, we focus on the observed object relative advantage reported in \cite{gibsonwu} and the replication reported in \cite{VasishthChenLi2013}; the data from \cite{HsiaoGibson2003} were not available. \cite{VasishthChopinRyderNicenboimCogSci2017}  asked the question: is the observed  object relative advantage explained better by the distance account, or  by the direct-access model as defined above? One can use k-fold cross-validation  to answer this question.
 
 \cite{VasishthChopinRyderNicenboimCogSci2017} implemented the distance account and the direct-access model as hierarchical models in  Stan, and compared the predictive performance of the two models against held-out data from the two data-sets. Four models were defined:
 
@@ -219,7 +215,7 @@ The results of the k-fold cross validation for the \cite{gibsonwu} data are show
 
 As shown in the table, model M1 has  a better fit than M0, and M2 is better than M1; there is no improvement in fit between M3 and M2. This implies that for the \cite{gibsonwu} data, the heterogeneous variance version of the direct-access model exhibits a better predictive performance than the distance account. There isn't any evidence for a hybrid model that includes both the direct-access assumption or renalysis-driven cost and the distance account's assumption of distance-driven cost.
 
-The replication data from \cite{VasishthetalPLoSOne2013} also show a similar pattern: superior predictive performance of the direct-access model over the distance accounts; see Table~\ref{tab:modcompgibsonwurep}. 
+The replication data from \cite{VasishthChenLi2013} also show a similar pattern: superior predictive performance of the direct-access model over the distance accounts; see Table~\ref{tab:modcompgibsonwurep}. 
 
 \begin{table}[!htbp]
 \centering
@@ -236,14 +232,11 @@ The replication data from \cite{VasishthetalPLoSOne2013} also show a similar pat
 \label{tab:modcompgibsonwurep}
 \end{table}
 
-
 \subsection{Discussion}
 
 It is interesting that the direct-access model can outperform the Lewis and Vasishth model on three data-sets. This suggests that a wider investigation of these two models is needed; we are carrying out further model comparisons.
 
 One important limitation of the direct-access model is that all the published work relating to this model has focused on inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. The direct-accss model is underspecified regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed earlier in connection with the activation model. Extending the direct-access model is a potentially interesting topic for future research.
-
-%- Bruno work: Figs 1, 4, 5, 6, 7, 12
 
 Continuing with our exploration of  competing accounts of retrieval, we explore an idea, proposed by \cite{VillataFranck}, that encoding interference rather  than retrieval interference might be a better explanation for the agreement attraction effects discussed earlier in the book.
 
