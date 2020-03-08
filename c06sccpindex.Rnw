@@ -120,8 +120,7 @@ require(reshape)
 require(ggplot2)
 
 ## Staub 2010 simulated data, unaggregated:
-load("data/ch_sims/staub10-original/m.RData")
-#head(m)
+load("chapters4to6_simulations/chapter_6/staub10/m.RData")
 mlt <- melt(m, id=c("roi","roi2","pos","cond"), 
             measure=c("FFD","FPRT","TFT","RPD","RBRT"), 
             na.rm = TRUE)
@@ -157,7 +156,7 @@ means$Condition <- factor(means$Condition, levels=c("SRC","ORC"))
 means2$Condition <- factor(means2$Condition, levels=c("SRC","ORC"))
 
 ## actual data from Table, p 75 of Staub 2010
-d <- read.table("data/ch_sims/staub10-original/staub10-data.txt", header=TRUE)
+d <- read.table("chapters4to6_simulations/chapter_6/staub10/staub10-data.txt", header=TRUE)
 colnames(d)[1:2] <- c("variable", "Condition")
 d$Condition <- factor(d$Condition, levels=c("SRC","ORC"))
 # head(d)
@@ -429,7 +428,7 @@ The attachment site was disambiguated at the verb \textit{entraron} (indicative)
 \begin{figure}[!htbp]
   \centering
 <<mv13dataambadv,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=5,fig.height=3, out.width='0.8\\textwidth'>>=
-data <- read.table("data/ch_sims/mv13/data-mv13.txt")
+data <- read.table("chapters4to6_simulations/chapter_6/mv13/data-mv13.txt")
 levels(data$cond) <- c("HIGH","LOW","UNAMB")
 data$amb <- ifelse(data$cond=="UNAMB", "Unambiguous", "Ambiguous")
 data$FPRT.c.exp <- exp(data$FPRT.c)
@@ -603,7 +602,7 @@ For simulating individual differences in working memory capacity, the method of 
 \subsection{Results}
 
 <<mv13modelprep, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE>>=
-load("data/ch_sims/mv13/sim-etm.RData")
+load("chapters4to6_simulations/chapter_6/mv13/sim-etm.RData")
 #
 ##
 ## ADDITIONAL MEASURES
@@ -627,7 +626,7 @@ m$amb <- ifelse(m$cond=="UNAMB", "Unambiguous", "Ambiguous")
 ## OTHER INFO
 ##
 ## encoding times ##
-enc <- read.table("data/ch_sims/mv13/enctimes.txt", header=TRUE)
+enc <- read.table("chapters4to6_simulations/chapter_6/mv13/enctimes.txt", header=TRUE)
 # head(enc,20); dim(enc)
 colnames(enc) <- c("exp","iteration","cond","roi","word","enc","ecc","freq1")
 # Only store first encoding of each word
@@ -637,11 +636,11 @@ enc1 <- subset(enc, !dupl); # head(enc1[-c(9,10)]); dim(enc1)
 m <- merge(m, enc1[-c(9,10)], by=c("exp","iteration","cond","roi"), all.x=TRUE)
 
 ## time outs ##
-tmo <- read.table("data/ch_sims/mv13/timeouts.txt", header=TRUE)
+tmo <- read.table("chapters4to6_simulations/chapter_6/mv13/timeouts.txt", header=TRUE)
 # head(tmo)
 
 ## attachment times ##
-retr <- read.table("data/ch_sims/mv13/attachments.txt", header=TRUE)
+retr <- read.table("chapters4to6_simulations/chapter_6/mv13/attachments.txt", header=TRUE)
 colnames(retr) <- c("exp","iteration","cond","roi","word","retr")
 retr$retr <- as.integer(retr$retr)
 
@@ -656,7 +655,7 @@ m <- merge(m, retr1[-c(5,7,8)], by=c("exp","iteration","cond","roi"), all.x=TRUE
 m$retr[is.na(m$retr)] <- 20
 
 ## trial messages
-msg <- read.table("data/ch_sims/mv13/trialmessages.txt", header=F)
+msg <- read.table("chapters4to6_simulations/chapter_6/mv13/trialmessages.txt", header=F)
 colnames(msg) <- c("exp","iteration","cond","pos","word","var","val")
 msg <- reshape(msg, idvar = c("exp","iteration","cond","pos","word"), timevar="var", direction="wide")
 msg$attached <- ifelse(is.na(msg$val.attachment),0,1)
@@ -680,7 +679,7 @@ trialinfo <- droplevels(trialinfo)
 # head(trialinfo); summary(trialinfo)
 
 ## subject info ##
-subjects <- read.table("data/ch_sims/mv13/subjects.txt", header=FALSE)
+subjects <- read.table("chapters4to6_simulations/chapter_6/mv13/subjects.txt", header=FALSE)
 colnames(subjects) <- c("exp","subj","ga")
 # subjects$wmc <- as.factor(ifelse(subjects$ga>1,"highWMC","lowWMC"))
 #subjects$wmc <- as.factor(ifelse(subjects$ga<1,"lowWMC","highWMC"))
