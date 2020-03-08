@@ -130,11 +130,8 @@ It was the boat that the guy who lived by the sea fixed in two sunny days.
 
 In the memory-load condition, participants showed longer reading times at the word \textit{fixed} vs.\ \textit{sailed}; by comparison, in the no-load condition, no difference was seen between the two words. Van Dyke and McElree's conclusion was that this effect was due to increased \index{similarity-based interference} similarity-based interference at the verb \textit{fixed}: the reader had to retrieve the subject \textit{boat}, but also had three interfering words in memory (\textit{table}, \textit{sink}, \textit{truck}) that could potentially be subjects of the verb \textit{fixed}. These interfering words cause slowdowns in the dependency-completion at the verb. As the authors put it (p.\ 163): ``Reading times for \dots the locus of the interference manipulation \dots provided the critical test of our retrieval interference hypothesis. We found clear support for retrieval interference from the significant effect of interference and the significant interaction in this region, which revealed that the interference effect was linked to the difference between the two sentence types in the Load conditions.''
 
-One difficulty here is that
-the claim above is based on a statistically non-significant result (min F$'$(1,68) = 1.44, p = 0.23; 56 participants), 
-%to-do: give page reference, am I referring to the interaction here?
+One difficulty here is that the claim above is based on a statistically non-significant result (the interaction has min F$'$(1,68) = 1.44, p = 0.23; 56 participants), 
 and the interaction between load and interference also failed to show an effect in a subsequent attempt by \cite{van2014low} (estimate -10 ms, SE 15; 65 participants). 
-%to-do: give page number where I got this from
 In the \cite{van2014low} paper, there isn't enough information to determine whether the direction of the effect is identical to that of the original study. In a recent larger-sample replication attempt involving English \citep{MertzenEtAlAMLaP2019}, we failed to find an interaction between load and interference in total reading time, although we do see some evidence for the interaction in first-pass reading time. \cite{MertzenEtAlAMLaP2019} also carried out eyetracking experiments in parallel on  German and Russian, but these languages didn't show any evidence of the expected interaction in any eyetracking dependent measure. 
 
  In subsequent work, \cite{VanDyke2007} conducted eye-tracking reading studies in which sentences like (\ref{vd07a},   \ref{vd07b}) were shown. The labels on each sentence type are explained below.
@@ -222,7 +219,6 @@ MismatchReflReci<-subset(dat,DepType%in%c("refl","reci") & TargetType=="Mismatch
 nMatchReflReci<-dim(MatchReflReci)[1] #21 studies
 nMismatchReflReci<-dim(MismatchReflReci)[1] # 13 studies
 
-#JEV data: to-do, add Cunnings and Sturt data?
 datMatchNonAgrmt<-list(y=MatchNonAgrmt$Effect,
                        s=MatchNonAgrmt$SE,
                        n=dim(MatchNonAgrmt)[1],
