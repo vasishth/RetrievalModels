@@ -17,7 +17,7 @@
 \usepackage{amsmath}% if you are using this package,
                       % it must be loaded before amsthm.sty
 
-\usepackage{xcolor,colortbl}
+\usepackage{color,colortbl}
 %\usepackage{geometry}
 \usepackage{graphicx}
 \usepackage{threeparttable}
@@ -37,8 +37,7 @@
 {\@chapapp~\thechapter: #1}{}{}
 \makeatother
 
- \usepackage{txfonts}
-% \usepackage[scaled=0.9]{couriers}% use if you're using \tt fonts
+\usepackage{txfonts}
 
 % indexes
 % uncomment the relevant set of commands
@@ -61,9 +60,9 @@
 % \hyphenation{docu-ment baseline-skip polar}
 
 % for this documentation, table of contents lists up to subsection level
-  \setcounter{tocdepth}{2}
+\setcounter{tocdepth}{2}
 
-  \newcommand\cambridge{cambridge7A}
+\newcommand\cambridge{cambridge7A}
 
 % remove the dot and change default for enumerated lists
   \def\makeRRlabeldot#1{\hss\llap{#1}}
@@ -90,23 +89,12 @@
 % \newcommand{\ignore}[1]{}
 \newcommand{\me}{\mathrm{e}}
 
-\newcommand{\revised}[1]{#1}
-\newcommand{\revisedII}[1]{#1}
-\newcommand{\revisedIII}[1]{#1}
-\newcommand{\revFE}[1]{#1}
-\newcommand{\revSV}[1]{#1}
-\newcommand{\revIV}[1]{#1}
-\newcommand{\revV}[1]{#1}
-\newcommand{\revVI}[1]{{\color{red}{#1}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \includeonly{06authored}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\usepackage[german,american]{babel}
-%\usepackage[utf8]{inputenc}
-%\usepackage{todonotes}
 \usepackage{gb4e}
 \usepackage{hyperref}
 \hypersetup{
