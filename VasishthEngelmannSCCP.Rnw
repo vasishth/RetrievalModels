@@ -58,6 +58,7 @@
 
 
 % \hyphenation{docu-ment baseline-skip polar}
+\hyphenation{Hast-ings baseline-skip polar}
 
 % for this documentation, table of contents lists up to subsection level
 \setcounter{tocdepth}{2}
