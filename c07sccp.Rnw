@@ -27,14 +27,14 @@ The worker was surprised that the resident$^{+animate}_{+subject}$ who was livin
 \end{xlist}
 \end{exe}
 
-As shown schematically in Figure~\ref{fig:da}, for sentence (\ref{ex:vandyke07}a) the model assumes that when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, these cues match the noun ``resident'', but they also partially match the noun ``neighbour'' on one feature (animate). This leads to a cue overload as in the activation model. The consequence of this cue overload is that in most trials the subject ``resident'' will be retrieved, but in some proportion of trials the incorrect noun ``neighbour'' will be misretrieved. In both cases the time taken to complete the retrieval is the same, say $\beta$ milliseconds. In trials where the incorrect noun is retrieved, in some proportion of the cases a second retrieval attempt (referred to as reanalysis) is carried out which costs a certain amount of time, say $\delta$ ms. In contrast to (\ref{ex:vandyke07}a), in (\ref{ex:vandyke07}b)  when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, only one noun (``resident'') matches these cues and most of the retrievals succeed immediately. Thus, in (\ref{ex:vandyke07}a) the probability of a misretrieval followed by a reanalysis step is higher than in (\ref{ex:vandyke07}a), and since reanalysis costs $\delta$ ms, sentence (\ref{ex:vandyke07}a) takes longer to read than (\ref{ex:vandyke07}b). 
+As shown schematically in Figure~\ref{fig:da}, for sentence (\ref{ex:vandyke07}a) the model assumes that when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, these cues match the noun ``resident'', but they also partially match the noun ``neighbour'' on one feature (animate). This leads to a cue overload as in the activation model. The consequence of this cue overload is that in most trials the subject ``resident'' will be retrieved, but in some proportion of trials the incorrect noun ``neighbour'' will be misretrieved. In both cases the time taken to complete the retrieval is the same, say $\beta$ milliseconds. In trials where the incorrect noun is retrieved, in some proportion of the cases a second retrieval attempt (referred to as reanalysis) is carried out which costs a certain amount of time, say $\delta$ ms. In contrast to (\ref{ex:vandyke07}a), in (\ref{ex:vandyke07}b)  when the retrieval cues [subject: yes, animate: yes] are used to access the subject noun in memory, only one noun (``resident'') matches these cues and most of the retrievals succeed immediately. Thus, in (\ref{ex:vandyke07}a) the probability of a misretrieval followed by a reanalysis step is higher than in (\ref{ex:vandyke07}b), and since reanalysis costs $\delta$ ms, sentence (\ref{ex:vandyke07}a) takes longer to read than (\ref{ex:vandyke07}b). 
 
 An important difference from the activation model is that in the direct-access model, cue overload affects only the probability of retrieving an item from memory; the retrieval time per se is constant. In the direct-access model, the increased reading time observed due to cue overload is a consequence of the reanalysis time. 
 By contrast, in the activation model, cue overload redistributes the activation of items, dampening activation for all items that (partly) match the retrieval cues. Since activation affects retrieval accuracy as well as retrieval time, the direct consequence of cue overload is increased retrieval time. 
 
 Formally, the direct-access model can therefore be seen as a two-component finite mixture process \citep{mclachlan2004finite,fruhwirth2006finite}, with some proportion of trials representing a successful retrieval in the first-attempt, and some proportion representing a slower retrieval that is the consequence of an initially unsuccessful retrieval in the first attempt followed by a subsequent reanalysis step \citep{NicenboimRetrieval2018}. A formalization in terms of a mixture process is as follows.
 
-Let $y$ be the reading time in milliseconds, and $\beta$ the mean time in log milliseconds taken for a successful retrieval, with standard deviation $\sigma$. Such a successful retrieval happens with probability $p$. Retrieval is assumed to fail with probability $(1-p)$, and the extra cost of re-attempting and successfully carrying out retrieval is $\delta$ log ms. For the full, hierarchically specified model, see \citep{NicenboimRetrieval2018}.
+Let $y$ be the reading time in milliseconds, and $\beta$ the mean time in log milliseconds taken for a successful retrieval, with standard deviation $\sigma$. Such a successful retrieval happens with probability $p$. Retrieval is assumed to fail with probability $(1-p)$, and the extra cost of re-attempting and successfully carrying out retrieval is $\delta$ log ms. For the full, hierarchically specified model, see \cite{NicenboimRetrieval2018}.
 \begin{equation} \label{eq:mixmodsr2}
   y \sim \left \{
   \begin{aligned}
@@ -79,7 +79,7 @@ The \cite{NicenboimRetrieval2018} computational implementation of the direct-acc
     \end{xlist}
 \end{exe}
 
-After each trial, \cite{nicenboimexploratory} also asked participants who carried out the action implied in the main clause. Four options were given  as possible answers; see (\ref{ex:multip-q}).
+After each trial, \cite{nicenboimexploratory} also asked participants who carried out the action implied in the main clause. Four options were given  as possible answers; see (\ref{ex:multip-q}) and (\ref{ex:answers}).
 
 \begin{exe}
     \ex  \textsc{Question} \label{ex:multip-q}
@@ -147,7 +147,7 @@ The direct-access mode and the activation model can be compared on other data as
 
 \subsection{Relative clauses in Chinese} \label{rchinese}
 
-One interesting test of the activation vs.\ direct-access models is relative clause processing. We turn to this next.
+One interesting test of the activation vs.\ direct-access model is relative clause processing. We turn to this next.
 
 It is widely accepted in psycholinguistics that  English subject relative clauses are easier to process than object relatives \citep[e.g.,][]{grodner}. For example, in (\ref{ex:EnglishRCs}), reading times at the relative clause verb \textit{invited} would be shorter in  subject vs.\ object relatives.
 
@@ -182,7 +182,7 @@ tycoon invite GAP DE official { have bad intentions}\\
 \end{xlist}
 \end{exe}
 
-The distance account therefore predicts that in Chinese, the head noun should be read slower in subject relatives compared to object relatives. We will refer to this as the object relative advantage. The first study to claim that this expected pattern is indeed observed in Chinese is \cite{HsiaoGibson2003}. A  subsequent study \citep{gibsonwu} also showed the same object-relative advantage,and this pattern was replicated in a  direct replication attempt \cite{VasishthChenLi2013}.  There are several empirical difficulties  with the claimed object relative advantage; these are discussed elsewhere \citep{VasishthChenLi2013,WuKaiserVasishth2017,JagerChenLi2015}. 
+The distance account therefore predicts that in Chinese, the head noun should be read slower in subject relatives compared to object relatives. We will refer to this as the object relative advantage. The first study to claim that this expected pattern is indeed observed in Chinese is \cite{HsiaoGibson2003}. A  subsequent study \citep{gibsonwu} also showed the same object-relative advantage, and this pattern was replicated in a  direct replication attempt \citep{VasishthChenLi2013}.  There are several empirical difficulties  with the claimed object relative advantage; these are discussed elsewhere \citep{VasishthChenLi2013,WuKaiserVasishth2017,JagerChenLi2015}. 
 
 For the present purposes, we focus on the observed object relative advantage reported in \cite{gibsonwu} and the replication reported in \cite{VasishthChenLi2013}; the data from \cite{HsiaoGibson2003} were not available. \cite{VasishthChopinRyderNicenboimCogSci2017}  asked the question: is the observed  object relative advantage explained better by the distance account, or  by the direct-access model as defined above? One can use k-fold cross-validation  to answer this question.
 
@@ -191,7 +191,7 @@ For the present purposes, we focus on the observed object relative advantage rep
 \begin{itemize}
 \item M0: A standard hierarchical linear model (no mixture). This corresponds to a test of Gibson's DLT and Lewis and Vasishth's cue-based retrieval account.
 \item M1: This model assumes a mixture distribution in both subject and object relatives. The model also assumes
-that there is no difference in retrieval time in ORs vs SRs, but only in the probability of successful retrieval. The variances of the success and reanalysis distributions are assumed to be identical (homogeneous variances). 
+that there is no difference in retrieval time in ORs vs.\ SRs, but only in the probability of successful retrieval. The variances of the success and reanalysis distributions are assumed to be identical (homogeneous variances). 
 \item M2: This model assumes a mixture in both relative clause types just like M1. It differs from M1 in that the variances of the success and reanalysis distributions are assumed to be different (heterogeneous variances).
 \item M3: This model assumes that retrieval time in SRs and ORs is different, and that the variances of the two distributions are different (heterogeneous variance). Thus, M3 is like M2, but with the additional assumption that distance may affect dependency completion time, as proposed by Gibson and others. This model is therefore a hybrid of the two proposals.
 \end{itemize}
@@ -209,11 +209,11 @@ The results of the k-fold cross validation for the \cite{gibsonwu} data are show
   3 & M3 vs M2 & -2.05 & 2.52 \\ 
    \hline
 \end{tabular}
-\caption{Model comparison using K-fold cross-validation for the Gibson and Wu 2013 data. Shown are the differences in $\widehat{elpd}$, along with standard errors of the differences. In a comparison between a model A vs B, a positive $\Delta\widehat{elpd}$ favors model A.} 
+\caption{Model comparison using K-fold cross-validation for the Gibson and Wu 2013 data. Shown are the differences in $\widehat{elpd}$, along with standard errors of the differences. In a comparison between a model A vs B, a positive $\Delta\widehat{elpd}$ favours model A.} 
 \label{tab:modcompgibsonwu}
 \end{table}
 
-As shown in the table, model M1 has  a better fit than M0, and M2 is better than M1; there is no improvement in fit between M3 and M2. This implies that for the \cite{gibsonwu} data, the heterogeneous variance version of the direct-access model exhibits a better predictive performance than the distance account. There isn't any evidence for a hybrid model that includes both the direct-access assumption or renalysis-driven cost and the distance account's assumption of distance-driven cost.
+As shown in the table, model M1 has  a better fit than M0, and M2 is better than M1; there is no improvement in fit between M3 and M2. This implies that for the \cite{gibsonwu} data, the heterogeneous variance version of the direct-access model exhibits a better predictive performance than the distance account. There isn't any evidence for a hybrid model that includes both the direct-access assumption or reanalysis-driven cost and the distance account's assumption of distance-driven cost.
 
 The replication data from \cite{VasishthChenLi2013} also show a similar pattern: superior predictive performance of the direct-access model over the distance accounts; see Table~\ref{tab:modcompgibsonwurep}. 
 
@@ -228,7 +228,7 @@ The replication data from \cite{VasishthChenLi2013} also show a similar pattern:
   3 & M3 vs M2 & 0.13 & 3.48 \\
    \hline
 \end{tabular}
-\caption{Model comparison using k-fold cross-validation for the Vasishth et al.\ 2013 replication of the Gibson and Wu 2013 study.} 
+\caption{Model comparison using k-fold cross-validation for the Vasishth et al.\ (2013) replication of the Gibson and Wu (2013) study.} 
 \label{tab:modcompgibsonwurep}
 \end{table}
 
@@ -236,13 +236,13 @@ The replication data from \cite{VasishthChenLi2013} also show a similar pattern:
 
 It is interesting that the direct-access model can outperform the Lewis and Vasishth model on three data-sets. This suggests that a wider investigation of these two models is needed; we are carrying out further model comparisons.
 
-One important limitation of the direct-access model is that all the published work relating to this model has focused on inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. The direct-accss model is underspecified regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed earlier in connection with the activation model. Extending the direct-access model is a potentially interesting topic for future research.
+One important limitation of the direct-access model is that all the published work relating to this model has focused on inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. The direct-access model is underspecified regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed earlier in connection with the activation model. Extending the direct-access model is a potentially interesting topic for future research.
 
 Continuing with our exploration of  competing accounts of retrieval, we explore an idea, proposed by \cite{VillataFranck}, that encoding interference rather  than retrieval interference might be a better explanation for the agreement attraction effects discussed earlier in the book.
 
 \section{Encoding interference in agreement attraction} \label{encint}
 
-As discussed earlier iin the book, sentences such as (\ref{c07example1}) can lead to an illusion of grammaticality.\footnote{An  extended version of this section appeared as \cite{VasishthEtAlICCM2017} in the Proceedings of the International Conference on Cognitive Modelling, held at the University of Warwick, Coventry, UK.}
+As discussed earlier in the book, sentences such as (\ref{c07example1}) can lead to an illusion of grammaticality.\footnote{An  extended version of this section appeared as \cite{VasishthEtAlICCM2017} in the Proceedings of the International Conference on Cognitive Modelling, held at the University of Warwick, Coventry, UK.}
 The sentence is
 ungrammatical because of the lack of number agreement between
 the subject \textit{key} and the auxiliary \textit{are}.
@@ -335,7 +335,7 @@ is the reading time in milliseconds from subject $i$ and item $j$.  The probabil
 \texttt{prob\_lo} represents the mixing probability of the distribution that generates the slower reading times corresponding to the trials where feature overwriting occurred. 
 
 The homogeneous variance model assumes that both mixture distributions have the same standard deviation $\sigma_e$.  The heterogeneous mixture model assumes that the mixture distribution that leads to the slower reading times is assumed to have both a different mean ($\beta+\delta$) and a different standard deviation ($\sigma_{e'}$) than the other distribution.
-Alternative models can be fit which relax these assumptions, but we leave these extensions for future work.
+Alternative models can be fit that relax these assumptions, but we leave these extensions for future work.
 
 
 As a baseline, we fit a model corresponding to the retrieval interference account,  and the 
