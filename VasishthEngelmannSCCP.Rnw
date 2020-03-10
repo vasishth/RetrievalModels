@@ -222,7 +222,7 @@ source("R/stan_results.R")
   \renewcommand{\refname}{Bibliography}% if you prefer this heading
   \bookreferences % if you already have references at the end of chapters,
                   % you will need this command to start a new \chapter* heading
-\bibliography{sccp}\label{refs}
+\bibliography{sccpcorrected}\label{refs}
 \bibliographystyle{cambridgeauthordate}
 
 \cleardoublepage
