@@ -198,11 +198,11 @@ source("R/stan_results.R")
 @
 
 % slternative approaches to modeling retrieval   
-<<c07, child='c07sccp.Rnw'>>=
+<<c07, child='c07sccpindex.Rnw'>>=
 @
 
 % modeling sentence processing deficits in aphasia
-<<c08, child='c08sccp.Rnw'>>=
+<<c08, child='c08sccpindex.Rnw'>>=
 @
 
 % future directions
