@@ -1,0 +1,411 @@
+\chapter{Modelling sentence comprehension deficits in aphasia} \label{c06}
+
+Aphasia \index{aphasia} is an acquired disorder of language processing that arises from lesions in the speech and language areas in the brain. These lesions occur due to cerebrovascular and other  diseases or  other injuries. Studies on aphasia have shown that two distinct types of aphasia arise depending on the area of the brain that develops lesions. Broca's aphasia involves lesions to the left lateral frontal region (the so-called Broca's area) and \index{Wernicke's aphasia} Wernicke's aphasia involves lesions to the left posterior temporal lobe (Wernicke's area). Classical definitions of sub-types of aphasia are defined around syndromes.
+Broca's aphasia \index{Broca's aphasia} involves difficulties in language production and moderate problems in syntactic comprehension. Spontaneous speech can be non-fluent, and  repeating sentences back can be difficult. 
+Wernicke's aphasia involves severe comprehension and repetition difficulties, and difficulty in finding words. 
+Some other sub-types are global aphasia (complete loss of language); conduction aphasia (relative intact comprehension and production but difficulties in repetition); and anomic aphasia (comprehension intact, but difficulty in finding words).
+
+Because aphasia is an acquired disorder, from the computational modelling perspective it is natural to ask whether models of sentence processing can help us understand what the nature of the impairment(s) is.
+Focusing only on sentence comprehension, several attempts have been made to ``damage'' a computational model of unimpaired processing in various ways to simulate disorders of comprehension. We summarize some of the important models and theories next.\footnote{The next section is reproduced with permission from \cite{PatilEtAl2016}, Copyright (2016) Wiley; license number 4736540285736.}
+
+\section{Theories and models of sentence comprehension deficits} \label{alternativeexplanations}
+
+Theories of sentence processing deficits in aphasia have been traditionally categorized as either \index{representational deficit} representational deficit accounts or \index{processing deficit} processing deficit accounts [for an overview, see][]\citep{Caplan:2009}.
+Representational or specific deficit accounts ascribe the impairment to disturbances in underlying syntactic representations, i.e., they assume that patients suffer from a breakdown in their knowledge of the grammar; in traditional linguistic terms, the deficit is in their competence as opposed to performance. 
+For example, the \index{Trace Deletion Hypothesis} Trace Deletion Hypothesis \citep[TDH,][]{Grodzinsky:1995,Grodzinsky:2000,Grodzinsky:2006a} proposes that aphasic patients have lost the ability to represent traces of syntactic movement. Hence, for non-canonical structures such as passives, they have no information about the theta-role of a moved NP and they need to rely on a default cognitive strategy which assigns the AGENT theta-role to the first NP in a sentence. However, the patients' syntactic representation also contains another AGENT, the one assigned to the unmoved subject NP in base position, which forces them to simply guess which of the two NPs is assigned the role of AGENT in a reversible non-canonical sentence.
+Besides the TDH, other accounts exist that relate syntactic comprehension disorders to disruptions in constructing fully intact syntactic representations \citep[for example,][]{Beretta:1998,Hickok:1995,Mauner:1993}. These accounts ascribe patients' sentence comprehension deficits to a breakdown in syntactic chain formation. 
+In summary, representational deficit accounts generally equate ``breakdown in knowledge of grammar'' with the loss in the ability to track head-dependent relations (such as the relation between a noun phrase and its trace) or the ability to keep track of the derivational history of a syntactic structure, where derivational history is construed in classical Chomskyan terms. It is by no means clear that such a breakdown is not due to processing difficulty; that is, the failure to keep track of dependencies (which may be equivalent to deleting traces) may be a processing problem arising due to stochastic variability or less efficient retrieval processes in parsing \cite{EngelmannVasishthCUNY2014}.
+
+We turn next to theories that have traditionally been termed processing deficit accounts. These assume that the underlying grammatical knowledge of patients is preserved, but the syntactic processing system is affected by processing (or capacity) limitations. Thus, these theories ascribe patients' difficulties with non-canonical sentences to a processing breakdown in parsing. 
+
+There exist various processing accounts that differ in how exactly they conceptualize processing limitations in syntactic parsing:
+(i) timing deficits;
+(ii) reduction in memory
+(iii) intermittent deficiency;
+(iv) weakened syntax;
+(v) slow syntax;
+(vi) lexical integration deficit;
+and (vii) lexical access deficits.
+
+Timing deficit accounts have been articulated in some detail in computationally implemented models; the others remain verbally--stated theories. We discuss each of these theories below.
+
+\subsection{Timing deficit}
+A representative of the timing deficit accounts is the work by 
+\cite{Haarmann-Kolk-1991}. They proposed a computational model of aphasic language breakdown, called SYNCHRON. This model implements the hypothesis by \cite{Kolk-vanGrunsven-1985} that parsing fails in agrammatic aphasics because syntactic representational elements that need to be simultaneously active in working memory are often not coactive because of disturbances in timing due to brain damage. The model is provided with a predefined phrase-structure representation of a sentence and it determines whether the complete construction of this phrase-structure representation is possible given a set of temporal constraints. The model constructs the phrase-structure representation as a bottom-up chain of retrievals---input words cause the retrieval of word forms, word forms cause the retrieval of associated lexical categories and lexical categories cause the retrieval of phrasal categories. The retrieval of a phrasal category is possible only if all its constituent categories are available in memory, which is the \emph{computational simultaneity} constraint in the model.
+
+SYNCHRON \index{SYNCHRON} assumes that aphasics have a temporal disorder---either the retrieval time, the time required to retrieve an element, is longer than normal, or the memory time, the amount of time a retrieved element remains available for further processing, is shorter than normal. 
+A different way to characterize these constraints is in terms of slowed retrieval and faster than normal decay of items in memory.
+This temporal disorder disrupts computational simultaneity among elements of the phrasal category, causing parsing failures. \cite{Haarmann-Kolk-1991} showed that assuming a temporal disorder is sufficient to model the combined effects of the degree of severity and sentence complexity in agrammatic aphasics described in \cite{Schwartz-EtAl-1980} and in a replication study by \cite{Kolk-vanGrunsven-1985}. Although SYNCHRON was successful in modelling aphasic behavior on simpler sentence types, its capabilities are limited due to the absence of a parsing process. It also lacked a mechanism for thematic role assignment, which is a crucial issue in sentence processing.
+
+
+\subsection{Reduction in memory}
+In later work, 
+\cite{Haarmann-EtAl-1997} proposed an enhanced model of aphasic sentence processing, the \index{Capacity Constrained Resource Deficit} Capacity Constrained Resource Deficit (CCRD) model. It is implemented in the \index{3CAPS} 3CAPS architecture  \cite{Just1980} and is derived from the Resource Reduction Hypothesis \cite{Miyake-EtAl-1994}. This hypothesis proposes that the impairment in aphasia is an extension of sentence processing limitations in low working memory capacity of unimpaired individuals. CCRD focuses on deriving thematic roles assigned by the verb in the sentence. CCRD is composed of three main subsystems that accomplish thematic role assignment by carrying out three different sub-tasks in sentence processing: performing lexical access, constructing the parse tree and mapping thematic roles. The functionality of each component subsystem is achieved through a set of production rules. Production rules temporarily activate the working memory elements that lead to various sentence representations. The rules in the thematic role component use the parse tree representation of a sentence to generate thematic roles between words in the sentence. Once the processing of a sentence is completed, the levels of activation of the working memory elements representing the thematic role bindings are recorded. Sentence comprehension accuracy is indicated by the average activation of these memory elements. 
+
+Both storage and computation of information need to draw from available activation. If enough activation is not available, this leads to a breakdown in sentence comprehension. The hypothesis for aphasic patients is that they share a deficit of pathologically reduced working memory capacity. A more complex sentence has higher storage and computational demands, and the reduction in the available activation in aphasics induces a breakdown in processing. The model was shown to reproduce the sentence complexity effect obtained by \cite{Caplan-Et-Al-1985} across nine sentence types, as well as the interaction between the sentence complexity effect and the degree of severity of aphasia in the data from \cite{Kolk-vanGrunsven-1985}. All simulations involved modelling the offline measure of sentence comprehension accuracy by fitting the memory capacity parameter along with several other parameters.
+
+Apart from SYNCHRON and CCRD, other attempts at modelling aphasic sentence comprehension are the HOPE model proposed by \cite{Gigley-1986}, the \index{UNIFICATION SPACE model} UNIFICATION SPACE model proposed by \cite{Kempen-Vosse-1989,vossekempen2000} and the ACT-R based model proposed by \cite{Crescentini-Stocco-2005}. While these models differ considerably in their details, they are consistent with the assumption that aphasic sentence comprehension is not a result of any breakdown in the knowledge of the grammar, but rather a deficit in the processing of this knowledge. As observed by \cite[p.~82][]{Haarmann-EtAl-1997}, 
+all these previous models share the common assumptions that ``(i) knowledge representation and processing are activation driven, (ii) successful sentence comprehension requires the co-activation of certain critical representational elements, and (iii) in aphasia, co-activation is disturbed by an immediate or emergent timing deficit.'' 
+
+\subsection{Intermittent deficiency}
+Support for intermittent deficiency comes from recent online studies with aphasics. In a self-paced listening study combined with a sentence-picture matching and grammaticality judgement task, \cite{Caplan:2007} found normal \textit{online} performance for patients when they provided correct offline responses. In contrast, incorrect offline responses were associated with abnormal online performance. This result is unexpected under the TDH, which does not predict systematic differences in online processes underlying correct and erroneous responses. Caplan and colleagues concluded that patients cannot be suffering from constant impairments in an underlying grammatical structure (e.g., deleted traces), or from a total breakdown in specific parsing operations (e.g., associating a trace with its filler). Instead, they argued that sentence comprehension deficits should better be conceptualized as reflecting intermittent deficiencies in resources necessary for syntactic parsing. These intermittent reductions are then seen in divergent self-paced listening data and lead the patient to end up with an erroneous sentence interpretation. These claims are consistent with the results of former sentence processing studies by \cite{Caplan:2003,Caplan:1995}.
+In recent work, \cite{hanneetal11} also provided evidence for the systematic differences between correct vs.\ incorrect parses, pointing to intermittent deficiencies.
+
+\subsection{Weakened syntax}
+Weakened syntax has received support from sentence comprehension studies using eye tracking \citep[e.g.,][]{Choy:2010,Dickey2009,Dickey:2007a,hanneetal11,Meyer2012,ThompsonChoy-2009}; for eye tracking studies on sentence production in aphasia see also \cite{Cho2010,Lee2011a,Lee2011}.
+Through a series of studies in the visual world paradigm, Thompson and colleagues explored patients' online parsing abilities
+for structures like yes-no questions, wh-questions and object clefts \cite{Dickey:2007a,Thompson2004}.
+For correctly answered wh-questions, aphasics showed the same eye movements patterns as controls---anticipatory eye movements to a potential filler (the moved object) for the gap when they heard the verb. When the offline response was incorrect, they showed increased looks to the subject competitor towards the end of the sentence.
+According to the authors, the anticipatory eye movements reflect the participants' incremental, automatic gap-filling during sentence comprehension. This suggests that 
+``resolving wh-dependencies was relatively unimpaired in the patients'' \cite[p.~14][]{Dickey:2007a}. Moreover, because patients' eye movements during correct responses were similar to controls' in speed and the overall pattern, the results are inconsistent with a slow-down in aphasics' online processing. 
+Referring to \cite{Avrutin:2006}, the authors suggested a weakened-syntax view of sentence comprehension disorders, which holds that syntactic representations in aphasia are (largely) undamaged and processing operations such as gap filling function with the same speed as in controls', but the resulting syntactic structures are not strong enough to inhibit competition from other sources (such as competing extra-linguistic heuristics) \cite{Dickey:2007a}. 
+To replicate and extend these initial results, \cite{Dickey2006,Dickey2009} evaluated patients' online processing in sentences with two different types of syntactic movement---wh-movement in object relative clauses and NP-movement in passives. 
+Although the results showed that patients can successfully resolve wh-movement dependencies,  gap-filling in object relative clauses was slightly delayed. 
+These results are different from earlier findings involving wh-questions. 
+Hence, the process of gap filling may be delayed in patients at least for some syntactic structures involving movement. Moreover, this process was disrupted by the late-emerging influence of syntactically unlicensed competitor interpretations.
+This position is closely related to the idea of slow syntax \citep{BurkhardtEtAl2003}, discussed next.
+
+\subsection{Slow syntax}
+As mentioned above, there is some evidence that gap-filling is delayed in patients.
+Further evidence consistent with slow syntax comes from 
+\cite{hanneetal11}, who investigated online processing of Broca's aphasics on German reversible canonical (SVO) sentences and their non-canonical counterparts (OVS) using a classical sentence-picture matching task in the visual world paradigm.
+Online (eye movements) and offline (accuracy and response time) data were collected simultaneously during the task. Patients' accuracy reflected the expected pattern. On average, they performed worse than controls, and comprehension for non-canonical sentences was significantly lower than for canonical sentences. Reaction times were significantly longer in patients than in controls, and non-canonical sentences elicited longer latencies than canonical ones. 
+Fixation patterns showed systematic differences in correct vs.\ incorrect offline responses. For correctly answered trials, patients' eye movement patterns were very similar to controls' (in terms of relative fixation probabilities). For incorrectly answered trials, patients' eye movements were clearly deviant from controls'. Interestingly, patients' eye movement patterns were delayed compared to controls, which is suggestive of a slowdown in online sentence processing. 
+Following Caplan and colleagues, they also came to the conclusion that these preserved processing routines are not always available because of intermittent deficiencies of parsing operations. Thus, the data of Hanne et al.\ are consistent with the independently motivated idea of a slow-down in syntactic processing in aphasia and with intermittent deficiency, although there may well be other underlying factors that lead to a slow-down, such as increased uncertainty under noisy memory representations.
+Using eyetracking with sentence-picture matching, \cite{Meyer2012} investigated the processing of English active and passive sentences in aphasics and age-matched controls. They found that, in active sentences as well as correctly comprehended passive sentences, on average aphasics' eye movements converged to the correct picture a little bit later than controls.  Such delays could be interpreted as slow syntactic processing or,  as Meyer et al.~interpreted them, as delayed lexical integration, which is discussed next. 
+
+\subsection{Lexical integration deficit}
+Thompson and colleagues are the main proponents of lexical integration difficulties.
+In a comprehensive summary of their eye tracking experiments, \cite{ThompsonChoy-2009} concluded that sentence comprehension impairments in aphasia are unlikely to be ``related to an inability to form, or compute, syntactic representations'' (p.\ 278). They further emphasized that although slight delays in gap-filling were seen for some syntactic structures, no delayed syntactic processing was found for patients' dependency resolution in pronominal constructions as well as in wh-questions, making a general delay in syntactic computation unlikely. Instead, given the consistent finding of the late-emerging influence of competitor interpretations in patients' incorrect responses, the authors  argued for a lexical integration deficit in aphasia, i.e., an impairment in the ability to integrate already accessed lexical information into a syntactic or a higher level semantic representation. Work by \cite{hagoort1996lexical} and \cite{SwaabEtAl-1997} makes similar claims.
+
+\subsection{Lexical access deficits}
+Some authors attribute patients' syntactic difficulties to an earlier stage in language processing---lexical access.
+\cite{Prather:1997}, using a list priming paradigm, found slower than normal activation of word meanings in Broca's patients. They suggested that this effect directly connects to reduced and/or absent activation effects found at gap sites during real-time sentence processing \citep{Zurif1994}. 
+In subsequent studies using a \index{cross-modal lexical priming} cross-modal lexical priming paradigm with Broca's aphasics, Love and colleagues \citep{Swinney1996,Love2001} found that priming of a filler at its gap site in syntactic movement structures is not absent, but delayed. The late reactivation of the antecedent was taken as evidence that patients can associate a moved element with a trace; however, this process is pathologically slow.
+In another study \citep{Love:2008}, when the speech rate of the auditory input was slowed, patients showed immediate priming effects at the gap site. They also showed delays in lexical activation when a moved NP was first overtly encountered in a sentence. Love and colleagues interpreted their findings as evidence that ``the formation of a syntactic dependency involving a moved constituent is selectively vulnerable, not because it's a syntactic operation, but because if lexical reactivation is not accomplished within a normal time frame, a non-grammatical heuristic kicks in to provide a conflicting interpretation'' \citep[p.~216][]{Love:2008}. Further, \cite{Ferrill2012} showed that in patients, lexical activation is slower not only in syntactic structures containing movement dependencies but also in canonical sentences without dislocated NPs. However, it remains unclear why comprehension of canonical structures is less (or even not at all) affected in aphasia.
+
+It is also worth noting that the lexical access account and the lexical integration deficit account may be difficult to disentangle.
+The lexical access account  
+is in principle distinct from Thompson and colleagues' proposal of  a deficit in lexical integration. 
+Thompson and colleagues observed no or only slight delays in the reactivation of antecedents at their gap sites (at least for correct trials) across experiments involving different movement structures \citep{ThompsonChoy-2009,Choy:2010,Meyer2012}. This absence of an effect, together with the observation of aberrant sentence-end effects of lexical competitors, led Thompson and colleagues to propose an impairment in integrating already accessed lexical information into the syntax or a higher level semantic representation. According to them, this account could explain deficits in comprehending both pronominal and movement structures.
+However, Thompson and colleagues' findings could also be interpreted as evidence towards a delay in lexical access. For example, in experiment one in \cite{ThompsonChoy-2009} \citep[see also][]{Choy:2010}, patients showed delayed looks to overtly mentioned (unmoved) nouns in a sentence compared to controls. \cite{Dickey:2007a} observed similar effects at the subject in yes-no-questions \citep[see also experiment two reported in][]{ThompsonChoy-2009}. In addition, \cite{Love:2008} pointed out that the auditory sentences used, for example, in \cite{Dickey:2007a} were spoken at a slower than normal speech rate, which might have confounded the results because the slow input could have compensated for the delay in aphasics' lexical activation.
+Furthermore, \cite{Yee2008} showed evidence for reduced lexical activation in Broca's aphasia rather than delays in reaching a certain activation threshold value; this points to impairments in lexical activation levels rather than the time course of this activation. Finally, \cite{Blumstein1998}, found no delays but successful priming of a filler at its gap site using a within-modality priming paradigm (auditory-auditory lexical decision). In this study, Broca's patients even patterned with unimpaired participants.
+Given the diverging results, it is currently still unclear whether and how impairments in sentence comprehension are caused by failures at the stage of lexical access or lexical integration. 
+
+We have summarized above the various theories about sentence comprehension deficits in aphasia; but it may be helpful to see the connections, similarities and differences between these theories by trying to identify some of the key proposals in these theories. We present such a comparison next.
+
+\subsection{A comparison of theories of impaired processing, and their relation to theories of unimpaired processing}
+
+The theories of sentence processing deficits mentioned above address essentially the same issues that theories of unimpaired populations address (one difference is that the effect of the various determinants of processing difficulty may be amplified in impaired populations). This becomes clear when we consider how  theories of unimpaired sentence processing that focus on the effect of \index{working memory} working memory are characterized; here, comprehension difficulty (i.e., delays) can arise in the integration of lexical items due to \index{decay} decay or \index{interference} interference \citep{vandykelewis03}, or working-memory capacity differences \cite{JustCarpenter1992}; dependencies may be forgotten \cite{taboretal04,VasishthSuckowLewis2010,FrankTrompenaarsVasishth2015}, which may or may not lead to parse failure; and there may be occasional mis-parses \cite{WagersLauPhillips2009,BadeckerStraub2002,VasishthBruessowLewis2008,CunningsFelser2013,PatilVasishthLewis2016}, due to interference effects or stochastic noise.
+As Table~\ref{modelcomparison} shows, classifying the theories mentioned above along these three dimensions---delay, forgetting, and mis-retrieval---demonstrates that while all the theories of sentence comprehension deficits in aphasia try to characterize forgetting in different ways, some try to also develop a theory of why processes are delayed, and why mis-retrievals happen:
+
+\begin{enumerate}
+\item
+In TDH, trace deletion has the effect that the relationship between a filler and a gap, which originally was present, is forgotten. Possibly, delays could also occur if the parser carries out extra steps to complete a heuristic strategy to decide on thematic roles for arguments.
+\item SYNCHRON implements delays and forgetting by inducing timing deficits that make retrieval slower and that make items in memory decay faster.
+\item 
+CCRD induces capacity limitations, which lead to forgetting.
+\item 
+Intermittent deficiency, as discussed by Caplan and others, is mainly concerned with occasional forgetting and mis-retrieval, although the precise nature of the deficiency is not defined.
+\item 
+Weakened syntax assumes that syntactic structures do not have strong enough representations, which may be a way to implement forgetting. 
+\item Slow syntax assumes slowed down parsing processes, which would cause delays, and occasional parsing failures.
+\item The lexical integration deficit proposal, as developed by Thompson and colleagues, 
+assumes a failure to retrieve a lexical item into a higher-level representation; this could be seen as implementing forgetting and possibly also mis-retrieval.
+\item 
+The delayed lexical access model  assumes that accessing an item in memory in the service of completing a dependency will lead to delays and failures.
+ \end{enumerate}
+
+
+Framing existing theories of sentence comprehension deficits in the context of delay, forgetting, and mis-retrieval also highlights the fact that (a) no one theory seems to cover all three events, and (b) one could re-classify theories as either being about delays (more generally, slowed processing), occasional failures to retrieve, or mis-retrievals.
+As an aside, note that none of the theories have any formalization of prediction cost \citep[e.g.,][]{Hale2001,Levy2008}; researchers in aphasia have largely neglected this topic in the past, but it is likely to become a  focus of research in the coming years \citep[see][for an interesting recent attempt using the storage cost metric from the \index{Dependency Locality Theory} Dependency Locality Theory]{clark12}.
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{rccc}
+\hline
+Model     &                        Delays  &     Forgetting    &	Mis-retrieval\\  
+\hline
+TDH                    &          x           &                   x    &	\\
+SYNCHRON       &             x        &                  x      &	\\
+CCRD                  &                        &                    x   &	\\
+ intermittent deficiency   &              &          x             &	x	\\
+ weakened syntax        &               &         x              &	\\
+ slow syntax                  &   x          &        x   &	\\
+ lexical integration deficit  &      &       x              &	x	\\
+ delayed lexical access        &  x      &            x   &	\\
+\hline
+\end{tabular}
+\caption{A matrix showing how the models relate to each other along dimensions of the three working-memory related events---delays, forgetting (or failure to retrieve), mis-retrieval---that have been investigated in sentence comprehension research.} \label{modelcomparison}
+\end{table}
+
+In summary, a useful way to understand the various theories of sentence comprehension deficits is in terms of their attempt to characterize delays, forgetting, and mis-retrievals. The fact that theories of unimpaired sentence comprehension that depend on working memory concepts
+are also focused on these same events suggests a natural classification of theories of impairment that makes contact with a more general theory of unimpaired processing.
+
+\section{Modelling individual-level differences}
+
+In healthy adults, 
+sentence comprehension has long been argued to be influenced by individual differences; a commonly assumed source is differences in working memory capacity \citep{DanemanCarpenter1980,JustCarpenter1992}. 
+Other factors such as age \citep{CaplanWaters2005} and cognitive control \citep{novick2005cognitive} have also been implicated.
+
+An important question that has not received much attention in the computational psycholinguistics literature is: what are sources of individual differences in healthy adults versus impaired populations, such as individuals with aphasia (IWA)? 
+
+It is well known that individuals with aphasia often experience difficulties in comprehending sentences. These difficulties are mainly observable as lower accuracy scores in comprehension tasks such as sentence-picture matching, in which a picture must be selected in accordance with the meaning of a sentence, or in object-manipulation task, in which the meaning of a sentence must be reenacted with figurines \citep[see literature review in][]{PatilEtAl2016}. Furthermore, eye-tracking during comprehension studies have revealed that IWA exhibit slower overall processing times \citep{hanneetal11}.
+
+Two factors that are known to affect performance in sentence comprehension tasks (such as sentence-picture-matching, see \cite{hanneetal11}) are canonicity (i.e., word order), and reversibility of thematic roles of animate nouns. Comprehension difficulties in IWA are selective in nature and particularly pronounced in sentences that are semantically reversible and have non-canonical word order, for example passives or object relative clauses. For these sentence structures, response accuracy is often indistinguishable from guessing (50\% accuracy). Such a pattern is referred to as chance performance. On the other hand, performance for canonical structures (e.g., actives or subject relative clauses) and irreversible sentences is often within normal range \citep{hanneetal11}. While chance performance is a typical trait of Broca's aphasia, it can be observed in other aphasia syndromes as well.
+
+Regarding the underlying nature of this deficit in IWA, two primary approaches have been proposed in the literature: \emph{representational} vs.\ \emph{processing accounts}. Whereas representational accounts \citep{Grodzinsky:1995} argue that chance performance is caused by impaired syntactic representations on which the parser operates, processing accounts assume an underlying deficit in parsing procedures proper. The exact nature of the impairment in mechanisms that are employed in parsing operations, however, are still not clear, and several proposals have been made. In this paper, we focus on processing accounts of sentence comprehension deficits in IWA and, specifically, evaluate three influential proposals  (for a detailed evaluation of representational accounts, see \cite{PatilEtAl2016}):
+
+\begin{enumerate}
+ \item \textit{Slowed processing}:
+  \cite{BurkhardtEtAl2003} argue that a slowdown in parsing mechanisms can best explain the processing deficit.  
+\ \item \textit{Intermittent deficiencies}:
+  \cite{CaplanEtAl2015} suggest that occasional temporal breakdowns of parsing mechanisms capture the observed behavior. 
+  \item \textit{Resource reduction}:
+  A further hypothesis, due to \cite{Caplan2012}, is that the deficit is caused by a reduction in resources related to sentence comprehension. 
+\end{enumerate} 
+
+Computational modelling can help evaluate these different proposals quantitatively. 
+Specifically, the cue-based retrieval account of \cite{LewisVasishth2005}, which was developed within the ACT-R framework \citep{AndersonEtAl2004}, is a computationally implemented model of unimpaired sentence comprehension 
+ that has been used to model a broad array of empirical phenomena in sentence processing relating to \index{similarity-based interference} similarity-based interference effects 
+\citep{NicenboimRetrieval2018,JaegerEngelmannVasishth2017,EngelmannJaegerVasishth2019} and the interaction between oculomotor control and sentence comprehension \citep{Engelmanna}.\footnote{The model can be downloaded in its current form from 
+https://github.com/felixengelmann/act-r-sentence-parser-em.}
+
+The Lewis and Vasishth model \citep[and its more recent version by][]{engelmann:phd}) integrates top-down predictions into bottom-up, word-by-word parsing steps by using a left-corner parsing algorithm. The model assumes that words are being read on a (simulated) screen. Simplifying somewhat, the processing cycle consists of the following stages, which are repeated until there are no more words to process: (1) lexical access and integration with the current parse, (2) predictive structure building; and (3) dependency completion (e.g., connecting a grammatical subject and a verb) through a so-called retrieval process. 
+The \cite{LewisVasishth2005} model is particularly attractive for studying sentence comprehension because the retrieval process relies on the general constraints on cognitive processes that have been laid out in the ACT-R framework. This makes it possible to investigate whether sentence processing could be seen as being subject to the same general cognitive constraints as  any other information processing task (of course, this does not entail that there are no language-specific constraints on sentence comprehension).
+A further advantage of the \cite{LewisVasishth2005} model in the context of theories of processing deficits in aphasia is that several of its numerical parameters (which are part of the general ACT-R framework) can be interpreted as implementing the three proposals mentioned above.
+
+The objective of the work presented here is to demonstrate that it is possible to map the three types of deficits mentioned above to three distinct parameters (described below) of the ACT-R architecture, and to use, for each individual IWA, the best-fitting values of these parameters as a means to distinguish between impaired and unimpaired individuals.
+
+In \cite{PatilEtAl2016}, the \cite{LewisVasishth2005} architecture was used to model aphasic sentence processing on a small scale, using data from seven IWA. 
+They modelled proportions of fixations in a visual world task, response accuracies and response times for empirical data of a sentence-picture matching experiment by \cite{hanneetal11}. Their goal was to test two of the three hypotheses of sentence comprehension deficits mentioned above, slowed processing and intermittent deficiency.  
+Their results revealed the best fit for the model that implemented both of the accounts, compared to models that only implemented one. Further, the results lead to the conclusion that IWA exhibit deficits to differing amounts.
+
+One major limitation of the Patil et al.\ study was the limited data it was based on: 7 IWA.
+In the present work, we provide a proof of concept study that goes beyond \cite{PatilEtAl2016} in two respects: first, we use a much larger data-set from \cite{CaplanEtAl2015} with 56 IWA and 46 matched controls; and second, we evaluate the evidence for all the three hypotheses mentioned above. 
+
+When fitting individual participants, we vary three parameters that map to the three theoretical proposals mentioned above. The goal is to determine whether the distributions of optimal parameter values computed for individual participants furnish any support for any of the three sources of deficits in processing. 
+We expect that if there is a tendency in one parameter to show non-default values in individual model fits for IWA, for example slowed processing,
+then there is support for the claim that slowed processing is an underlying source of processing difficulty in IWA. Similar predictions hold for the other two constructs, intermittent deficiency and resource reduction; and for combinations of the three proposals.
+
+\subsection{Mapping ACT-R parameters to sources of deficits}
+
+In ACT-R, the retrieval of a chunk from memory depends on its activation level, which is determined by several constraints; we discuss a subset of these next. 
+Let $C$ be the set of all chunks in declarative memory. The total activation of a chunk $i \in C$ equals
+
+\begin{equation}\label{eq:1}
+A_i = B_i + S_i + \epsilon,
+\end{equation}
+
+\noindent
+where $B_i$ is the base-level or resting-state activation of the chunk $i$; the second summand $S_i$ represents the spreading activation that a chunk $i$ receives during a particular retrieval event; 
+and $\epsilon$ is noise that is logistically distributed, approximating a normal distribution, with mean $0$ and standard deviation ANS; the noise term is generated at each new retrieval request.
+The time it takes for a chunk $i$ to be retrieved $T_i$ depends on its activation $A_i$ via $T_i = F exp(-A_i)$, where $F$ is a scaling constant which we kept constant at $0.2$ here.
+
+The parameter ANS of the logistic distribution from which $\epsilon$ is generated can be interpreted as implementing the \emph{intermittent deficiency} hypothesis, because higher values of ANS will tend to lead to more fluctuations in activation of a chunk and therefore higher rates of unsuccessful retrievals.\footnote{Note that \cite{PatilEtAl2016} implemented intermittent deficiency using another source of noise in the model which affects not activation levels but rather the odds of a processing operation being chosen.} 
+Increasing ANS leads to a larger influence of random fluctuation in activation on a chunk's activation, which represents the core idea of \emph{intermittent deficiency}: that there is not a constantly present damage to the processing system, but rather that the deficit occasionally interferes with parsing, leading to more errors.
+
+The second summand in \eqref{eq:1} represents the process of \emph{spreading activation} within the ACT-R framework. For a given chunk $i$ to be retrieved, and given retrieval cues $j \in \{1, \ldots, J\}$, the amount of activation spread to the chunk $i$ as a function of the retrieval cues is quantified by computing: 
+
+\begin{equation}\label{eq:2}
+  S_i = \sum_{j=1}^J W_j S_{ji}.
+\end{equation}
+
+\noindent
+The weighting term $W_j$ is assumed by default to be $\frac{\text{GA}}{J}$, where GA is an ACT-R parameter\footnote{GA stands for goal activation in ACT-R, for reasons that are not relevant here.} and $S_{ji}$ is a value that  reflects the strength of association between  the retrieval cue $j$ and the chunk $i$. To give a simplified  example of what spreading activation does, assume that two chunks $i_1$ and $i_2$ are in memory, and there are two retrieval cues $c_1$ and $c_2$ that are being used to search for a chunk. Chunk $i_1$ matches fully with the two retrieval cues, and chunk $i_2$ matches with only one of the retrieval cues, say $c_2$.  Suppose also that the strength of association $S_{ji}$ between a retrieval cue $j$ and a chunk $i$ is $1$ if the retrieval cue matches a feature on the chunk, and $0$ otherwise. Assume that GA is $1$.
+Then, the activation spread to item $i_1$ as a function of the two retrieval cues is: 
+
+\begin{equation}
+  S_{i_1} = W_1 S_{11}+W_2 S_{21}=1/2 \times 1 + 1/2 \times 1 = 1
+\end{equation}
+
+and the activation spread to item $i_2$ is:
+
+\begin{equation}
+  S_{i_2} = W_1 S_{12}+W_2 S_{22}=1/2 \times 1 + 1/2 \times 0 = 1/2
+\end{equation}
+
+More activation is spread to chunk $i_1$ than to chunk $i_2$ due to a full match with the retrieval cues. Now consider the case where $GA=2$. Now, 
+$S_{i_1}= 2/2 \times 1 + 2/2 \times 1 = 2$ and 
+$S_{i_2}= 2/2 \times 1 + 2/2 \times 0 = 1$. Thus, with a higher GA value, more activation is spread to a chunk in memory when it matches the retrieval cues.
+
+The parameter GA therefore determines the total amount of activation increase in a chunk as a function of the number of retrieval cues it matches. It is a free parameter in ACT-R. As discussed in chapter~\ref{c04}, this parameter 
+has been used to model individual differences in working memory capacity (see, for example, \cite{DailyEtAl2001}). 
+The lower the GA value, the lower the increase in activation of the chunk $i$ due to a match with the retrieval cues.
+Low GA values thus model low working memory capacity: when an item needs to be retrieved from memory using certain retrieval cues, the probability of successful retrieval will go down if GA is lower.
+Similarly, higher GA values model higher working memory capacity.
+Thus, it can be seen as one way (although by no means the only way) to implement the resource reduction hypothesis. 
+
+Finally, the hypothesis of \emph{slowed processing} can be mapped to the \emph{default action time} (DAT) parameter in ACT-R. This defines the constant amount of time it takes a selected parsing rule to ``fire'', i.e., to start the actions specified in the action part of the rule. Higher values would lead to a greater delay in firing of parsing rules. Due to the longer decay in this case, retrieval may be slower and more failed retrieval attempts may occur. 
+
+In the following section, we evaluate the model's performance on the empirical data for IWA and unimpaired individuals, implementing the three theoretical claims by varying the three parameters described above. 
+
+\subsection{Simulations}
+
+In this section we describe our modelling method and the procedure we use for fitting the model results to the empirical data from \cite{CaplanEtAl2015}.
+
+\subsubsection{Materials} \label{caplanmaterials}
+
+We used the data from 56 IWA and 46 matched controls published in \cite{CaplanEtAl2015}. In this data-set, participants listened to recordings of sentences presented word-by-word; they paced themselves through the sentence, providing self-paced listening data. Participants processed 20 examples of 11 spoken sentence types and indicated which of two pictures corresponded to the meaning of each sentence. This yielded accuracy data for each sentence type. 
+
+Out of the 11 sentence types, we chose the subject/object relative clause contrast for the current simulation:
+subject relatives (\textit{The woman who hugged the girl washed the boy}) represent the arguments of the sentence (woman, girl) in canonical order, whereas in object relatives (\textit{The woman who the girl hugged washed the boy}), they occur in non-canonical order.
+We chose relative clauses for two reasons. First, relative clauses have been very well-studied in psycholinguistics and serve as a typical example where processing difficulty is (arguably) experienced due to deviations in canonical word ordering \citep{JustCarpenter1992}.
+Second, the \cite{LewisVasishth2005} model already has productions defined for these constructions, so the relative clause data serve as a good test of the model as it currently stands.
+
+\subsubsection{Parameter estimation}
+
+We used grid search to find the best fitting parameters. We refer to the parameter space $\Pi_i$ as the set of all vectors $(\text{GA}, \text{DAT}, \text{ANS})$ with $\text{GA},\ \text{DAT},\ \text{ANS} \in \mathbb{R}$.
+For computational convenience, we chose a discretisation of $\Pi$ by defining a step-width and lower and upper boundaries for each parameter. In this discretised space $\Pi'$, we chose $\text{GA} \in \{0.2, 0.3, \ldots, 1.1\}$, $\text{DAT} \in \{0.05, 0.06, \ldots, 0.1\}$, and $\text{ANS} \in \{0.15, 0.2, \ldots, 0.45\}$.\footnote{The standard settings in the \cite{LewisVasishth2005} model are $\text{GA} = 1,\ \text{DAT} = 0.05\ \text{(or 50 ms)},\ \text{and ANS} = 0.15$.} $\Pi'$ could be visualised as a three-dimensional grid of 420 dots, which are the elements $p' \in \Pi'$.
+
+The default parameter values were included in $\Pi'$. This means that models that vary only one or two of the three parameters were included in the simulations. 
+
+
+For all participants in the \cite{CaplanEtAl2015} data-set, we calculated comprehension question response accuracies, averaged over all items of the subject / object relative clause condition. For each $p' \in \Pi'$, we ran the model for 1000 iterations for the subject and object relative tasks.
+From the model output, we determined whether the model made the correct attachment in each iteration, i.e., whether the correct noun was selected as subject of the embedded verb, and we calculated the accuracy in a simulation for a given parameter $p' \in \Pi'$ as the proportion of iterations where the model made the correct attachment. We counted a parsing failure, where the model did not create the target dependency, as an incorrect response.
+
+The problem of finding the best fit for each subject can be phrased as follows: for all subjects, find the parameter vector that minimises the absolute distance between the model accuracy for that parameter vector and each subject's accuracy. Because there might not always be a unique $p'$ that solves this problem, the solution can be a set of parameter vectors.
+If for any one participant multiple optimal parameters were calculated, we averaged each parameter value to obtain a unique parameter vector. This transforms the parameter estimates from the discretised space $\Pi'$ to the original parameter space $\Pi$.
+
+
+\subsection{Results}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figures/margSR.pdf}
+  \caption{Marginal distributions of each of the three parameters for subject relatives in controls (solid lines) vs.\ IWA (dotted lines). The vertical line shows the default setting for the respective parameter.}
+  \label{fig:margSR}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\columnwidth]{figures/margOR.pdf}
+  \caption{Marginal distributions of each of the three parameters for object relatives in controls (solid lines) vs.\ IWA (dotted lines). The vertical line shows the default setting for the respective parameter.}
+  \label{fig:margOR}
+\end{figure}
+
+\begin{table}
+  \centering
+  \resizebox{\columnwidth}{!}{%
+  \begin{tabular}{llccccccc}
+    ~  & ~        & GA & DAT & ANS & GA \& DAT & GA \& ANS & DAT \& ANS & GA \& DAT \& ANS\\
+    \hline
+    SR & control  & 19 & 24  & 18  & 18     & 11     & 16      & 10\\
+    ~  & IWA      & 38 & 41  & 42  & 32     & 33     & 36      & 27\\
+    \hline
+    OR & control  & 21 & 26  & 36  & 21     & 20     & 25      & 20\\
+    ~  & IWA      & 40 & 48  & 53  & 38     & 40     & 48      & 38\\
+    \hline
+  \end{tabular}
+  }
+  \caption{The number of participants in subject / object relatives (SR/OR) for which non-default parameter values were predicted, in the subject vs.\ object relative tasks, respectively; for goal activation (GA), default action time (DAT) and noise (ANS) parameters.}
+  \label{table:normsettingsSO}
+\end{table}
+
+In this section we presents the results of the simulations and the fit to the data. First, we describe the general pattern of results reflected by the distribution of non-default parameter estimates per subject. Following that, we test whether tighter clustering occurs in controls.
+
+\paragraph{Distribution of parameter value estimates} 
+Table~\ref{table:normsettingsSO} shows the number of participants for which a non-default parameter value was predicted. 
+We refer to the values $\text{GA} = 1,\ \text{DAT} = 0.05\ \text{(or 50 ms)},\ \text{and ANS} = 0.15$ as the default values, as set in the ACT-R architecture.
+It is clear that, as expected, the number of subjects with non-default parameter values is always larger for IWA vs.\ controls, but controls show non-default values unexpectedly often.
+In controls, the main difference between subject and object relatives is a clear increase in elevated noise values in object relatives.
+
+For IWA in subject relatives, the single-parameter models are very similar, whereas in simple object relatives, most IWA (95\%) exhibit elevated noise values, while a far smaller proportion (71\%) showed reduced goal activation values. 
+
+Figures~\ref{fig:margSR} and \ref{fig:margOR} illustrate the smoothed marginal distributions of parameter value estimates, for subject and object relative clauses, respectively. Most importantly, it is visible in both subject and object relatives that the distributions of controls' estimates have their point of highest density around the default value of the respective parameter. Deviations from this observation are mainly visible in the distributions for object relatives, where a second peak further away from the default is visible for each parameter. Distributions for IWA, on the other hand, are much flatter, and most density is concentrated relatively far away from the default parameter setting. This situation is exacerbated in object relatives compared to subject relatives.
+
+Overall, most IWA exhibit non-default parameter settings ANS and DAT, and to a lesser extent in GA. Table~\ref{table:normsettingsSO} shows further that the only combined model (i.e., the model that varied two or more parameters instead of keeping the other two at their default value) that matches the single variation model for DAT or ANS is the one combining DAT and ANS. We suspect that the lower number of IWA for which non-default GA values were estimated are due to GA and ANS eliciting similar model behavior.
+We address this point in the discussion below.
+
+\paragraph{Cluster analysis} In order to investigate the
+ predicted clustering of parameter estimates, we performed a \index{cluster analysis} cluster analysis on the data too see to which degree controls and IWA could be discriminated.
+If our prediction is correct that, compared to IWA, clustering is tighter in controls, we expect that a higher proportion of the data should be correctly assigned to one of two clusters, one corresponding to controls, the other one corresponding to IWA. We chose hierarchical clustering to test this prediction \citep{friedman2001elements}.
+
+We combined the data for subject and object relatives into one respective data set.
+We calculated the dendrogram and cut the tree at 2, because we are only looking for the discrimination between controls and IWA. The results of this are shown in Table~\ref{table:hclustSO}. The clustering is able to identify controls better than IWA, but the identification of IWA is better than chance (50\%). 
+Discriminative ability might improve if all 11 constructions in \cite{CaplanEtAl2015} were to be used; this will be investigated in future work.
+
+\begin{table}
+\begin{tabular}{ccccc}
+ &\multicolumn{2}{c}{Subject relatives} & \multicolumn{2}{c}{Object relatives}\\
+predicted group &    controls &  IWA & controls & IWA \\ 
+         control      &  \textbf{34}             & 21   &        \textbf{42}   & 24\\
+         IWA           & 12              & \textbf{35}    &         4    & \textbf{32}\\ 
+ \hline        
+         accuracy & 74\% & 63\% & 91\% & 57\%
+\end{tabular}
+\caption{Discrimination ability of hierarchical clustering on the combined data for subject / object relatives. Numbers in bold show the number of correctly clustered data points. The bottom row shows the percentage accuracy.}
+  \label{table:hclustSO}
+\end{table}
+
+
+\subsection{Discussion}
+
+The simulations and cluster analysis from \cite{MaetzigEtAltopics2018} demonstrate overall tighter clustering in parameter estimates for controls, and more variance in IWA. This is evident from the clustering results in Table~\ref{table:hclustSO}.
+These findings are consistent with the predictions of the small-scale study in \cite{PatilEtAl2016}. However, there is considerable variability even in the parameter estimates for controls, more than expected based on the results of \cite{PatilEtAl2016}.
+
+The distribution of non-default parameter estimates (see Figures~\ref{fig:margSR}, \ref{fig:margOR} and Table~\ref{table:normsettingsSO})
+suggest that all three hypotheses are possible explanations for the patterns in our simulation results: compared to controls, estimates for IWA tend to include higher default action times and activation noise scales, and lower goal activation. These effects generally appear to be more pronounced in object relatives vs.\ subject relatives. This means that all the three hypotheses can be considered viable candidate explanations. 
+Overall, more IWA than controls display non-default parameter settings. Although there is evidence that many IWA are affected by all three impairments in our implementation, there are also many patients that show only one or two non-default parameter values. Again, this is more the case in object relatives than in subject relatives.
+
+In general, there is evidence that all three deficits are plausible to some degree. However, IWA differ in the degree of the deficits, and they have a broader range of parameter values than controls.
+Nevertheless, even the controls show a broad range of differences in parameter values, and even though these are not as variable as IWA, this suggests that some of the unimpaired controls can be seen as showing slowed processing, intermittent deficiencies, and resource reduction to some degree.
+
+There are several problems with the current modelling method. First, using the ACT-R framework with its multiple free parameters has the risk of overfitting. We plan to address this problem in three ways in future research: (1) Testing more constructions from the \cite{CaplanEtAl2015} data-set might show whether the current estimates are unique to this kind of construction, or if they are generalisable. (2) We plan to create a new data-set analogous to Caplan's, using German as the test language. Once the English data-set has been analysed and the conclusions about the different candidate hypotheses have been tested on English, a crucial test of the conclusions will be cross-linguistic generalisability.
+A systematic model comparison method such as k-fold cross-validation might 
+serve  as a means to formally compare the implementations of the theoretical claims of aphasic sentence processing.
+
+Second, the use of accuracies as modelling measure has some drawbacks. Informally, in an accuracy value there is less information encoded than in, for example, reading or listening times. In future work, we aim to implement an approach modelling both accuracies and listening times \citep{NicenboimRetrieval2018}. Also, counting each parsing failure as `wrong' might yield overly conservative accuracy values for the model; this can be addressed by assigning a random component into the calculation. This reflects more closely a participant who guesses if he/she did not fully comprehend the sentence.
+
+Third, related to the overfitting problem addressed above, at least two of the varied parameters -- goal activation and activation noise -- lead to similar effects when manipulated in the way described here. 
+More specifically, the decision to use the ANS parameter makes the assumption that the high noise levels for IWA influence all declarative memory retrieval processes, and thus the whole memory, not only the production system. 
+Similarly, assuming lower GA values for IWA amounts to assuming generally lower working memory capacity in those participants, not specifically lower verbal working memory.
+Both parameters lead to a higher rate of retrieval failures. Because of this, it will be worth investigating in future work whether other sources of noise in the ACT-R framework may be a better way to model intermittent deficiencies (see \cite{PatilEtAl2016} for an example).
+
+Lastly, simulating the subject vs.\ object relative tasks separately yields the undesirable interpretation of participants' parameters varying across sentence types. While this is not totally implausible, estimating only one set of parameters for all sentence types would reduce the necessity of making additional theoretical assumptions on the underlying mechanisms, and allows for easier comparisons between different syntactic constructions.  We plan to do this in future work.
+
+Although our method, as a proof of concept, showed that all three hypotheses are supported to some degree, it is worth investigating more thoroughly how different ACT-R mechanisms are influenced by changes in the three varied parameters in the present work. Implementing more of the constructions from \cite{CaplanEtAl2015} will, for example, enable us to explore how the different hypotheses interact with each other in our implementation. 
+
+One possible way to delve deeper into identifying the sources of individual variability in IWA could be to investigate whether sub-clusters show up within the IWA parameter estimates.
+For example, different IWA being grouped together by high noise values could be interpreted as these patients sharing a common source of their sentence processing deficit (in this hypothetical case, our implementation of intermittent deficiencies). We will address this question once we have simulated data for more constructions of the \cite{CaplanEtAl2015} data-set.
+
+
+
+To sum up, we evaluated three well-known verbally stated hypotheses about causes of deficits in  sentence comprehension in aphasia: slowed processing, intermittent deficiency, and resource reduction. We implemented these hypotheses within a computational model of sentence processing, the \cite{LewisVasishth2005} model of cue-based retrieval. The three hypotheses can be implemented by changing the default values of three different parameter values within the Lewis and Vasishth model. Using a large data-set from IWA and unimpaired controls, 
+we estimated the optimal values for each of these parameters for each individual separately. We found that, compared to controls, IWA have more variable optimal parameter values than controls, and that IWA show differential degrees of deficit, where a deficit is considered to exist if an optimal parameter value for an individual  deviates from the default value of the parameter. Thus, all three hypotheses about deficits in sentence comprehension may be viable explanations of processing difficulty; however, for each individual, the degree of impairment along each of these dimensions of slowed processing, intermittent deficiency, and resource reduction is likely to differ. An important implication is that it is not meaningful to state hypotheses about deficits in IWA  in terms of average behavior: multiple causes of deficit may exist in any one individual, and the degree of deficit along each dimension in each individual may differ. Understanding deficits in IWA requires shifting the focus toward understanding the nature of the variability between individuals.
+
+Next, we report a first attempt to leverage the \cite{CaplanEtAl2015} to compare the predictive fit of the direct-access model and the activation-based model.
+
+\section{Competing models of retrieval in aphasia}
+
+\subsection{Materials}
+
+\cite{LissonEtAl2020} investigated the two competing models of retrieval discussed in chapter~\ref{c05}, the direct-access model and the activation-based model. The data used was the self-paced listening dataset  \cite{CaplanEtAl2015} described in section \ref{caplanmaterials}. Here, the dependent variable was summed-up listening times at the verb and the noun inside the relative clause; this region was chosen because we are interested in the retrieval events that happen at the moment that the verb region is processed. The listening times were summed up in these two regions in order to make the comparison between the English subject and relative clause processiing times comparable; in English, the position of the verb is different in subject vs.\ object relatives (see examples \ref{SR} and \ref{OR} below). 
+
+\begin{exe}
+\label{ex-caplan}
+\ex \begin{xlist}
+  \ex\label{SR}{\textbf{Subject Relative (SR):} The girl who \textbf{chased the mother} hugged the boy.}
+  \ex\label{OR}{\textbf{Object Relative (OR):} The girl who \textbf{the mother chased} hugged the boy.}
+  \end{xlist}
+\end{exe}
+
+One assumption made in the implementations of the direct-access and activation-based models was that the picture-selection accuracy would be taken to indicate whether the participant interpreted the relative clause correctly. Since  only 10 out of the 20 items in the \cite{CaplanEtAl2015} had pictures corresponding to the correct vs.\ incorrect interpretations of the relative clause verb (the other items targeted the main clause verb), the modelling was restricted to these 10 items.
+
+\subsection{Results and discussion}
+
+The model comparison using the k-fold cross-validation discussed  in chapter \ref{c05} showed that the activation-based model has a somewhat better predictive  performance  than the direct-access model; the $\widehat{elpd}$ difference between the two models was 115 (SE = 69), in  favor of the activation-based model. The relative differences in $\widehat{elpd}$ for each data-point are shown in Figure~\ref{fig:paulaplot}. 
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{figures/paulaelpdplot}
+\caption{Shown are the differences between the two models in expected pointwise log density for each data-point. Points above the zero line  show an advantage for the activation-based model, and points below the zero line an advantage for the direct-access model. The darkness in the hexagons represents density, with darker hexagons representing more dense data-points.}\label{fig:paulaplot}
+\end{figure}
+
+Figure~\ref{fig:paulaplot} shows that the activation-based model does somewhat better than the direct-access model for the denser regions of the plots, but the difference is not really decisive even when the difference in $\widehat{elpd}$ is viewed graphically in this form.
+
+One problem in interpreting this slight advantage for the activation-based model is the fact that the data used are relatively sparse; only 33 IWAs and 46 controls' data were used. Eight IWAs were excluded because they were in the early post-acute phase, and fifteen others had been classified as IWAs but showed no apparent symptoms of aphasia. For a decisive model comparison, a larger-sample dataset is needed from IWAs and controls.
+
+\section{Concluding remarks}
+
+In this chapter, we report some of our recent attempts at using the largest data-set currently in existence on individuals with aphasia (IWAs) and controls (the \cite{CaplanEtAl2015} data-set). One study investigated individual differences in the behaviour of IWAs vs.\ controls, quantified through the filter of the model's parameters \citep{MaetzigEtAltopics2018}. The second study \citep{LissonEtAl2020} compared the predictions of two competing models of retrieval processes. These approaches open up some very promising directions for future research, when larger data-sets become available.
