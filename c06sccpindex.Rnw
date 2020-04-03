@@ -59,7 +59,7 @@ Table~\ref{tab:params} summarizes relevant parameter values used in the simulati
   \caption{ACT-R/EMMA parameter values.}  \label{tab:params}
 \end{table}
 
-\section[Modelling Reanalysis]{Modelling Reanalysis: Memory and Expectation processes in parsing}\label{sec:sim:II}
+\section[Modelling reanalysis]{Modelling reanalysis: Memory and expectation processes in parsing}\label{sec:sim:II}
 \subsection{Memory and Expectation in Relative Clauses}
 
 \cite{Staub2010a} conducted an experiment that showed effects of both memory retrieval and expectation\index{expectation} at different positions within the same sentence. \cite{Staub2010a} studied the well-known difference between \index{subject-extracted structure} subject-extracted (SRC) and \index{object-extracted structure} object-extracted (ORC) relative clauses as in Example~(\ref{ex:staub10}).
@@ -267,7 +267,7 @@ Second, \index{first-pass regression} first-pass regression proportions are pred
 Third, expectation-based first-pass regressions are only predicted on the determiner of the ORC subject, not on the noun. In the data, however, the effect is found at the determiner \emph{and} the noun. This is most likely a spill-over effect due to delayed parsing in some trials, which is not predicted in this case by the model. It is possible in the model that parsing processes on word n influence the fixation time on word n+1: This happens when a time-out is initiated while the eyes have already moved on to word n+1. However, this does not happen in the simulation, because the detection of the validated expectation is instantaneous, meaning it is part of the first parsing production firing at the determiner. Hence, reanalysis is always initiated before the time-out production can fire. This might be a limitation of the model which will have to be addressed in the future. However, an alternative cause for spill-over effects --- especially, if they span multiple words --- may be that readers delay parsing in order to collect more information before making structural decisions.
 A likely mechanism for delaying parsing processes in this way is to hold words temporarily in the articulatory loop \citep{BaddeleyHitch1974,Baddeley2003}. This possibility will be discussed and tested with a brief simulation, presented below. 
 
-\section[Modelling Underspecification]{Modelling Underspecification: The adaptive interaction between parsing, eye-movement control, and working memory capacity}
+\section[Modelling underspecification]{Modelling underspecification: The adaptive interaction between parsing, eye-movement control, and working memory capacity}
 \label{sec:sim:III}
 \subsection{Good-Enough Parsing}
 \index{good-enough processing}
