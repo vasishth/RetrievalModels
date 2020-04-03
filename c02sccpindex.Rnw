@@ -1,5 +1,5 @@
 
-\chapter{Dependency completion in sentence comprehension} \label{c01}
+\chapter{Dependencies in sentence comprehension} \label{c01}
 
 \section{Memory processes in sentence comprehension}
 
@@ -53,7 +53,7 @@ Seen in this way, a priori it seems unlikely that generalisations about memory d
  
 In the next section, we survey the literature on how constraints on memory might play a role in the formation of dependencies between words in a sentence context. 
  
- \section{Dependency completion in sentence processing} 
+\section{Dependency completion in sentence processing} 
 
 Who did what is a central component of comprehending the meaning of a sentence. We will refer to the process of connecting co-dependents for interpretation as \index{dependency completion} dependency completion.  This can be seen as a word-association process not unlike the one studied in memory research in psychology, but with the crucial difference that the associations lead to the construction of structured representations. 
 
@@ -110,6 +110,15 @@ The distractor \textit{musicians} (in the proactive interference condition \ref{
 Apart from the work mentioned above,pro- and retroactive interference configurations have not been systematically studied in sentence processing; this is an important gap in the literature on interference.  
 
 We turn next to a typology of linguistic dependencies have been investigated in the reading literature. We limit the discussion to work on reading (self-paced readind and eyetracking) because the mapping between  reading time and the predictions of the models under consideration in this book is relatively straightforward to define.
+
+Primarily because there is empirical data available from reading studies on these dependency types, we will focus on three basic classes of dependency:
+
+\begin{enumerate}
+\item \textbf{Subject-verb non-agreement dependencies}. These dependencies involve the grammatical subject of a verb. A simple example would be \textit{The senator read the report.} Here, \textit{senator} is subject of the verb \textit{read}. The reason these are referred to as ``non-agreement'' dependencies is to distinguish them from subject-verb dependencies in which the verb has an overt number marking  that must match that of the subject (at least in subject-agreement languages).  
+\item \textbf{Subject-verb number agreement}. As mentioned above, here, the verb carries number marking that must (in the languages considered here, usually English) agree with that of the subject. A classic example is \textit{The keys to the cabinets are on the table}, where the key dependency is that between \textit{keys} and \textit{are}. These subject-verb number agreement constructions are treated separately from the subject-verb non-agreement dependencies because they behave  very differently, and the empirical data pose some interesting problems for sentence processing models (especially the ones presented in this book).
+\item 
+\textbf{Reflexives and reciprocals}. These dependencies arise between  antecedents and reflexives like English \textit{herself} or Mandarin \textit{ziji}; and reciprocals like English \textit{each other}. These dependencies are special because they involve the Binding theory, a central construct in linguistic theory; empirically, what's interesting is that they seem to show distinct patterns of dependency completion time than the other types mentioned above. 
+\end{enumerate}
 
 \section{Subject-verb non-agreement dependencies}
 
@@ -953,6 +962,9 @@ Thus, for reflexives, the conclusion one can draw from these data is not as clea
 
 \section{Concluding remarks}
 
-The reading studies that have investigated different types of dependency constructions show some limited evidence for inhibitory and facilitatory interference, but what stands out from the reviewing the published evidence \citep{JaegerEngelmannVasishth2017} is the generally low statistical power of the published studies. If the meta-analytical estimates of inhibitory and facilitatory interference effects are accurate estimates of the true underlying effects, then none of the published reading studies so far can be considered properly powered for detecting the effects. We discuss the implications of this point about low power at length in several papers \citep{VasishthMertzenJaegerGelman2018,nicenboimexploratory,JaegerMertzenVanDykeVasishth2019,NicenboimPreactivation2019}.
+The reading studies that have investigated these different types of dependency constructions show very limited evidence for inhibitory and facilitatory interference. Although subject-verb non-agreement dependencies seem to often show patterns consistent with inhibitory interference, grammatical subject-verb dependencies often do not. This is a puzzle for similarity-based interference researchers. Furthermore, it has been argued that reflexives (and perhaps also reciprocals) are immune to inhibitory or facilitatory interference because Binding theory ensures that the antecedent is unerringly found in memory. If this claim turns out to be true, it would be an interesting and important exception to the general principles of interference that are claimed to apply in sentence processing. One important implication would be that linguistic constraints, often subtle constraints, can play a greater role in online processing than general working memory constraints. This would show, inter alia, that sentence processing is at least partly subject to purely linguistic constraints.
+
+
+One thing that stands out from the reviewing the published evidence \citep{JaegerEngelmannVasishth2017} is the generally low statistical power of the published studies. If the meta-analytical estimates of inhibitory and facilitatory interference effects are accurate estimates of the true underlying effects, then none of the published reading studies so far can be considered properly powered for detecting the effects. We discuss the implications of this point about low power at length in several papers \citep{VasishthMertzenJaegerGelman2018,nicenboimexploratory,JaegerMertzenVanDykeVasishth2019,NicenboimPreactivation2019}.
 
 This is a disappointing empirical starting point for evaluating the computational models considered in this book. As discussed in the previous chapter, one of the \citep{rp} criteria for a persuasive model fit---higher precision  data---has not yet been met in the literature.  Nevertheless, given the data that are available, it is possible to draw some initial conclusions  about the models' performance. That is what the rest of this book tries to achieve. Our hope is that some day there will be higher precision benchmark data for evaluating sentence processing models of the sort discussed here.      
