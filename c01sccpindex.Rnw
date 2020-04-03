@@ -1,6 +1,4 @@
-\chapter{The motivation for this book} \label{c00}
-
-\section{Introduction}
+\chapter{Introduction} \label{c00}
 
 A large body of work in cognitive science is concerned with
 understanding the constraints on human language comprehension and
@@ -21,11 +19,11 @@ reproducibility, and to allow others to use and extend the
 computational models presented here, all the associated data and code
 for this book have been made available from the following repository:
 
-https://github.com/vasishth/RetrievalModels.
+https://vasishth.github.io/RetrievalModels.
 
-In the next few subsections, we quickly survey some important aspects of previous research on sentence processing, focusing on two important and closely related ideas: the role of working memory constraints and the role of predictive processing.
+In the next few subsections, we quickly survey some important aspects of previous research on sentence processing, focussing on two important and closely related ideas: the role of working memory constraints and the role of predictive processing.
 
-\subsection{Working memory in theories of sentence comprehension}
+\section{Working memory in theories of sentence comprehension}
 
 \index{working memory}
 
@@ -43,7 +41,7 @@ syntactic complexity in sentence processing by indirectly invoking a
 limit on working memory capacity. They developed a measure of \index{structural complexity}
 structural complexity that was meant to correlate with memory
 limitations \cite[480-482]{MillerChomsky63}: the ratio between the
-non-terminal and terminal nodes in the tree-representation of a
+non-terminal and terminal nodes in the tree representation of a
 sentence (i.e., a global ratio) was taken as a measure of ``the amount
 of computation per input symbol that must be performed''
 \cite[480]{MillerChomsky63}.  For example, the ratio of non-terminals
@@ -56,14 +54,13 @@ predictor of processing complexity. This line of work on complexity
 continues to be expanded on today.
 
 \index{center embedding}
-The double center embedding construction is a classic example that
+The double center-embedding construction is a classic example that
 illustrates this shift in emphasis from limits on working memory \index{working memory capacity}
 capacity to the constraints imposed on the predictive process.
 Janet Fodor is cited in \cite{frazier85} as noticing that in
-English complex multiple center embeddings have surprisingly been
-found to be easier to process when an embedded verb is missing (i.e.,
+English, complex multiple center embeddings are  easier to process when the middle verb is missing (i.e.,
 when the sentence is ungrammatical), compared to when the sentence has
-the correct syntactic structure . Consider the following sentences:
+the correct syntactic structure. Consider the following sentences:
 
 \begin{exe}
 \ex \label{ungramCE}
@@ -223,7 +220,7 @@ eyetracking, \cite{MalsburgVasishth2013} suggested that low working
 memory capacity participants may underspecify more often in the face of
 temporary ambiguity; also see \cite{Traxler2007}.
 
-\subsection{Prediction in sentence processing}
+section{Prediction in sentence processing}
 
 \index{Syntactic Prediction Locality Theory}
 In his Syntactic Prediction Locality Theory \citep{Gibson1998} and his \index{Dependency Locality Theory}
@@ -260,7 +257,7 @@ For example, \cite{MacDonaldChristiansen2002} wrote an important critique of \ci
 low-capacity participants.\footnote{It is worth noting here as an aside that capacity was measured using the \cite{DanemanCarpenter1980} reading span task, which may index experience with language rather than inherent capacity per se \citep{wellsetal}.} MacDonald and Christiansen argued that the differences in processing difficulty attributed to inherent  \index{capacity differences}
 capacity differences may be due to an interaction between experience with language and biological (neural architectural) factors that have nothing to do with the capacity of a separate working memory system.
 
-\subsection{Working memory and prediction as explanations for processing difficulty}
+\section{Working memory and prediction as explanations for processing difficulty}
 
 \index{memory load} \index{working memory capacity}
 In summary,  memory load and limits on working memory capacity are candidate explanation for certain aspects of language processing, but certain other aspects of processing have a better explanation in terms of probabilistic predictive processes.  Much of the inspiration for memory
@@ -286,11 +283,11 @@ can be summarized as follows. Of course, not everyone will agree with this summa
 \item Experience with language affects our probabilistic knowledge of language, and consequently, our comprehension \citep{MacDonaldChristiansen2002,wellsetal}. 
 \end{enumerate}
 
-\section{Three gaps in the sentence processing literature}
+\section{Some gaps in the sentence processing literature}
 
-Although the last sixty years have seen significant advances in our understanding of sentence comprehension processes, we see three major gaps in existing work. 
+Although the last sixty years have seen significant advances in our understanding of sentence comprehension processes, we see several major gaps in existing work (there may be others; these are just the ones that stood out for us during the modelling work reported here). 
 
-\subsection{The scarcity of computationally implemented models}
+\subsection{The relative scarcity of computationally implemented models}
 
 \index{computational modelling} \index{mathematical modelling}
 The first gap is that, instead of making computational/mathematical
@@ -436,70 +433,17 @@ garden-path effects would suffice.  The consequence has been that a
 lot of the data published in psycholinguistics is likely to come from
 underpowered studies. As we discuss below (section \ref{typem}), this has very bad consequences for theory development.
 
-\section{The goals of this book}
-
-The present book is a first attempt to address the gaps discussed in the previous section from a very particular perspective.
-In the following pages, we will spell out a theory of
-sentence processing \citep{LewisVasishth2005} that uses (or is inspired by) a specific cognitive
-architecture, \index{ACT-R} ACT-R \citep{AndersonEtAl2004}, that has been designed for
-modelling general cognitive processes. ACT-R is a reasonable choice
-for a framework because it is a mature architecture that has been
-widely used in artificial intelligence, human-computer interaction,
-psychology, and other areas of cognitive science to model human
-information processing (for examples, see the literature listed on the home page for the architecture: http://act-r.psy.cmu.edu/). 
-
-Throughout this book, it is important to keep in mind that this is not a book about sentence processing models in general, but about one particular class of models, those relating to retrieval processes. The reader should therefore not be surprised to find that the discussion focusses on one kind of modelling approach. 
-
-\subsection{Providing reproducible model code}
-
-One of the great failures of psycholinguistics has been that model code, as well as experimental data, are rarely made public (there are, of course, some exceptions, particularly in recent years). A major goal of this book is to help change this unfortunate culture. This book can be seen as providing the reader with a complete report of all the modelling work on retrieval processes that we have done between 2005 and 2020. All the code and data associated with the modelling reported here can be reproduced by the reader, and extended and used to test novel predictions of the models.\footnote{See: https://github.com/vasishth/RetrievalModels.} Of course, we recognize that code rot---the slow deterioration and increasing unusability of software over time---is inevitable. It is highly likely that five years from now the code provided will not work as expected, unless the reader can obtain the ACT-R, lisp, R, and Stan versions we used in creating the models. Even if  the code fails to run some years from now, our hope is that at least the code can be adapted or rewritten to reproduce and extend the models presented here.
-
-If the reader intends to run the code in this book, they should install ACT-R 6.0, and the following R packages:
-
-<<Rpackages>>=
-sessionInfo()
-@
-
-\subsection{Modelling average effects as well as individual differences}
-
-The book will discuss the modelling of both average effects and of individual differences. Specifically, we will illustrate how we could investigate (a) \index{individual differences}
-the influence of individual differences in \index{working memory capacity} working memory capacity on parsing, (b) the role of parsing strategy, including task-dependent underspecification,  (c) the interaction between individual working memory capacity, grammatical knowledge, and parsing, (d) the interaction between the eye-movement control system and sentence comprehension, and (e) how individual-level differences in the behaviour of individuals with aphasia might be explained in terms of model parameters. 
-
-\subsection{Developing a set of modelling and empirical benchmarks for future model comparison}
-
-A further goal of the book is to provide the next generation of
-researchers with a synthesis of the modelling and empirical work that
-followed the publication of the article by
-\cite{LewisVasishth2005}. Our hope is that others will be able to
-build and improve on the present work, either falsifying or extending
-the empirical support for the model claims and thereby advancing our
-understanding of the important open theoretical issues, or developing
-competing models that can outperform the ones presented here.  Some \index{competing models}
-attempts at developing competing models that aim to outperform the
-models presented in the present book already exist
-\citep{SmithFranckTaborCogSci2018,rasmussen2017left,cho2017incremental,parker2019cue}. One
-problem common to all these models is that they take up one or two
-empirical phenomena of interest (a common choice is subject vs.\
-object relatives, usually in English). This often leads to overfitting
-the model to a very narrow set of facts. A remarkable number of
-modelling studies limit themselves to narrow topics like relative clause processing.  What is missing in the field is a set of \index{benchmark empirical tests}
-benchmark empirical tests that a model can be evaluated on in order to demonstrate superior fit to data, relative to some baseline model. As a first step towards developing such a benchmark, we provide in one place the data-sets from reading studies on interference effect that happen to be publicly available.
-
-Regarding the data used in this book, we focus almost exclusively on reading data, from \index{self-paced reading} self-paced reading or \index{self-paced listening} self-paced listening, and \index{eyetracking} eyetracking studies. This is because we primarily set out to model the reading process;  an exception is the modelling of visual world data reported in  \cite{PatilEtAl2016}.
-We chose reading times as a convenient starting point because the \cite{LewisVasishth2005} model delivers predictions in terms of retrieval time and retrieval accuracy, and dependent measures in reading studies (e.g., fixation durations, comprehension accuracy) map relatively straightforwardly to this measure.  We will therefore not discuss the large body of research using other methods such as EEG and the visual world paradigm.  It is of course important to develop computational models that can be related to data that come from these methods. We hope
-that future generations will take up that task.
-
-\section{Desiderata for a good model fit}
+\subsection{Unclear desiderata for a good model fit}
 
 In psycholinguistics, there are no general standards on how to
-quantify a good model fit. A standard criterion is root mean squared
-deviation, which quantifies the average deviation from the observed
-value, but there are better approaches. We discuss two important
+quantify a good model fit. Sometimes root mean squared
+deviation is used, which quantifies the average deviation from the observed
+value B ut there are better approaches. We discuss two important
 criteria below that we feel are appropriate for modelling work in
 psycholinguistics; both are related to each other and are
 fundamentally graphical in nature.
 
-\subsection{The Roberts and Pashler (2000) criteria}
+\subsubsection{The Roberts and Pashler (2000) criteria}
 
 In an influential paper, \cite{rp} pointed out that a quantitative
 model's fit to the data is only convincing when two conditions are
@@ -714,7 +658,7 @@ Apart from the incorrect inferencs that  arise due to Type M/S error, \index{Typ
 another major problem in the psycholinguistics is statistically incorrect inferences based on null results. \index{null results} Null results under repeated sampling can only be interpreted if there is a demonstration of sufficient statistical power \citep{hoenigheisey} computed before conducting the studies. In the past, \index{power} power has never been considered in such studies, but the situation has improved in recent years \citep[e.g.,][]{stack2018failure}.  This point about null results in low-power experiments is demonstrated in the upper part of Figure \ref{fig:typemdemo}. If a researcher were to run an experiment with 10\% power repeatedly, they would usually get a null result. Accepting the null result would be a mistake here, because the true estimate is not zero; it is just impossible to detect accurately. Such incorrect inferences are quite common in psycholinguistics. The problems with such misinterpretations  have been brought up repeatedly in the psychology literature 
 \citep[e.g.,][]{cohen1962statistical}. But these problems with incorrect inferences from low power studies have generally have been ignored; a likely reason for this misuse of statistical theory is the cursory statistical education usually available in psycholinguistic curricula.
 
-\subsection{The Freedman-Spiegelhalter approach}
+\subsubsection{The Freedman-Spiegelhalter approach}
 
 \index{Bayesian} \index{clinical trials}
 In Bayesian approaches to clinical trials, an approach for evaluating predictions exists that is closely related to the Robert and Pashler criteria discussed above.\footnote{The following section is from \cite{VasishthGelman2019}, which is available under a CC-BY 4.0 Attribution International license.}
@@ -789,6 +733,60 @@ Only situation E shows consistency with the quantitative prediction. A and B are
 In contrast to the ROPE approach described above, what models in psycholinguistics usually predict is the sign of an effect, but not the magnitude or the uncertainty. This is one reason why \index{null hypothesis significance testing} null hypothesis significance testing is so popular: the question whether an effect is ``present'' vs.\ ``absent'' is easily answered by looking up the  p-value. \index{p-value}
 
 But a prediction like ``the effect is present'' is not particularly useful because this implies that an effect with estimated mean $500$ ms that is statistically significant would be consistent with the prediction just as well as a significant $5$ ms effect. However, a 5 ms effect may have no special relevance for theory development.
+
+
+\section{The goals of this book}
+
+The present book is a first attempt to address the gaps discussed in the previous section from a very particular perspective.
+In the following pages, we will spell out a theory of
+sentence processing \citep{LewisVasishth2005} that uses (or is inspired by) a specific cognitive
+architecture, \index{ACT-R} ACT-R \citep{AndersonEtAl2004}, that has been designed for
+modelling general cognitive processes. ACT-R is a reasonable choice
+for a framework because it is a mature architecture that has been
+widely used in artificial intelligence, human-computer interaction,
+psychology, and other areas of cognitive science to model human
+information processing (for examples, see the literature listed on the home page for the architecture: http://act-r.psy.cmu.edu/). 
+
+Throughout this book, it is important to keep in mind that this is not a book about sentence processing models in general, but about one particular class of models, those relating to retrieval processes. The reader should therefore not be surprised to find that the discussion focusses on one kind of modelling approach. 
+
+\subsection{Providing reproducible model code}
+
+One of the great failures of psycholinguistics has been that model code, as well as experimental data, are rarely made public (there are, of course, some exceptions, particularly in recent years). A major goal of this book is to help change this unfortunate culture. This book can be seen as providing the reader with a complete report of all the modelling work on retrieval processes that we have done between 2005 and 2020. All the code and data associated with the modelling reported here can be reproduced by the reader, and extended and used to test novel predictions of the models.\footnote{See: https://vasishth.github.io/RetrievalModels.} Of course, we recognize that code rot---the slow deterioration and increasing unusability of software over time---is inevitable. It is highly likely that five years from now the code provided will not work as expected, unless the reader can obtain the ACT-R, lisp, R, and Stan versions we used in creating the models. Even if  the code fails to run some years from now, our hope is that at least the code can be adapted or rewritten to reproduce and extend the models presented here.
+
+If the reader intends to run the code in this book, they should install ACT-R 6.0, and the following R packages:
+
+<<Rpackages>>=
+sessionInfo()
+@
+
+\subsection{Modelling average effects as well as individual differences}
+
+The book will discuss the modelling of both average effects and of individual differences. Specifically, we will illustrate how we could investigate (a) \index{individual differences}
+the influence of individual differences in \index{working memory capacity} working memory capacity on parsing, (b) the role of parsing strategy, including task-dependent underspecification,  (c) the interaction between individual working memory capacity, grammatical knowledge, and parsing, (d) the interaction between the eye-movement control system and sentence comprehension, and (e) how individual-level differences in the behaviour of individuals with aphasia might be explained in terms of model parameters. 
+
+\subsection{Developing a set of modelling and empirical benchmarks for future model comparison}
+
+A further goal of the book is to provide the next generation of
+researchers with a synthesis of the modelling and empirical work that
+followed the publication of the article by
+\cite{LewisVasishth2005}. Our hope is that others will be able to
+build and improve on the present work, either falsifying or extending
+the empirical support for the model claims and thereby advancing our
+understanding of the important open theoretical issues, or developing
+competing models that can outperform the ones presented here.  Some \index{competing models}
+attempts at developing competing models that aim to outperform the
+models presented in the present book already exist
+\citep{SmithFranckTaborCogSci2018,rasmussen2017left,cho2017incremental,parker2019cue}. One
+problem common to all these models is that they take up one or two
+empirical phenomena of interest (a common choice is subject vs.\
+object relatives, usually in English). This often leads to overfitting
+the model to a very narrow set of facts. A remarkable number of
+modelling studies limit themselves to narrow topics like relative clause processing.  What is missing in the field is a set of \index{benchmark empirical tests}
+benchmark empirical tests that a model can be evaluated on in order to demonstrate superior fit to data, relative to some baseline model. As a first step towards developing such a benchmark, we provide in one place the data-sets from reading studies on interference effect that happen to be publicly available.
+
+Regarding the data used in this book, we focus almost exclusively on reading data, from \index{self-paced reading} self-paced reading or \index{self-paced listening} self-paced listening, and \index{eyetracking} eyetracking studies. This is because we primarily set out to model the reading process;  an exception is the modelling of visual world data reported in  \cite{PatilEtAl2016}.
+We chose reading times as a convenient starting point because the \cite{LewisVasishth2005} model delivers predictions in terms of retrieval time and retrieval accuracy, and dependent measures in reading studies (e.g., fixation durations, comprehension accuracy) map relatively straightforwardly to this measure.  We will therefore not discuss the large body of research using other methods such as EEG and the visual world paradigm.  It is of course important to develop computational models that can be related to data that come from these methods. We hope
+that future generations will take up that task.
 
 \section{Looking ahead}
 
