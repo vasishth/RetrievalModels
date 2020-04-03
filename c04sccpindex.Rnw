@@ -201,7 +201,7 @@ Taking into account item prominence as presented above, these unexplained effect
 
 Next, we investigate the prediction space of LV05 under assumption 3$'$ that retrieval cues can be associated with multiple features to varying degrees.
 
-\subsection{Multi-associative Cues}
+\subsection{Multi-associative cues}
 \label{sec:cueconf}
 \index{multi-associative cues}
 The noun \textit{surgeon} in the sentence ``the surgeon who treated Jennifer had pricked herself'' receives increased activation in memory when retrieval is triggered at \textit{himself} because it matches the syntactic cue \actrcue{CCOM}.
