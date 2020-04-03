@@ -438,7 +438,7 @@ We then spell out how our revisions to the model are implemented and, finally, p
 
 \newpage
 
-\section{Parameter estimation given data}
+\section{Parameter estimation given data and a model}
 
 In this section, we illustrate how model predictions can be derived by learning from data, using a parameter estimation approach called \index{Approximate Bayesian Computation} Approximate Bayesian Computation or ABC. The ABC approach is useful when the model cannot easily be  expressed as a likelihood. In the discussion below, we illustrate how ABC can be used in future work to evaluate model predictions, for predicting both average effects and individual-level effects.
 
