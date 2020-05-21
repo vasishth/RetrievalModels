@@ -8,7 +8,7 @@
 % \documentclass[spanningrule]{../cambridge7A}% option
 
 \usepackage{pifont}
-\usepackage{natbib}
+\usepackage[sort]{natbib}
 % \usepackage[numbers]{natbib}% option
 \usepackage[figuresright]{rotating}
 \usepackage{floatpag}
@@ -59,6 +59,8 @@
 
 % \hyphenation{docu-ment baseline-skip polar}
 \hyphenation{Hast-ings baseline-skip polar}
+\hyphenation{Diere-rich baseline-skip polar}
+
 
 % for this documentation, table of contents lists up to subsection level
 \setcounter{tocdepth}{2}
@@ -145,6 +147,10 @@ opts_chunk$set(fig.path='figures/fig-', fig.align='center', fig.show='hold',warn
 options(replace.assign=TRUE,show.signif.stars=FALSE)
 options(replace.assign=TRUE,width=75)
 opts_chunk$set(dev='postscript')
+
+start_y_at_zero<-function(){
+scale_y_continuous(expand = c(0, 0))
+}
 
 source("R/funnelplot.R")
 source("R/prettyfunnelplot.R")
