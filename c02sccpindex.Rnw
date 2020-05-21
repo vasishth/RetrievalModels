@@ -12,7 +12,7 @@ Figure~\ref{fig:faneffect}  shows a schematic illustration of the fan effect. Su
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=\textwidth]{figures/spreadingactivation}
+\includegraphics[width=6cm]{figures/spreadingactivation}
 \caption{A schematic illustration of the fan effect. Searching for an object that is gray and a square (the target item) is more difficult when competing items have one or more features matching cues used for identifying the target item.}\label{fig:faneffect}
 \end{figure}
  
@@ -67,7 +67,7 @@ As discussed by \cite{lewis:magical},  there are in principle two possible seria
 Following the terminology from memory research in cognitive psychology, \cite{lewis:magical} refers to these configurations  as \index{proactive interference} proactive  and retroactive interference, respectively. \index{retroactive interference}
 As an example, consider the eye-tracking study by
 \cite{VanDykeMcElree2011}.
-As shown in example \ref{ex:proretrovandyke2011}, the critical region is the verb \textit{compromised}.
+As shown in Example \ref{ex:proretrovandyke2011}, the critical region is the verb \textit{compromised}.
 Assuming that this verb takes an animate noun as subject, 
 at the verb the animate subject \textit{attorney} must be retrieved. In 
 (\ref{ex:proretrovandyke2011}b), the animate distractor noun \textit{witness} appears before the target noun, leading to a proactive interference configuration. The baseline condition here is (\ref{ex:proretrovandyke2011}a), which has an inanimate distractor noun \textit{motion}.   
@@ -107,9 +107,9 @@ The distractor \textit{musicians} (in the proactive interference condition \ref{
 \end{exe}
 
 \index{proactive interference} \index{retroactive interference}
-Apart from the work mentioned above,pro- and retroactive interference configurations have not been systematically studied in sentence processing; this is an important gap in the literature on interference.  
+Apart from the work mentioned above, pro- and retroactive interference configurations have not been systematically studied in sentence processing; this is an important gap in the literature on interference.  
 
-We turn next to a typology of linguistic dependencies have been investigated in the reading literature. We limit the discussion to work on reading (self-paced readind and eyetracking) because the mapping between  reading time and the predictions of the models under consideration in this book is relatively straightforward to define.
+We turn next to a typology of linguistic dependencies that have been investigated in the reading literature. We limit the discussion to work on reading (self-paced readind and eyetracking) because the mapping between  reading time and the predictions of the models under consideration in this book is relatively straightforward to define.
 
 Primarily because there is empirical data available from reading studies on these dependency types, we will focus on three basic classes of dependency:
 
@@ -168,7 +168,7 @@ The worker was surprised that the resident who was living near the dangerous nei
 This experiment had a $2\times 2$ factorial design which varied whether a noun (\textit{warehouse}/\textit{neighbour})  that appears between a subject-verb dependency (\textit{resident}-\textit{was complaining}) was a grammatical subject (High Syntactic interference) or not (Low Syntactic interference), and was animate (High Semantic interference) or not (Low Semantic interference).  The research question was the following: when a subject-verb dependency is to be completed at the verb phrase \textit{was complaining}, can a distractor noun (such as \textit{neighbour}) that overlaps in syntactic and semantic features with the grammatical subject (\textit{resident}) cause greater difficulty in completing the dependency at the verb?
 Van Dyke found that syntactic interference effects occurred earlier than semantic interference effects: when the distractor noun was in subject position inside the relative clause (compared to non-subject position), an interference effect showed up earlier compared to the case where the distractor noun was animate. This suggests that syntactic cues may have priority or may be weighted more heavily than semantic cues.
 
-As mentioned above, \cite{VanDykeMcElree2011} also investigated interference in \index{proactive} proactive and \index{retroactive} retroactive configurations (see examples \ref{ex:proretrovandyke2011} above), and argued that \index{retroactive interference} retroactive interference effects are stronger than \index{proactive interference} proactive interference effects.
+As mentioned above, \cite{VanDykeMcElree2011} also investigated interference in \index{proactive} proactive and \index{retroactive} retroactive configurations (see Examples \ref{ex:proretrovandyke2011} above), and argued that \index{retroactive interference} retroactive interference effects are stronger than \index{proactive interference} proactive interference effects.
 
 <<jvdmetaanalysis,echo=FALSE,cache=TRUE>>=
 dat<-read.csv("data/MetaAnalysisData.csv",header=TRUE,sep=";")
@@ -343,7 +343,7 @@ One explanation for this facilitation is in terms of a \index{lognormal race} lo
  \begin{figure}[!htbp]
 \centering
 \includegraphics[width=10cm]{figures/c02cs2018implausible.pdf}
-\caption{Visualization of two conditions in the Cunnings and Sturt 2018 experiment, and the predictions of the cue-based retrieval model. The verb \textit{shattered} attempts to retrieve an item in memory that is a direct object and has the property ``is shatterable''. In both the (a) and (b) conditions shown, the direct object (which is the  target noun that should be retrieved) matches the direct object retrieval cue. However, in (b) the distractor noun matches the ``is shatterable'' cue. As a consequence, in (b), both  the target and distractor nouns enter into a race, and whichever item is non-deterministically retrieved is the winner of the race. This race process leads to a faster reading time at the verb \textit{shattered} in (b) vs.\ (a). See Section \ref{core03predictions} for more discussion about the assumed race process.} \label{fig:cunningssturt}
+\caption{Visualization of two conditions in the Cunnings and Sturt (2018) experiment, and the predictions of the cue-based retrieval model. The verb \textit{shattered} attempts to retrieve an item in memory that is a direct object and has the property ``is shatterable''. In both the (a) and (b) conditions shown, the direct object (which is the  target noun that should be retrieved) matches the direct object retrieval cue. However, in (b) the distractor noun matches the ``is shatterable'' cue. As a consequence, in (b), both  the target and distractor nouns enter into a race, and whichever item is non-deterministically retrieved is the winner of the race. This race process leads to a faster reading time at the verb \textit{shattered} in (b) vs.\ (a). See Section \ref{core03predictions} for more discussion about the assumed race process.} \label{fig:cunningssturt}
 \end{figure}
 
 Subject-verb dependencies have also been investigated in the context of  number agreement. Here, the retrieval cue of interest is number marking: at least in English, the subject must agree in number with the verb. Dependencies involving number agreement exhibit some interesting peculiarities, as we discuss next.
@@ -370,8 +370,8 @@ Many sentence comprehension studies have shown that the illusion has the effect 
 
 In sentence comprehension, one explanation for the \index{agreement attraction} agreement attraction effect is in terms of \index{cue-based retrieval} cue-based retrieval.  \cite{WagersLauPhillips2009} suggested that when the parser encounters the verb, the mismatch between the expected number on the verb and the actual number marking triggers a retrieval process. In the above example, the verb triggers a search for a plural-marked noun that is the subject of the verb. This leads to occasional misretrievals of the only plural marked noun in the sentence, \textit{cabinets}. An obvious problem with this account is that it seems unlikely that the reader interprets the sentence to mean that the cabinets are  on the table; of course, such an objection assumes that the reader is engaged in fully interpreting the sentence, which itself may be a questionable assumption \citep{SanfordSturt2002,FerreiraFerraroBailey2002}; we return to the question of \index{underspecification} underspecification later (chapter \ref{c04}). Note that the explanation for subject-verb \index{number agreement} number agreement conditions is the same as that for Cunnings and Sturt's  data for their  sentences (\ref{ex:cunningssturtjml2017} above). One important difference between the  Wagers et al.\  design and  that of Cunnings and Sturt  is that in the  latter it is very plausible that the reader incorrectly retrieves the distractor as a subject (although Cunnings and Sturt did not check whether readers did in fact misinterpret the sentence). It is not clear whether such a \index{misretrieval} misretrieval occurs in subject-verb number agreement.
   
-Another possible explanation for the agreement attraction effect is in terms of the \index{feature overwriting} feature overwriting model of \cite{Nairne1990}. In example~(\ref{example2}),
-both the nouns are marked singular, whereas in example~(\ref{example1}) the nouns have different number marking. 
+Another possible explanation for the agreement attraction effect is in terms of the \index{feature overwriting} feature overwriting model of \cite{Nairne1990}. In Example~(\ref{example2}),
+both the nouns are marked singular, whereas in Example~(\ref{example1}) the nouns have different number marking. 
 As discussed in \cite{VillataFranck},
 the similarity in number of the two nouns in (\ref{example2}) could be the underlying cause for increased processing difficulty, compared to (\ref{example1}).
 The identical number marking in (\ref{example2}) could lead to increased \index{confusability} confusability between the two nouns, leading to longer reading times at the moment when a subject noun is to be accessed at the auxiliary verb. 
@@ -388,12 +388,12 @@ datMismatchAgrmt<-list(y=MismatchAgrmt$Effect,
                        s=MismatchAgrmt$SE,
                        n=dim(MismatchAgrmt)[1])
 
-fit <- stan(file='StanModels/rema2.stan', data=datMismatchAgrmt,
+fit2 <- stan(file='StanModels/rema2.stan', data=datMismatchAgrmt,
             iter=2000, chains=4, seed=987654321,
             control = list(adapt_delta = 0.99))
 
 paramnames<-c("mu","tau")
-params<-extract(fit,pars=paramnames)
+params<-extract(fit2,pars=paramnames)
 
 #print(fit,pars=paramnames)
 mu_targetmismatch<-round(c(mean(params$mu),quantile(params$mu,prob=c(0.025,0.975))))
@@ -438,12 +438,12 @@ datMatchNumAgrmt<-list(y=MatchNumAgrmt$Effect,
                        s=MatchNumAgrmt$SE,
                        n=dim(MatchNumAgrmt)[1])
 
-fit <- stan(file='StanModels/rema2.stan', data=datMatchNumAgrmt,
+fit3 <- stan(file='StanModels/rema2.stan', data=datMatchNumAgrmt,
             iter=2000, chains=4, seed=987654321,
             control = list(adapt_delta = 0.99))
 
 paramnames<-c("mu","tau")
-params<-extract(fit,pars=paramnames)
+params<-extract(fit3,pars=paramnames)
 
 #print(fit,pars=paramnames)
 mu_targetmatchnum<-round(c(mean(params$mu),quantile(params$mu,prob=c(0.025,0.975))))
@@ -467,7 +467,7 @@ The tendency towards a speedup in constructions like (\ref{example2gr}) could ha
 
 Based on the studies from their lab, Wagers and colleagues conclude that there is no difference in processing in the two grammatical agreement attraction conditions  shown in  (\ref{example1gr}, \ref{example2gr}). Wagers et al.\ explain this null effect as follows. The subject noun predicts a verb with a particular number marking, and this prediction is validated when the verb is encountered. In such a situation, no retrieval process is triggered.  This proposal has some difficulties. A great deal of work on English \citep{Gibson2000,grodner,Bartek2011} has consistently shown that even in grammatical constructions, a retrieval process is triggered. It seems implausible that retrieval is not triggered only in this one particular case, where the number feature is involved.
 
-How strong is the evidence for the null results reported in the Dillon et al., Wagers et al., and Lago et al.\ studies? When \index{p-value} p-values are greater than $0.05$, this is not necessarily evidence that the null hypothesis is true. As  discussed in section \ref{typem},when \index{power} power is low, it is hardly surprising that repeated experiments show null results. This point has somehow been lost in the course of translating statistical theory to  psychological and linguistic applications. Instead of concluding that they have no evidence for an effect, researchers will incorrectly conclude that ``absence of evidence is evidence of absence''. 
+How strong is the evidence for the null results reported in the Dillon et al., Wagers et al., and Lago et al.\ studies? When \index{p-value} p-values are greater than $0.05$, this is not necessarily evidence that the null hypothesis is true. As  discussed in section \ref{typem}, when \index{power} power is low, it is hardly surprising that repeated experiments show null results. This point has somehow been lost in the course of translating statistical theory to  psychological and linguistic applications. Instead of concluding that they have no evidence for an effect, researchers will incorrectly conclude that ``absence of evidence is evidence of absence''. 
 
 What would have happened if statistical power were higher than in the studies mentioned above? The Dillon et al., Wagers et al., and Lago et al.\  studies generally have small sample sizes, leading to power far below 80\%. \index{power}
  \cite{NicenboimEtAlCogSci2018} increased power by increasing sample size to 185 subjects, and by increasing the strength of the interference manipulation. Their design involved grammatical German sentences with number interference. Here, a subject noun and a verb always have two nouns intervening between them. In the high-interference condition, all three nouns match the number  feature that is on the verb; in the low-interference condition, only the subject noun has the number feature that is on the verb. Thus, this design seeks to increase the magnitude of the number interference effect by increasing the \index{fan effect} fan, i.e., increasing the number of nouns that match the retrieval cues.
@@ -519,12 +519,12 @@ Example~(\ref{reflpro}) shows a \index{proactive interference} proactive interfe
 Example~(\ref{reflretro}) shows a \index{retroactive interference} retroactive interference configuration:  the distractor noun \textit{Jonathan} appears between the subject, which is the antecedent of the reflexive, and the reflexive \textit{himself}. 
 
 In both  configurations, one can investigate the effect of the distractor noun by comparing sentences that either have a masculine distractor noun such as \textit{Jonathan},  or a feminine distractor noun  such as \textit{Jennifer}.  Sturt found no evidence that the reflexive was mistakenly associated with the distractor noun  at the earliest moments of processing, that is, in first-pass reading times.
-As  Sturt puts it (page 542), \index{Principle A} ``Principle A of the \index{binding theory} binding theory operates at the very earliest stages of processing; \dots the gender of the ungrammatical antecedent [the distractor noun] had no effect on early processing, although it affected processing during later stages.''
+As  Sturt puts it (p.\ 542), \index{Principle A} ``Principle A of the \index{binding theory} binding theory operates at the very earliest stages of processing; \dots the gender of the ungrammatical antecedent [the distractor noun] had no effect on early processing, although it affected processing during later stages.''
 In other words, at the earliest moments of processing, based on these \index{null results} null results, reflexives are assumed to be immune to the effects of interference.
 
  Recall that earlier we had seen in subject-verb dependencies that interference effects are robustly seen.
  In the grammatical subject-verb dependencies investigated by Van Dyke and colleagues, we robustly see inhibitory effects, and 
-in ungrammatical subject verb dependencies with number agreement between the distractor and verb, we see a relatively clear indication of facilitation effects. Since the majority of these studies involve self-paced reading, we cannot say whether these inhibitory and facilitatory effects reflect the earliest moments of processing. 
+in ungrammatical subject-verb dependencies with number agreement between the distractor and verb, we see a relatively clear indication of facilitation effects. Since the majority of these studies involve self-paced reading, we cannot say whether these inhibitory and facilitatory effects reflect the earliest moments of processing. 
 An exception is the eyetracking study by \cite{VanDyke2007}; but here too,  first-pass reading time seems to show no interference effects (see Figure~\ref{fig:jvddataplot}). However, in a recent larger-sample eyetracking study involving English, \cite{MertzenEtAlAMLaP2019} did find the predicted inhibitory interference effects in first-pass reading times.
 
 Is the processing of \index{reflexives} reflexives different from those of subject-verb constructions? The answer would be yes if interference effect was seen in subject-verb constructions but not in reflexive constructions. In particular, at the earliest moments of processing, e.g., in first-pass reading times, we would expect to see interference effects in  subject-verb constructions but not in reflexives. \cite{DillonMishlerSloggett2013} were the first to directly compare interference effects in these two dependency types  (their experiment 1).  They compared subject-verb number agreement constructions with reflexives. See (\ref{dillon13agrmt}, \ref{dillon13refl}).
@@ -668,7 +668,7 @@ dillonmeanplot<-ggplot(agr_refl_means_df,
 geom_vline(xintercept=0)+start_y_at_zero()
 @
 
-<<dilloninddiffs,echo=FALSE>>=
+<<dilloninddiffs,echo=FALSE,warnings=FALSE>>=
 u0id<-paste0("r_subj[",unique(crit_orig$subj), ",Intercept]")
 u0<-posterior_samples(m_dillon,
                       pars = u0id,
@@ -965,6 +965,6 @@ Thus, for reflexives, the conclusion one can draw from these data is not as clea
 The reading studies that have investigated these different types of dependency constructions show very limited evidence for inhibitory and facilitatory interference. Although subject-verb non-agreement dependencies seem to often show patterns consistent with inhibitory interference, grammatical subject-verb dependencies often do not. This is a puzzle for similarity-based interference researchers. Furthermore, it has been argued that reflexives (and perhaps also reciprocals) are immune to inhibitory or facilitatory interference because Binding theory ensures that the antecedent is unerringly found in memory. If this claim turns out to be true, it would be an interesting and important exception to the general principles of interference that are claimed to apply in sentence processing. One important implication would be that linguistic constraints, often subtle constraints, can play a greater role in online processing than general working memory constraints. This would show, inter alia, that sentence processing is at least partly subject to purely linguistic constraints.
 
 
-One thing that stands out from the reviewing the published evidence \citep{JaegerEngelmannVasishth2017} is the generally low statistical power of the published studies. If the meta-analytical estimates of inhibitory and facilitatory interference effects are accurate estimates of the true underlying effects, then none of the published reading studies so far can be considered properly powered for detecting the effects. We discuss the implications of this point about low power at length in several papers \citep{VasishthMertzenJaegerGelman2018,nicenboimexploratory,JaegerMertzenVanDykeVasishth2019,NicenboimPreactivation2019}.
+One thing that stands out from reviewing the published evidence \citep{JaegerEngelmannVasishth2017} is the generally low statistical power of the published studies. If the meta-analytical estimates of inhibitory and facilitatory interference effects are accurate estimates of the true underlying effects, then none of the published reading studies so far can be considered properly powered for detecting the effects. We discuss the implications of this point about low power at length in several papers \citep{VasishthMertzenJaegerGelman2018,nicenboimexploratory,JaegerMertzenVanDykeVasishth2019,NicenboimPreactivation2019}.
 
-This is a disappointing empirical starting point for evaluating the computational models considered in this book. As discussed in the previous chapter, one of the \citep{rp} criteria for a persuasive model fit---higher precision  data---has not yet been met in the literature.  Nevertheless, given the data that are available, it is possible to draw some initial conclusions  about the models' performance. That is what the rest of this book tries to achieve. Our hope is that some day there will be higher precision benchmark data for evaluating sentence processing models of the sort discussed here.      
+This is a disappointing empirical starting point for evaluating the computational models considered in this book. As discussed in the previous chapter, one of the \cite{rp} criteria for a persuasive model fit---higher precision  data---has not yet been met in the literature.  Nevertheless, given the data that are available, it is possible to draw some initial conclusions  about the models' performance. That is what the rest of this book tries to achieve. Our hope is that some day there will be higher precision benchmark data for evaluating sentence processing models of the sort discussed here.      
