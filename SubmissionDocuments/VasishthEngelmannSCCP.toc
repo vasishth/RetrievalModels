@@ -1,0 +1,157 @@
+\contentsline {schapter}{Acknowledgements}{viii}{chapter*.2}% 
+\contentsline {schapter}{Preface}{x}{chapter*.3}% 
+\contentsline {schapter}{{List of illustrations}}{xi}{chapter*.4}% 
+\contentsline {schapter}{List of tables}{xix}{chapter*.5}% 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Working memory in theories of sentence comprehension}{2}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Prediction in sentence processing}{6}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Working memory and prediction}{7}{section.1.3}% 
+\contentsline {section}{\numberline {1.4}Current beliefs about constraints on sentence comprehension}{7}{section.1.4}% 
+\contentsline {section}{\numberline {1.5}Some gaps in the sentence processing literature}{8}{section.1.5}% 
+\contentsline {subsection}{\numberline {1.5.1}The relative scarcity of computationally implemented models}{8}{subsection.1.5.1}% 
+\contentsline {subsection}{\numberline {1.5.2}A focus on average behaviour and neglect of individual-level differences}{11}{subsection.1.5.2}% 
+\contentsline {subsection}{\numberline {1.5.3}The absence of high-precision studies}{11}{subsection.1.5.3}% 
+\contentsline {subsection}{\numberline {1.5.4}Unclear desiderata for a good model fit}{12}{subsection.1.5.4}% 
+\contentsline {subsubsection}{The Roberts and Pashler (2000) criteria}{12}{section*.6}% 
+\contentsline {subsubsection}{Why is high uncertainty undesirable in the estimate from the data?}{13}{section*.7}% 
+\contentsline {subsubsection}{The Freedman-Spiegelhalter approach}{16}{section*.8}% 
+\contentsline {section}{\numberline {1.6}The goals of this book}{17}{section.1.6}% 
+\contentsline {subsection}{\numberline {1.6.1}Providing reproducible model code}{17}{subsection.1.6.1}% 
+\contentsline {subsection}{\numberline {1.6.2}Modelling average effects as well as individual differences}{18}{subsection.1.6.2}% 
+\contentsline {subsection}{\numberline {1.6.3}Developing a set of modelling and empirical benchmarks for future model comparison}{18}{subsection.1.6.3}% 
+\contentsline {section}{\numberline {1.7}Looking ahead}{19}{section.1.7}% 
+\contentsline {chapter}{\numberline {2}Dependencies in sentence comprehension}{21}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Memory processes in sentence comprehension}{21}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Dependency completion in sentence processing}{23}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Subject-verb non-agreement dependencies}{26}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Subject-verb number agreement}{31}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Reflexives and reciprocals}{38}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Individual-level effects in the Dillon et al.\ design}{41}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}A sensitivity analysis on the ungrammatical agreement and reflexives conditions using informative priors}{44}{subsection.2.5.2}% 
+\contentsline {section}{\numberline {2.6}Concluding remarks}{46}{section.2.6}% 
+\contentsline {chapter}{\numberline {3}The core ACT-R-based model of retrieval processes}{48}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}ACT-R}{49}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}The Lewis \& Vasishth (2005) model}{51}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}A priori predictions of the model}{53}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Predictions of the Lewis \& Vasishth (2005) model for target-match and target-mismatch configurations}{53}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}Comparison of the LV05 prediction space with the results of the meta-analysis}{58}{subsection.3.2.3}% 
+\contentsline {subsubsection}{Methods}{58}{section*.9}% 
+\contentsline {subsubsection}{Results}{59}{section*.10}% 
+\contentsline {section}{\numberline {3.3}Parameter estimation given data and a model}{64}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Bayesian parameter estimation}{64}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Approximate Bayesian Computation}{65}{subsection.3.3.2}% 
+\contentsline {subsubsection}{Step 1: Define a prior for the parameter}{65}{section*.11}% 
+\contentsline {subsubsection}{The estimates from data for ungrammatical conditions}{65}{section*.12}% 
+\contentsline {subsubsection}{Step 2: Compute posterior distributions of the latency factor using ABC rejection sampling}{67}{section*.13}% 
+\contentsline {subsubsection}{Step 3: Generate posterior predicted data}{67}{section*.14}% 
+\contentsline {section}{\numberline {3.4}Concluding remarks}{67}{section.3.4}% 
+\contentsline {chapter}{\numberline {4}Extension: Prominence and multi-associative cues}{70}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Incorporating prominence and multi-associative cues}{70}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Item prominence}{72}{subsection.4.1.1}% 
+\contentsline {subsubsection}{Predictions in target-mismatch configurations}{73}{section*.15}% 
+\contentsline {subsubsection}{Predictions in target-match configurations}{76}{section*.16}% 
+\contentsline {paragraph}{A: Target-match inhibition}{77}{section*.17}% 
+\contentsline {paragraph}{B: Target-match facilitation}{78}{section*.18}% 
+\contentsline {subsection}{\numberline {4.1.2}Multi-associative cues}{79}{subsection.4.1.2}% 
+\contentsline {subsection}{\numberline {4.1.3}Implementation of item prominence and multi-associative cues}{85}{subsection.4.1.3}% 
+\contentsline {subsection}{\numberline {4.1.4}Multi-associative cues}{86}{subsection.4.1.4}% 
+\contentsline {subsection}{\numberline {4.1.5}Prominence}{89}{subsection.4.1.5}% 
+\contentsline {section}{\numberline {4.2}A simulation of the meta-analysis studies}{91}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Data}{91}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Method}{92}{subsection.4.2.2}% 
+\contentsline {paragraph}{Parameter estimation}{93}{section*.19}% 
+\contentsline {subsection}{\numberline {4.2.3}Results}{94}{subsection.4.2.3}% 
+\contentsline {section}{\numberline {4.3}General Discussion}{99}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Distractor prominence}{103}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Multi-associative cues}{104}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Some limitations of the present work}{107}{subsection.4.3.3}% 
+\addvspace {10pt}Appendices
+\contentsline {section}{\numberline {4.A}Key terms and concepts}{109}{section.a.4.A}% 
+\contentsline {section}{\numberline {4.B}List of experiments included in the simulations}{111}{section.a.4.B}% 
+\contentsline {section}{\numberline {4.C}The prominence effect explained}{113}{section.a.4.C}% 
+\contentsline {section}{\numberline {4.D}Model specifications}{116}{section.a.4.D}% 
+\contentsline {chapter}{\numberline {5}Extension: Eye-movement control and parsing}{118}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Introduction}{118}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}The EMMA/ACT-R reading model}{120}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Replication of Salvucci (2001)}{122}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Data}{122}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Model}{122}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}Analysis}{123}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}Results}{125}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.5}Discussion}{125}{subsection.5.3.5}% 
+\contentsline {section}{\numberline {5.4}The extended EMMA/ACT-R model}{126}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Retrieval}{127}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}Surprisal}{127}{subsection.5.4.2}% 
+\contentsline {section}{\numberline {5.5}Simulations on the Potsdam Sentence Corpus}{128}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Data}{129}{subsection.5.5.1}% 
+\contentsline {paragraph}{Potsdam Sentence Corpus}{129}{section*.20}% 
+\contentsline {paragraph}{Retrieval}{129}{section*.21}% 
+\contentsline {paragraph}{Surprisal}{129}{section*.22}% 
+\contentsline {subsection}{\numberline {5.5.2}Model}{130}{subsection.5.5.2}% 
+\contentsline {subsection}{\numberline {5.5.3}Results}{132}{subsection.5.5.3}% 
+\contentsline {subsubsection}{PSC vs. SC}{132}{section*.23}% 
+\contentsline {subsubsection}{Influence of parsing difficulty}{133}{section*.24}% 
+\contentsline {subsection}{\numberline {5.5.4}Discussion}{134}{subsection.5.5.4}% 
+\contentsline {section}{\numberline {5.6}General Discussion}{135}{section.5.6}% 
+\contentsline {subsection}{\numberline {5.6.1}Comparison with E-Z Reader}{135}{subsection.5.6.1}% 
+\contentsline {subsection}{\numberline {5.6.2}Future prospects}{137}{subsection.5.6.2}% 
+\addvspace {10pt}Appendices
+\contentsline {section}{\numberline {5.A}Root-mean-square deviation}{139}{section.b.5.A}% 
+\contentsline {section}{\numberline {5.B}Linear regression analysis}{139}{section.b.5.B}% 
+\contentsline {chapter}{\numberline {6}Reanalysis and underspecification}{143}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Introduction}{143}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Modelling reanalysis}{144}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}Memory and Expectation in Relative Clauses}{144}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.2}Simulation: Modelling the Staub (2010) data}{146}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.3}Results}{147}{subsection.6.2.3}% 
+\contentsline {subsection}{\numberline {6.2.4}Discussion}{149}{subsection.6.2.4}% 
+\contentsline {section}{\numberline {6.3}Modelling underspecification}{151}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Good-Enough Parsing}{151}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}Simulation: Modelling the von der Malsburg and Vasishth (2013) data}{156}{subsection.6.3.2}% 
+\contentsline {subsection}{\numberline {6.3.3}Results}{158}{subsection.6.3.3}% 
+\contentsline {subsection}{\numberline {6.3.4}Discussion}{161}{subsection.6.3.4}% 
+\contentsline {section}{\numberline {6.4}General Discussion}{163}{section.6.4}% 
+\contentsline {chapter}{\numberline {7}Competing accounts of interference in sentence processing}{165}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}The direct-access model}{165}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Comparing the predictive performances of the models}{168}{section.7.2}% 
+\contentsline {subsection}{\numberline {7.2.1}Inhibitory interference}{168}{subsection.7.2.1}% 
+\contentsline {subsection}{\numberline {7.2.2}Relative clauses in Chinese}{171}{subsection.7.2.2}% 
+\contentsline {subsection}{\numberline {7.2.3}Discussion}{174}{subsection.7.2.3}% 
+\contentsline {section}{\numberline {7.3}Encoding interference in agreement attraction}{174}{section.7.3}% 
+\contentsline {subsection}{\numberline {7.3.1}An evaluation of the Nairne proposal}{176}{subsection.7.3.1}% 
+\contentsline {subsection}{\numberline {7.3.2}Model comparison}{178}{subsection.7.3.2}% 
+\contentsline {subsection}{\numberline {7.3.3}Discussion}{179}{subsection.7.3.3}% 
+\contentsline {subsubsection}{Some limitations}{179}{section*.25}% 
+\contentsline {chapter}{\numberline {8}Modelling sentence comprehension deficits in aphasia}{181}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}Theories and models of sentence comprehension deficits}{182}{section.8.1}% 
+\contentsline {subsection}{\numberline {8.1.1}Timing deficit}{183}{subsection.8.1.1}% 
+\contentsline {subsection}{\numberline {8.1.2}Reduction in memory}{183}{subsection.8.1.2}% 
+\contentsline {subsection}{\numberline {8.1.3}Intermittent deficiency}{185}{subsection.8.1.3}% 
+\contentsline {subsection}{\numberline {8.1.4}Weakened syntax}{185}{subsection.8.1.4}% 
+\contentsline {subsection}{\numberline {8.1.5}Slow syntax}{186}{subsection.8.1.5}% 
+\contentsline {subsection}{\numberline {8.1.6}Lexical integration deficit}{187}{subsection.8.1.6}% 
+\contentsline {subsection}{\numberline {8.1.7}Lexical access deficits}{187}{subsection.8.1.7}% 
+\contentsline {subsection}{\numberline {8.1.8}A comparison of theories of impaired processing, and their relation to theories of unimpaired processing}{189}{subsection.8.1.8}% 
+\contentsline {section}{\numberline {8.2}Modelling individual-level differences}{191}{section.8.2}% 
+\contentsline {subsection}{\numberline {8.2.1}Mapping ACT-R parameters to sources of deficits}{194}{subsection.8.2.1}% 
+\contentsline {subsection}{\numberline {8.2.2}Simulations}{196}{subsection.8.2.2}% 
+\contentsline {subsubsection}{Materials}{196}{section*.26}% 
+\contentsline {subsubsection}{Parameter estimation}{196}{section*.27}% 
+\contentsline {subsection}{\numberline {8.2.3}Results}{197}{subsection.8.2.3}% 
+\contentsline {paragraph}{Distribution of parameter value estimates}{198}{section*.28}% 
+\contentsline {paragraph}{Cluster analysis}{199}{section*.29}% 
+\contentsline {subsection}{\numberline {8.2.4}Discussion}{199}{subsection.8.2.4}% 
+\contentsline {section}{\numberline {8.3}Competing models of retrieval in aphasia}{202}{section.8.3}% 
+\contentsline {subsection}{\numberline {8.3.1}Materials}{202}{subsection.8.3.1}% 
+\contentsline {subsection}{\numberline {8.3.2}Results and discussion}{203}{subsection.8.3.2}% 
+\contentsline {section}{\numberline {8.4}Concluding remarks}{203}{section.8.4}% 
+\contentsline {chapter}{\numberline {9}Future directions}{205}{chapter.9}% 
+\contentsline {section}{\numberline {9.1}The need for creating higher-precision benchmark data-sets for model evaluation and comparison}{205}{section.9.1}% 
+\contentsline {section}{\numberline {9.2}Comprehensive model comparisons of competing models of retrieval}{206}{section.9.2}% 
+\contentsline {section}{\numberline {9.3}The need for larger-sample direct-replication studies}{206}{section.9.3}% 
+\contentsline {section}{\numberline {9.4}Understanding the production-comprehension link}{207}{section.9.4}% 
+\setcounter {tocdepth}{0}
+\vspace {\baselineskip }
+\contentsline {section}{Bibliography}{209}{section.9.4}% 
+\contentsline {schapter}{Bibliography}{209}{appendix*.30}% 
+\contentsline {schapter}{Index}{229}{appendix*.30}% 
