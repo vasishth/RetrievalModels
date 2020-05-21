@@ -353,6 +353,7 @@ The attachment site was disambiguated at the verb \textit{entraron} (indicative)
   \centering
 <<mv13dataambadv,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=5,fig.height=3, out.width='0.8\\textwidth'>>=
 data <- read.table("chapters4to6_simulations/chapter_6/mv13/data-mv13.txt")
+data$cond<-factor(data$cond)
 levels(data$cond) <- c("HIGH","LOW","UNAMB")
 data$amb <- ifelse(data$cond=="UNAMB", "Unambiguous", "Ambiguous")
 data$FPRT.c.exp <- exp(data$FPRT.c)
@@ -827,7 +828,7 @@ colnames(means.p)[4] <- "W"
 Figure~\ref{fig:mv13model:rer} shows the proportions of rereading the sentence after seeing the disambiguating verb \textit{entraron}/\textit{entraran} in the ambiguous conditions or \textit{entraban} in the unambiguous condition. The model predicts rereading almost exclusively in the ambiguous high-attachment condition, because the parser mostly attaches low and reanalysis is therefore mainly needed when the sentence is disambiguated towards high attachment. A second prediction is that high-capacity readers reread in that condition more often than low-capacity readers. 
 The reason for this is that simulated high-capacity subjects attach more often than low-capacity subjects, as is shown in Figure~\ref{fig:mv13model:att}. This is the case in both ambiguous conditions, and is responsible for the ambiguity advantage seen for both groups. Rereading is, however, only affected in the ambiguous HIGH-disambiguation condition, since only in this case is reanalysis necessary. 
 
-There are important differences between the observed patterns in the dat and the model predictions. This becomes when we compare the predictions in Figure~\ref{fig:mv13model:rer} with the data in Figure~\ref{fig:mv13data:rer}. More reading occurs in high-capacity readers in the ambiguous HIGH condition, and this is consistent with the data. However, the predictions show that rereading proportions of low-capacity readers are also affected by the conditions, which is not the case in the data. Another difference is that, in the data, there is some rereading in every condition; by contrast, the model predictions show rereading only in the reanalysis condition (a). Both differences are due to the simplified nature of the model, which will be elaborated in the discussion.
+There are important differences between the observed patterns in the data and the model predictions. This becomes when we compare the predictions in Figure~\ref{fig:mv13model:rer} with the data in Figure~\ref{fig:mv13data:rer}. More reading occurs in high-capacity readers in the ambiguous HIGH condition, and this is consistent with the data. However, the predictions show that rereading proportions of low-capacity readers are also affected by the conditions, which is not the case in the data. Another difference is that, in the data, there is some rereading in every condition; by contrast, the model predictions show rereading only in the reanalysis condition (a). Both differences are due to the simplified nature of the model, which will be elaborated in the discussion.
 
 
 \subsection{Discussion}
