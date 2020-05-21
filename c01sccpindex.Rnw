@@ -96,13 +96,13 @@ found for Dutch \citep{FrankTrompenaarsVasishth2015}, but see
 German. \cite{VasishthSuckowLewis2010} suggested that German speakers
 may be able to hold predictions of upcoming verb phrases in memory
 better than English speakers, because verb phrases in German embedded \index{verb-final} \index{predictions}
-clauses are always in the last position. German speakers get more exposure to verb-final constructions than English speakers; this is assumed to allow German speakers to maintain predictions for upcoming verbs in German better than English speakers reading English. The explanation is therefore grounded in experience, not some inherent working memory capacity difference between German and English speakers. Incidentally, the ability to maintain predictions seems to be linked to the properties of the language: when German and Dutch speakers who speak fluent English read sentences in English, they no longer show German/Dutch-like behavior, and behave like English native speakers, reading ungrammatical sentence faster 
+clauses are always in the last position. German speakers get more exposure to verb-final constructions than English speakers; this is assumed to allow German speakers to maintain predictions for upcoming verbs in German better than English speakers reading English. The explanation is therefore grounded in experience, not some inherent working memory capacity difference between German and English speakers. Incidentally, the ability to maintain predictions seems to be linked to the properties of the language: when German and Dutch speakers who speak fluent English read sentences in English, they no longer show German/Dutch-like behavior, and behave like English native speakers, reading ungrammatical sentences faster 
 \citep{FrankTrompenaarsVasishth2015}. This differentiated pattern of responses conditional on the language being currently used suggests that the \index{probabilistic knowledge} probabilistic knowledge about syntactic predictions may not transfer across the languages spoken by an individual; if this conclusion turns out to be correct, it would be an interesting avenue of research in bilingualism, where research often presupposes  transfer effects across languages. \index{bilingualism}
 
 Some of the other recent empirical work on
 reading that is concerned with the role of prediction in processing
 complex syntactic structures is
-\cite{levyfedgibsonRussian,levy2012processing,LevyKeller2013,VasishthMertzenJaegerGelman2018,levy2012processing,linzenuncertainty}. However,
+\cite{levyfedgibsonRussian,levy2012processing,LevyKeller2013,VasishthMertzenJaegerGelman2018,linzenuncertainty}. However,
  working memory limitations may also play a role independent of
 the constraints imposed by predictive processing. For example,
 \cite{SafaviEtAlFrontiers2016} showed that in Persian, readers tended
@@ -220,7 +220,7 @@ eyetracking, \cite{MalsburgVasishth2013} suggested that low working
 memory capacity participants may underspecify more often in the face of
 temporary ambiguity; also see \cite{Traxler2007}.
 
-section{Prediction in sentence processing}
+\section{Prediction in sentence processing}
 
 \index{Syntactic Prediction Locality Theory}
 In his Syntactic Prediction Locality Theory \citep{Gibson1998} and his \index{Dependency Locality Theory}
@@ -257,7 +257,7 @@ For example, \cite{MacDonaldChristiansen2002} wrote an important critique of \ci
 low-capacity participants.\footnote{It is worth noting here as an aside that capacity was measured using the \cite{DanemanCarpenter1980} reading span task, which may index experience with language rather than inherent capacity per se \citep{wellsetal}.} MacDonald and Christiansen argued that the differences in processing difficulty attributed to inherent  \index{capacity differences}
 capacity differences may be due to an interaction between experience with language and biological (neural architectural) factors that have nothing to do with the capacity of a separate working memory system.
 
-\section{Working memory and prediction as explanations for processing difficulty}
+\section[Working memory and prediction]{Working memory and prediction as explanations for processing difficulty}
 
 \index{memory load} \index{working memory capacity}
 In summary,  memory load and limits on working memory capacity are candidate explanation for certain aspects of language processing, but certain other aspects of processing have a better explanation in terms of probabilistic predictive processes.  Much of the inspiration for memory
@@ -387,7 +387,7 @@ models of eye-movement control stand out as examples of
 comprehensive architectural frameworks of a particular cognitive
 process of interest (reading).  Cognitive psychology has a rich \index{working memory models}
 tradition of such models: the working memory models by
-\cite{OberauerKliegl2006,LewandowskyGeigerOberauer2008}, the \index{4CAPS} 4CAPS architecture \citep{justetal99} (http://www.ccbi.cmu.edu/4CAPS/), and other models \citep{lee2014bayesian,busemeyer2010cognitive,lewiscogmodsym,farrell2018computational}.
+\cite{OberauerKliegl2006,LewandowskyGeigerOberauer2008}, the \index{4CAPS} 4CAPS architecture \citep{justetal99} (www.ccbi.cmu.edu/4CAPS/), and other models \citep{lee2014bayesian,busemeyer2010cognitive,lewiscogmodsym,farrell2018computational}.
 By contrast, in the narrower field of sentence processing, not as much effort has gone into developing comprehensive architectures.
 
 \subsection{A focus on average behaviour and neglect of individual-level differences}
@@ -438,7 +438,7 @@ underpowered studies. As we discuss below (section \ref{typem}), this has very b
 In psycholinguistics, there are no general standards on how to
 quantify a good model fit. Sometimes root mean squared
 deviation is used, which quantifies the average deviation from the observed
-value B ut there are better approaches. We discuss two important
+value But there are better approaches. We discuss two important
 criteria below that we feel are appropriate for modelling work in
 psycholinguistics; both are related to each other and are
 fundamentally graphical in nature.
@@ -751,11 +751,11 @@ Throughout this book, it is important to keep in mind that this is not a book ab
 
 \subsection{Providing reproducible model code}
 
-One of the great failures of psycholinguistics has been that model code, as well as experimental data, are rarely made public (there are, of course, some exceptions, particularly in recent years). A major goal of this book is to help change this unfortunate culture. This book can be seen as providing the reader with a complete report of all the modelling work on retrieval processes that we have done between 2005 and 2020. All the code and data associated with the modelling reported here can be reproduced by the reader, and extended and used to test novel predictions of the models.\footnote{See: https://vasishth.github.io/RetrievalModels.} Of course, we recognize that code rot---the slow deterioration and increasing unusability of software over time---is inevitable. It is highly likely that five years from now the code provided will not work as expected, unless the reader can obtain the ACT-R, lisp, R, and Stan versions we used in creating the models. Even if  the code fails to run some years from now, our hope is that at least the code can be adapted or rewritten to reproduce and extend the models presented here.
+One of the great failures of psycholinguistics has been that model code, as well as experimental data, are rarely made public (there are, of course, some exceptions, particularly in recent years). A major goal of this book is to help change this unfortunate culture. This book can be seen as providing the reader with a complete report of all the modelling work on retrieval processes that we have done between 2005 and 2020. All the code and data associated with the modelling reported here can be reproduced by the reader, and extended and used to test novel predictions of the models.\footnote{See: vasishth.github.io/RetrievalModels.} Of course, we recognize that code rot---the slow deterioration and increasing unusability of software over time---is inevitable. It is highly likely that five years from now the code provided will not work as expected, unless the reader can obtain the ACT-R, lisp, R, and Stan versions we used in creating the models. Even if  the code fails to run some years from now, our hope is that at least the code can be adapted or rewritten to reproduce and extend the models presented here.
 
-If the reader intends to run the code in this book, they should install ACT-R 6.0, and the following R packages:
+If the reader intends to run the code in this book, they should install ACT-R 6.0, and the R packages indicated in the source files for the book available from the github repository (vasishth.github.io/RetrievalModels).
 
-<<Rpackages>>=
+<<Rpackages,eval=FALSE,echo=FALSE>>=
 sessionInfo()
 @
 
@@ -790,4 +790,4 @@ that future generations will take up that task.
 
 \section{Looking ahead}
 
-It may be useful to briefly summarize the structure of the remainder of this book. Chapter \ref{c01} reviews the range of empirical phenomena that form the basis for a large chunk of the modelling, and discusses the published empirical findings regarding these phenomena.  One of the key takeaways from this chapter is that published studies on these phenomena are likely to be \index{power} underpowered and therefore not sufficiently informative. Chapter \ref{c02} presents the core \index{ACT-R} ACT-R model, as developed in the \cite{LewisVasishth2005} paper; chapters \ref{c02prominence} and \ref{c02emma} summarize two recent extensions. The first extension (chapter \ref{c02prominence}) modifies the core model to account for linguistic \index{prominence} prominence of items in memory, and for so-called \index{multi-associative cues} multi-associative cues. The second extension (chapter \ref{c02emma}) integrates an eye-movement control model \index{EMMA} (EMMA, a simplified version of the \index{E-Z Reader} E-Z Reader model) with the parsing model and evaluates its performance. Chapter \ref{c04} then presents an evaluation of the model incorporating eye-movement control on psycholinguistic data on \index{reanalysis} reanalysis and \index{underspecification} underspecification effects, and shows how \index{individual differences} individual differences in capacity can be explained by the model.  One important question that needs to be answered is how the Lewis and Vasishth model fares in comparison to a competing model of retrieval processes; this is the topic of the chapter \ref{c05}, which covers a model evaluation, using an implementation of the \index{direct-access} direct-access model of McElree as a baseline.  Finally, chapter \ref{c06} discusses the model's ability to explain \index{individual-level differences} individual-level differences in deficits in sentence comprehension in aphasia. The concluding chapter lays out important open problems and possible future directions and modelling approaches. 
+It may be useful to briefly summarize the structure of the remainder of this book. Chapter \ref{c01} reviews the range of empirical phenomena that form the basis for a large chunk of the modelling, and discusses the published empirical findings regarding these phenomena.  One of the key takeaways from this chapter is that published studies on these phenomena are likely to be \index{power} underpowered and therefore not sufficiently informative. Chapter \ref{c02} presents the core \index{ACT-R} ACT-R model, as developed in the \cite{LewisVasishth2005} paper; Chapters \ref{c02prominence} and \ref{c02emma} summarize two recent extensions. The first extension (chapter \ref{c02prominence}) modifies the core model to account for linguistic \index{prominence} prominence of items in memory, and for so-called \index{multi-associative cues} multi-associative cues. The second extension (Chapter \ref{c02emma}) integrates an eye-movement control model \index{EMMA} (EMMA, a simplified version of the \index{E-Z Reader} E-Z Reader model) with the parsing model and evaluates its performance. Chapter \ref{c04} then presents an evaluation of the model incorporating eye-movement control on psycholinguistic data on \index{reanalysis} reanalysis and \index{underspecification} underspecification effects, and shows how \index{individual differences} individual differences in capacity can be explained by the model.  One important question that needs to be answered is how the Lewis and Vasishth model fares in comparison to a competing model of retrieval processes; this is the topic of the Chapter \ref{c05}, which covers a model evaluation, using an implementation of the \index{direct-access} direct-access model of McElree as a baseline.  Finally, Chapter \ref{c06} discusses the model's ability to explain \index{individual-level differences} individual-level differences in deficits in sentence comprehension in aphasia. The concluding chapter lays out important open problems and possible future directions and modelling approaches. 
