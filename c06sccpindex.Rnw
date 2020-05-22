@@ -32,9 +32,9 @@ The advantage of the model presented here is that it is integrated with the full
 In addition to Interface I, \emph{Time Out}, that was presented in the previous chapter, three further elementary interfaces are proposed. Interface II, \index{Reanalysis} \emph{Reanalysis}, is an early detection of parsing error resulting in a regression similar to ``rapid integration failure'' in \cite{ReichleWarrenMcConnell2009}.
 A simulation with Interfaces I and II replicates the results of \cite{Staub2010a}, who found effects of memory and expectation in distinct locations of object- vs.\ subject-relative clauses. 
 Interface III, \index{Underspecification} \emph{Underspecification}, aborts a costly attachment alternatively to signaling a time-out depending on the task-relevance of the attachment relation.
-A second simulation illustrates at the example of \cite{MalsburgVasishth2013} how underspecification results from an interaction of eye movement control with parsing and individual differences in working memory capacity.
-While Interfaces I and II are interventions by the parser that interrupt the otherwise autonomous saccade programming, Interface III is rather an intervention in the other direction: In the case of underspecification, the parser is cut off by time pressure imposed by eye movement control.
-Finally, a possible Interface IV: \index{Subvocalization} \emph{Subvocalization} is proposed; this is not discussed in the book but is available in the model code and is discussed in \cite{engelmann:phd}. As another alternative to Time Out, a word ready for integration could be stored in phonological memory \citep{BaddeleyHitch1974,Baddeley2003} for a very short time until there is free capacity of the sentence processor. This could be used in future work to model spill-over effects of parsing difficulty.
+A second simulation illustrates how the model predicts that underspecification results from an interaction of eye movement control with parsing and individual differences in working memory capacity.
+While Interfaces I and II are interventions by the parser that interrupt the otherwise autonomous saccade programming, Interface III is rather an intervention in the other direction: In the case of underspecification, the parser is cut off by time pressure imposed by eye-movement control.
+Finally, a possible Interface IV: \index{Subvocalization} \emph{Subvocalization} is proposed; this is not discussed in the book but is available in the model code and is discussed in \cite{engelmann:phd}. Interface IV serves as another alternative to Time Out; a word ready for integration could be stored in phonological memory \citep{BaddeleyHitch1974,Baddeley2003} for a very short time until there is free capacity of the sentence processor. This could be used in future work to model spill-over effects of parsing difficulty.
 
 Table~\ref{tab:params} summarizes relevant parameter values used in the simulations in this chapter. If not stated otherwise, ACT-R and EMMA parameters were kept constant at the values estimated for model $4$ ``EMMA+r'' in the corpus study discussed in chapter~\ref{c02emma} or at default values.
 
@@ -318,8 +318,8 @@ More evidence for construal and the good-enough account \citep{FerreiraFerraroBa
 \cite{SwetsDesmetClifton2008} manipulated task demands by using either superficial comprehension questions or questions that specifically queried the interpretation of the relative clause. The results showed an ambiguity advantage in (\ref{ex:swets08}a) vs.\ (b) and (c) at the disambiguating reflexive only when questions were superficial, indicating that question type affected the readers preference to leave the RC attachment underspecified. 
 In addition, in the condition with questions targeting the relative clause (RC question condition), question response times were elevated for ambiguous sentences. This indicates that even in the RC-question condition the attachment was sometimes left unspecified and had to be resolved during the question answering phase. In the RC-question condition, a disambiguation towards NP1 (\ref{ex:swets08}b) resulted in longest reading times, pointing to a preference towards NP2 in the initial attachment, which had to be revised at the reflexive. For a detailed analysis of the \cite{SwetsDesmetClifton2008} data and the compatibility with assumptions about underspecification, see \cite{LogacevMultiple,LogacevVasishthQJEP2016}.
 
-In related work, \cite{MalsburgVasishth2013} found evidence for the influence of working memory capacity on the preferences for underspecification.
-They conducted an eye-tracking experiment using the stimuli of a Spanish study by \cite{MeseguerCarreirasClifton2002} and analyzed the participants' individual scanpaths \citep{MalsburgVasishth2011} and working memory capacity. \index{working memory capacity}
+In related work, \cite{MalsburgVasishth2013} investigated the influence of working memory capacity on the preferences for underspecification.
+They conducted an eye-tracking experiment using the stimuli of a Spanish study by \cite{MeseguerCarreirasClifton2002} and analyzed the participants' individual scanpaths \citep{MalsburgVasishth2011} conditional on working memory capacity. \index{working memory capacity}
 In the sentences studied (Example~\ref{ex:malsburg13}), an adjunct (\textit{cuando los directores...}) was temporarily ambiguous between modifying the main verb \textit{dijo} as a temporal adverbial clause (high attachment) or the embedded verb \textit{se levantaran} as a conditional (low attachment). 
 
 \begin{exe}
@@ -349,9 +349,9 @@ In the sentences studied (Example~\ref{ex:malsburg13}), an adjunct (\textit{cuan
 
 The attachment site was disambiguated at the verb \textit{entraron} (indicative) / \textit{entraran} (subjunctive) towards HIGH (\ref{ex:malsburg13}a) or LOW (\ref{ex:malsburg13}b) attachment, respectively. In the unambiguous (UNAMB) condition (\ref{ex:malsburg13}c), using the word \textit{si} (``if'') instead of \textit{cuando} (``when''/``if'') unambiguously signalled LOW attachment of the adjunct as a conditional.
 
-\begin{figure}[!htbp]
-  \centering
-<<mv13dataambadv,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=5,fig.height=3, out.width='0.8\\textwidth'>>=
+%\begin{figure}[!htbp]
+%  \centering
+<<mv13dataambadv,echo=FALSE, include=FALSE,warning=FALSE, error=FALSE, message=FALSE, fig.width=5,fig.height=3, out.width='0.8\\textwidth'>>=
 data <- read.table("chapters4to6_simulations/chapter_6/mv13/data-mv13.txt")
 data$cond<-factor(data$cond)
 levels(data$cond) <- c("HIGH","LOW","UNAMB")
@@ -360,11 +360,14 @@ data$FPRT.c.exp <- exp(data$FPRT.c)
 data$wmc <- factor(ifelse(data$pcu >= median(data$pcu), "high WMC", "low WMC"))
 
 ## Ambiguity advantage ##
-mlt <- melt(data, id=c("amb","wmc"), measure=c("FPRT.c.exp"), na.rm = T)
+mlt <- melt(data, id=c("amb","wmc"), measure=c("FPRT.c.exp"), na.rm = TRUE)
 cst <- cast(subset(mlt,value>0), variable+amb+wmc ~ ., function(x) c(M=mean(x), SE=sd(x)/sqrt(length(x)), N=length(x), CI=ci(x)))
 # head(cst)
 d.means.t3 <- cst
-d.means.t3$wmc <- rep(c("low", "high"),2)
+# There is a mistake in the original paper; this should have been high and then low:
+#d.means.t3$wmc <- rep(c("low", "high"),2)
+# this is correct:
+d.means.t3$wmc <- rep(c("high", "low"),2)
 colnames(d.means.t3)[3] <- "WMC"
 
 (pvdmv13rer<-ggplot(aes(amb, M, group=WMC, lty=WMC),#, ymax=509, ymin=460), 
@@ -389,21 +392,23 @@ data=subset(d.means.t3,variable=="FPRT.c.exp"))
   )
 )
 @
-  \caption[Ambiguity advantage in the pre-verbal region for low-capacity readers in the data of von der Malsburg and Vasishth (2013).]{Ambiguity advantage for low- vs.\ high-capacity readers in the data of von der Malsburg and Vasishth (2013). Shown are gaze durations in the pre-verbal region (\textit{cuando/si los directores}) for ambiguous (a and b) and unambiguous (c) conditions, grouped by high and low working memory capacity as measured by the operation span task.  Error bars represent 95\% confidence intervals.}\label{fig:mv13data:rt}
-\end{figure}
+%  \caption[Ambiguity advantage in the pre-verbal region for low-capacity readers in the data of von der Malsburg and Vasishth (2013).]{Ambiguity advantage for low- vs.\ high-capacity readers in the data of von der Malsburg and Vasishth (2013). Shown are gaze durations in the pre-verbal region (\textit{cuando/si los directores}) for ambiguous (a and b) and unambiguous (c) conditions, grouped by high and low working memory capacity as measured by the operation span task.  Error bars represent 95\% confidence intervals.}\label{fig:mv13data:rt}
+%\end{figure}
 
 
 \begin{figure}[!htbp]
 \centering
 <<mv13datarer, include=TRUE,echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, fig.width=6,fig.height=4, out.width='0.7\\textwidth'>>=
 ## mean rereading
-mlt <- melt(data, id=c("cond","wmc"), measure=c("isa","acc"), na.rm=T)
+mlt <- melt(data, id=c("cond","wmc"), measure=c("isa","acc"), 
+            na.rm=TRUE)
 cst <- cast(mlt, variable+cond+wmc ~ ., function(x) c(M=mean(x), N=length(x)))
 cst$SE <- sqrt(cst$M*(1-cst$M))/sqrt(cst$N)
 cst$CI.lower <- cst$M + qt(.025, df=cst$N-1) * cst$SE
 cst$CI.upper <- cst$M + qt(.975, df=cst$N-1) * cst$SE
 # head(cst)
 d.means.p2 <- cst
+levels(d.means.p2$wmc)
 d.means.p2$wmc <- c("high", "low")
 colnames(d.means.p2)[3] <- "WMC"
 
@@ -431,7 +436,7 @@ colnames(d.means.p2)[3] <- "WMC"
   \label{fig:mv13data:rer}
 \end{figure}
 
-Von der Malsburg and Vasishth found an ambiguity advantage in the pre-verbal region \textit{cuando los directores}: First-pass reading times (gaze durations) were faster in ambiguous vs.\ unambiguous conditions. This effect was driven mainly by low-capacity readers (see Figure~\ref{fig:mv13data:rt}). The observed ambiguity advantage in low capacity readers is consistent with the assumption of \cite{Traxler2007} that low-capacity readers underspecify more often. Further support for this assumption comes from the proportions of rereading of the whole sentence after seeing the disambiguating region (see Figure~\ref{fig:mv13data:rer}). 
+Von der Malsburg and Vasishth investigated the ambiguity advantage in the pre-verbal region \textit{cuando los directores}. For this design, \cite{Traxler2007} would predict that low-capacity readers underspecify more often. Support for the \cite{Traxler2007} prediction  comes from the proportions of rereading of the whole sentence after seeing the disambiguating region (see Figure~\ref{fig:mv13data:rer}). 
 For high-capacity readers, the rereading proportion was highest for condition (a), where the disambiguation was towards the more distant high attachment. In contrast, low-capacity readers showed no statistically significant difference in rereading proportions between conditions. According to \cite{MalsburgVasishth2013}, this suggests that high-capacity readers complete the attachment of the adjunct more often and thus have to reanalyze later, whereas low-capacity readers have no need for reanalysis because they tend to leave the attachment unspecified in the ambiguous conditions. The reason for reanalysis occurring predominantly in the high-attachment condition is that the conditional interpretation with a low attachment is initially preferred with the word \textit{cuando}.
 
 The evidence summarized above suggests that ambiguous attachment relations are strategically underspecified, and that readers with
@@ -444,7 +449,8 @@ In particular, for nonprimary relations in the sense of \cite{FrazierClifton1997
 Thus, underspecification is not a deterministic process but dynamically adapts to the relative timing of the attachment process and autonomous low-level eye movement processes. If an attachment is easy and proceeds fast in relation to the ``default'' reading speed (in the sense of \emph{uninterrupted} reading), the attachment is completed. If, however, the attachment could not be made without interrupting the progress of the eyes, it is abandoned in a trade-off with reading speed. 
 An influence of working memory differences is predicted by the assumption that, compared to high-capacity readers, low-capacity readers take longer on average to complete the attachment, resulting in more cancellations that leave the attachment underspecified.
 
-\subsection{Simulation: Modelling the von der Malsburg and Vasishth (2013) data}
+\subsection{Model predictions for the von der Malsburg and Vasishth (2013) experiment}
+
 Here, we report an implementation of the model that defines \emph{good-enough} parsing as the result of an interaction between the parser and eye-movement control, as explained above. For non-obligatory relations, the time to attach is constrained by the time needed by saccade programming and low-level processes to identify the next word:
 
 \begin{description}
@@ -741,8 +747,8 @@ Simulated participants were grouped into high and low capacity with respect to t
 This resulted in $30$ simulated high-capacity subjects with mean \Sexpr{round(ga_means[1],digits=2)} and $30$ simulated low-capacity subjects with mean \Sexpr{round(ga_means[2],digits=2)}.
 As in the preceding simulation, no parameter estimation was done to fit the model to the empirical data. 
 
-The modelling results are compared to the findings reported in \cite{MalsburgVasishth2013}. Model predictions for gaze durations for the potentially ambiguous region \textit{cuando}/\textit{si}\footnote{Predictions are shown for one word only and not for the whole pre-verbal region, because the model currently does not predict any spill-over due to delayed parsing processes. Therefore, the effect of underspecification appears immediately at the critical word. Also see the General Discussion on this point.} 
-are plotted in Figure~\ref{fig:mv13model:rt}. The predictions clearly show an ambiguity advantage which is more pronounced for low-$W$ simulations than for high-$W$ simulations. This is in line with the findings of an ambiguity advantage by \cite{MalsburgVasishth2013} and others. However, the detailed pattern in the data of von der Malsburg and colleagues (Figure~\ref{fig:mv13data:rt}) is different. In the simulation, low-capacity readers are generally slower than high-capacity readers; this is not the case in the empirical data. The data shows both groups to be equally fast in ambiguous conditions.
+Model predictions for gaze durations for the potentially ambiguous region \textit{cuando}/\textit{si}\footnote{Predictions are shown for one word only and not for the whole pre-verbal region, because the model currently does not predict any spill-over due to delayed parsing processes. Therefore, the effect of underspecification appears immediately at the critical word. Also see the General Discussion on this point.} 
+are plotted in Figure~\ref{fig:mv13model:rt}. The model predicts an ambiguity advantage which is more pronounced for low-$W$ simulations than for high-$W$ simulations. This is in line with the findings of an ambiguity advantage in previous work. 
 
 The timing difference between low- and high-capacity readers in the unambiguous condition predicted by the model is due to different time-out proportions in the attachment region, as shown in Figure~\ref{fig:mv13model:timeout}. Because attachment is generally slower for low-capacity readers, more time-outs (interface I), which make the eyes wait for the completion of integration, are necessary. No time-outs are predicted in the ambiguous conditions, since attachment happens as a process of minor importance in this case.
 
@@ -855,7 +861,7 @@ This mechanism would ensure a balance between speed and accuracy according to in
 For low capacity readers, the utility for attachment would automatically turn out generally lower and thus compensate for slower memory processes. As a result, reading speed of low-capacity readers would be more or less the same as of high-capacity readers. This adaptive, yet simple mechanism of global good-enough processing make the prediction that low-capacity readers do not generally read slower than high-capacity readers; this prediction should be tested in future work.
 In addition, a model like this would predict the results of \cite{SwetsDesmetClifton2008} who found indications for underspecification only in sessions when superficial comprehension questions were asked. The adaptation of utility values according to response accuracy would lead to more attachments for comprehension questions targeting the ambiguous relation and more underspecification for easy questions. This adaptation would occur over time and would predict trial effects.
 
-A third simplifying model assumption regards the generation of differences in working memory capacity. Although the data shows qualitative differences in the ambiguity advantage (there is no indication of an ambiguity advantage for high-capacity readers) and rereading proportions (there is no indication of a difference by condition for low-capacity readers), the model rather predicts differences in the magnitude of the ambiguity advantage by capacity level: The ambiguity advantage is predicted to have a larger magnitude for low-capacity readers, and differences in rereading proportions are more pronounced for high-capacity readers. This is a result of the choice made during modelling regarding the variability in capacity between subjects (for the simulations, $W$ is sampled from a normal distribution around $1$ with standard deviation $=0.25$). Choosing a greater variance would increase the differences between capacity groups and potentially predict the qualitative differences found in the empirical data. In order to model the results of \cite{MalsburgVasishth2013}, the variance for $W$ would have to be based on the empirical variance in scores of the reading-span test that assesses individual working memory capacity. We leave this for future work.
+A third simplifying model assumption regards the generation of differences in working memory capacity. Although the data shows qualitative differences in the ambiguity advantage (there is no indication of an ambiguity advantage for high-capacity readers) and rereading proportions (there is no indication of a difference by condition for low-capacity readers), the model rather predicts differences in the magnitude of the ambiguity advantage by capacity level: The ambiguity advantage is predicted to have a larger magnitude for low-capacity readers, and differences in rereading proportions are more pronounced for high-capacity readers. This is a result of the choice made during modelling regarding the variability in capacity between subjects (for the simulations, $W$ is sampled from a normal distribution around $1$ with standard deviation $=0.25$). Choosing a greater variance would increase the differences between capacity groups. The variance for $W$ could  be based on the empirical variance in scores of the working memory test that assesses individual working memory capacity. We leave this for future work.
 
 The fourth (and final) point relates to the  immediacy of the predicted effects. In other words, effects are generally predicted at the word that causes them. What is needed is a mechanism that allows for somewhat delayed parsing processes and predicts spill-over as observed, e.g., in the expectation-based first-pass regressions in \cite{Staub2010a} or the ambiguity advantage in gaze durations across the pre-verbal region in \cite{MalsburgVasishth2013}. 
 
