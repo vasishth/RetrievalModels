@@ -217,8 +217,7 @@ connected syntactic structure.  Although the driver of
 underspecification here is externally imposed task demands, working memory limitations \index{working memory limitations}
 may also be an additional factor. In a Spanish reading study using
 eyetracking, \cite{MalsburgVasishth2013} suggested that low working
-memory capacity participants may underspecify more often in the face of
-temporary ambiguity; also see \cite{Traxler2007}.
+memory capacity participants may underspecify more often in the face of temporary ambiguity; also see \cite{Traxler2007}.
 
 \section{Prediction in sentence processing}
 
