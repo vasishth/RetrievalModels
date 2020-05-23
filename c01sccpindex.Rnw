@@ -748,7 +748,7 @@ information processing (for examples, see the literature listed on the home page
 
 Throughout this book, it is important to keep in mind that this is not a book about sentence processing models in general, but about one particular class of models, those relating to retrieval processes. The reader should therefore not be surprised to find that the discussion focusses on one kind of modelling approach. 
 
-\subsection{Providing reproducible model code}
+\subsection{Providing open source model code}
 
 One of the great failures of psycholinguistics has been that model code, as well as experimental data, are rarely made public (there are, of course, some exceptions, particularly in recent years). A major goal of this book is to help change this unfortunate culture. This book can be seen as providing the reader with a complete report of all the modelling work on retrieval processes that we have done between 2005 and 2020. All the code and data associated with the modelling reported here can be reproduced by the reader, and extended and used to test novel predictions of the models.\footnote{See: vasishth.github.io/RetrievalModels.} Of course, we recognize that code rot---the slow deterioration and increasing unusability of software over time---is inevitable. It is highly likely that five years from now the code provided will not work as expected, unless the reader can obtain the ACT-R, lisp, R, and Stan versions we used in creating the models. Even if  the code fails to run some years from now, our hope is that at least the code can be adapted or rewritten to reproduce and extend the models presented here.
 
