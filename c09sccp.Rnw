@@ -21,7 +21,9 @@ In the present work, we provide  all the benchmark reading data available to us 
 
 \section{Comprehensive model comparisons of competing models of retrieval}
 
-Although \cite{NicenboimRetrieval2018}, \cite{VasishthChopinRyderNicenboimCogSci2017}, and \cite{LissonEtAl2020} have made some initial attempts to compare the predictions of the Lewis and Vasishth activation-based model and McElree's direct-access model against benchmark data, a broader investigation is needed. For example, \cite{MertzenEtAlAMLaP2019} has developed large-sample data from English, German, and Russian on proactive interference effects; such data can serve as useful test-sets for model comparisons.
+Although \cite{NicenboimRetrieval2018}, \cite{VasishthChopinRyderNicenboimCogSci2017}, and \cite{LissonEtAl2020} have made some initial attempts to compare the predictions of the Lewis and Vasishth activation-based model and McElree's direct-access model against benchmark data, a broader investigation is needed. For example, \cite{MertzenEtAlAMLaP2019} has developed large-sample data from English, German, and Russian on proactive interference effects; such data can serve as useful test-sets for model comparisons. 
+
+There is also a need to compare the predictive performance of the activation model with competing modelling  approaches, such as SOPARSE \citep{SmithFranckTaborCogSci2018}. In order to conduct a fair model comparison, a principled approach needs to be developed for defining which lexical features are relevant; currently, this decision is made on an ad-hoc basis. \cite{smith2019smithvasishthfeatures} have developed such a principled approach using large corpora. Such a principled specification of lexical features will be very useful for future attempts at comparing competing models against benchmark data.
 
 \section{The need for larger-sample direct-replication studies}
 
