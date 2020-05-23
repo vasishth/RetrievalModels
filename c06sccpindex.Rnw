@@ -408,7 +408,7 @@ cst$CI.lower <- cst$M + qt(.025, df=cst$N-1) * cst$SE
 cst$CI.upper <- cst$M + qt(.975, df=cst$N-1) * cst$SE
 # head(cst)
 d.means.p2 <- cst
-levels(d.means.p2$wmc)
+#levels(d.means.p2$wmc)
 d.means.p2$wmc <- c("high", "low")
 colnames(d.means.p2)[3] <- "WMC"
 
@@ -449,7 +449,7 @@ In particular, for nonprimary relations in the sense of \cite{FrazierClifton1997
 Thus, underspecification is not a deterministic process but dynamically adapts to the relative timing of the attachment process and autonomous low-level eye movement processes. If an attachment is easy and proceeds fast in relation to the ``default'' reading speed (in the sense of \emph{uninterrupted} reading), the attachment is completed. If, however, the attachment could not be made without interrupting the progress of the eyes, it is abandoned in a trade-off with reading speed. 
 An influence of working memory differences is predicted by the assumption that, compared to high-capacity readers, low-capacity readers take longer on average to complete the attachment, resulting in more cancellations that leave the attachment underspecified.
 
-\subsection{Model predictions for the von der Malsburg and Vasishth (2013) experiment}
+\subsection{Simulation: Modelling the von der Malsburg and Vasishth (2013) experiment}
 
 Here, we report an implementation of the model that defines \emph{good-enough} parsing as the result of an interaction between the parser and eye-movement control, as explained above. For non-obligatory relations, the time to attach is constrained by the time needed by saccade programming and low-level processes to identify the next word:
 
