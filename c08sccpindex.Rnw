@@ -377,7 +377,7 @@ we estimated the optimal values for each of these parameters for each individual
 
 Next, we report a first attempt to leverage the \cite{CaplanEtAl2015} to compare the predictive fit of the direct-access model and the activation-based model.
 
-\section{Competing models of retrieval in aphasia}
+\section{Competing models of retrieval in aphasia} \label{c06:competing}
 
 \subsection{Materials}
 
