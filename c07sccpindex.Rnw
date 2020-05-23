@@ -48,7 +48,7 @@ We can now determine whether the observed data are underlyingly coming from a tw
 
 The \cite{NicenboimRetrieval2018} computational implementation of the direct-access model in Stan \citep{stan:2017} is available from the book's home page: https://vasishth.github.io/RetrievalModels/.
 
-\section{Comparing the predictive performances of the models}\label{nicenboiminhint}
+\section{Comparing the predictive performance of the models}\label{nicenboiminhint}
 
 \subsection{Inhibitory interference}
 
@@ -144,7 +144,7 @@ multiplot(plot_rt_ab,plot_rt_da,cols=2)
 
 In summary, the direct-access model exhibited a better predictive performance compared to the activation model. The reason that the \index{direct-access model} direct-access model outperformed the \index{activation model} activation model is that the latter predicts that in \index{inhibitory interference} inhibitory interference experimental designs, retrievals of the incorrect chunk should be slower than the retrievals of the correct chunk. In the data-set used for model comparison \citep{nicenboimexploratory}, incorrect retrievals had faster reading time than correct retrievals. This pattern is  predicted by the direct-access model because correct retrievals are a mixture of an initially correct retrieval and an initial retrieval failure followed by a second retrieval attempt; the presence of trials with a costly second retrieval attempt take more time on average than incorrect trials.
 
-The direct-access mode and the activation model can be compared on other data as well.
+The direct-access mode and the activation model should be compared on other data as well; ideally, we need a  broad range of benchmark data to carry out a thorough evaluation.  The first step in this direction is reported in Chapter~\ref{c06} (Section \ref{c06:competing}).
 
 \subsection{Relative clauses in Chinese} \label{rchinese}
 
