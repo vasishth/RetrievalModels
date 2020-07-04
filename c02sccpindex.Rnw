@@ -915,13 +915,13 @@ Figures~\ref{fig:dillonresults} and \ref{fig:dillonrepresults} show an interesti
 \subsection{A sensitivity analysis on the ungrammatical agreement and reflexives conditions using informative priors}
 
 An important objection to the replication data is that we do not use all available information in the models.
-All the statistical models fit in \cite{JaegerMertzenVanDykeVasishth2019} used \index{mildly informative priors} mildly informative, \index{regularizing priors} regularizing priors, which effectively assume an agnostic starting point \citep{SchadEtAlWorkflow}. However, one of the key advantages of \index{Bayesian methods} Bayesian methods, which \cite{JaegerMertzenVanDykeVasishth2019} did not take advantage of, is that \index{prior knowledge} prior knowledge or beliefs about the plausible values of a parameter can be quantitatively taken into consideration by using an informative prior. 
+All the statistical models fit in \cite{JaegerMertzenVanDykeVasishth2019} used \index{mildly uninformative priors} mildly uninformative, \index{regularizing priors} regularizing priors, which effectively assume an agnostic starting point \citep{SchadEtAlWorkflow}. However, one of the key advantages of \index{Bayesian methods} Bayesian methods, which \cite{JaegerMertzenVanDykeVasishth2019} did not take advantage of, is that \index{prior knowledge} prior knowledge or beliefs about the plausible values of a parameter can be quantitatively taken into consideration by using an informative prior. 
 
 Priors may arise from different sources, an obvious one being a body of empirical data on the specific issue in question.  When empirical data are scarce, other sources can be \index{expert opinion} expert opinion, which has been proposed in medical statistics \citep{ohagan2006uncertain,OakleyOHagan}, or via extensions of existing theories.  
 
 Speaking informally, the posterior mean can be seen as a weighted sum of the prior mean and the sample mean, weighted by the relative precision (inverse of the variance) of the prior and the data. If the prior has relatively higher precision, it will dominate in determining the posterior mean, and if the data has higher precision (this is a function of standard deviation and the sample size), then the data will dominate in determining the posterior mean. A consequence of this fact is that when we have a very strong prior belief, expressed through a distribution with a relatively small standard deviation, even large amounts of data may not shift the posterior mean away from the prior mean. 
 
-Hence, when investigating a controversial research question, it may be desirable to quantitatively take into account opposing theoretical views by using a representative spectrum of different priors. In this context, medical statisticians like \cite{spiegelhalter2004bayesian} have proposed the use of a \index{community of priors} ``community of priors'': opposing perspectives of researchers are  incorporated in the data analysis by using different priors.  In this way, one can use \index{agnostic priors} \textit{agnostic priors} (mildly informative priors), \textit{enthusiastic priors} that support a particular position, and \index{adversarial priors} \index{skeptical priors} \textit{adversarial or skeptical priors} that represent alternative positions. The different posterior distributions from the data can then be examined in the light of these priors, and the researcher can draw their own conclusion. 
+Hence, when investigating a controversial research question, it may be desirable to quantitatively take into account opposing theoretical views by using a representative spectrum of different priors. In this context, medical statisticians like \cite{spiegelhalter2004bayesian} have proposed the use of a \index{community of priors} ``community of priors'': opposing perspectives of researchers are  incorporated in the data analysis by using different priors.  In this way, one can use \index{agnostic priors} \textit{agnostic priors} (mildly uninformative priors), \textit{enthusiastic priors} that support a particular position, and \index{adversarial priors} \index{skeptical priors} \textit{adversarial or skeptical priors} that represent alternative positions. The different posterior distributions from the data can then be examined in the light of these priors, and the researcher can draw their own conclusion. 
 
 We can examine next how agnostic, adversarial, and enthusiastic priors affect the posterior distributions of the effects of interest in the replication data. 
 The case of ungrammatical agreement constructions is relatively uncontroversial and will therefore not show any influence of priors. 
@@ -930,7 +930,7 @@ More interesting is the effect of different prior specifications on the interfer
 We carried out a sensitivity analysis on the estimates for the  ungrammatical conditions, defining priors that represent three sources of beliefs. The different priors are summarized in Table~\ref{tab:sensitivityanalysis}. 
 
 \begin{enumerate}
-\item \textbf{Mildly informative priors (Agnostic prior)} As a baseline, we used a mildly informative prior for both the agreement and reflexive conditions. This prior represents an agnostic starting point where no information is incorporated from any prior knowledge.
+\item \textbf{Mildly uninformative priors (Agnostic prior)} As a baseline, we used a mildly uninformative prior for both the agreement and reflexive conditions. This prior represents an agnostic starting point where no information is incorporated from any prior knowledge.
 \item \textbf{Meta-analysis priors (Adversarial prior for reflexives)}
 We derived posterior distributions of the interference effect in ungrammatical agreement and reflexive conditions using data from existing reading time studies \citep{JaegerEngelmannVasishth2017}. These studies represent a synthesis of the evidence available from self-paced reading and eye-tracking studies on agreement and reflexives. Because the dependent measure of interest in our studies is total fixation time, the estimates from the eye-tracking studies are based on total fixation times. We refer to this prior as an adversarial prior because the estimate for ungrammatical reflexives is N(9,10.75), which is a relatively tight prior for the reflexives interference effect in our replication study.  A great deal of data would be needed to shift the posterior mean such that a facilitatory interference effect is seen. 
 \item \textbf{LV05 priors (enthusiastic prior)} As a prior representing the equal cue-weighting retrieval proposal, we used a normal approximation of the range of predicted effects from the \cite{EngelmannJaegerVasishth2019} model. 
@@ -942,22 +942,22 @@ We derived posterior distributions of the interference effect in ungrammatical a
 \multicolumn{4}{c}{\textbf{Sensitivity analysis}}\\
 Condition & Source for Prior & Prior (ms) & Posterior (ms) \\
 \hline
-Agreement  & Mildly informative & N(0,7600) & -22 [-46,1]\\
+Agreement  & Mildly uninformative & N(0,7600) & -22 [-46,1]\\
 (Ungram) & Meta-analysis  & N(-32,8.5) & -25 [-36,-14]\\
   & LV05 Model   &  N(-26,13) & -22 [-34,-7]\\
 \hline                            
-Reflexives  & Mildly informative & N(0,7600) & -24 [-50,2] \\
+Reflexives  & Mildly uninformative & N(0,7600) & -24 [-50,2] \\
 (Ungram) & Meta-analysis & N(9,10.75) & -3 [-17,12]\\ 
   & LV05 Model & N(-26,13) &  -22 [-38,-6]\\
  \hline                            
  \end{tabular}
 \end{center}
-\caption{Summary of the sensitivity analysis, investigating the effect of incorporating prior knowledge from: mildly informative priors; a meta-analysis of existing reading data on ungrammatical agreement and reflexives; and  the model predictions in Engelmann, J\"ager, and Vasishth, 2019. The dependent measure in the analysis is total fixation time and the posterior estimates are back-transformed to the ms scale from log ms. The priors are shown in the ms scales.}\label{tab:sensitivityanalysis}
+\caption{Summary of the sensitivity analysis, investigating the effect of incorporating prior knowledge from: mildly uninformative priors; a meta-analysis of existing reading data on ungrammatical agreement and reflexives; and  the model predictions in Engelmann, J\"ager, and Vasishth, 2019. The dependent measure in the analysis is total fixation time and the posterior estimates are back-transformed to the ms scale from log ms. The priors are shown in the ms scales.}\label{tab:sensitivityanalysis}
 \end{table}%
 
 The results of this sensitivity analysis are shown in Table \ref{tab:sensitivityanalysis}.  Agreement conditions show similar facilitatory interference effects regardless of the prior chosen. 
 This confirms that the agreement interference effect is robust to the choice of prior. For reflexives, the situation is different. 
-The reflexive conditions show \index{facilitatory interference} facilitatory interference effects only when we use mildly informative priors and the LV05 predictions as priors.  With the relatively tight meta-analysis prior N(9,10.75), we see no indication of facilitatory interference effects in the replication data. 
+The reflexive conditions show \index{facilitatory interference} facilitatory interference effects only when we use mildly uninformative priors and the LV05 predictions as priors.  With the relatively tight meta-analysis prior N(9,10.75), we see no indication of facilitatory interference effects in the replication data. 
 Thus, for reflexives, the conclusion one can draw from these data is not as clear as for agreement; the conclusion  depends on the researcher's prior belief.  
 
 \section{Concluding remarks}
