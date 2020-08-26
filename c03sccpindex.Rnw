@@ -100,7 +100,13 @@ The \index{parsing architecture} parsing architecture has been further used to m
 
 \subsection{A priori predictions of the model} \label{lv05predictions}
 
-Figure~\ref{fig:plotmatch} shows the range of predicted retrieval time (in milliseconds) for target match and mismatch conditions respectively, for a range of parameter values. 
+Figure~\ref{fig:plotmatch} shows the range of predicted retrieval time (in milliseconds) for target match and mismatch conditions respectively, for a range of parameter values (the different parameters and their theoretical interpretation are discussed below). The range of the parameter values chosen for generating the predictions is restricted to plausible ranges based on the values used in the ACT-R modelling community and in our own modelling work. 
+
+The model makes two broad classes of prediction: inhibitory interference and facilitatory interference effects. Inhibitory interference is predicted to occur in so-called target-match configurations: when the target for retrieval perfectly matches retrieval cues, and a distractor's features partially match retrieval cues. Facilitatory interference effects occur when we have a so-called target-mismatch configuration: both the target and distractor match the retrieval cues partially. These configurations are discussed in detail below.
+
+One important point to notice in Figure~\ref{fig:plotmatch} is that, depending on the numerical parameter settings in the model, the magnitude of the interference effects (inhibitory and facilitatory) can vary. This is an interesting observation because it shows that individual-level differences could in principle be modelled through systematic differences in the parameters.
+
+Figure~\ref{fig:plotmatch} should also remind the reader of the \cite{rp} desiderata: it shows the range of predictions are relatively restricted, lying between 10 and 80 ms for inhibitory interference, and -10 and -80 ms for facilitatory interference (in reading studies). 
 
 <<predictions,echo=FALSE,include=FALSE>>=
 ## cue weight 1:
