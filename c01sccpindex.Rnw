@@ -1,23 +1,14 @@
 \chapter{Introduction} \label{c00}
 
 A large body of work in cognitive science is concerned with
-understanding the constraints on human language comprehension and
-production. Although questions about language processing fall within the relatively narrow confines of psycholinguistics, there are deep connections between language processing and independently developed research on memory processes within cognitive psychology. This book is about a particular set of computational models of sentence
+understanding the constraints on human language comprehension and production. Although questions about language processing fall within the relatively narrow confines of psycholinguistics, there are deep connections between language processing and independently developed research on memory processes within cognitive psychology. This book is about a particular set of computational models of sentence
 comprehension processes \citep{LewisVasishth2005,EngelmannJaegerVasishth2019} that seek to explain how one particular conception of working memory constraints
-comes into play when we comprehend a sentence. The aim is to use an
-independently developed process model of human information processing  \index{ACT-R}
-(ACT-R) to account for some of the cognitive processes that unfold
-when a sentence is read or heard.
+comes into play when we comprehend a sentence. The aim is to use an independently developed process model of human information processing  \index{ACT-R}
+(ACT-R) to account for some of the cognitive processes that unfold when a sentence is read or heard. Because of the narrow focus of the work presented here, our discussion of alternative computational modeling approaches will be cursory. This is in no way intended to diminish the importance of these approaches; we feel that approaches such as connectionist modeling and non-linear dynamical systems based models add great theoretical value to the field and deserve a fuller treatment.
 
-This book summarizes only one particular thread of research on the role of  \index{working memory}
-working memory constraints in sentence comprehension, but the work
-reported here is intended to be a modest contribution towards a
-broader, longer-term goal: developing competing theories and models of sentence
-comprehension or parsing processes that can be quantitatively compared
-against high-quality benchmark empirical data.  In an effort to foster
-reproducibility, and to allow others to use and extend the
-computational models presented here, all the associated data and code
-for this book have been made available from the following repository:
+
+In fact, even within theories that assume working memory constructs in sentence comprehension, this book summarizes only one particular thread of research on the role of  \index{working memory} working memory constraints in sentence comprehension, but the work reported here is intended to be a modest contribution towards a broader, longer-term goal: developing competing theories and models of sentence
+comprehension or parsing processes that can be quantitatively compared against high-quality benchmark empirical data.  In an effort to foster reproducibility, and to allow others to use and extend the computational models presented here, all the associated data and code for this book have been made available from the following repository:
 
 https://vasishth.github.io/RetrievalModels.
 
@@ -765,27 +756,17 @@ the influence of individual differences in \index{working memory capacity} worki
 
 \subsection{Developing a set of modelling and empirical benchmarks for future model comparison}
 
-A further goal of the book is to provide the next generation of
-researchers with a synthesis of the modelling and empirical work that
-followed the publication of the article by
-\cite{LewisVasishth2005}. Our hope is that others will be able to
-build and improve on the present work, either falsifying or extending
-the empirical support for the model claims and thereby advancing our
-understanding of the important open theoretical issues, or developing
-competing models that can outperform the ones presented here.  Some \index{competing models}
-attempts at developing competing models that aim to outperform the
-models presented in the present book already exist
-\citep{SmithFranckTaborCogSci2018,rasmussen2017left,cho2017incremental,parker2019cue}. One
-problem common to all these models is that they take up one or two
-empirical phenomena of interest (a common choice is subject vs.\
-object relatives, usually in English). This often leads to overfitting
-the model to a very narrow set of facts. A remarkable number of
-modelling studies limit themselves to narrow topics like relative clause processing.  What is missing in the field is a set of \index{benchmark empirical tests}
-benchmark empirical tests that a model can be evaluated on in order to demonstrate superior fit to data, relative to some baseline model. As a first step towards developing such a benchmark, we provide in one place the data-sets from reading studies on interference effect that happen to be publicly available.
+A further goal of the book is to provide the next generation of researchers with a synthesis of the modelling and empirical work that followed the publication of the article by
+\cite{LewisVasishth2005}. Our hope is that others will be able to build and improve on the present work, either falsifying or extending the empirical support for the model claims and thereby advancing our understanding of the important open theoretical issues, or developing competing models that can outperform the ones presented here.  Some \index{competing models} attempts at developing competing models that aim to outperform the models presented in the present book already exist \citep{SmithFranckTaborCogSci2018,rasmussen2017left,cho2017incremental,parker2019cue}. One problem common to all these models is that they take up one or two empirical phenomena of interest (a common choice is subject vs.\
+object relatives, usually in English). This often leads to overfitting the model to a very narrow set of facts. A remarkable number of modelling studies (including our own!) limit themselves to narrow topics like relative clause processing.  What is missing in the field is a set of \index{benchmark empirical tests} benchmark empirical tests that a model can be evaluated on in order to demonstrate superior fit to data, relative to some baseline model. As a first step towards developing such a benchmark, we provide in one place the data-sets from reading studies on interference effect that happen to be publicly available.
 
-Regarding the data used in this book, we focus almost exclusively on reading data, from \index{self-paced reading} self-paced reading or \index{self-paced listening} self-paced listening, and \index{eyetracking} eyetracking studies. This is because we primarily set out to model the reading process;  an exception is the modelling of visual world data reported in  \cite{PatilEtAl2016}.
-We chose reading times as a convenient starting point because the \cite{LewisVasishth2005} model delivers predictions in terms of retrieval time and retrieval accuracy, and dependent measures in reading studies (e.g., fixation durations, comprehension accuracy) map relatively straightforwardly to this measure.  We will therefore not discuss the large body of research using other methods such as EEG and the visual world paradigm.  It is of course important to develop computational models that can be related to data that come from these methods. We hope
-that future generations will take up that task.
+Because the modelling reported here was carried out over many years (most of the work was done between 2005 and 2018), many computational challenges had to be overcome. For example, the ACT-R architecture itself is continuously evolving independently of the sentence processing architecture we work with. These version  changes in ACT-R necessitated a near-complete rewrite of the modelling constructs.  As a consequence, the original Lewis and Vasishth model's underlying machinery also changed in subtle ways. This evolution of ACT-R will remain a challenge for future researchers. A further problem that we encountered was that lisp is not a widely used programming language any more; this makes the ACT-R model less accessible to researchers interested in using it. Fortunately, researchers have recently developed viable alternative implementations in python \citep{bdactrbook}, which may be easier to maintain and develop further. The lesson to be learnt here is that developing a sustainable code base, and preventing code rot, is a major challenge in any large programming project like this one, and the user/reader needs to be aware of this limitation and to be patient when adapting or using legacy code. One insight to be gained here is that perhaps some compromises are necessary in order to make the theoretically machinery more accessible to the wider community. It is possible to investigate the core principles of the model  without implementing a fully-fledged model; this can be done by using code written in the programming language R. We provide such an implementation, along with a Shiny app that allows the reader to compute simple effects without doing any coding at all.\footnote{https://engelmann.shinyapps.io/inter-act/}. 
+
+Another issue we faced was that we studied different research problems piecemeal. For example, a model integrating eye-movement control and parsing is reported in Chapter 5, but this model has not been regression-tested with the core phenomena discussed in Chapter 4 or other chapters. Future generations working on this framework could (and should) develop a more systematic testing framework, so that empirical coverage is incremental in the sense that the model's performance on all previously modelled data-sets and phenomena is evaluated again when exploring an extension of the architecture.
+
+One further area where the present work fell short was that modelling should ideally always be comparative; a baseline model is necessary to evaluate a particular model's relative performance. In more recent work, reported in Chapters 7 and 8, we have attempted to shift the focus towards evaluating competing models' performance on the same data-set. In future work, this should be standard practice. For example, an alternative competing model of eye-movement control and parsing would be very useful in order to better understand the relative performance of the model presented in chapter 5.
+
+Regarding the data used in this book, we focus almost exclusively on reading data, from \index{self-paced reading} self-paced reading or \index{self-paced listening} self-paced listening, and \index{eyetracking} eyetracking studies. This is because we primarily set out to model the reading process;  an exception is the modelling of visual world data reported in  \cite{PatilEtAl2016}. We chose reading times as a convenient starting point because the \cite{LewisVasishth2005} model delivers predictions in terms of retrieval time and retrieval accuracy, and dependent measures in reading studies (e.g., fixation durations, comprehension accuracy) map relatively straightforwardly to this measure.  We will therefore not discuss the large body of research using other methods such as EEG and the visual world paradigm.  It is of course important to develop computational models that can be related to data that come from these methods. We hope that future generations will take up that task.
 
 \section{Looking ahead}
 
