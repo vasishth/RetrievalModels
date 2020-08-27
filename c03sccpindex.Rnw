@@ -4,7 +4,7 @@ Any comprehensive theory of sentence comprehension needs to explain the mechanis
 
 \index{cue-based retrieval}
 In a content-addressable memory, a cue-based retrieval mechanism can activate certain items in parallel on the basis of how well their properties, i.e., their \textit{features}, agree with a set of requirements, i.e. \textit{cues}, which are determined by the type of dependency.
-This stands in contrast to search mechanisms which assume that items in memory are checked based on their location in memory, e.g., their \index{serial order position} serial order position \citep{Sternberg1966,Sternberg1969,BerwickWeinberg1984} or their position in a syntactic tree \citep{Sturt2003}. 
+This stands in contrast to search mechanisms which assume that items in memory are checked based on, for example, their \index{serial order position} serial order position \citep{Sternberg1966,Sternberg1969,BerwickWeinberg1984} or their position in a syntactic tree \citep{Sturt2003}. 
 
 A cue-based model of sentence parsing has been described in 
 \cite{VanDykeLewis2003}, \cite{LewisVasishth2005}, \cite{LewisVasishthVanDyke2006}, and \cite{VasishthLewis2006}. 
@@ -15,15 +15,15 @@ The parser uses rapid associative memory retrievals to form inter-word dependenc
 ACT-R is a \index{comprehensive theory} comprehensive, implemented theory which integrates processes of working memory access, rule-guided behavior, learning, sensual input, and motor control. 
 It is a constantly developing framework that incorporates  findings from experimental work in various areas of cognitive psychology. \index{long-term memory}
 ACT-R consists of a long-term memory of \index{declarative knowledge} declarative and \index{procedural knowledge} procedural knowledge and \index{short-term buffers} short-term buffers with \index{limited capacity} limited capacity, representing a limited \index{focus of attention} focus of attention \citep{McElree2006,Cowan2001,Miller1956}. 
-Procedural knowledge is realized in the form of a production system \citep{Newell1973,Newell1978} that consists of condition-action pairs that operate on short-term, or \emph{working} memory. \index{working memory}
+Procedural knowledge is realized in the form of a production system \citep{Newell1973,Newell1978} that consists of condition-action pairs that operate on short-term or working memory. \index{working memory}
 
-The contents of short-term memory buffers serve as conditions that trigger productions to fire. The result of a condition --- the manipulated buffer contents --- serve as condition for other productions. Hence, the  sequence of events is defined through condition-action specifications that operate by the serial firing of productions. 
+The contents of short-term memory buffers serve as conditions that trigger if-then production rules \index{production rule} to fire. The action(s) carried out by a production rule --- which usually manipulates buffer contents --- lead to a new state of the buffers. This new state serves as a condition that triggers other production rules. Hence, the  sequence of events is defined through if-else condition-action specifications that operate through the serial firing of production rules. 
 At the same time, associated items are related by a mechanism of spreading activation that affects an individual item's activation dependent on the presence of related items. Memory items, so-called \index{chunks} \emph{chunks}, enter the buffers by being retrieved from \index{declarative memory} declarative memory. 
 Memory items are accessed by a cue-based retrieval mechanism on the basis of their activation, which is subject to \index{decay} decay, \index{reactivation} reactivation, \index{similarity-based interference} similarity-based interference, and \index{noise} noise.
 
 Next, the equations that underlie ACT-R content-addressable memory access will be explained in a --- sometimes simplified --- way as they are relevant for the model of sentence comprehension described in \cite{LewisVasishth2005}.
 
-In ACT-R, the probability and latency of retrieving a memory item is determined by its activation value. An item's activation fluctuates over time as the result of decay, reactivation, and noise. At the time of a retrieval request, a limited amount of activation spreads among all items in relation to their match with the retrieval specification, which is defined by a comparison of an item's \textit{features} with the retrieval \textit{cues}.
+In ACT-R, the probability and latency of retrieving a memory item is determined by its activation value. An item's activation changes over time as the result of decay, reactivation, and noise. At the time of a retrieval request, a limited amount of activation spreads among all items in relation to their match with the retrieval specification, which is defined by a comparison of an item's \textit{features} with the retrieval \textit{cues}.
 
 An item's final activation value is the sum of four components: A base-level $B_i$, which includes decay and frequency of use, the spreading activation $S_i$, which includes similarity-based interference, a penalty component $P_i$ for mismatches with the retrieval specification, and a random noise component $\varepsilon$. The base-level activation $B_i$ is computed from a \textit{base-level constant} $\beta_i$ and the item's history of use:
 
@@ -57,13 +57,19 @@ $P$ is the \index{mismatch penalty parameter} \textit{mismatch penalty parameter
 This way, the more dissimilar a feature value of an item is to the cue value, the more activation is subtracted for this item.
 If, for example, one defines some similarity between the color values \textit{red} and \textit{orange}, orange items would be less penalized than, e.g., blue items when cueing for a \actrcue{red}.
 
-The item that is finally retrieved in a particular trial is the one that happens to have the highest activation. The time to retrieve an item $i$ is a function of its activation $A_i$:
+The item $i$ that is finally retrieved in a particular trial is the one that happens to have the highest activation $A_i$.
+The activation $A_i$ is the sum of the base-level $B_i$ and the spreading activation $S_i$, the mismatch penalty, plus Gaussian noise $\epsilon_i$, where $\epsilon_i$ is sampled from a normal distribution with mean 0 and some standard deviation $\sigma$ (Equation~\ref{eq:act}).
+
+\begin{equation}
+  A_i = B_i + S_i + P_i + \epsilon_i  \hbox{, where } \epsilon_i \sim Normal(0,\sigma)  \label{eq:act}
+\end{equation}
+
+The time to retrieve an item $i$ is a function of its activation $A_i$, as determined by the following equation:
 \begin{equation}\label{eq:rt}
 	RT = Fe^{-(f\times A_i)}
 \end{equation}
 where $F$ is the \index{latency factor} \textit{latency factor} (LF) and $f$ the \textit{latency exponent}. 
 If no item has an activation above a certain threshold $\tau$, retrieval fails. The duration of a failed retrieval is calculated by the same Equation (\ref{eq:rt}) with $A_i$ substituted with $\tau$.
-
 
 \section{The Lewis \& Vasishth (2005) model}
 The \index{computational model} computational model of parsing difficulty developed by \cite{LewisVasishth2005} adopts ACT-R's general principles, a limited focus of attention and cue-based retrieval of memory items subject to fluctuating activation as a function of decay and retrieval history and similarity-based retrieval interference. An essential property of \index{cue-based retrieval} cue-based retrieval in contrast to structural search is that \index{serial order} serial order information is not used in the search mechanism \citep{McElree2006,Ratcliff1978}. \cite{LewisVasishth2005} argue that this serves the speed of \index{language processing} language processing where most dependencies can be established without serial order information, purely based on the items features and recency in terms of activation decay over time. The lack of immediate serial order information in incremental sentence processing  explains severe comprehension difficulty in cases where this information is needed, such as in double center-embeddings such as Example~(\ref{ex:centeremb}):
@@ -95,18 +101,15 @@ New structure is built at a new input word and then attached into previously-bui
 The productions essentially operate on four buffers, each holding one chunk: A control buffer (the goal buffer), a lexical buffer holding the lexicon entry corresponding to the current word, a retrieval buffer holding the syntactic chunk retrieved from memory, and a buffer for creating new structure. The goal buffer contains some syntactic expectation in the form of a syntactic category that is necessary in order to complete the currently pursued structure.
 Figure~\ref{fig:lv05buffers} from \cite{LewisVasishth2005} illustrates the cycle carried out at each input word: First, the corresponding lexical entry is accessed in the lexicon in \index{declarative memory} declarative memory. Based on the lexical entry and on the current goal category, the cues for retrieving a matching constituent are specified and retrieval is initiated. Finally, a new syntactic node is created and attached to the one retrieved. Attention is then sent to the next word. The essential step is memory retrieval. Through ACT-R's independently motivated principles of cue-based working memory access, the simulations in \cite{LewisVasishth2005} provide quantitative predictions for \index{distance effects} effects of distance, structural interference, and embedding type in sentence comprehension.
 
-The \index{parsing architecture} parsing architecture has been further used to model important aspects of sentence comprehension such as \index{anti-locality} anti-locality \citep{VasishthLewis2006}, \index{negative polarity items} intrusive interference in negative polarity constructions \citep{VasishthBruessowLewis2008}, interference effects in reflexive processing \citep{PatilVasishthLewis2012,ParkerPhillips2014,JaegerEngelmannVasishth2015} and subject-verb processing
-\citep{WagersLauPhillips2009,DillonMishlerSloggett2013}, and impaired sentence comprehension in aphasia \citep{PatilEtAl2016,MaetzigEtAltopics2018}.
+The \index{parsing architecture} parsing architecture has been further used to model several different aspects of sentence comprehension such as \index{anti-locality} anti-locality \citep{VasishthLewis2006}, \index{negative polarity items} intrusive interference in negative polarity constructions \citep{VasishthBruessowLewis2008}, interference effects in reflexive processing \citep{PatilVasishthLewis2012,ParkerPhillips2014,JaegerEngelmannVasishth2015} and subject-verb processing
+\citep{WagersLauPhillips2009,DillonMishlerSloggett2013}, and impaired sentence comprehension in aphasia \citep{PatilEtAl2016,MaetzigEtAltopics2018,LissonEtAl2020}.
 
 \subsection{A priori predictions of the model} \label{lv05predictions}
 
-Figure~\ref{fig:plotmatch} shows the range of predicted retrieval time (in milliseconds) for target match and mismatch conditions respectively, for a range of parameter values (the different parameters and their theoretical interpretation are discussed below). The range of the parameter values chosen for generating the predictions is restricted to plausible ranges based on the values used in the ACT-R modelling community and in our own modelling work. 
+%Figure~\ref{fig:plotmatch} shows the range of predicted retrieval time (in milliseconds) for grammatical and ungrammatical conditions, respectively. Grammatical conditions are alsoo called  target match configurations, because the retrieval cues (e.g., at the verb) match the target for retrieval perfectly. Analogously, ungrammatical conditions are called target mismatch, because the retrieval cues match the target for retrieval only partially. In Figure~\ref{fig:plotmatch}, the predictions are shown for a range of parameter values. The range of the parameter values chosen for generating the predictions is restricted to plausible ranges based on the values used in the ACT-R modelling community and in our own modelling work. 
 
-The model makes two broad classes of prediction: inhibitory interference and facilitatory interference effects. Inhibitory interference is predicted to occur in so-called target-match configurations: when the target for retrieval perfectly matches retrieval cues, and a distractor's features partially match retrieval cues. Facilitatory interference effects occur when we have a so-called target-mismatch configuration: both the target and distractor match the retrieval cues partially. These configurations are discussed in detail below.
+%As Figure~\ref{fig:plotmatch} shows, the model makes two broad classes of prediction: inhibitory interference and facilitatory interference effects. Inhibitory interference is predicted to occur in  target-match configurations: when the target for retrieval perfectly matches retrieval cues, and a distractor's features partially match retrieval cues. Facilitatory interference effects occur when we have a target-mismatch configuration: both the target and distractor match the retrieval cues partially. These configurations are discussed in detail below.
 
-One important point to notice in Figure~\ref{fig:plotmatch} is that, depending on the numerical parameter settings in the model, the magnitude of the interference effects (inhibitory and facilitatory) can vary. This is an interesting observation because it shows that individual-level differences could in principle be modelled through systematic differences in the parameters.
-
-Figure~\ref{fig:plotmatch} should also remind the reader of the \cite{rp} desiderata: it shows the range of predictions are relatively restricted, lying between 10 and 80 ms for inhibitory interference, and -10 and -80 ms for facilitatory interference (in reading studies). 
 
 <<predictions,echo=FALSE,include=FALSE>>=
 ## cue weight 1:
@@ -218,21 +221,22 @@ plot_mismatch+facet_wrap( ~ cueweighting, ncol=3)+
 #multiplot(plot_match,plot_mismatch,cols=2)
 @
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=10cm]{figures/priorpredictions}
-\caption{Predicted reading times of the LV05 model for the target-match and mismatch configurations, where the noise parameter has value 0.2; the mismatch penalty parameter has value 0.15; retrieval threshold has value -1.5;  the LF parameter values come from a Normal distribution with mean 0.3 and standard deviation 0.1; and the maximum associative strength comes from a Normal distribution with mean 1.5 and standard deviation 0.25.}\label{fig:plotmatch}
-\end{figure}
+%\begin{figure}[!htbp]
+%\centering
+%\includegraphics[width=10cm]{figures/priorpredictions}
+%\caption{Predicted reading times of the LV05 model for the target-match and mismatch configurations, where the noise parameter has value 0.2; the mismatch penalty parameter has value 0.15; retrieval threshold has value -1.5;  the LF parameter values come from a Normal distribution with mean 0.3 and standard deviation 0.1; and the maximum associative strength comes from a Normal distribution with mean 1.5 and standard deviation 0.25.}\label{fig:plotmatch}
+%\end{figure}
 
-\subsection{Predictions of the Lewis \& Vasishth (2005) model for target-match and target-mismatch configurations} \label{core03predictions}
-
+%\subsubsection{Predictions of the Lewis \& Vasishth (2005) model for target-match and target-mismatch configurations} 
+%
 \begin{figure}[!htbp]
 \includegraphics[width=\textwidth]{figures/tableLV05pred}
     \caption{Spreading activation according to ACT-R/LV05 in the four conditions shown in Example~\ref{ex:c03sturt03:exp2}. Line weights indicate the amount of \index{spreading activation} spreading activation from a cue to an item. Black oval boxes represent a feature match. Gray oval boxes indicate features matching an \index{cue overload} `overloaded' cue (\actrcue{MASC} in b), and white boxes indicate a mismatch. The figure is by Engelmann and Vasishth (2019); available at dx.doi.org/10.6084/m9.figshare.9305456 under a CC-BY4.0 license.}\label{fig:c03ACTRpred}
 \end{figure}
 
+In this section, we explain how inhibitory interference and facilitatory interference effects arise in the model. Inhibitory interference arises in target-match configurations, where the target for retrieval matches the retrieval cues perfectly, and the distractor partially matches the retrieval cues; and facilitatory interference arises in target-mismatch configurations, where both the target and distractor only partially match the retrieval cues.
 
-See Figure~\ref{fig:c03ACTRpred} for a graphical representation of the model predictions for Example~\ref{ex:c03sturt03:exp2}. The oval boxes indicate matching (black or gray) or mismatching (white) features of an item with respect to the retrieval cues. The darker the boxes, the better the match of the item and the higher its \index{activation level} \textbf{activation level}.
+Example~\ref{ex:c03sturt03:exp2} shows the two configurations, and Figure~\ref{fig:c03ACTRpred} presents a graphical representation of how the model's predictions arise. The oval boxes indicate matching (black or gray) or mismatching (white) features of an item with respect to the retrieval cues. The darker the boxes, the better the match of the item and the higher its \index{activation level} \textbf{activation level}.
 
 \begin{exe}
 \ex\label{ex:c03sturt03:exp2}
@@ -252,14 +256,14 @@ The surgeon\featuresetNP{-FEM}{+CCOM} who treated Jennifer\featuresetNP{+FEM}{-C
 The relative activation levels of memory items in ACT-R determine which item will be retrieved. All items available in memory enter into a race at the time of retrieval, such that the one which happens to have the highest activation is retrieved. Thus, only one ``winning'' item is ever retrieved in any one trial. The higher the activation of the ``winning'' item, the faster the retrieval time.  Each item $i$ has a \index{base-level activation} \textbf{base-level activation} $B_i$  that reflects past usage by accounting for all reactivation events ($t_j$ represents the time elapsed since the $j$-th activation) and a time-based decay with rate $d$ (this usually has the default value $0.5$ in ACT-R):
 
 \begin{eqnarray}
-  B_i = \text{ln}(\sum_{j=1}^n t_j^{-d}) + \beta_i \label{eq:bl}
+  B_i = \log(\sum_{j=1}^n t_j^{-d}) + \beta_i \label{eq:bl}
 \end{eqnarray}
 
 \noindent
 In the above equation, $\beta_i$ is the resting-state activation for item $i$, and $n$ indexes the number of times that the item $i$ has been retrieved in the past.
 
 In addition to the base-level activation, \index{spreading activation} \textbf{spreading activation} is added to every (partially) matching item at the time of retrieval. The spreading activation component is the main source of similarity-based interference effects in ACT-R. 
-An item receives spreading activation from all matching cues $j$ depending on the \index{associative strength} \emph{associative strength} $S_{ji}$ between cue $j$ and item $i$ and the cue's weight $W_{j}$; see Equations~(\ref{eq:spread2}) and (\ref{eq:assoc}). $W_j$ is standardly set to $1/\textit{number of cues}$, meaning that all cues are weighted equally. We are adopting this standard assumption throughout this work.  The implications of cue-weighting are discussed in \citep{VasishthEtAlTiCS2019,JaegerMertzenVanDykeVasishth2019}. 
+An item receives spreading activation from all matching cues $j$ depending on the \index{associative strength} \emph{associative strength} $S_{ji}$ between cue $j$ and item $i$ and the cue's weight $W_{j}$; see Equations~(\ref{eq:spread2}) and (\ref{eq:assoc}). $W_j$ is standardly set to $1/\textit{number of cues}$, meaning that all cues are weighted equally. We are adopting this standard assumption throughout this work.  The implications of cue-weighting are discussed in \citep{VasishthEtAlTiCS2019,JaegerMertzenVanDykeVasishth2019,YadavEtAlAMLaP2020}. 
 
 \begin{equation}
       S_i = \sum_j W_{j} S_{ji} \label{eq:spread2}
@@ -268,20 +272,15 @@ An item receives spreading activation from all matching cues $j$ depending on th
 The arrows in Figure~\ref{fig:c03ACTRpred} show how activation from the retrieval cues is distributed to the target and the distractor based on their features. The thickness of the lines with arrows indicates the amount of spreading activation that is added to an item due to that feature.
 In Figure~\ref{fig:c03ACTRpred}a (cf.\ Example~\ref{ex:c03sturt03:exp2}a), the target is a full match for the set of retrieval cues, \actrcue{masc} and \actrcue{ccom}. Both cues are also \emph{unambiguous} because they are matched by the target only and not by the distractor. The target thus receives the maximal amount of spreading activation at retrieval. By contrast, 
 in the interference condition b in Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:c03sturt03:exp2}, the gender cue is matched by the distractor in addition to the target. Thus, the \actrcue{MASC} cue is now \emph{ambiguous}, or ``overloaded'' \citep{WatkinsWatkins1975}. This \index{cue overload} \textbf{cue overload} has the consequence that the activation from this cue is now split between the target and the distractor. 
-This follows from Equation (\ref{eq:assoc}): The associative strength between a cue and an item is reduced in relation to the \emph{fan} --- the number of items associated with the cue (\textit{MAS} is the value of the \emph{maximum associative strength}).
+This follows from Equation (\ref{eq:fan}), which is repeated below for convenience as Equation (\ref{eq:assoc}). The associative strength between a cue and an item is reduced in relation to the fan --- the number of items associated with the cue. (Recall that \textit{MAS} is the value of the maximum associative strength).
 
 \begin{equation}
-  S_{ji} = \textit{MAS} - \text{ln}(\textit{fan}_{j}) \label{eq:assoc}%\\
+  S_{ji} = \textit{MAS} - \log(\textit{fan}_{j}) \label{eq:assoc}%\\
 \end{equation}
 
 Each cue distributes the \emph{limited} available activation equally between all matching items (with the maximally available amount being $W_j\times\textit{MAS}$).
 The more competitor items are present that match a cue $j$, the weaker the association $S_{ji}$ of this cue with the item $i$. In other words, each competitor reduces the spreading activation to the target by some amount and thus makes it harder to be distinguished from the other items.
-This is called the \index{fan effect} \textbf{fan effect} \citep{anderson1974retrieval}. 
-In our example (Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:sturt03:exp2}), the fan effect causes a reduction of the spreading activation received by the target in b in comparison with a, thus reducing the target's total activation, which is the sum of the base-level $B_i$ and the spreading activation $S_i$ plus Gaussian noise $\epsilon_i$, where $\epsilon_i$ is sampled from a normal distribution with mean 0 and some standard deviation $\sigma$ (Equation~\ref{eq:act}). 
-
-\begin{equation}
-  A_i = B_i + S_i + \epsilon_i  \hbox{, where } \epsilon_i \sim Normal(0,\sigma)  \label{eq:act}
-\end{equation}
+This is the \index{fan effect} fan effect discussed earlier  \citep{anderson1974retrieval}.  In our example (Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:sturt03:exp2}), the fan effect causes a reduction of the spreading activation received by the target in b in comparison with a, thus reducing the target's total activation $A_i$ (where $i$ indexes the id of the target chunk) 
 
 A decrease in activation causes the retrieval time (also called \index{retrieval latency} \emph{retrieval latency}) \textit{RT}$_i$ to increase. As shown in Equation~(\ref{eq:rtrep}), the retrieval latency of an item is a negative exponential function of its activation at the time of retrieval, where $F$ and $f$ are two scaling parameters --- the \index{latency factor} \emph{latency factor} and the \index{latency exponent} \emph{latency exponent}, respectively.
 
@@ -292,9 +291,9 @@ A decrease in activation causes the retrieval time (also called \index{retrieval
 Hence, the similarity in gender between target and distractor in target-match configurations shown in Figure~\ref{fig:ACTRpred} a vs.\ b predicts a slower retrieval latency due to the \index{fan effect} fan effect, i.e., inhibitory interference. \index{inhibitory interference}
  At any retrieval event, only the item with the highest activation at that moment is retrieved, and only when its activation is equal or above the retrieval threshold $\tau$. Therefore, the processing time at the word where the retrieval is triggered is dependent only on the time it takes to retrieve the item that happens to have a higher activation, i.e., the winner.
 Due to the Gaussian noise component in Equation~(\ref{eq:act}), activation fluctuates, such that there is always the possibility --- depending on the relative difference in activation between target and distractor --- of a \index{misretrieval} \textbf{misretrieval}, i.e., that the distractor is erroneously retrieved instead of the target. 
-Therefore, because of the increased distractor activation in \ref{fig:c03ACTRpred}b, there is a higher probability for misretrievals in b compared to a.\footnote{%
+Therefore, because of the increased distractor activation in \ref{fig:c03ACTRpred}b, there is a higher probability of misretrievals in b compared to a.\footnote{%
 In an alternative model of cue-based retrieval proposed by \cite{McElree2006}, the direct-access model, interference is only reflected in a decreased retrieval probability of the target but not in retrieval time. 
-  Effects observed in reading times are then explained as a by-product of changes in the retrieval probabilities. The idea here is that misretrievals may trigger a reanalysis process that inflates reading times \citep{McElree1993}. For an implementation and quantitative comparison of the direct-access model \citep{McElree2006} with the LV05 model, see \cite{NicenboimRetrieval2018}.}
+  Effects observed in reading times are then explained as a by-product of changes in the retrieval probabilities. The idea here is that misretrievals may trigger a reanalysis process that inflates reading times \citep{McElree1993}. For  implementations and quantitative comparisons of the direct-access model \citep{McElree2006} with the LV05 model, see \cite{NicenboimRetrieval2018,LissonEtAl2020}.}
 
 In \index{target mismatch} target-mismatch configurations (c and d of Fig.~\ref{fig:c03ACTRpred} and Example~\ref{ex:c03sturt03:exp2}), the predictions for \index{retrieval latency} retrieval latencies are different from those in \index{target match} target-match configurations.
 In c and d, the target is only a partial match as it does not exhibit the correct gender feature \match{fem}. When the distractor matches the gender in d, there is, however, no reduction in the target's activation. The reason is that both cues \actrcue{fem} and \actrcue{ccom} are only matched by one item each and are thus not ambiguous. Hence, no fan effect and no inhibitory interference is predicted.
@@ -310,13 +309,17 @@ Since the winner is always the item with the highest activation --- i.e., the sh
 
 Because of this statistical facilitation, the prediction for target-mismatch configurations in Figure \ref{fig:lv05plots}d vs. \ref{fig:lv05plots}c is a speed-up on average over multiple trials, i.e., \index{facilitatory interference} facilitatory interference.
 
-\subsection{Comparison of the LV05 prediction space with the results of the meta-analysis}
-
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.8\textwidth]{figures/fig-lv05plots1} 
 \caption{Prediction space for the interference effect in ACT-R in target-match (circles, solid line) and target-mismatch configurations (triangles, broken line). Interference is plotted in terms of the difference in mean retrieval latencies between the interference (labelled distractor-match) and the no-interference (labelled distractor-mismatch) condition, and as a function of the latency factor $F$. Positive values indicate longer mean retrieval latencies in the interference condition (\emph{inhibitory interference}) due to cue-overload (fan effect) from a partially matching distractor; negative values indicate shorter mean retrieval latencies in the interference condition (\emph{facilitatory interference}) due to retrievals of the partially matching distractor on trials where the distractor is highly activated and hence fast. Each individual data point represents the mean interference effect of 6,000 iterations with one out of 10,980 different parameter settings (each in target-match and target-mismatch configurations; i.e., there are 21,960 data points plotted in total). Each parameter setting is a combination of the following parameter values: latency factor $\protect F \in \{0, 0.01, ..., 0.6\}$, noise parameter $\protect \textit{ANS} \in \{0.1, 0.2, 0.3\}$, maximum associative strength $\protect \textit{MAS} \in \{1,2,3,4\}$, mismatch penalty $\protect \textit{MP} \in \{0,1,2\}$, retrieval threshold $\protect \tau \in \{-2,-1.5,...,0\}$.}\label{fig:lv05plots}
 \end{figure}
+
+Figure~\ref{fig:lv05plots} shows the quantitative predictions of the model for target-match and mismatch conditions. Shown are the mean predicted retrieval times (an average of 6000 simulations) for a range of parameter values. The parameter values are varied over a narrow band to show how they influence the retrieval time. One important point to notice is that, depending on the numerical parameter settings in the model, the magnitude of the interference effects (inhibitory and facilitatory) can vary. This is an interesting observation because it shows that individual-level differences could in principle be modelled through systematic differences in the parameters. Figure~\ref{fig:lv05plots} should also remind the reader of the \cite{rp} desiderata: it shows the range of predictions are relatively restricted. This is important for model validation; it shows that the model's predictions are in principle falsifiable. It is not the case that the model can predict any possible outcome.
+
+We turn next to a comparison of the model predictions for  empirical data from the different dependency types discussed in Chapter 2. 
+
+\subsection{Comparison of the LV05 prediction space with the results of the J\"ager et al.\ meta-analysis}
 
 \subsubsection{Methods}
 \label{sec:generalmethods}
