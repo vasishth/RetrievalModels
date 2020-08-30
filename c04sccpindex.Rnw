@@ -97,7 +97,7 @@ ggplot(data=subset(prommeans,
 
 The figure clearly shows a non-linear relationship between distractor prominence and the interference effects in target-match and target-mismatch configurations. 
 
-We explain the causes of the observed patterns in detail below by referring to Figures~\ref{fig:promEnsMismatch} and \ref{fig:promEnsMatch}. We first look at the predictions for \emph{target-mismatch} configurations (broken line), as these are less complex than the target-match predictions. The discussion surrounding Figures~~\ref{fig:promEnsMismatch} and \ref{fig:promEnsMatch is technically demanding, and can be skipped without loss of the main thread of this chapter. This discussion is only of interest to readers who want to understand the model's behaviour in its full details.
+We explain the causes of the observed patterns in detail below by referring to Figures~\ref{fig:promEnsMismatch} and \ref{fig:promEnsMatch}. We first look at the predictions for \emph{target-mismatch} configurations (broken line), as these are less complex than the target-match predictions. The discussion surrounding Figures~~\ref{fig:promEnsMismatch} and \ref{fig:promEnsMatch} is technically demanding, and can be skipped without loss of the main thread of this chapter. This discussion is only of interest to readers who want to understand the model's behaviour in its full details.
 
 \subsubsection{Predictions in target-mismatch configurations}\label{promexpl}
 \index{target mismatch}
