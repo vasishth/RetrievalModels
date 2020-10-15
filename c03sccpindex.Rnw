@@ -289,7 +289,8 @@ A decrease in activation causes the retrieval time (also called \index{retrieval
   \textit{RT}_i = Fe^{-(f\times A_i)} \label{eq:rtrep}
 \end{equation}
 
-Hence, the similarity in gender between target and distractor in target-match configurations shown in Figure~\ref{fig:ACTRpred} a vs.\ b predicts a slower retrieval latency due to the \index{fan effect} fan effect, i.e., inhibitory interference. \index{inhibitory interference}
+
+Hence, the similarity in gender between target and distractor in target-match configurations shown in Figure~\ref{fig:c03ACTRpred} a vs.\ b predicts a slower retrieval latency due to the \index{fan effect} fan effect, i.e., inhibitory interference. \index{inhibitory interference}
  At any retrieval event, only the item with the highest activation at that moment is retrieved, and only when its activation is equal or above the retrieval threshold $\tau$. Therefore, the processing time at the word where the retrieval is triggered is dependent only on the time it takes to retrieve the item that happens to have a higher activation, i.e., the winner.
 Due to the Gaussian noise component in Equation~(\ref{eq:act}), activation fluctuates, such that there is always the possibility --- depending on the relative difference in activation between target and distractor --- of a \index{misretrieval} \textbf{misretrieval}, i.e., that the distractor is erroneously retrieved instead of the target. 
 Therefore, because of the increased distractor activation in \ref{fig:c03ACTRpred}b, there is a higher probability of misretrievals in b compared to a.\footnote{%
