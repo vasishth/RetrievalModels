@@ -377,12 +377,12 @@ models of eye-movement control stand out as examples of
 comprehensive architectural frameworks of a particular cognitive
 process of interest (reading).  Cognitive psychology has a rich \index{working memory models}
 tradition of such models: the working memory models by
-\cite{OberauerKliegl2006,LewandowskyGeigerOberauer2008}, the \index{4CAPS} 4CAPS architecture \citep{justetal99} (www.ccbi.cmu.edu/4CAPS/), and other models \citep{lee2014bayesian,busemeyer2010cognitive,lewiscogmodsym,farrell2018computational}.
-By contrast, in the narrower field of sentence processing, not as much effort has gone into developing comprehensive architectures.
+\cite{OberauerKliegl2006,LewandowskyGeigerOberauer2008}, the \index{4CAPS} 4CAPS architecture \citep{justetal99,just2007organization,varma2016caps} (www.ccbi.cmu.edu/4CAPS/), and other models \citep{lee2014bayesian,busemeyer2010cognitive,lewiscogmodsym,farrell2018computational}.
+By contrast, in the narrower field of sentence processing, not as much effort has gone into developing comprehensive architectures; an interesting exception is CC READER \citep{JustCarpenter1992,just2002haw}.
 
 \subsection{A focus on average behaviour and neglect of individual-level differences}
 
-The second gap in current work is that the vast majority of the empirical and modelling work has focused on explaining average behavior. \index{average behavior} Researchers have pointed out that the excessive focus on modelling average bahaviour is problematic; for example, see the discussion in \cite{kidd2018individual}.
+The second gap in current work is that the vast majority of the empirical and modelling work has focused on explaining average behavior. \index{average behavior} Researchers have pointed out that the excessive focus on modelling average behaviour is problematic; for example, see the discussion in \cite{kidd2018individual}.
 
 As \cite{norm} put it, ``The average is an abstraction. The reality is
 variation.'' The average response is not sufficiently informative
