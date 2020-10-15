@@ -35,7 +35,7 @@ The surgeon\featuresetNP{-FEM}{+CCOM} who treated Jennifer\featuresetNP{+FEM}{-C
     \caption{Predictions of ACT-R for the four conditions shown in Example~(\ref{ex:sturt03:exp2}). Line weights indicate the amount of spreading activation from a cue to an item. Black oval boxes represent a feature match. Gray oval boxes indicate features matching an `overloaded' cue (\actrcue{MASC} in b), and white boxes indicate a mismatch.} \label{fig:ACTRpred}
 \end{figure}
 
-We reconsider three assumptions in the ACT-R cue-based retrieval model that constitutes the basis of the LV05 predictions. These are the following:
+We reconsider three assumptions in the ACT-R cue-based retrieval model that constitute the basis of the LV05 predictions. These are the following:
 
 \begin{enumerate}
   \item The base-level activation of items in memory is a function only of decay and reactivation through study-relevant retrieval events. Other influences (discussed in detail below) are usually ignored.
@@ -45,7 +45,7 @@ We reconsider three assumptions in the ACT-R cue-based retrieval model that cons
 
 These assumptions are, in fact, oversimplifications that do not accurately reflect general aspects of cognition. 
 In particular, considering that the memory activation of an item represents its strength of representation or its accessibility, it should (a) affect the strength of interference, and (b) take into account more aspects of the linguistic context than only the retrieval event that is relevant in a particular experiment. 
-Furthermore, given that cognitive associations between contextual cues and certain representation are the result of associative learning through experience, 
+Furthermore, given that cognitive associations between contextual cues and certain representations are the result of associative learning through experience, 
 one should account for the fact that these associations can be graded and multi-associative in nature and are not necessarily strictly categorical.
 Motivated by these considerations, the revised assumptions we propose are as follows:
 
