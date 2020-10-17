@@ -1,6 +1,10 @@
 \chapter{Competing accounts of interference in sentence processing} \label{c05}
 
-The cue-based retrieval model presented in this book is only one way to implement retrieval in sentence processing. An interesting competing proposal comes from \cite{McElree2000,McElree2006}. For a long time, the Lewis and Vasishth activation model and the McElree \index{direct-access model} direct-access model were, at least implicitly, considered to be notational variants \citep[e.g., see][]{LewisVasishthVanDyke2006,parkervandykeshvartsman2017}. \cite{NicenboimRetrieval2018} were the first to implement the direct-access model computationally and  to quantitatively compare the predictions of the two models of retrieval. In this chapter, we present some of the work relating to these model comparisons.
+The different cue-based retrieval models presented in the preceding chapters of this book are not the only way to implement retrieval processes in sentence processing. An interesting competing proposal comes from \cite{McElree2000,McElree2006}. For a long time, the Lewis and Vasishth activation model and the McElree \index{direct-access model} direct-access model were  considered to be notational variants \citep[e.g., see][]{LewisVasishthVanDyke2006,parkervandykeshvartsman2017}. Unfortunately, the direct-access model was never implemented as a computational process model; this made it difficult to unpack the underlying latent processes assumed there.  
+
+One way to compare the predictions of the model discussed in this book and the direct-access model is to implement a simplified statistical process model that abstracts away from some of the more complex aspects of the models (especially the Lewis and Vasishth model). The principal reason to simplify the model is convenience; a fully implemented process model for direct-access, programmed in the same cognitive architecture as the Lewis and Vasishth model, should be a longer-term goal.  
+
+\cite{NicenboimRetrieval2018} were the first to implement the Lewis and Vasishth model and the direct-access model as statistical models and  to quantitatively compare the predictions of these two models of retrieval. In this chapter, we present some of the work relating to these model comparisons. The models are implemented using the Stan programming language (mc-stan.org).
 
 \section{The direct-access model}
 
@@ -148,7 +152,9 @@ The direct-access mode and the activation model should be compared on other data
 
 \subsection{Relative clauses in Chinese} \label{rchinese}
 
-One interesting test of the activation vs.\ direct-access model is \index{relative clause} relative clause processing. We turn to this next.
+In section 6.2, we presented a model of subject vs.\ object relative clause processing in English. There, we were mainly interested in demonstrating how eye-movement control and parsing interact; the broader goal was to show how expectation and memory effects play a role in parsing.
+
+In this section, we use the statistical modeling approach discussed above to answer a different questiono. Of the two competing theories of retrieval, the Lewis and Vasishth model and the direct-access model, which theory can better explain the empirical facts about Chinese \index{Chinese} \index{relative clause} relative clause processing?
 
 It is widely accepted in psycholinguistics that \index{English} English \index{subject relative} subject relative clauses are easier to process than \index{object relative} object relatives \citep[e.g.,][]{grodner}. For example, in (\ref{ex:EnglishRCs}), reading times at the relative clause verb \textit{invited} would be shorter in  subject vs.\ object relatives.
 
@@ -163,7 +169,7 @@ The official who the tycoon invited has bad intentions.
 \end{xlist}
 \end{exe}
 
-One of the explanations for this observed difference is decay in \index{working memory} working memory: the distance between the subject and the relative clause verb is larger in object relatives than subject relatives; this leads to the decay in activation of the subject, causing greater retrieval difficulty at the relative clause verb \citep{Gibson2000}. Another alternative explanation is in terms of the \index{fan effect} fan effect \citep{LewisVasishth2005}: in object relatives, two nouns match the retrieval cues  set at the relative clause verb, whereas in subject relatives only one noun matches the retrieval cues. We will refer to the decay or interference explanations as the \index{distance account} distance account, because both depend on whether or not an intervener appears between the subject and the verb.
+One of the explanations for this observed difference is decay in \index{working memory} working memory: the distance between the subject and the relative clause verb is larger in object relatives than subject relatives; this leads to the decay in activation of the subject, causing greater retrieval difficulty at the relative clause verb \citep{Gibson2000}. Another alternative explanation is in terms of the \index{fan effect} fan effect discussed earlier: in object relatives, two nouns match the retrieval cues  set at the relative clause verb, whereas in subject relatives only one noun matches the retrieval cues. We will refer to the decay or interference explanations as the \index{distance account} distance account, because both depend on whether or not an intervener appears between the subject and the verb.
 
 Interestingly, the distance account predicts that in Chinese, object relatives should be \textit{easier} than subject relatives---this would be the opposite pattern to that found for English. As shown in (\ref{ex:chineseRCs}), Chinese relative clauses are prenominal: they appear before the head noun, not after (as is the case in English). This has the consequence that the distance between the  gap and the relative clause head noun is larger in the subject relative than in the object relative. 
 
@@ -412,4 +418,6 @@ One argument against the feature overwriting account is that one cannot explain 
 
 Finally, new data-sets on agreement attraction have recently become available \citep{ALV2020,JaegerMertzenVanDykeVasishth2019}. A more extensive investigation should be carried out to evaluate whether the feature overwriting model can explain these data better as well.   
 
+\section{Summary}
 
+In this chapter, we report some attempts at understanding the cue-based retrieval model's predictions from a model comparison perspective. In order to carry out these model comparisons,  hierarchical statistical models were implemented of competing theories of cognitive processes. Then, their predictive performance was compared quantitatively. This comparison-based approach to model evaluation is superior to the standard approach that we took in the earlier chapters of this book, that of only evaluating one's own favoured model against data. The model comparison approach his superior because it establishes model performance relative to a baseline model. If all models are wrong, we want to identify the models that are less wrong. We hope that future researchers will focus on model comparison based evaluations, so that we can engage in ''strong inference'' \citep{platt1964strong} and eliminate the models that do worse.      
