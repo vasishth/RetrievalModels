@@ -1,13 +1,21 @@
 \chapter{Future directions} \label{c09}
 
-In this closing chapter, we briefly discuss what we see as some of the important open problems that the next generation of researchers could pursue.
+In this closing chapter, we briefly discuss what we see as some of the important open problems that we made some progress in solving, and the problems that still need to be addressed. In Section 1.5, we discussed four gaps in the literature. This book attempts to address each of these gaps.
 
-\section{The need for creating higher-precision benchmark data-sets for model evaluation and comparison}
+\section{The relative scarcity of implemented computational models}
 
-Several classes of problems have been studied in sentence processing. A probably incomplete list is as follows:
+In this book, we have presented several models covering a broad range of empirical phenomena.
+
+
+\section{An excessive focus on average behaviour}
+
+\section{The creation of higher-precision benchmark data-sets for model evaluation and comparison}
+
+Several classes of problems have been studied in sentence processing. A probably incomplete list is shown below:
 
 \begin{enumerate}
 \item Local attachment ambiguities (garden-path constructions)
+\item Constraints on dependency completion
 \item Shallow vs.\ deep processing (good-enough processing and underspecification)
 \item Serial vs.\ parallel parsing
 \item The use of syntactic vs.\ semantic (pragmatic/phonological/prosodic) cues in sentence comprehension
@@ -17,7 +25,17 @@ Several classes of problems have been studied in sentence processing. A probably
 \item Large-scale comprehension data on processing differences between unimpaired and impaired populations.
 \end{enumerate}
 
-In the present work, we provide  all the benchmark reading data available to us on similarity-based interference effects. These data are a mixture of complete data-sets, and minimal data summaries derived from published work. It would be useful to systematically develop a repository of such data-sets for the different topics listed above, with the goal that the predictions of competing models of sentence processing could be tested against a broad class of phenomena.
+In recent empirical work we have carried out, we have attempted to systematically create benchmark reading data available specifically on similarity-based interference effects. 
+
+\begin{itemize}
+\item Mertzen et al 2020a
+\item Mertzen et al 2020b
+\item \cite{JaegerMertzenVanDykeVasishth2019}
+\item \cite{VasishthMertzenJaegerGelman2018}
+\item JaegerEngelmannVasishth2017
+\end{itemize}
+
+These data are a mixture of complete data-sets, and data summaries derived from published work. It would be useful to systematically create a repository of such data-sets for the different topics listed above, with the goal that the predictions of competing models of sentence processing could be tested against a broad class of phenomena.
 
 \section{Comprehensive model comparisons of competing models of retrieval}
 
