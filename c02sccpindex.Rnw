@@ -7,7 +7,7 @@
  Cognitive psychology has a rich history of investigating human memory processes. A typical experiment in cognitive psychology might involve getting participants to study pairs of words in succession, and then asking them to recall the second word given the first, or to recall the first word given the second.  Using such experimental paradigms, psychologists have  developed many   theories about how human memory works. For sentence processing, especially interesting are theories explaining why we forget material that we have previously seen.  
  
  \index{interference}
- A dominant explanation for forgetting is interference:  the association between multiple items in memory leads to competition among them and the subsequent inability to retrieve the correct item. \cite{anderson1974retrieval} suggested that interference is affected by the total number of associated links in memory; he refers to this number as the fan. The larger the fan, the greater the interference. We will refer to the processing difficulty arising from the \index{fan effect} fan effect as \index{inhibitory interference} \textit{inhibitory interference}.
+ A dominant explanation for forgetting is interference:  the association between multiple items in memory leads to competition among them and the subsequent inability to retrieve the correct item. \cite{anderson1974retrieval} suggested that interference is affected by the total number of associated links in memory; he refers to this number as the fan. The larger the fan, the greater the interference. Following \cite{Dillon2011}, we will refer to the processing difficulty arising from the \index{fan effect} fan effect as \index{inhibitory interference} \textit{inhibitory interference}.
 Figure~\ref{fig:faneffect}  shows a schematic illustration of the fan effect. Suppose an experiment is carried out where a participant is shown a gray circle, triangle, and square, and the participant's task is to identify the gray square. The participant initiates a search, looking for an object that is gray and a square; these are the cues used for a search. Because there are three items that match the cue gray, the fan is three. Here, identifying the target object (the gray square) will be slower compared to a case where the circle and triangle are not gray. 
 
 \begin{figure}[!htbp]
@@ -31,7 +31,7 @@ Apart from interference arising from the fan effect, many other interesting gene
 \item Shared features between multiple items in memory degrading memory representations \citep{Nairne1990,OberauerKliegl2006,VasishthEtAlICCM2017}. 
 \end{enumerate}
 
-Despite this apparently rich connection between sentence processing and the findings of cognitive psychology, it  is still reasonable to question whether these generalisations  from psychology have anything to do with constraints on sentence processing. A priori, the answer  could well be: not much. Unlike memorising unrelated items in a psychology experiment, the words that appear in a sentence occur in a particular context: syntax, semantics, pragmatics, discourse, gesture, prosody, and possibly also facial expressions together impose structure and add context in a way that cannot be compared to  simple list memorisation and recall.
+Despite this apparently rich connection between sentence processing and the findings of cognitive psychology, it  is  reasonable to question whether these generalisations  from psychology have anything to do with constraints on sentence processing. A priori, the answer  could well be: not much. Unlike memorising unrelated items in a psychology experiment, the words that appear in a sentence occur in a particular context: syntax, semantics, pragmatics, discourse, gesture, prosody, and possibly also facial expressions together impose structure and add context in a way that cannot be compared to  simple list memorisation and recall.
   For example, consider  a task where a participant is asked to memorise word pairs  like
   
 \begin{exe}
@@ -57,9 +57,9 @@ In the next section, we survey the literature on how constraints on memory might
 
 Who did what is a central component of comprehending the meaning of a sentence. We will refer to the process of connecting co-dependents for interpretation as \index{dependency completion} dependency completion.  This can be seen as a word-association process not unlike the one studied in memory research in psychology, but with the crucial difference that the associations lead to the construction of structured representations. 
 
- Completing a dependency crucially involves retrieving a codependent element that resides in memory in a heightened state of activation, usually because it has been read or heard in the recent past. 
+ Completing a dependency crucially involves retrieving a co-dependent element that resides in memory in a heightened state of activation, usually because it has been read or heard in the recent past. 
  \index{retrieval}
-  This retrieval process is widely assumed to be driven by a \index{cue-based search} cue-based, \index{content-addressable search}  content-addressable search \citep{McElreeForakerDyer2003}. For example, the verb \textit{slept} would  generally require an animate subject; one retrieval cue here would therefore be animacy. Another example is number marking on the auxiliary verb; the sentence \textit{The key is on the table} has a singular-marked auxiliary verb which, due to subject-verb agreement requirements in English, needs a singular-marked subject. 
+  This retrieval process is widely assumed to be driven by a \index{cue-based search} cue-based, \index{content-addressable search}  content-addressable search \citep{McElreeForakerDyer2003}. For example, the verb \textit{slept} would  generally require an animate subject; one retrieval cue here would therefore be animacy. Another example is number marking on the auxiliary verb; the sentence \textit{The key is on the table} has a singular-marked auxiliary verb which, due to the subject-verb number agreement constraint in English, needs a singular-marked subject. 
   
 In such retrieval situations, if more than one noun is present that has a feature that matches the retrieval cue, retrieving the correct noun has been argued to become more difficult.  Here, we will refer to the correct target for retrieval as the target noun, and the interfering noun or nouns as the distractor(s). 
   
@@ -109,7 +109,7 @@ The distractor \textit{musicians} (in the proactive interference condition \ref{
 \index{proactive interference} \index{retroactive interference}
 Apart from the work mentioned above, pro- and retroactive interference configurations have not been systematically studied in sentence processing; this is an important gap in the literature on interference.  
 
-We turn next to a typology of linguistic dependencies that have been investigated in the reading literature. We limit the discussion to work on reading (self-paced readind and eyetracking) because the mapping between  reading time and the predictions of the models under consideration in this book is relatively straightforward to define.
+We turn next to a typology of linguistic dependencies that have been investigated in the reading literature. We limit the discussion to work on reading (self-paced reading and eyetracking) because the mapping between  reading time and the predictions of the models under consideration in this book is relatively straightforward to define.
 
 Primarily because there is empirical data available from reading studies on these dependency types, we will focus on three basic classes of dependency:
 
