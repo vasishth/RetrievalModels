@@ -381,7 +381,7 @@ The feature overwriting model of \cite{Nairne1990} formalizes this idea. To quot
 
 A third explanation for agreement attraction is in terms of the \index{Marking and Morphing} Marking and Morphing (hereafter, MM) model; this model is intended to explain effects in production rather than comprehension.  Under the MM model, attraction arises due to ambiguous encoding of the number marking on a subject phrase \citep[e.g.,][]{EberhardCuttingBock2005}. In MM, number is considered to be a continuum and not a binary value. The feature ``plural'' from the distractor noun (i.e., the attractor) spreads activation to the root node of the subject noun phrase, causing it to become more ``plural''. The extent to which the subject noun phrase becomes plural depends on factors such as the number of distractor nouns with the plural feature, and how near they are to the subject noun phrase's root node in the syntactic tree. \cite{hammerly2019grammaticality} provide an implementation of MM that seeks to explain grammaticality judgement data in terms of a \index{drift diffusion process} drift diffusion process \citep{Ratcliff1978}. In the Hammerly  et al.\ implementation, the basic explanation for ungrammatical agreement attraction configurations being judged grammatical erroneously is a slower rate of evidence accumulation in favour of the correct and incorrect dependency completion. This model has not yet been extended to explain reading times,  and it is not clear whether under this model attraction is limited to retroactive interference designs and not proactive \citep{ALV2020},  but is an interesting proposal that needs further development.
 
-Related evidence for an encoding account for agreement attraction comes from \cite{PaapeEtAlMPT2020}. This work presents empirical evidence from Eastern Armenian that readers the number feature percolates to the grammatical subject from both the distractor noun as well as the verb.   Paape and colleagues implement a series of competing computational models, and show that the model that best explains the data is one that allows feature overwriting on the grammatical subject.
+Related evidence for an encoding account for agreement attraction comes from \cite{PaapeEtAlMPT2020}. This work presents empirical evidence from Eastern Armenian that  the number feature percolates to the grammatical subject from both the distractor noun as well as the verb.   Paape and colleagues implement a series of competing computational models, and show that the model that best explains the data is one that allows feature overwriting on the grammatical subject.
 
  These different theories/explanations for the agreement attraction effect are not necessarily mutually exclusive; any combination of these theories, or possibly all of them, could together explain the data. Such hybrid models have not yet been developed or tested; developing them is an interesting direction for future research.
   
@@ -406,12 +406,12 @@ mu_targetmismatch<-round(c(mean(params$mu),quantile(params$mu,prob=c(0.025,0.975
 <<mismatchplot,echo=FALSE>>=
 plotmeanSE(d=MismatchAgrmt,title="Agreement attraction data")+geom_hline(yintercept=mu_targetmismatch[2],color="gray")+geom_hline(yintercept=mu_targetmismatch[3],color="gray")+magnifytext()
 @
-\caption{Subject-verb number agreement effects in ungrammatical sentences (reading studies). Shown are the means (sorted by increasing magnitude of the effect) and 95\% confidence intervals from publicly available data.}\label{fig:agrmtattrnc01}
+\caption{Subject-verb number agreement effects in ungrammatical sentences (reading studies). Shown are the means (sorted by increasing magnitude of the effect) and 95\% confidence intervals that were either computed from publicly available data, or derived from published estimates.}\label{fig:agrmtattrnc01}
 \end{figure} 
 
- As shown in Figure~\ref{fig:agrmtattrnc01}, there is some variability in agreement attraction data, but the posterior distribution of the effect has mean \Sexpr{mu_targetmismatch[1]} ms, with 95\% credible interval [\Sexpr{mu_targetmismatch[2]},\Sexpr{mu_targetmismatch[3]}] ms, which is consistent with an overall facilitation effect. These estimates are remarkably consistent with the facilitatory effects observed in the two experiments by \cite{CunningsSturt2018} ($-22$ ms, $[-4,-42]$ ms,  and $-19$ ms, $[1,-40]$ ms). As discussed earlier, Cunnings and Sturt's experiments involved a plausibility manipulation, not the number feature; this could mean that such facilitatory effects are a hallmark of configurations in which the features on the item targeted for retrieval don't fully match all the retrieval cues.
+ As shown in Figure~\ref{fig:agrmtattrnc01}, there is remarkable variability in agreement attraction data, but the posterior distribution of the effect has mean \Sexpr{mu_targetmismatch[1]} ms, with 95\% credible interval [\Sexpr{mu_targetmismatch[2]},\Sexpr{mu_targetmismatch[3]}] ms, which is consistent with an overall facilitation effect. These estimates are remarkably consistent with the facilitatory effects observed in the two experiments by \cite{CunningsSturt2018} ($-22$ ms, $[-4,-42]$ ms,  and $-19$ ms, $[1,-40]$ ms). As discussed earlier, Cunnings and Sturt's experiments involved a plausibility manipulation, not the number feature; this could mean that such facilitatory effects are a hallmark of configurations in which the features on the item targeted for retrieval don't fully match all the retrieval cues.
 
-Almost all the data displayed in Figure~\ref{fig:agrmtattrnc01} comes from languages like English and Spanish \citep[an exception is][who investigated Arabic]{TuckerIdrissiAlmeida2015}. English and Spanish have relatively impoverished case marking systems. What happens if the grammatical subject and object are unambiguously case-marked? If case marking allows the parsing system to sufficiently distinguish between the nouns, the agreement attraction effect should be weakened when the nouns have distinctive \index{case marking} case marking. \cite{ALV2020} tested this hypothesis using \index{Armenian} Armenian, a language with subject-verb agreement and rich case marking. In a series of experiments (forced choice and self-paced reading), they found that although distinctive case marking on subject and object nouns led to facilitation in processing, there was no indication that distinctive case marking  attenuates the \index{agreement attraction} agreement attraction effect. \cite{ALV2020} explained the absence of an interaction between case marking and agreement attraction in terms of predictive parsing processes. As shown schematically in Figure~\ref{fig:serinecase}, once the nouns have been read, the parser predicts a verb phrase with the subject and object \index{subcategorization} subcategorization features already linked to the previously processed nouns. For example, if the reader encounters a sentence like \textit{The painters that the sculptor\dots}, a singular-marked verb is predicted, but the subcategorization frame of the  verb is already filled with the  indices corresponding to the subject and object nouns. Now, if a plural-marked verb is encountered, only the number marking of the predicted chunk needs to be modified to integrate the verb with the predicted verb phrase chunk. After that integration, agreement attraction may happen in the manner that \cite{WagersLauPhillips2009} suggest. If case marking only plays a role during prediction as suggested above, 
+Almost all the data displayed in Figure~\ref{fig:agrmtattrnc01} comes from languages like English and Spanish \citep[an exception is][who investigated Arabic]{TuckerIdrissiAlmeida2015}. English and Spanish have relatively impoverished case marking systems. What happens if the grammatical subject and object are unambiguously case-marked? If case marking allows the parsing system to sufficiently distinguish between the nouns, the agreement attraction effect should be weakened when the nouns have distinctive \index{case marking} case marking. \cite{ALV2020} tested this hypothesis using \index{Armenian} Armenian, a language with subject-verb agreement and rich case marking. In a series of experiments (forced choice and self-paced reading), they found that although distinctive case marking on subject and object nouns led to facilitation in processing, there was no indication that distinctive case marking  attenuates the \index{agreement attraction} agreement attraction effect. One explanation offered by \cite{ALV2020} for the absence of an interaction between case marking and agreement attraction is cast in terms of predictive parsing processes. As shown schematically in Figure~\ref{fig:serinecase}, once the nouns have been read, the parser predicts a verb phrase with the subject and object \index{subcategorization} subcategorization features already linked to the previously processed nouns. For example, if the reader encounters a sentence like \textit{The painters that the sculptor\dots}, a singular-marked verb is predicted, but the subcategorization frame of the  verb is already filled with the  indices corresponding to the subject and object nouns. Now, if a plural-marked verb is encountered, only the number marking of the predicted chunk needs to be modified to integrate the verb with the predicted verb phrase chunk. After that integration, agreement attraction may happen in the manner that \cite{WagersLauPhillips2009} suggest. If case marking only plays a role during prediction as suggested above, 
 this may explain why Avetisyan et al.\ find no indication that distinctive case marking attenuates the agreement attraction effect.  
 
 \begin{figure}[!htbp]
@@ -426,10 +426,10 @@ Grammatical versions of the number agreement configuration have also been invest
  \begin{exe} 
 \ex
 \begin{xlist}
-\item \label{example1gr}
-The keys to the cabinets are on the table.
 \item \label{example2gr}
 The keys to the cabinet are on the table.
+\item \label{example1gr}
+The keys to the cabinets are on the table.
 \end{xlist}
 \end{exe}
 
@@ -454,7 +454,7 @@ mu_targetmatchnum<-round(c(mean(params$mu),quantile(params$mu,prob=c(0.025,0.975
  Here, the general claim in the reading literature \citep{lago2015agreement} is that no difference is seen between the two conditions. If we examine the estimates from these studies, 
   we again see a wide range of variability, with all possible outcomes being observed; see Figure~\ref{fig:matchnumagrmt}. 
 The mean of the posterior distribution of this effect
-(the reading time at the auxiliary in (\ref{example2gr}) minus the reading time at the auxiliary in (\ref{example1gr})  across all these studies (some studies used the post-critical region) is   
+(the reading time at the auxiliary in (\ref{example1gr}) minus the reading time at the auxiliary in (\ref{example2gr})  across all these studies (some studies used the post-critical region) is   
 \Sexpr{mu_targetmatchnum[1]} ms, with 95\% credible interval [\Sexpr{mu_targetmatchnum[2]},\Sexpr{mu_targetmatchnum[3]}] ms.
 
 \begin{figure}[!htbp]
@@ -465,9 +465,9 @@ plotmeanSE(d=MatchNumAgrmt,title="Target match \n number agreement")
 \caption{Target match number agreement effects in reading studies.}\label{fig:matchnumagrmt}
 \end{figure}
 
-The tendency towards a speedup in constructions like (\ref{example2gr}) could have a trivial explanation: differences in spillover from the preceding region. In (\ref{example2gr}) the word before the auxiliary is \textit{cabinet}, whereas in (\ref{example1gr}) it is  \textit{cabinets}. The reading time of the plural noun will be longer than the singular just because of the word length difference, and this difference could be spilling over onto the auxiliary. So this observed speedup can perhaps be disregarded. 
+%The tendency towards a speedup in constructions like (\ref{example2gr}) could have a trivial explanation: differences in spillover from the preceding region. In (\ref{example2gr}) the word before the auxiliary is \textit{cabinet}, whereas in (\ref{example1gr}) it is  \textit{cabinets}. The reading time of the plural noun will be longer than the singular just because of the word length difference, and this difference could be spilling over onto the auxiliary. So this observed speedup can perhaps be disregarded. 
 
-Based on the studies from their lab, Wagers and colleagues conclude that there is no difference in processing in the two grammatical agreement attraction conditions  shown in  (\ref{example1gr}, \ref{example2gr}). Wagers et al.\ explain this null effect as follows. The subject noun predicts a verb with a particular number marking, and this prediction is validated when the verb is encountered. In such a situation, no retrieval process is triggered.  This proposal has some difficulties. A great deal of work on English \citep{Gibson2000,grodner,Bartek2011} has consistently shown that even in grammatical constructions, a retrieval process is triggered. It seems implausible that retrieval is not triggered only in this one particular case, where the number feature is involved.
+Based on the studies from their lab, Wagers and colleagues conclude that there is no difference in processing in the two grammatical agreement attraction conditions  shown in  (\ref{example2gr}, \ref{example1gr}). Wagers et al.\ explain this null effect as follows. The subject noun predicts a verb with a particular number marking, and this prediction is validated when the verb is encountered. In such a situation, no retrieval process is triggered.  This proposal has some difficulties. A great deal of work on English \citep{Gibson2000,grodner,Bartek2011} has consistently shown that even in grammatical constructions, a retrieval process is triggered. It seems implausible that retrieval is not triggered only in this one particular case, where the number feature is involved.
 
 How strong is the evidence for the null results reported in the Dillon et al., Wagers et al., and Lago et al.\ studies? When \index{p-value} p-values are greater than $0.05$, this is not necessarily evidence that the null hypothesis is true. As  discussed in section \ref{typem}, when \index{power} power is low, it is hardly surprising that repeated experiments show null results. This point has somehow been lost in the course of translating statistical theory to  psychological and linguistic applications. Instead of concluding that they have no evidence for an effect, researchers will incorrectly conclude that ``absence of evidence is evidence of absence''. 
 
@@ -504,7 +504,7 @@ This larger-sample study suggests that the magnitude of the \index{cue-based ret
   
 \section{Reflexives and reciprocals}
 
-\cite{Sturt2003} carried out an eye tracking study that investigated the processing of direct object reflexives. He suggested that when the parser encounters a \index{reflexive} reflexive,  in the first moments of processing, the antecedent is chosen using principle A of the binding theory.   
+\cite{Sturt2003} carried out an eye tracking study that investigated the processing of direct object reflexives. He suggested that when the parser encounters a \index{reflexive} reflexive,  in the first moments of processing, the antecedent is chosen using principle A of the \index{binding theory} binding theory \citep{chomsky1981lectures}.   
  This implies that if any other noun phrases are present that are not syntactically licensed as antecedents of the reflexive, these would never be considered as possible antecedents even if the gender marking on the reflexive matches these noun phrases. Two examples are shown below  to illustrate  the two basic configurations that have been studied in the literature. These examples are adapted from Sturt's paper.
  
 \begin{exe} 
@@ -529,7 +529,9 @@ In other words, at the earliest moments of processing, based on these \index{nul
 in ungrammatical subject-verb dependencies with number agreement between the distractor and verb, we see a relatively clear indication of facilitation effects. Since the majority of these studies involve self-paced reading, we cannot say whether these inhibitory and facilitatory effects reflect the earliest moments of processing. 
 An exception is the eyetracking study by \cite{VanDyke2007}; but here too,  first-pass reading time seems to show no interference effects (see Figure~\ref{fig:jvddataplot}). However, in a recent larger-sample eyetracking study involving English, \cite{MertzenEtAlAMLaP2019} did find the predicted inhibitory interference effects in first-pass reading times.
 
-Is the processing of \index{reflexives} reflexives different from those of subject-verb constructions? The answer would be yes if interference effect was seen in subject-verb constructions but not in reflexive constructions. In particular, at the earliest moments of processing, e.g., in first-pass reading times, we would expect to see interference effects in  subject-verb constructions but not in reflexives. \cite{DillonMishlerSloggett2013} were the first to directly compare interference effects in these two dependency types  (their experiment 1).  They compared subject-verb number agreement constructions with reflexives. See (\ref{dillon13agrmt}, \ref{dillon13refl}).
+Is the processing of \index{reflexives} reflexives different from those of subject-verb constructions? The answer would be yes if interference effect was seen in subject-verb agreement constructions but not in reflexive constructions. In particular, at the earliest moments of processing, e.g., in first-pass reading times, we would expect to see interference effects in  subject-verb constructions but not in reflexives. \cite{DillonMishlerSloggett2013} were the first to directly compare interference effects in these two dependency types  (their experiment 1).  They compared subject-verb number agreement constructions with reflexives. See (\ref{dillon13agrmt}, \ref{dillon13refl}).
+
+\underline{Number agreement conditions}: 
 
 \begin{exe}
 \ex \label{dillon13agrmt}
@@ -545,7 +547,7 @@ Is the processing of \index{reflexives} reflexives different from those of subje
 \end{xlist}
 \end{exe}
 
-
+\underline{Reflexive conditions}: 
 
 \begin{exe}
 \ex \label{dillon13refl}
@@ -565,7 +567,7 @@ Ungrammatical \\
 \end{xlist}
 \end{exe}
 
-Dillon generously provided the data from his study. This allowed us to  determine whether, in early vs.\ late measures, any difference is seen between agreement and reflexives. We first defined nested contrasts (in grammatical and ungrammatical sentences separately) as shown in Table~\ref{dillon13nestedcoding}. Note that Dillon and colleagues used a different contrast coding than we did (main effects and interactions of grammaticality and intrusion); the details of these differences are discussed in \cite{JaegerMertzenVanDykeVasishth2019}. 
+Dillon generously gave us the data from his study. This allowed us to  determine whether, in early vs.\ late measures, any difference is seen between agreement and reflexives. We first defined nested contrasts (in grammatical and ungrammatical sentences separately) as shown in Table~\ref{dillon13nestedcoding}; for more details on contrast coding, see \cite{SchadEtAlcontrasts}. Note that Dillon and colleagues used a different contrast coding than we did (main effects and interactions of grammaticality and intrusion); the details of these differences are discussed in \cite{JaegerMertzenVanDykeVasishth2019}. Our contrast coding was designed to directly test the predictions of the \cite{LewisVasishth2005} model.
 
 \begin{table}[!htbp]
 \begin{center}
@@ -662,10 +664,11 @@ agr_df$dependency<-"agreement"
 agr_refl_means_df<-rbind(refl_df,agr_df)
 
 dillonmeanplot<-ggplot(agr_refl_means_df,
-       aes(x=posterior,fill=dependency))+
-  geom_density(stat="density",alpha=0.5)+
+       aes(x=posterior,colour=dependency))+
+  geom_density(stat="density",alpha=0.5,size=1.5)+
+  scale_color_manual(values = c("black", "gray"))+
 #    geom_line(aes(linetype=dependency))+
-  #scale_color_grey()+scale_fill_grey()+
+#  scale_color_grey()+scale_fill_grey()+
   xlab("Estimate (ms)")+
 geom_vline(xintercept=0)+start_y_at_zero()
 @
@@ -799,8 +802,9 @@ agr_df$dependency<-"agreement"
 agr_refl_means_df<-rbind(refl_df,agr_df)
 
 dillonrepmeanplot<-ggplot(agr_refl_means_df,
-       aes(x=posterior,fill=dependency))+
-  geom_density(stat="density",alpha=0.5)+
+       aes(x=posterior,colour=dependency))+
+  geom_density(stat="density",alpha=0.5,size=1.5)+
+  scale_color_manual(values = c("black", "gray"))+
 #  geom_line(aes(linetype=dependency))+
   #scale_color_grey()+scale_fill_grey()+
   xlab("Estimate (ms)")+
@@ -906,7 +910,7 @@ In their paper, Dillon and colleagues argue that reflexives and agreement attrac
 
 Thus, although the experiment design had the potential to demonstrate that dependency type determines whether interference occurs, the data don't seem to provide a basis for a conclusion. 
 
-A major issue in the Dillon et al.\ study was that the sample size was quite small. 
+A major issue in the Dillon et al.\ study was that the sample size was quite small. A prospective power analysis of the Dillon et al.\ data---using their sample size and predicted effects from the cue-based retrieval model of Lewis and Vasishth---shows that prospective power is likely to have ranged from 20-40\% for subject-verb agreement configurations, and 5-25\% for reflexives; see \cite{JaegerMertzenVanDykeVasishth2019} for details on the power calculations.   
 We attempted to replicate the key results with a larger sample size (181 participants). This work is reported in full in \cite{JaegerMertzenVanDykeVasishth2019}.
 Figure~\ref{fig:dillonrepresults} shows the results at the critical region (the auxiliary or reflexive). Figure~\ref{fig:dillonrepresults} shows that both agreement and reflexives in ungrammatical conditions seem to show similar \index{facilitatory interference} facilitatory interference effects in total reading times.
 
