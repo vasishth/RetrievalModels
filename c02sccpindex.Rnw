@@ -582,7 +582,7 @@ intr.ru & 0   & 0   & 0   & 0  &   0    & 0 &  -0.5 &   0.5\\
 intr.rg & 0   & 0   & 0   & 0  &  -0.5  &  0.5  & 0 &   0\\
 \end{tabular}
 \end{center}
-\caption{Nested contrast coding to investigate the effect of intrusion in grammatical and ungrammatical agreement and reflexive constructions. The contrast dep is the main effect of dependency type (agreement or reflexive).}
+\caption{Nested contrast coding to investigate the effect of intrusion in grammatical and ungrammatical agreement and reflexive constructions. The contrast dep is the main effect of dependency type (agreement or reflexive). The abbreviation intr.au means intrusion (interference effect) in agreement dependencies, ungrammatical; intr.ag stands for intrusion (interference effect) in agreement dependencies, grammatical; intr.ru refers to intrusion (interference effect) in reflexive dependencies, ungrammatical; intr.rg stands for intrusion (interference effect) in reflexive dependencies, grammatical.}
 \label{dillon13nestedcoding}
 \end{table}%
 
@@ -812,9 +812,8 @@ geom_vline(xintercept=0)+start_y_at_zero()
 @
 
 <<dillonrepinddiffs,echo=FALSE>>=
-u0id<-paste0("r_subj[",unique(crit$subj), ",Intercept]")
 u0<-posterior_samples(m_drep,
-                      pars = u0id,
+                      pars = parnames(m_drep)[466:646],
                       exact_match = TRUE)
 u1_agr<-posterior_samples(m_drep,
                       pars = parnames(m_drep)[1733:(1733+180)],
@@ -829,8 +828,8 @@ agr_subj<-refl_subj<-matrix(rep(NA,4000*181),
 for(i in 1:181){
  refl_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,2]))-
     exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,2]))
- agr_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,3]))-
-    exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,3]))
+ agr_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_agr[,i]+m_post[,3]))-
+    exp(m_post[,1]+u0[,i]-(u1_agr[,i]+m_post[,3]))
 }
 
 agr_subj<-data.frame(agr_subj)
