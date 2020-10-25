@@ -55,7 +55,7 @@ The final activation component assigns a penalty for mismatches. Some activation
 
 $P$ is the \index{mismatch penalty parameter} \textit{mismatch penalty parameter} (MP). $M_{ji}$ is the similarity between cue value $j$ and the value in the corresponding slot of item $i$. The similarity $M_{ji}$ is a value between $0$ (identity) and $-1$ (maximum difference).
 This way, the more dissimilar a feature value of an item is to the cue value, the more activation is subtracted for this item.
-If, for example, one defines some similarity between the color values \textit{red} and \textit{orange}, orange items would be less penalized than, e.g., blue items when cueing for a \actrcue{red}.
+If, for example, one defines some similarity between the color values \textit{red} and \textit{orange}, orange items would be less penalized than, e.g., blue items when cueing for something that has the feature \actrcue{red}.
 
 The item $i$ that is finally retrieved in a particular trial is the one that happens to have the highest activation $A_i$.
 The activation $A_i$ is the sum of the base-level $B_i$ and the spreading activation $S_i$, the mismatch penalty, plus Gaussian noise $\epsilon_i$, where $\epsilon_i$ is sampled from a normal distribution with mean 0 and some standard deviation $\sigma$ (Equation~\ref{eq:act}).
