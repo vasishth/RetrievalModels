@@ -154,7 +154,7 @@ The direct-access mode and the activation model should be compared on other data
 
 In section 6.2, we presented a model of subject vs.\ object relative clause processing in English. There, we were mainly interested in demonstrating how eye-movement control and parsing interact; the broader goal was to show how expectation and memory effects play a role in parsing.
 
-In this section, we use the statistical modeling approach discussed above to answer a different questiono. Of the two competing theories of retrieval, the Lewis and Vasishth model and the direct-access model, which theory can better explain the empirical facts about Chinese \index{Chinese} \index{relative clause} relative clause processing?
+In this section, we use the statistical modeling approach discussed above to answer a different question. Of the two competing theories of retrieval, the Lewis and Vasishth model and the direct-access model, which theory can better explain the empirical facts about Chinese \index{Chinese} \index{relative clause} relative clause processing?
 
 It is widely accepted in psycholinguistics that \index{English} English \index{subject relative} subject relative clauses are easier to process than \index{object relative} object relatives \citep[e.g.,][]{grodner}. For example, in (\ref{ex:EnglishRCs}), reading times at the relative clause verb \textit{invited} would be shorter in  subject vs.\ object relatives.
 
