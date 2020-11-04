@@ -236,7 +236,7 @@ plot_mismatch+facet_wrap( ~ cueweighting, ncol=3)+
 
 In this section, we explain how inhibitory interference and facilitatory interference effects arise in the model. Inhibitory interference arises in target-match configurations, where the target for retrieval matches the retrieval cues perfectly, and the distractor partially matches the retrieval cues; and facilitatory interference arises in target-mismatch configurations, where both the target and distractor only partially match the retrieval cues.
 
-Example~\ref{ex:c03sturt03:exp2} shows the two configurations, and Figure~\ref{fig:c03ACTRpred} presents a graphical representation of how the model's predictions arise. The oval boxes indicate matching (black or gray) or mismatching (white) features of an item with respect to the retrieval cues. The darker the boxes, the better the match of the item and the higher its \index{activation level} \textbf{activation level}.
+Example~\ref{ex:c03sturt03:exp2} shows the two configurations, and Figure~\ref{fig:c03ACTRpred} presents a graphical representation of how the model's predictions arise. The oval boxes indicate matching (black or gray) or mismatching (white) features of an item with respect to the retrieval cues. The darker the boxes, the better the match of the item and the higher its \index{activation level} activation level.
 
 \begin{exe}
 \ex\label{ex:c03sturt03:exp2}
@@ -257,7 +257,7 @@ The surgeon\featuresetNP{-FEM}{+CCOM} who treated Jennifer\featuresetNP{+FEM}{-C
 The relative activation levels of memory items in ACT-R determine which item will be retrieved. All items available in memory enter into a race at the time of retrieval, such that the one which happens to have the highest activation is retrieved. Thus, only one ``winning'' item is ever retrieved in any one trial. The higher the activation of the ``winning'' item, the faster the retrieval time.  Each item $i$ has a \index{base-level activation} \textbf{base-level activation} $B_i$  that reflects past usage by accounting for all reactivation events ($t_j$ represents the time elapsed since the $j$-th activation) and a time-based decay with rate $d$ (this usually has the default value $0.5$ in ACT-R):
 
 \begin{eqnarray}
-  B_i = \log(\sum_{j=1}^n t_j^{-d}) + \beta_i \label{eq:bl}
+  B_i = \log\left(\sum_{j=1}^n t_j^{-d}\right) + \beta_i \label{eq:bl}
 \end{eqnarray}
 
 \noindent
@@ -271,8 +271,8 @@ An item receives spreading activation from all matching cues $j$ depending on th
 \end{equation}
 
 The arrows in Figure~\ref{fig:c03ACTRpred} show how activation from the retrieval cues is distributed to the target and the distractor based on their features. The thickness of the lines with arrows indicates the amount of spreading activation that is added to an item due to that feature.
-In Figure~\ref{fig:c03ACTRpred}a (cf.\ Example~\ref{ex:c03sturt03:exp2}a), the target is a full match for the set of retrieval cues, \actrcue{masc} and \actrcue{ccom}. Both cues are also \emph{unambiguous} because they are matched by the target only and not by the distractor. The target thus receives the maximal amount of spreading activation at retrieval. By contrast, 
-in the interference condition b in Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:c03sturt03:exp2}, the gender cue is matched by the distractor in addition to the target. Thus, the \actrcue{MASC} cue is now \emph{ambiguous}, or ``overloaded'' \citep{WatkinsWatkins1975}. This \index{cue overload} \textbf{cue overload} has the consequence that the activation from this cue is now split between the target and the distractor. 
+In Figure~\ref{fig:c03ACTRpred}a (cf.\ Example~\ref{ex:c03sturt03:exp2}a), the target is a full match for the set of retrieval cues, \actrcue{masc} and \actrcue{ccom}. Both cues are also unambiguous because they are matched by the target only and not by the distractor. The target thus receives the maximal amount of spreading activation at retrieval. By contrast, 
+in the interference condition b in Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:c03sturt03:exp2}, the gender cue is matched by the distractor in addition to the target. Thus, the \actrcue{MASC} cue is now ambiguous, or ``overloaded'' \citep{WatkinsWatkins1975}. This \index{cue overload} \textbf{cue overload} has the consequence that the activation from this cue is now split between the target and the distractor. 
 This follows from Equation (\ref{eq:fan}), which is repeated below for convenience as Equation (\ref{eq:assoc}). The associative strength between a cue and an item is reduced in relation to the fan --- the number of items associated with the cue. (Recall that \textit{MAS} is the value of the maximum associative strength).
 
 \begin{equation}
@@ -281,9 +281,9 @@ This follows from Equation (\ref{eq:fan}), which is repeated below for convenien
 
 Each cue distributes the \emph{limited} available activation equally between all matching items (with the maximally available amount being $W_j\times\textit{MAS}$).
 The more competitor items are present that match a cue $j$, the weaker the association $S_{ji}$ of this cue with the item $i$. In other words, each competitor reduces the spreading activation to the target by some amount and thus makes it harder to be distinguished from the other items.
-This is the \index{fan effect} fan effect discussed earlier  \citep{anderson1974retrieval}.  In our example (Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:sturt03:exp2}), the fan effect causes a reduction of the spreading activation received by the target in b in comparison with a, thus reducing the target's total activation $A_i$ (where $i$ indexes the id of the target chunk) 
+This is the \index{fan effect} fan effect discussed earlier  \citep{anderson1974retrieval}.  In our example (Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:sturt03:exp2}), the fan effect causes a reduction of the spreading activation received by the target in b in comparison with a, thus reducing the target's total activation $A_i$ (where $i$ indexes the id of the target chunk). 
 
-A decrease in activation causes the retrieval time (also called \index{retrieval latency} \emph{retrieval latency}) \textit{RT}$_i$ to increase. As shown in Equation~(\ref{eq:rtrep}), the retrieval latency of an item is a negative exponential function of its activation at the time of retrieval, where $F$ and $f$ are two scaling parameters --- the \index{latency factor} \emph{latency factor} and the \index{latency exponent} \emph{latency exponent}, respectively.
+A decrease in activation $A_i$ causes the retrieval time (also called \index{retrieval latency} \emph{retrieval latency}) \textit{RT}$_i$ to increase. As shown in Equation~(\ref{eq:rtrep}), the retrieval latency of an item is a negative exponential function of its activation at the time of retrieval, where $F$ and $f$ are two scaling parameters --- the \index{latency factor} \emph{latency factor} and the \index{latency exponent} \emph{latency exponent}, respectively.
 
 \begin{equation}
   \textit{RT}_i = Fe^{-(f\times A_i)} \label{eq:rtrep}
