@@ -4,7 +4,7 @@ The preceding chapter discussed the empirical coverage of the Lewis and Vasishth
 
 In this chapter, we show how prominence and multiple association of cues and features can be implemented in the model, and the empirical consequences of these extensions of the original model. Because the proposed extensions presented here are post-hoc (developed after seeing the data), it would be important in future work to test the predictions that now emerge from this extended model. We make some proposals below on how to test the predictions of these extensions of the model.
 
-Interestingly, the extensions we propose are already implicit in the ACT-R architecture. Prominence is a function the activation of an item in memory, and it is only natural that discourse and other kinds of linguistic prominence modulates the activation of items. Similarly, the association between a feature on an item and a retrieval cue is assumed in ACT-R to be binary: either there is a match or there isn't. However, language acquisition is a process of statistical learning, and it is well-established that in the course of learning associations, one can associate one cue with multiply co-occurring features. It is this general property of statistical learning that we exploit when discussing the multi-associative cues discussed here.  
+Interestingly, the ``extensions'' we propose are already present in the ACT-R architecture. Prominence is a function of the activation of an item in memory, but this activation is not taken into account in the fan effect computations. It is only natural that discourse and other kinds of linguistic prominence modulates the activation of items. Similarly, the association between a feature on an item and a retrieval cue is actually assumed in ACT-R to be a continuum, but the standard equations for spreading activation and the fan effect do not take this into account and instead effectively treat the match between features and cues as binary: either there is a match or there isn't. The same type of graded, continuous association is seen in language acquisition; there, it is well-established that in the course of learning associations statistically, one can associate one cue with multiply co-occurring features. It is this general property of statistical learning that we exploit when discussing the multi-associative cues discussed here.  
 
 These extensions are tentative proposals for expanding the relevance of the ACT-R framework for an application like language processing. After all, language comprehension does not simply involve processing unstructured lists of words like in a classical working memory experimental task in cognitive psychology. Linguistics strings have structure and statistical properties, and this should arguably be reflected in the model. 
 
@@ -38,9 +38,9 @@ The surgeon\featuresetNP{-FEM}{+CCOM} who treated Jennifer\featuresetNP{+FEM}{-C
 We reconsider three assumptions in the ACT-R cue-based retrieval model that constitute the basis of the LV05 predictions. These are the following:
 
 \begin{enumerate}
-  \item The base-level activation of items in memory is a function only of decay and reactivation through study-relevant retrieval events. Other influences (discussed in detail below) are usually ignored.
-  \item The fan effect (the inhibitory interference effect caused by cue overload) is a function of the number of items that match a specific retrieval cue, independent of their activation.
-  \item The associative strength between a retrieval cue and a memory item is based on a binary (match/mismatch) one-to-one mapping between the cue and a feature value.
+  \item[1.] The base-level activation of items in memory is a function only of decay and reactivation through study-relevant retrieval events. Other influences (discussed in detail below) are usually ignored.
+  \item[2.] The fan effect (the inhibitory interference effect caused by cue overload) is a function of the number of items that match a specific retrieval cue, independent of their activation.
+  \item[3.] The associative strength between a retrieval cue and a memory item is based on a binary (match/mismatch) one-to-one mapping between the cue and a feature value.
 \end{enumerate}
 
 These assumptions are, in fact, oversimplifications that do not accurately reflect general aspects of cognition. 
