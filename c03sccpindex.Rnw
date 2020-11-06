@@ -12,7 +12,7 @@ A cue-based model of sentence parsing has been described in
 The parser uses rapid associative memory retrievals to form inter-word dependencies, incrementally building a structural sentence representation. The success and latency of the retrieval process depends on the activation of syntactic representations, which is affected by time-based decay and interference from similar items. \index{decay}
 
 \section{ACT-R}
-ACT-R is a \index{comprehensive theory} comprehensive, implemented theory which integrates processes of working memory access, rule-guided behavior, learning, sensual input, and motor control. 
+ACT-R (Adaptive Control of Thought---Rational) is a  comprehensive, implemented theory which integrates processes of working memory access, rule-guided behavior, learning, sensory input, and motor control. 
 It is a constantly developing framework that incorporates  findings from experimental work in various areas of cognitive psychology. \index{long-term memory}
 ACT-R consists of a long-term memory of \index{declarative knowledge} declarative and \index{procedural knowledge} procedural knowledge and \index{short-term buffers} short-term buffers with \index{limited capacity} limited capacity, representing a limited \index{focus of attention} focus of attention \citep{McElree2006,Cowan2001,Miller1956}. 
 Procedural knowledge is realized in the form of a production system \citep{Newell1973,Newell1978} that consists of condition-action pairs that operate on short-term or working memory. \index{working memory}
@@ -31,6 +31,7 @@ An item's final activation value is the sum of four components: A base-level $B_
 	B_i = \log\left (\sum_{j=1}^n t_j^{-d}\right) + \beta_i
 \end{equation}
 
+\noindent
 where $n$ is the number of times the item was accessed in memory, $t_j$ is the time since the $j$th access, and $d$ is the \index{decay parameter} \textit{decay parameter}. An item's activation decreases over time, with a decay parameter of $0.5$ by default, and receives a reactivation boost when it is accessed. 
 
 At the time of a retrieval request, activation is spread from each retrieval cue to all matching items. This activation, however, is limited for each cue and distributed among the items that share the requested feature, i.e., the \emph{competitors}. The number of items competing for activation from a certain cue is called the \textit{fan}. An item with a high fan will thus receive less spreading activation than one with no competitors, i.e., it is inhibited by similarity-based interference or the so-called \index{fan effect} \textit{fan effect}.\footnote{Note that the description of ACT-R for the present purpose is simplified to reflect the way that it was used in the model of \cite{LewisVasishth2005}. In default ACT-R, spreading activation is not a property of retrieval cues per se. Rather, any buffer's content can spread activation to related items. Usually, the chunks in the goal buffer are the sources of spreading activation and, hence, of the fan effect. In the \cite{LewisVasishth2005} parser, the retrieval cues are always mirrored in the goal buffer, such that the model behaves as if spreading activation is specific to retrieval cues.}
@@ -38,12 +39,13 @@ The spreading activation component $S_i$ of item $i$ is summed over all cues $j 
 \begin{equation}\label{eq:spread}
 	S_i = \sum_j W_{j} S_{ji}
 \end{equation}
-where $W_{j}$ is the amount of activation from the cue $j$ and $S_{ji}$ is the strength of association between cue $j$ and item $i$. $S_{ji}$ is a function of the fan of item $i$ for cue $j$:
+where $W_{j}$ is the amount of activation from the cue $j$ and $S_{ji}$ is the strength of association between cue $j$ and item $i$. The term $S_{ji}$ is a function of the fan of item $i$ for cue $j$:
 
 \begin{equation}\label{eq:fan}
 	S_{ji} = S - \log(\textit{fan}_{ji})
 \end{equation}
 
+\noindent
 where $S$ is the \index{maximum associative strength} \textit{maximum associative strength} (MAS). The fan of item $i$ for cue $j$ is defined by the number of competing items in memory that match the feature associated with $j$: $\textit{fan}_{ji} = 1+\textit{items}_j$.\footnote{In fact, all \textit{slots} in all memory items containing the feature are counted. For simplicity, we assume here that a linguistically relevant item will have a certain feature in only one slot.}
 As a consequence, the spreading activation component $S_i$ increases the item's activation by Equation (\ref{eq:spread}) for each matching retrieval cue and reduces its activation by Equation (\ref{eq:fan}) for each distractor item that also (partially) matches the retrieval cues. Note that (\ref{eq:fan}) is the core equation of \index{similarity-based interference} similarity-based interference in ACT-R as it defines the influence of competitors on an item's activation at the time of retrieval.
 
@@ -53,6 +55,7 @@ The final activation component assigns a penalty for mismatches. Some activation
 	P_i = \sum_j PM_{ji}
 \end{equation}
 
+\noindent
 $P$ is the \index{mismatch penalty parameter} \textit{mismatch penalty parameter} (MP). $M_{ji}$ is the similarity between cue value $j$ and the value in the corresponding slot of item $i$. The similarity $M_{ji}$ is a value between $0$ (identity) and $-1$ (maximum difference).
 This way, the more dissimilar a feature value of an item is to the cue value, the more activation is subtracted for this item.
 If, for example, one defines some similarity between the color values \textit{red} and \textit{orange}, orange items would be less penalized than, e.g., blue items when cueing for something that has the feature \actrcue{red}.
@@ -72,7 +75,7 @@ where $F$ is the \index{latency factor} \textit{latency factor} (LF) and $f$ the
 If no item has an activation above a certain threshold $\tau$, retrieval fails. The duration of a failed retrieval is calculated by the same Equation (\ref{eq:rt}) with $A_i$ substituted with $\tau$.
 
 \section{The Lewis \& Vasishth (2005) model}
-The \index{computational model} computational model of parsing difficulty developed by \cite{LewisVasishth2005} adopts ACT-R's general principles, a limited focus of attention and cue-based retrieval of memory items subject to fluctuating activation as a function of decay and retrieval history and similarity-based retrieval interference. An essential property of \index{cue-based retrieval} cue-based retrieval in contrast to structural search is that \index{serial order} serial order information is not used in the search mechanism \citep{McElree2006,Ratcliff1978}. \cite{LewisVasishth2005} argue that this serves the speed of \index{language processing} language processing where most dependencies can be established without serial order information, purely based on the items features and recency in terms of activation decay over time. The lack of immediate serial order information in incremental sentence processing  explains severe comprehension difficulty in cases where this information is needed, such as in double center-embeddings such as Example~(\ref{ex:centeremb}):
+The \index{computational model} computational model of parsing difficulty developed by \cite{LewisVasishth2005} adopts ACT-R's general principles, a limited focus of attention and cue-based retrieval of memory items subject to fluctuating activation as a function of decay and retrieval history and similarity-based retrieval interference. An essential property of \index{cue-based retrieval} cue-based retrieval in contrast to structural search is that \index{serial order} serial order information is not used in the search mechanism \citep{McElree2006,Ratcliff1978}. \cite{LewisVasishth2005} argue that this partly explains the speed with which \index{language processing} language processing unfolds;  most dependencies can be established without serial order information, purely based on the items' features and recency in terms of activation decay over time. The lack of immediate serial order information in incremental sentence processing  explains severe comprehension difficulty in cases where this information is needed. An example is double center-embeddings such as Example~(\ref{ex:centeremb}):
 
 \begin{exe}
 \ex \label{ex:centeremb}
@@ -98,7 +101,7 @@ New structure is built at a new input word and then attached into previously-bui
 	\label{fig:lv05buffers}
 \end{figure}
 
-The productions essentially operate on four buffers, each holding one chunk: A control buffer (the goal buffer), a lexical buffer holding the lexicon entry corresponding to the current word, a retrieval buffer holding the syntactic chunk retrieved from memory, and a buffer for creating new structure. The goal buffer contains some syntactic expectation in the form of a syntactic category that is necessary in order to complete the currently pursued structure.
+The productions essentially operate on four buffers, each holding one chunk: A control buffer (the goal buffer), a lexical buffer holding the lexicon entry corresponding to the current word, a retrieval buffer holding the syntactic chunk retrieved from memory, and a buffer for creating new structure. The goal buffer holds syntactic expectations in the form of a syntactic category that is necessary in order to complete the currently pursued structure.
 Figure~\ref{fig:lv05buffers} from \cite{LewisVasishth2005} illustrates the cycle carried out at each input word: First, the corresponding lexical entry is accessed in the lexicon in \index{declarative memory} declarative memory. Based on the lexical entry and on the current goal category, the cues for retrieving a matching constituent are specified and retrieval is initiated. Finally, a new syntactic node is created and attached to the one retrieved. Attention is then sent to the next word. The essential step is memory retrieval. Through ACT-R's independently motivated principles of cue-based working memory access, the simulations in \cite{LewisVasishth2005} provide quantitative predictions for \index{distance effects} effects of distance, structural interference, and embedding type in sentence comprehension.
 
 The \index{parsing architecture} parsing architecture has been further used to model several different aspects of sentence comprehension such as \index{anti-locality} anti-locality \citep{VasishthLewis2006}, \index{negative polarity items} intrusive interference in negative polarity constructions \citep{VasishthBruessowLewis2008}, interference effects in reflexive processing \citep{PatilVasishthLewis2012,ParkerPhillips2014,JaegerEngelmannVasishth2015} and subject-verb processing
@@ -234,7 +237,9 @@ plot_mismatch+facet_wrap( ~ cueweighting, ncol=3)+
     \caption{Spreading activation according to ACT-R/LV05 in the four conditions shown in Example~\ref{ex:c03sturt03:exp2}. Line weights indicate the amount of \index{spreading activation} spreading activation from a cue to an item. Black oval boxes represent a feature match. Gray oval boxes indicate features matching an \index{cue overload} `overloaded' cue (\actrcue{MASC} in b), and white boxes indicate a mismatch. The figure is by Engelmann and Vasishth (2019); available at dx.doi.org/10.6084/m9.figshare.9305456 under a CC-BY4.0 license.}\label{fig:c03ACTRpred}
 \end{figure}
 
-In this section, we explain how inhibitory interference and facilitatory interference effects arise in the model. Inhibitory interference arises in target-match configurations, where the target for retrieval matches the retrieval cues perfectly, and the distractor partially matches the retrieval cues; and facilitatory interference arises in target-mismatch configurations, where both the target and distractor only partially match the retrieval cues.
+In this section, we explain how two classes of effect---inhibitory interference and facilitatory interference---arise in the model. Inhibitory interference
+ arises in target-match configurations, where the target for retrieval matches the retrieval cues perfectly, and the distractor partially matches the retrieval cues; and facilitatory interference
+ arises in target-mismatch configurations, where both the target and distractor only partially match the retrieval cues.
 
 Example~\ref{ex:c03sturt03:exp2} shows the two configurations, and Figure~\ref{fig:c03ACTRpred} presents a graphical representation of how the model's predictions arise. The oval boxes indicate matching (black or gray) or mismatching (white) features of an item with respect to the retrieval cues. The darker the boxes, the better the match of the item and the higher its \index{activation level} activation level.
 
@@ -263,7 +268,7 @@ The relative activation levels of memory items in ACT-R determine which item wil
 \noindent
 In the above equation, $\beta_i$ is the resting-state activation for item $i$, and $n$ indexes the number of times that the item $i$ has been retrieved in the past.
 
-In addition to the base-level activation, \index{spreading activation} \textbf{spreading activation} is added to every (partially) matching item at the time of retrieval. The spreading activation component is the main source of similarity-based interference effects in ACT-R. 
+In addition to the base-level activation, \index{spreading activation} spreading activation is added to every (partially) matching item at the time of retrieval. The spreading activation component is the main source of similarity-based interference effects in ACT-R. 
 An item receives spreading activation from all matching cues $j$ depending on the \index{associative strength} \emph{associative strength} $S_{ji}$ between cue $j$ and item $i$ and the cue's weight $W_{j}$; see Equations~(\ref{eq:spread2}) and (\ref{eq:assoc}). $W_j$ is standardly set to $1/\textit{number of cues}$, meaning that all cues are weighted equally. We are adopting this standard assumption throughout this work.  The implications of cue-weighting are discussed in \citep{VasishthEtAlTiCS2019,JaegerMertzenVanDykeVasishth2019,YadavEtAlAMLaP2020}. 
 
 \begin{equation}
@@ -272,7 +277,7 @@ An item receives spreading activation from all matching cues $j$ depending on th
 
 The arrows in Figure~\ref{fig:c03ACTRpred} show how activation from the retrieval cues is distributed to the target and the distractor based on their features. The thickness of the lines with arrows indicates the amount of spreading activation that is added to an item due to that feature.
 In Figure~\ref{fig:c03ACTRpred}a (cf.\ Example~\ref{ex:c03sturt03:exp2}a), the target is a full match for the set of retrieval cues, \actrcue{masc} and \actrcue{ccom}. Both cues are also unambiguous because they are matched by the target only and not by the distractor. The target thus receives the maximal amount of spreading activation at retrieval. By contrast, 
-in the interference condition b in Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:c03sturt03:exp2}, the gender cue is matched by the distractor in addition to the target. Thus, the \actrcue{MASC} cue is now ambiguous, or ``overloaded'' \citep{WatkinsWatkins1975}. This \index{cue overload} \textbf{cue overload} has the consequence that the activation from this cue is now split between the target and the distractor. 
+in the interference condition b in Figure~\ref{fig:c03ACTRpred} and Example~\ref{ex:c03sturt03:exp2}, the gender cue is matched by the distractor in addition to the target. Thus, the \actrcue{MASC} cue is now ambiguous, or ``overloaded'' \citep{WatkinsWatkins1975}. This \index{cue overload} cue overload has the consequence that the activation from this cue is now split between the target and the distractor. 
 This follows from Equation (\ref{eq:fan}), which is repeated below for convenience as Equation (\ref{eq:assoc}). The associative strength between a cue and an item is reduced in relation to the fan --- the number of items associated with the cue. (Recall that \textit{MAS} is the value of the maximum associative strength).
 
 \begin{equation}
@@ -303,7 +308,7 @@ In \index{target mismatch} target-mismatch configurations (c and d of Fig.~\ref{
 In c and d, the target is only a partial match as it does not exhibit the correct gender feature \match{fem}. When the distractor matches the gender in d, there is, however, no reduction in the target's activation. The reason is that both cues \actrcue{fem} and \actrcue{ccom} are only matched by one item each and are thus not ambiguous. Hence, no fan effect and no inhibitory interference is predicted.
 However, since target and distractor now both receive the same amount of spreading activation --- each matches exactly one cue --- their activation levels are relatively close to each other. 
 Because activation fluctuates due to the random noise component in Equation~(\ref{eq:act}), when two items receive the same amount of spreading activation from their match with the retrieval cues, the winning item at the time of retrieval is chosen randomly with a probability of around 0.5.
-Since the winner is always the item with the highest activation --- i.e., the shortest retrieval latency --- at the time of retrieval, this fulfills the conditions of a \index{race process} \emph{race process}. As shown in Figure~\ref{fig:raceproc}, in a race process, when the finishing times of two items' retrieval times can be described by distributions that have similar means, the retrieval times of the winner (which can differ from trial to trial) will have a distribution that has a smaller mean than the means of the two items' retrieval time distributions. This is called \index{statistical facilitation} \textbf{statistical facilitation} \citep{raab1962division}. A race process therefore has the effect that, \textit{on average} over multiple trials, the retrieval latency is shorter when the two competing items have similar mean retrieval times than when there is a clear winner due to a bigger difference in retrieval latency as is the case in condition c \citep[e.g.,][]{LogacevVasishth2015}.
+Since the winner is always the item with the highest activation --- i.e., the shortest retrieval latency --- at the time of retrieval, this fulfills the conditions of a \index{race process} \emph{race process}. As shown in Figure~\ref{fig:raceproc}, in a race process, when the finishing times of two items' retrieval times can be described by distributions that have similar means, the retrieval times of the winner (which can differ from trial to trial) will have a distribution that has a smaller mean than the means of the two items' retrieval time distributions. This is called \index{statistical facilitation} statistical facilitation \citep{raab1962division}. A race process therefore has the effect that, \textit{on average} over multiple trials, the retrieval latency is shorter when the two competing items have similar mean retrieval times than when there is a clear winner due to a bigger difference in retrieval latency as is the case in condition c \citep[also see][]{LogacevVasishth2015}.
 
 \begin{figure}[!htbp]
 \centering
@@ -429,8 +434,6 @@ Dependency            & Target                        & Estimate ($\bar{b}$)    
 \caption{Results of the J\"ager et al.\ (2017)  meta-analysis showing mean effect estimates $\bar{b}$
 with Bayesian 95\% credible intervals in the Estimates column. The range specified by a 95\% credible interval contains the true value of the estimated parameter with 95\% certainty, given the model and the data. A positive interference effect means inhibition, a negative one facilitation. Results are compared with the predictions of cue-based retrieval as implemented in the LV05 ACT-R model,  and the additional contributions of the extensions \index{prominence} \emph{item prominence} (IP) and \index{multi-associative cues} \emph{multi-associative cues} (MAC), which are discussed in Chapter~\ref{c02prominence}.}\label{tab:resultsMeta1}
 \end{table}%
-
-
 
 In \cite{JaegerEngelmannVasishth2017}, subject-verb dependencies were divided into \textit{agreement} dependencies \citep[e.g.,][]{WagersLauPhillips2009,Pearlmutter1999} and \textit{non-agreement} dependencies \citep[e.g.,][]{VanDyke2007,VanDykeMcElree2011}, because these constitute two distinct lines of research and usually show different patterns. While agreement studies have focused on effects of number attraction, non-agreement studies investigated interference effects involving other semantic and syntactic cues.
 Reflexive-antecedent and reciprocal-antecedent dependencies were treated as one category in the meta-analysis because both follow a similar syntactic constraint and the data of only two publications on reciprocals were available when the \cite{JaegerEngelmannVasishth2017} article was published.
