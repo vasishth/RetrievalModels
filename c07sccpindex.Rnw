@@ -110,7 +110,7 @@ As a consequence, for each trial, participants provided a reading time at the ve
 
 The experiment showed the expected inhibitory interference effect; the estimated slowdown in (\ref{ex:HI}) vs.\ (\ref{ex:LI}) was 9 ms, with a 95\% credible interval spanning 0-18 ms.  
 
-In order to evaluate the relative predictive accuracy of the activation model and the \index{direct-access model} direct-access model, \cite{NicenboimRetrieval2018} carried out a model comparison using the above data. The predictive performance of the two models was evaluated using \index{k-fold cross validation} k-fold cross validation \citep{vehtari2012survey,vehtari2016LOOwaic}.  
+In order to evaluate the relative predictive accuracy of the activation model and the \index{direct-access model} direct-access model, \cite{NicenboimRetrieval2018} carried out a model comparison using the above data. The predictive performance of the two models was evaluated using \index{k-fold cross-validation} k-fold cross-validation \citep{vehtari2012survey,vehtari2016LOOwaic}.  
 
 Figure \ref{fig:daactcomparison} shows a comparison of the relative predictive fits from the hierarchical Bayesian models implementing the activation model, and McElree's direct-access model as a finite mixture process. The violin plots show posterior predictive distributions from the model; their width represents the density of the predicted mean reading times. The black circles show the empirically observed mean reading times. The four types of reading times refer to four different kinds of question responses that the participants could give in the experiment \citep{nicenboimexploratory}. 
 
@@ -203,7 +203,7 @@ that there is no difference in retrieval time in ORs vs.\ SRs, but only in the p
 \item M3: This model assumes that retrieval time in SRs and ORs is different, and that the variances of the two distributions are different (heterogeneous variance). Thus, M3 is like M2, but with the additional assumption that distance may affect dependency completion time, as proposed by Gibson and others. This model is therefore a hybrid of the two proposals.
 \end{itemize}
 
-The results of the k-fold cross validation for the \cite{gibsonwu} data are shown in Table~\ref{tab:modcompgibsonwu}. The quantity shown is the difference ($\Delta$) in expected log pointwise density (ELPD) between the two models. ELPD is  a measure of deviance; a positive  difference represents a better fit.
+The results of the k-fold cross-validation for the \cite{gibsonwu} data are shown in Table~\ref{tab:modcompgibsonwu}. The quantity shown is the difference ($\Delta$) in expected log pointwise density (ELPD) between the two models. ELPD is  a measure of deviance; a positive  difference represents a better fit.
 
 \begin{table}[!htbp]
 \centering
