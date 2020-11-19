@@ -241,7 +241,7 @@ The replication data from \cite{VasishthChenLi2013} also show a similar pattern:
 
 \subsection{Discussion}
 
-It is interesting that the direct-access model can outperform the Lewis and Vasishth model on three data-sets. This suggests that a wider investigation of these two models is needed; we are carrying out further model comparisons.
+It is interesting that the direct-access model can outperform the Lewis and Vasishth model on three data-sets. This suggests that a wider investigation of these two models is needed; we are currently carrying out further model comparisons with new data-sets \citep{LissonEtAl2020}.
 
 One important limitation of the direct-access model is that all the published work relating to this model has focused on \index{inhibitory interference effects} inhibitory interference effects \citep{VasishthEtAlTiCS2019}. What are the model's predictions regarding \index{facilitatory interference effects} facilitatory interference effects? The model assumes that slower reading times occur due to a reanalysis step that results in the correct item being retrieved. However, in ungrammatical sentences, there is no correct item to retrieve. The direct-access model is underspecified regarding the processing steps taken in this situation \citep{NicenboimRetrieval2018}. It is therefore likely that additional assumptions will be needed to account for the speedups discussed earlier in connection with the activation model. Extending the direct-access model is a potentially interesting topic for future research.
 
@@ -277,7 +277,7 @@ Another prominent explanation, due to \cite{WagersLauPhillips2009}, is the \inde
 There is evidence for both these accounts: a \index{facilitatory effect} facilitatory effect is generally present in the published data. 
 A question then arises: if we take the position that a dependency between \textit{cabinets} and \textit{are} is not plausible, could there be an explanation for the facilitation that does not need reference to a cue-based retrieval process?
 
-As discussed earlier in chapter \ref{c01}, the facilitatory effect is robustly seen in at least 10 published studies \index{self-paced reading} \index{eyetracking} (self-paced reading or eyetracking). The explanation we presented in chapter \ref{c02} was in terms of a race process within the \index{ACT-R based model} ACT-R based model. Next, we consider an alternative explanation in terms of \index{encoding interference} encoding interference.
+As discussed earlier in chapter \ref{c01}, the facilitatory effect is more or less clearly seen in at least 10 published studies \index{self-paced reading} \index{eyetracking} (self-paced reading or eyetracking). The explanation we presented in chapter \ref{c02} was in terms of a race process within the \index{ACT-R based model} ACT-R based model. Next, we consider an alternative explanation in terms of \index{encoding interference} encoding interference.
 
 Consider the ungrammatical example sentences again. In example~(\ref{c07example2}),
 both the nouns are marked singular, whereas in example~(\ref{c07example1}) the nouns have different number marking. 
@@ -416,7 +416,7 @@ One could, however, defend the cue-based retrieval account on the grounds that t
 
 One argument against the feature overwriting account is that one cannot explain the facilitatory interference effects found in \cite{CunningsSturt2018}; see the discussion relating to example~\ref{ex:CunningsSturt2018} on page~\pageref{ex:CunningsSturt2018}. In the Cunnings and Sturt design, there cannot be a feature overwrite between the nouns in question that can explain the differences in reading time observed at the verb. 
 
-Finally, new data-sets on agreement attraction have recently become available \citep{ALV2020,JaegerMertzenVanDykeVasishth2019}. A more extensive investigation should be carried out to evaluate whether the feature overwriting model can explain these data better as well.   
+Finally, new data-sets on agreement attraction have recently become available \citep{ALV2020,JaegerMertzenVanDykeVasishth2019}. A more extensive investigation is being carried out to evaluate whether the feature overwriting model can explain these data better as well \citep{PaapeEtAlMPT2020}.   
 
 \section{Summary}
 
