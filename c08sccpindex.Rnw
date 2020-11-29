@@ -147,7 +147,7 @@ are also focused on these same events suggests a natural classification of theor
 
 In healthy adults, 
 sentence comprehension has long been argued to be influenced by individual differences; a commonly assumed source is differences in working memory capacity \citep{DanemanCarpenter1980,JustCarpenter1992}. 
-Other factors such as age \citep{CaplanWaters2005} and cognitive control \citep{novick2005cognitive} have also been implicated.
+Other factors such as age \citep{CaplanWaters2005} and cognitive control \citep{novick2005cognitive} have also been implicated.\footnote{This section reuses material from \cite{MaetzigEtAltopics2018}, reproduced with permission, license number 4740821189889, Copyright 2018 Cognitive Science Society, Inc.}
 
 An important question that has not received much attention in the computational psycholinguistics literature is: what are sources of individual differences in healthy adults versus impaired populations, such as individuals with aphasia (IWA)? 
 
