@@ -222,13 +222,13 @@ $S_{i_1}= 2/2 \times 1 + 2/2 \times 1 = 2$ and
 $S_{i_2}= 2/2 \times 1 + 2/2 \times 0 = 1$. Thus, with a higher GA value, more activation is spread to a chunk in memory when it matches the retrieval cues.
 
 The parameter GA therefore determines the total amount of activation increase in a chunk as a function of the number of retrieval cues it matches. It is a free parameter in ACT-R. As discussed in chapter~\ref{c04}, this parameter 
-has been used to model individual differences in working memory capacity (see, for example, \cite{DailyEtAl2001}). 
+has been used to model individual differences in working memory capacity (see, for example, \citealp{DailyEtAl2001}). 
 The lower the GA value, the lower the increase in activation of the chunk $i$ due to a match with the retrieval cues.
 Low GA values thus model low working memory capacity: when an item needs to be retrieved from memory using certain retrieval cues, the probability of successful retrieval will go down if GA is lower.
 Similarly, higher GA values model higher working memory capacity.
 Thus, it can be seen as one way (although by no means the only way) to implement the resource reduction hypothesis. 
 
-Finally, the hypothesis of \emph{slowed processing} can be mapped to the \emph{default action time} (DAT) parameter in ACT-R. This defines the constant amount of time it takes a selected parsing rule to ``fire'', i.e., to start the actions specified in the action part of the rule. Higher values would lead to a greater delay in firing of parsing rules. Due to the longer decay in this case, retrieval may be slower and more failed retrieval attempts may occur. 
+Finally, the hypothesis of slowed processing can be mapped to the default action time (DAT) parameter in ACT-R. This defines the constant amount of time it takes a selected parsing rule to ``fire'', i.e., to start the actions specified in the action part of the rule. Higher values would lead to a greater delay in firing of parsing rules. Due to decay, retrieval may be slower and more failed retrieval attempts may occur. 
 
 In the following section, we evaluate the model's performance on the empirical data for IWA and unimpaired individuals, implementing the three theoretical claims by varying the three parameters described above. 
 
@@ -254,7 +254,7 @@ The default parameter values were included in $\Pi'$. This means that models tha
 
 
 For all participants in the \cite{CaplanEtAl2015} data-set, we calculated comprehension question response accuracies, averaged over all items of the subject / object relative clause condition. For each $p' \in \Pi'$, we ran the model for 1000 iterations for the subject and object relative tasks.
-From the model output, we determined whether the model made the correct attachment in each iteration, i.e., whether the correct noun was selected as subject of the embedded verb, and we calculated the accuracy in a simulation for a given parameter $p' \in \Pi'$ as the proportion of iterations where the model made the correct attachment. We counted a parsing failure, where the model did not create the target dependency, as an incorrect response.
+From the model output, we determined whether the model made the correct attachment in each iteration, i.e., whether the correct noun was selected as subject of the embedded verb, and calculated the accuracy in a simulation for a given parameter $p' \in \Pi'$ as the proportion of iterations where the model made the correct attachment. We counted a parsing failure, where the model did not create the target dependency, as an incorrect response.
 
 The problem of finding the best fit for each subject can be phrased as follows: for all subjects, find the parameter vector that minimises the absolute distance between the model accuracy for that parameter vector and each subject's accuracy. Because there might not always be a unique $p'$ that solves this problem, the solution can be a set of parameter vectors.
 If for any one participant multiple optimal parameters were calculated, we averaged each parameter value to obtain a unique parameter vector. This transforms the parameter estimates from the discretised space $\Pi'$ to the original parameter space $\Pi$.
@@ -314,7 +314,7 @@ We address this point in the discussion below.
 If our prediction is correct that, compared to IWA, clustering is tighter in controls, we expect that a higher proportion of the data should be correctly assigned to one of two clusters, one corresponding to controls, the other one corresponding to IWA. We chose hierarchical clustering to test this prediction \citep{friedman2001elements}.
 
 We combined the data for subject and object relatives into one respective data set.
-We calculated the dendrogram and cut the tree at 2, because we are only looking for the discrimination between controls and IWA. The results of this are shown in Table~\ref{table:hclustSO}. The clustering is able to identify controls better than IWA, but the identification of IWA is better than chance (50\%). 
+We calculated the dendrogram and cut the tree at 2, because we are only looking for the discrimination between controls and IWA. The results of this are shown in Table~\ref{table:hclustSO}. The clustering is able to identify controls better than IWA, but in object relatives the identification of IWA is only a little bit better than chance (50\%). 
 Discriminative ability might improve if all 11 constructions in \cite{CaplanEtAl2015} were to be used; this will be investigated in future work.
 
 \begin{table}
@@ -343,7 +343,7 @@ Overall, more IWA than controls display non-default parameter settings. Although
 In general, there is evidence that all three deficits are plausible to some degree. However, IWA differ in the degree of the deficits, and they have a broader range of parameter values than controls.
 Nevertheless, even the controls show a broad range of differences in parameter values, and even though these are not as variable as IWA, this suggests that some of the unimpaired controls can be seen as showing slowed processing, intermittent deficiencies, and resource reduction to some degree.
 
-There are several problems with the current modelling method. First, using the ACT-R framework with its multiple free parameters has the risk of overfitting. We plan to address this problem in three ways in future research: (1) Testing more constructions from the \cite{CaplanEtAl2015} data-set might show whether the current estimates are unique to this kind of construction, or if they are generalisable. (2) We plan to create a new data-set analogous to Caplan's, using German as the test language. Once the English data-set has been analysed and the conclusions about the different candidate hypotheses have been tested on English, a crucial test of the conclusions will be cross-linguistic generalisability.
+There are several problems with the current modelling method. First, using the ACT-R framework with its multiple free parameters has the risk of overfitting. We plan to address this problem in three ways in future research: (1) Testing more constructions from the \cite{CaplanEtAl2015} data-set might show whether the current estimates are unique to this kind of construction, or if they are generalisable. (2) We plan to create a new data-set analogous to Caplan's, using German as the test language \citep{PreglaTR,PreglaBL}. Once the English data-set has been analysed and the conclusions about the different candidate hypotheses have been tested on English, a crucial test of the conclusions would be cross-linguistic generalisability.
 A systematic model comparison method such as k-fold cross-validation might 
 serve  as a means to formally compare the implementations of the theoretical claims of aphasic sentence processing.
 
@@ -352,7 +352,7 @@ Second, the use of accuracies as modelling measure has some drawbacks. Informall
 Third, related to the overfitting problem addressed above, at least two of the varied parameters -- goal activation and activation noise -- lead to similar effects when manipulated in the way described here. 
 More specifically, the decision to use the ANS parameter makes the assumption that the high noise levels for IWA influence all declarative memory retrieval processes, and thus the whole memory, not only the production system. 
 Similarly, assuming lower GA values for IWA amounts to assuming generally lower working memory capacity in those participants, not specifically lower verbal working memory.
-Both parameters lead to a higher rate of retrieval failures. Because of this, it will be worth investigating in future work whether other sources of noise in the ACT-R framework may be a better way to model intermittent deficiencies (see \cite{PatilEtAl2016} for an example).
+Both parameters lead to a higher rate of retrieval failures. Because of this, it will be worth investigating in future work whether other sources of noise in the ACT-R framework may be a better way to model intermittent deficiencies (see \citealp{PatilEtAl2016} for an example).
 
 Lastly, simulating the subject vs.\ object relative tasks separately yields the undesirable interpretation of participants' parameters varying across sentence types. While this is not totally implausible, estimating only one set of parameters for all sentence types would reduce the necessity of making additional theoretical assumptions on the underlying mechanisms, and allows for easier comparisons between different syntactic constructions.  We plan to do this in future work.
 
@@ -363,7 +363,7 @@ For example, different IWA being grouped together by high noise values could be 
 
 
 
-To sum up, we evaluated three well-known verbally stated hypotheses about causes of deficits in  sentence comprehension in aphasia: slowed processing, intermittent deficiency, and resource reduction. We implemented these hypotheses within a computational model of sentence processing, the \cite{LewisVasishth2005} model of cue-based retrieval. The three hypotheses can be implemented by changing the default values of three different parameter values within the Lewis and Vasishth model. Using a large data-set from IWA and unimpaired controls, 
+To sum up, we evaluated three well-known verbally stated hypotheses about causes of deficits in  sentence comprehension in aphasia: slowed processing, intermittent deficiency, and resource reduction. We implemented these hypotheses within the \cite{LewisVasishth2005} model of cue-based retrieval. The three hypotheses can be implemented by changing the default values of three different parameter values within the Lewis and Vasishth model. Using a large data-set from IWA and unimpaired controls, 
 we estimated the optimal values for each of these parameters for each individual separately. We found that, compared to controls, IWA have more variable optimal parameter values than controls, and that IWA show differential degrees of deficit, where a deficit is considered to exist if an optimal parameter value for an individual  deviates from the default value of the parameter. Thus, all three hypotheses about deficits in sentence comprehension may be viable explanations of processing difficulty; however, for each individual, the degree of impairment along each of these dimensions of slowed processing, intermittent deficiency, and resource reduction is likely to differ. An important implication is that it is not meaningful to state hypotheses about deficits in IWA  in terms of average behavior: multiple causes of deficit may exist in any one individual, and the degree of deficit along each dimension in each individual may differ. Understanding deficits in IWA requires shifting the focus toward understanding the nature of the variability between individuals.
 
 Next, we report a first attempt to leverage the \cite{CaplanEtAl2015} to compare the predictive fit of the direct-access model and the activation-based model.
@@ -386,7 +386,7 @@ One assumption made in the implementations of the direct-access and activation-b
 
 \subsection{Results and discussion}
 
-The model comparison using the k-fold cross-validation discussed  in chapter \ref{c05} showed that the activation-based model has a somewhat better predictive  performance  than the direct-access model; the $\widehat{elpd}$ difference between the two models was 115 (SE = 69), in  favor of the activation-based model. The relative differences in $\widehat{elpd}$ for each data-point are shown in Figure~\ref{fig:paulaplot}. 
+Model comparison using the k-fold cross-validation method discussed  in chapter \ref{c05} showed that the activation-based model has a somewhat better predictive  performance  than the direct-access model; the $\widehat{elpd}$ difference between the two models was 115 (SE = 69), in  favor of the activation-based model. The relative differences in $\widehat{elpd}$ for each data-point are shown in Figure~\ref{fig:paulaplot}. 
 
 \begin{figure}[!htbp]
 \centering
