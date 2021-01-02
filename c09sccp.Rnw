@@ -8,7 +8,7 @@ We have presented several models covering a broad range of empirical phenomena: 
 
 \section{An excessive focus on average behaviour}
 
-As discussed earlier, many researchers have pointed out the importance of modelling not just mean differences, but also individual-level differences. Our first attempts in this direction have focussed on individuals with aphasia; this was because this group analyses may make less sense in this population. We also showed how capacity differences between participants can be modelled within the framework presented. However, much more can be done with the ACT-R framework when it comes to understanding the underlying causes of individual-level variation. This line of work has only just begun in our lab \citep{YadavEtAlAMLaP2020}.
+As discussed earlier, many researchers have pointed out the importance of modelling not just mean differences, but also individual-level differences. Our first attempts in this direction have focussed on individuals with aphasia; this was because group analyses may make less sense in this population. We also showed how capacity differences between participants can be modelled within the framework presented. However, much more can be done with the ACT-R framework when it comes to understanding the underlying causes of individual-level variation. This line of work has only just begun in our lab \citep{YadavEtAlAMLaP2020}.
 
 \section{Creating higher-precision benchmark data-sets for model evaluation and comparison}
 
