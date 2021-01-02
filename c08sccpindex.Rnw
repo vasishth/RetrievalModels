@@ -177,13 +177,12 @@ Their results revealed the best fit for the model that implemented both of the a
 One major limitation of the Patil et al.\ study was the limited data it was based on: 7 IWA.
 In the present work, we provide a proof of concept study that goes beyond \cite{PatilEtAl2016} in two respects: first, we use a much larger data-set from \cite{CaplanEtAl2015} with 56 IWA and 46 matched controls; and second, we evaluate the evidence for all the three hypotheses mentioned above. 
 
-When fitting individual participants, we vary three parameters that map to the three theoretical proposals mentioned above. The goal is to determine whether the distributions of optimal parameter values computed for individual participants furnish any support for any of the three sources of deficits in processing. 
-We expect that if there is a tendency in one parameter to show non-default values in individual model fits for IWA, for example slowed processing,
+When fitting individual participants, we vary three parameters that map to the three theoretical proposals mentioned above. The goal is to determine whether the distributions of optimal parameter values computed for individual participants furnish any support for any of the three sources of deficits in processing. If there is a tendency in one parameter to show non-default values in individual model fits for IWA, for example slowed processing,
 then there is support for the claim that slowed processing is an underlying source of processing difficulty in IWA. Similar predictions hold for the other two constructs, intermittent deficiency and resource reduction; and for combinations of the three proposals.
 
 \subsection{Mapping ACT-R parameters to sources of deficits}
 
-In ACT-R, the retrieval of a chunk from memory depends on its activation level, which is determined by several constraints; we discuss a subset of these next. 
+As discussed earlier in detail, in ACT-R, the retrieval of a chunk from memory depends on its activation level, which is determined by several constraints. We revisit a subset of these next. 
 Let $C$ be the set of all chunks in declarative memory. The total activation of a chunk $i \in C$ equals
 
 \begin{equation}\label{eq:1}
@@ -195,10 +194,10 @@ where $B_i$ is the base-level or resting-state activation of the chunk $i$; the 
 and $\epsilon$ is noise that is logistically distributed, approximating a normal distribution, with mean $0$ and standard deviation ANS; the noise term is generated at each new retrieval request.
 The time it takes for a chunk $i$ to be retrieved $T_i$ depends on its activation $A_i$ via $T_i = F exp(-A_i)$, where $F$ is a scaling constant which we kept constant at $0.2$ here.
 
-The parameter ANS of the logistic distribution from which $\epsilon$ is generated can be interpreted as implementing the \emph{intermittent deficiency} hypothesis, because higher values of ANS will tend to lead to more fluctuations in activation of a chunk and therefore higher rates of unsuccessful retrievals.\footnote{Note that \cite{PatilEtAl2016} implemented intermittent deficiency using another source of noise in the model which affects not activation levels but rather the odds of a processing operation being chosen.} 
-Increasing ANS leads to a larger influence of random fluctuation in activation on a chunk's activation, which represents the core idea of \emph{intermittent deficiency}: that there is not a constantly present damage to the processing system, but rather that the deficit occasionally interferes with parsing, leading to more errors.
+The parameter ANS of the logistic distribution from which $\epsilon$ is generated can be interpreted as implementing the intermittent deficiency hypothesis, because higher values of ANS will tend to lead to more fluctuations in activation of a chunk and therefore higher rates of unsuccessful retrievals.\footnote{Note that \cite{PatilEtAl2016} implemented intermittent deficiency using another source of noise in the model which affects not activation levels but rather the odds of a processing operation being chosen.} 
+Increasing ANS leads to a larger influence of random fluctuation in activation on a chunk's activation, which represents the core idea of intermittent deficiency: that there is not a constantly present damage to the processing system, but rather that the deficit occasionally interferes with parsing, leading to more errors.
 
-The second summand in \eqref{eq:1} represents the process of \emph{spreading activation} within the ACT-R framework. For a given chunk $i$ to be retrieved, and given retrieval cues $j \in \{1, \ldots, J\}$, the amount of activation spread to the chunk $i$ as a function of the retrieval cues is quantified by computing: 
+The second summand in \eqref{eq:1} represents the process of spreading activation within the ACT-R framework. For a given chunk $i$ to be retrieved, and given retrieval cues $j \in \{1, \ldots, J\}$, the amount of activation spread to the chunk $i$ as a function of the retrieval cues is quantified by computing: 
 
 \begin{equation}\label{eq:2}
   S_i = \sum_{j=1}^J W_j S_{ji}.
