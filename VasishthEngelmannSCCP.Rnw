@@ -122,8 +122,8 @@
 \listoftables
 
 \include{c00acksccp} 
+\include{c00forewordsccp}
 \include{c00prefacesccp}
-
 
 <<setup,include=FALSE,cache=FALSE,echo=FALSE>>=
 library(knitr)
