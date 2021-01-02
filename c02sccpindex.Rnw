@@ -639,7 +639,7 @@ priors<-c(set_prior("normal(0,10)",
                                 class = "sd"),
           set_prior("lkj(2)", class = "cor"))
 
-m_dillon<-brm(TFT~1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr + (1+1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|subj) + (1+1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|item),crit_orig,family=lognormal(),prior = priors,
+m_dillon<-brm(TFT~1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr + (1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|subj) + (1+Dep+Gram+DepxGram+Int_gram_refl+Int_gram_agr+Int_ungram_refl+Int_ungram_agr|item),crit_orig,family=lognormal(),prior = priors,
             warmup = 1000, iter = 2000, 
             chains = 4,
             cores = 4,
@@ -688,10 +688,10 @@ u1_refl<-posterior_samples(m_dillon,
 ## compute subject level estimates:
 agr_subj<-refl_subj<-matrix(rep(NA,4000*40),ncol=40)
 for(i in 1:40){
- refl_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,2]))-
-    exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,2]))
- agr_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,3]))-
-    exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,3]))
+ refl_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,2])/2)-
+    exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,2])/2)
+ agr_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,3])/2)-
+    exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,3])/2)
 }
 
 agr_subj<-data.frame(agr_subj)
@@ -826,10 +826,11 @@ u1_refl<-posterior_samples(m_drep,
 agr_subj<-refl_subj<-matrix(rep(NA,4000*181),
                             ncol=181)
 for(i in 1:181){
- refl_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,2]))-
-    exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,2]))
- agr_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_agr[,i]+m_post[,3]))-
-    exp(m_post[,1]+u0[,i]-(u1_agr[,i]+m_post[,3]))
+ refl_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_refl[,i]+m_post[,2])/2)-
+    exp(m_post[,1]+u0[,i]-(u1_refl[,i]+m_post[,2])/2)
+ 
+ agr_subj[,i]<-exp(m_post[,1]+u0[,i]+(u1_agr[,i]+m_post[,3])/2)-
+    exp(m_post[,1]+u0[,i]-(u1_agr[,i]+m_post[,3])/2)
 }
 
 agr_subj<-data.frame(agr_subj)
@@ -893,7 +894,7 @@ dillonrepindplotridges<-ggplot(agr_refl_long,
 (dillonmeanplot) /
   (p_refl + p_agr)
 @
-\caption{Summary for total reading time dependent measures of the Dillon et al.\ (2013) comparisons for ungrammatical sentences involving agreement and reflexives. The sample size was 40 participants. The upper plot shows the posterior distributions of the facilitatory interference effect in agreement and reflexives, and the lower plots show the individual-level estimates of the effect, with 80 and 95\% credible intervals.}\label{fig:dillonresults}
+\caption{Summary for total reading time of the Dillon et al.\ (2013) comparisons for ungrammatical sentences involving agreement and reflexives. The sample size was 40 participants. The upper plot shows the posterior distributions of the facilitatory interference effect in agreement and reflexives, and the lower plots show the individual-level estimates of the effect, with 80 and 95\% credible intervals.}\label{fig:dillonresults}
 \end{figure}
 
 \begin{figure}[!hbtp]
@@ -902,7 +903,7 @@ dillonrepindplotridges<-ggplot(agr_refl_long,
 (dillonrepmeanplot) /
   (p_reflrep + p_agrrep)
 @
-\caption{Summary for total reading time dependent measures of the J{\"a}ger et al.\ (2020) comparisons for ungrammatical sentences involving agreement and reflexives. The sample size was 181 participants. The upper plot shows the posterior distributions of the facilitatory interference effect in agreement and reflexives, and the lower plots show the individual-level estimates of the effect, with 80 and 95\% credible intervals.}\label{fig:dillonrepresults}
+\caption{Summary for total reading time of the J{\"a}ger et al.\ (2020) comparisons for ungrammatical sentences involving agreement and reflexives. The sample size was 181 participants. The upper plot shows the posterior distributions of the facilitatory interference effect in agreement and reflexives, and the lower plots show the individual-level estimates of the effect, with 80 and 95\% credible intervals.}\label{fig:dillonrepresults}
 \end{figure}
 
 In their paper, Dillon and colleagues argue that reflexives and agreement attraction constructions exhibit different interference profiles in ungrammatical constructions. In order to argue for a difference between agreement and reflexives with respect to the interference manipulation, an interaction must be demonstrated between dependency type and the interference manipulation. However, such an interaction was not present in the original data \citep{JaegerMertzenVanDykeVasishth2019}.  
