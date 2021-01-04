@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: VasishthEngelmannSCCP.aux
+A level-1 auxiliary file: c00acksccp.aux
+A level-1 auxiliary file: c00forewordsccp.aux
+A level-1 auxiliary file: c00prefacesccp.aux
+The style file: cambridgeauthordate.bst
+Reallocated field_info (elt_size=4) to 12567 items from 5000.
+Database file #1: sccpcorrected.bib
+Warning--empty note in PaapeEtAlMPT2020
+You've used 329 entries,
+            2465 wiz_defined-function locations,
+            2456 strings with 59405 characters,
+and the built_in function-call counts, 138651 in all, are:
+= -- 13580
+> -- 5012
+< -- 1129
++ -- 1913
+- -- 1444
+* -- 11928
+:= -- 22707
+add.period$ -- 1363
+call.type$ -- 329
+change.case$ -- 2091
+chr.to.int$ -- 319
+cite$ -- 330
+duplicate$ -- 5208
+empty$ -- 10138
+format.name$ -- 1858
+if$ -- 27987
+int.to.chr$ -- 11
+int.to.str$ -- 1
+missing$ -- 335
+newline$ -- 1695
+num.names$ -- 1031
+pop$ -- 1957
+preamble$ -- 1
+purify$ -- 2415
+quote$ -- 0
+skip$ -- 5090
+stack$ -- 0
+substring$ -- 9594
+swap$ -- 1146
+text.length$ -- 30
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2546
+warning$ -- 1
+while$ -- 1166
+width$ -- 0
+write$ -- 4296
+(There was 1 warning)
