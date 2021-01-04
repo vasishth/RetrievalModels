@@ -29,9 +29,7 @@ Several classes of problems have been studied in sentence processing. A probably
 Unfortuntely, psycholinguistics generally neglected power considerations in most of the published literature; as a consequence of the generally low power of published studies, many papers end up reporting over-estimates which never replicate. There is an urgent need to revisit the empirical base of psycholinguistics, and to establish larger-sample benchmark data so that model evaluation and model comparison is meaningful. 
 
 In recent empirical work we have carried out, we have made some modest attempts to systematically create benchmark reading data available specifically on similarity-based interference effects. Examples are 
-Mertzen (PhD dissertation), 
-\cite{JaegerMertzenVanDykeVasishth2019},
-and \cite{VasishthMertzenJaegerGelman2018}. We  have also  tried to systemtically synthesize existing evidence using meta-analysis \citep{JaegerEngelmannVasishth2017}.
+ \cite{JaegerMertzenVanDykeVasishth2019,VasishthMertzenJaegerGelman2018,Mertzenretro,Mertzenproretro,MertzenEtAlAMLaP2019}. We  have also  tried to systematically synthesize existing evidence in particular areas of sentence processing using meta-analysis \citep{JaegerEngelmannVasishth2017,BuerkiEtAl2020}.
 
 An important task that remains for the field is to  systematically create a repository of such data-sets for the different phenomenaa listed above, with the goal that the predictions of competing models of sentence processing be tested against as broad a class of phenomena as possible.
 
@@ -45,5 +43,5 @@ There is also a need to compare the predictive performance of the activation mod
 
 \section{In closing}
 
-This book attempts to address many of the important open problems in sentence comprehension, admittedly with varying  degrees of success and varying degrees of uniformity. Nevertheless, the last 20 years of work on retrieval models, starting with the pioneering work of Rick Lewis, have taught us a lot about the role that general information processing principles play in explaining aspects of sentence comprehension. We hope that other researchers will find useful some of the ideas presented in this book. We hope that our first steps, reported in this book, will help others develop the next generation of computational models of sentence processing.
+This book attempts to address some of the important open problems in sentence comprehension, admittedly with varying  degrees of success and varying degrees of uniformity. Nevertheless, the last 20 years of work on retrieval models, starting with the pioneering work of Rick Lewis, have taught us a lot about the role that general information processing principles play in explaining aspects of sentence comprehension. We hope that other researchers will find useful at least some of the ideas presented in this book. We hope that our first steps, reported in this book, will help others develop the next generation of computational models of sentence processing.
 
